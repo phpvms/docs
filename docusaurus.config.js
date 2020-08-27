@@ -1,11 +1,11 @@
 module.exports = {
   title: 'phpVMS Docs',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://phpvms.github.com',
+  baseUrl: '/docs',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'phpvms', // Usually your GitHub org/user name.
-  projectName: 'phpvms docs', // Usually your repo name.
+  organizationName: 'phpvms',
+  projectName: 'docs',
   themeConfig: {
     navbar: {
       title: 'phpVMS Docs',
