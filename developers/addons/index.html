@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.61">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-100567975-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview")</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script><title data-react-helmet="true">Addons | phpVMS Docs</title><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Addons | phpVMS Docs"><meta data-react-helmet="true" name="description" content="If you&#x27;re looking to create a full add-on, that has it&#x27;s own URL, this is the page you want. If you want to create a component that someone can include into their own views/templates, you want a widget."><meta data-react-helmet="true" property="og:description" content="If you&#x27;re looking to create a full add-on, that has it&#x27;s own URL, this is the page you want. If you want to create a component that someone can include into their own views/templates, you want a widget."><meta data-react-helmet="true" property="og:url" content="https://phpvms.github.com/docs/developers/addons"><link data-react-helmet="true" rel="shortcut icon" href="/docs/img/favicon.ico"><link data-react-helmet="true" rel="canonical" href="https://phpvms.github.com/docs/developers/addons"><link rel="stylesheet" href="/docs/styles.fd84a81c.css">
+<link rel="preload" href="/docs/styles.1bee5e41.js" as="script">
+<link rel="preload" href="/docs/runtime~main.6e0f5566.js" as="script">
+<link rel="preload" href="/docs/main.979747f0.js" as="script">
+<link rel="preload" href="/docs/1.5a8bba90.js" as="script">
+<link rel="preload" href="/docs/2.344311c2.js" as="script">
+<link rel="preload" href="/docs/26.97bab3d2.js" as="script">
+<link rel="preload" href="/docs/20ac7829.d8dabe62.js" as="script">
+<link rel="preload" href="/docs/17896441.2ccafa95.js" as="script">
+<link rel="preload" href="/docs/928c3d33.4c468457.js" as="script">
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><a class="navbar__brand" href="/docs/"><img class="navbar__logo" src="/docs/img/logo.svg" alt="My Site Logo"><strong class="navbar__title">phpVMS Docs</strong></a></div><div class="navbar__items navbar__items--right"><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_2aTZ"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_BsTx">🌜</span></div><div class="react-toggle-track-x"><span class="toggle_BsTx">🌞</span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a class="navbar__brand" href="/docs/"><img class="navbar__logo" src="/docs/img/logo.svg" alt="My Site Logo"><strong class="navbar__title">phpVMS Docs</strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_2gpo"><div class="docSidebarContainer_3_JD" role="complementary"><div class="sidebar_2urC"><div class="menu menu--responsive menu_5FrY"><button aria-label="Open Menu" aria-haspopup="true" class="button button--secondary button--sm menu__button" type="button"><svg aria-label="Menu" class="sidebarMenuIcon_Dm3K" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 32 32" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><ul class="menu__list"><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Getting Started</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/">Introduction</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/getting-started/requirements">Requirements</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Installation</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/installation/download">Download</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/installation/installation">Installation</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/installation/cron">Cron/Scheduled Tasks</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/installation/importing">Importing</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/installation/upgrading">Upgrading</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Configuration</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/config/files">Config Files</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/config/optimizing">Optimizing</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Themes and Layouts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/customize/layouts">Layouts and Template Basics</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/customize/theming">Theming</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/customize/building-assets">Building Assets</a></li></ul></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">Developers</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developers/environment">Environment Configuration</a></li><li class="menu__list-item"><a aria-current="page" class="menu__link menu__link--active active" tabindex="0" href="/docs/developers/addons">Addons</a></li><li class="menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developers/awards">Awards</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">API</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/api/overview">Overview</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/api/auth">Authentication</a></li><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/api/apis">APIs</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">ACARS</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" tabindex="-1" href="/docs/acars/install-server">Installation (Server)</a></li></ul></li></ul></div></div></div><main class="docMainContainer_3EyW"><div class="container padding-vert--lg docItemWrapper_1EkI"><div class="row"><div class="col docItemCol_2ASc"><div class="docItemContainer_3QWW"><article><header><h1 class="docTitle_1Lrw">Addons</h1></header><div class="markdown"><p>If you&#x27;re looking to create a full add-on, that has it&#x27;s own URL, this is the page you want. If you want to create a component that someone can include into their own views/templates, you want a widget. </p><p>At their core, the module system uses <a href="https://nwidart.com/laravel-modules/v2/introduction">laravel-modules</a>. The stubs are modified so the generation create the structure that is compatible with the phpVMS codebase.</p><hr><h1 id="basic-scaffold-generation">Basic Scaffold Generation</h1><p>To generate a module, run:</p><pre><code class="language-bash">php artisan module:make {ModuleName}
+</code></pre><p>Which generates the basic structure in the <code>/modules</code> folder. After generating the module, if you want to make it available on composer, edit the <code>composer.json</code> file, setting your <code>VENDOR</code> and author information.</p><div class="admonition admonition-tip alert alert--success"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</h5></div><div class="admonition-content"><p>All of the examples below will be based on a module named <code>Sample</code>. To see the source for the module, <a href="https://github.com/nabeelio/phpvms-module">check it out on GitHub</a>.</p></div></div><hr><h2 id="namespacing">Namespacing</h2><p>The root namespace for your module will be <code>Modules\{YOUR_MODULE}</code>, e.g, <code>Modules\Sample</code></p><hr><h2 id="directory-structure">Directory Structure</h2><p>When a module is created, a directory structure like this is created:</p><pre><code>├── Config
+├── Console
+├── Database
+├── Http
+├── Listeners
+├── Models
+├── Providers
+└── Resources
+</code></pre><ul><li><p><code>Config</code> - This contains the config file for use in your module. The items in this will be prefixed by your module name, for example:</p><pre><code class="language-php">echo config(&#x27;sample.name&#x27;); # writes out &quot;Sample&quot;
+</code></pre></li><li><p><code>Console</code> - This contains any <code>artisan</code> commands your module might have</p></li><li><p><code>Database</code> - This contains several directories, the most important probably being the <code>migrations</code> directory. See below for more information about migrations and database access.</p></li><li><p><code>Http</code> - The folders in this are all related to HTTP access for your application - includes the controllers and routes</p></li><li><p><code>Listeners</code> - Any event listeners for your module will be in here. See below for more information about subscribing to events.</p></li><li><p><code>Models</code> - All of the models, used for database access, and corresponding to tables, are placed here. </p></li><li><p><code>Resources</code> - Any language files and views are placed here</p></li></ul><hr><h3 id="automatic-installation">Automatic Installation</h3><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Still being written</p></div></div><p>To be able to publish to composer, add <code>joshbrw/laravel-module-installer</code> as a dependency in your module&#x27;s <code>composer.json</code> file, and then set the <code>type</code> in the <code>composer.json</code> file to <code>laravel-module</code>. Then a user can run <code>composer require your/module</code> from Packagist to install.</p><p>See <a href="https://github.com/joshbrw/laravel-module-installer">joshbrw/laravel-module-installer</a> for additional information.</p><hr><h1 id="routing-and-controllers">Routing And Controllers</h1><p>Routing follows the standard Laravel routing format, and the files are placed in the <code>modules/{MODULE}/Http/Routes</code> folder. For examples, see the <code>app/Routes</code> files to see how the Route groups work and how the middleware works. For example, the <code>Sample</code> module&#x27;s routes:</p><hr><h2 id="web-routes">Web Routes</h2><p>These are in the <code>Http/Routes/web.php</code> file. These define your pages that render HTML. For example, the default routes look like:</p><pre><code class="language-php">Route::group([&#x27;middleware&#x27; =&gt; [
+    &#x27;role:user&#x27; # Define who can access this page
+]], function() {
+
+    # all your routes are prefixed with your module&#x27;s name
+    # e.g. yoursite.com/sample
+    Route::get(&#x27;/&#x27;, &#x27;SampleController@index&#x27;);
+});
+
+</code></pre><h4 id="admin-routes">Admin Routes</h4><p>These are in the <code>Http/Routes/admin.php</code>. This will look for controllers in the <code>Http/Controllers/Admin</code> folder and namespace. These routes will be prefixed with <code>$module/admin</code></p><h4 id="api-routes">API Routes</h4><p>These are in <code>Http/Routes/api.php</code>, and will look for controllers in the <code>Http/Controllers/Api</code> folder and namespace. These routes will be prefixed with <code>/api/$module</code>.</p><h4 id="middleware"><code>middleware</code></h4><p>Middleware allows you to inject a class into the HTTP request chain, so you don&#x27;t need to call a check or something in every method.</p><pre><code class="language-php">&#x27;middleware&#x27; =&gt; [&#x27;role:user&#x27;]       # enable for all users
+&#x27;middleware&#x27; =&gt; [&#x27;role:admin&#x27;]      # enable for admin only
+
+&#x27;middleware&#x27; =&gt; [&#x27;api.auth&#x27;] # for API routes, you can add this middlware to require API auth
+</code></pre><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Read more about <a href="https://laravel.com/docs/5.5/middleware">Laravel Middleware</a></p></div></div><hr><h2 id="controllers">Controllers</h2><p>Now we can look at the (truncated) corresponding controller:</p><pre><code class="language-php">&lt;?php
+
+namespace Modules\Sample\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class SampleController extends Controller
+{
+    // ...
+    
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return view(&#x27;sample::index&#x27;);
+    }
+
+    // ...
+}
+</code></pre><hr><h5 id="getting-the-user">Getting the User</h5><pre><code class="language-php">$user = Auth::user();
+</code></pre><p>To check if a user is logged in, use:</p><pre><code class="language-php">if(Auth::check())
+</code></pre><hr><h1 id="database-access">Database Access</h1><h2 id="models">Models</h2><p>Models are the more basic way to access your database tables. For example, if you have a table called <code>sample_table</code>, a model called <code>SampleTable</code> would make most sense. While table names generally refer to objects in the plural, a model is named for an item in it&#x27;s singular form.</p><h3 id="creating-a-model">Creating a Model</h3><p>The models go into the <code>Models</code> directory. The fastest way is to use the <code>artisan</code> helper:</p><pre><code>php artisan module:make-model SampleTable Sample
+</code></pre><p>After it&#x27;s generated, you should open the model, and fill in the table name. See the <a href="https://laravel.com/docs/5.5/eloquent">Laravel Model Documentation</a> for more details on how to work with models.</p><h4 id="relationships">Relationships</h4><p>If your table has a column called <code>pirep_id</code>, you can add a relationship to your model called <code>pireps</code>:</p><pre><code class="language-php">namespace Modules\Sample\Models;
+
+use App\Contracts\Model;
+
+class SampleTable extends Model {
+    public function pirep()
+    {
+        return $this-&gt;belongsTo(Pirep::class, &#x27;pirep_id&#x27;);
+    }
+}
+</code></pre><p>Now, you can easily access the parent PIREP, without having to write any queries:</p><pre><code class="language-php">$record = SampleTable::with([&#x27;pirep&#x27;])-&gt;get(1);  # Get the ID of 1, eager-loading the pirep relationship
+echo $record-&gt;pirep-&gt;dpt_airport_id; # Write out the departure airport
+</code></pre><p>We can also get fancy, since the relationship returns the <code>Pirep</code> model, and it has relationships to the <code>Airport</code> model, you can open the <code>App\Models\Pirep</code> file and look at the relationships.</p><pre><code class="language-php">echo $record-&gt;pirep-&gt;dpt_airport-&gt;name; # Write out the name of the departure airport
+</code></pre><p>The right relationships make life easier. See the Laravel documentation on relationships.</p><hr><h2 id="creating-and-modifying-tables-with-migrations">Creating and modifying tables with migrations</h2><p>Laravel includes a way to create and update tables, called <a href="https://laravel.com/docs/5.5/migrations">migrations</a>.  Migrations are ways to programmatically define your tables, and let the framework worry about the exact syntax to use. The advantage to this abstraction is being.</p><p>! You should <em>not</em> be using raw SQL</p><p>There is an <code>artisan</code> helper to generate migrations:</p><pre><code class="language-bash">php artisan module:make-migration create_sample_table ModuleName
+</code></pre><p>This will create a migration file in your module&#x27;s <code>Database/migrations</code> directory. Now, when a user can goes to the updater, at <code>/update</code>, it will show that there are updates available, and the migrations will be run. During an install, the migrations are also all run. This makes updates simple and straight-forward, without having to run any SQL manually.</p><p>The <code>app/Database/migrations</code> directory has the core migrations and is a good reference on field types, especially if you&#x27;re looking to add relationships.</p><p>!!! Design your tables well - follow the guidelines set by Laravel, and you&#x27;ll have a much better time.</p><p>!!!! Add new migration files when you have to modify a table, etc, after you&#x27;ve released it into the wild. The migrations that are run are kept track of, so if it&#x27;s seen that it&#x27;s already run the file, it won&#x27;t run it again.</p><h3 id="seeding-data">Seeding Data</h3><p>I&#x27;ve added a few extra features, including adding seed data, including adding seeder data. For example, the <code>Settings</code> table:</p><pre><code class="language-php">&lt;?php
+use App\Contracts\Migration;
+use App\Services\Installer\SeederService;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreateSettingsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create(&#x27;settings&#x27;, function (Blueprint $table) {
+            // ... Create all the columns
+        });
+        
+            // Create some initial data, with the columns filled out
+        $settings = [
+            [
+                &#x27;order&#x27; =&gt; 1,
+                &#x27;name&#x27; =&gt; &#x27;Start Date&#x27;,
+                &#x27;group&#x27; =&gt; &#x27;general&#x27;,
+                &#x27;value&#x27; =&gt; &#x27;&#x27;,
+                &#x27;type&#x27; =&gt; &#x27;date&#x27;,
+                &#x27;description&#x27; =&gt; &#x27;The date your VA started&#x27;,
+            ],
+            
+            // A lot more entries
+            
+        ];
+        
+        $this-&gt;addData(&#x27;settings&#x27;, $settings);
+    }
+    
+    // Not showning the down()
+}
+</code></pre><hr><h1 id="templating">Templating</h1><p>Templates are placed in <code>modules/{ModuleName}/Resources/views</code>. If someone wants to modify the views, it&#x27;s recommended that they either run <code>php artisan vendor:publish</code> or they copy the templates into the <code>resources/views/module/$moduleName</code> folder (look at the <code>$viewPath</code> value in the <code>registerViews()</code> method in the <code>$MODULE/Providers/$ModuleServiceProvider.php</code> file for the exact path if you&#x27;re unsure).</p><p>!!!! Read more about <a href="https://laravel.com/docs/5.5/blade">Laravel Blade Templating</a></p><hr><h1 id="event-listeners">Event Listeners</h1><p>Available events from the main app are listed in the <a href="/nabeelio/phpvms/tree/master/app/Events">app/Events</a> directory. Subscribing to events follows the <a href="https://laravel.com/docs/5.5/events#event-subscribers">Laravel Events</a> format. Create the event listener in your <code>$MODULE\Listeners</code> folder (e.g, <code>PirepAcceptedListener</code>), and then register it in your <code>$MODULE\Providers\EventServiceProvider</code> folder, in the <code>$listen</code> section, like:</p><pre><code class="language-php">protected $listen = [
+    &#x27;App\Events\PirepAccepted&#x27; =&gt; [
+        &#x27;Modules\Sample\Listeners\PirepAcceptedListener&#x27;,
+    ],
+];
+</code></pre><p>To see the data passed, just look in the Event class.</p><hr><h1 id="design-patterns-and-suggestions">Design Patterns and Suggestions</h1><h2 id="service-layer">Service Layer</h2><p>When multiple models/repositories/steps are involved in a task, they should be written as a <code>Service</code> class. For example, when filing a PIREP,  there are changes made to the <code>PIREP</code> model, but also to the <code>User</code> model, one or more events are dispatched, etc. Instead of putting all of this logic into a Controller or directly into a Model, a Service class should be defined, which ties all these steps together. This helps with testing and debugging, and portability. In the PIREP example, it can be filed through a web interface, or a RESTful interface. A Service class allows for both of these to use the same logic without reusing code.</p><hr><h2 id="repositories">Repositories</h2><p>While you can use and import models directly, it&#x27;s recommended to use the repositories, in the <a href="/nabeelio/phpvms/tree/master/app/Repositories">app/Repositories</a> are listed <a href="https://github.com/andersao/l5-repository#prettusrepositorycontractsrepositoryinterface">here</a>. Repositories give the added benefits of automatically caching and flushing the cache when data is added/updated.</p><p>The recommended method is to use <a href="https://laravel.com/docs/5.5/container#automatic-injection">Automatic Injection</a>, which would involve adding a constructor to your Listener, as such:</p><pre><code class="language-php">namespace Modules\Sample\Listeners;
+
+use App\Events\PirepAccepted;
+use App\Repositories\PirepRepository;
+
+class PirepAcceptedListener {
+
+    private $pirepRepo;
+
+    // You can pass as many Repositories in as your wish. 
+    // See the app\Controllers for more examples
+    public function __construct(PirepRepository $pirepRepo) {
+        $this-&gt;pirepRepo = $pirepRepo;
+    }
+
+    public function handle(PirepAccepted $pirep) {
+        Log::info(&#x27;Received PIREP&#x27;, [$pirep]);
+    }
+}
+</code></pre><p>The methods in the repositories largely mirror the Model methods, but can automatically handle searches, etc. The docs for the repositories <a href="https://github.com/andersao/l5-repository#prettusrepositorycontractsrepositoryinterface">are available here</a>. You can read more about the repository pattern <a href="https://bosnadev.com/2015/03/07/using-repository-pattern-in-laravel-5/?utm_source=prettus-l5-repository&amp;utm_medium=readme&amp;utm_campaign=prettus-l5-repository">here</a></p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/phpvms/docs/master/docs/developers/addons.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/developers/environment"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Environment Configuration</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/developers/awards"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Awards »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3klQ"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#namespacing" class="table-of-contents__link">Namespacing</a></li><li><a href="#directory-structure" class="table-of-contents__link">Directory Structure</a><ul><li><a href="#automatic-installation" class="table-of-contents__link">Automatic Installation</a></li></ul></li><li><a href="#web-routes" class="table-of-contents__link">Web Routes</a></li><li><a href="#controllers" class="table-of-contents__link">Controllers</a></li><li><a href="#models" class="table-of-contents__link">Models</a><ul><li><a href="#creating-a-model" class="table-of-contents__link">Creating a Model</a></li></ul></li><li><a href="#creating-and-modifying-tables-with-migrations" class="table-of-contents__link">Creating and modifying tables with migrations</a><ul><li><a href="#seeding-data" class="table-of-contents__link">Seeding Data</a></li></ul></li><li><a href="#service-layer" class="table-of-contents__link">Service Layer</a></li><li><a href="#repositories" class="table-of-contents__link">Repositories</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 phpvms</div></div></div></footer></div>
+<script src="/docs/styles.1bee5e41.js"></script>
+<script src="/docs/runtime~main.6e0f5566.js"></script>
+<script src="/docs/main.979747f0.js"></script>
+<script src="/docs/1.5a8bba90.js"></script>
+<script src="/docs/2.344311c2.js"></script>
+<script src="/docs/26.97bab3d2.js"></script>
+<script src="/docs/20ac7829.d8dabe62.js"></script>
+<script src="/docs/17896441.2ccafa95.js"></script>
+<script src="/docs/928c3d33.4c468457.js"></script>
+</body>
+</html>
