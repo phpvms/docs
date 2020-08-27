@@ -1,7 +1,7 @@
 module.exports = {
   title: 'phpVMS Docs',
-  url: 'https://phpvms.github.com',
-  baseUrl: '/docs/',
+  url: 'https://docs.phpvms.net',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'phpvms',
