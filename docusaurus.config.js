@@ -12,10 +12,12 @@ module.exports = {
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
+        // src: 'img/logo_blue_bg.svg',
       },
       items: [],
     },
     prism: {
+      theme: require('prism-react-renderer/themes/github'),
       additionalLanguages: ['bash', 'http', 'php'],
     },
     footer: {
