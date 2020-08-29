@@ -6,6 +6,7 @@ module.exports = {
     ],
     'Installation': [
       'installation/download',
+      'installation/vhost',
       'installation/installation',
       'installation/cron',
       'installation/importing',
