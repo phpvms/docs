@@ -16,6 +16,9 @@ module.exports = {
       },
       items: [],
     },
+    prism: {
+      additionalLanguages: ['bash', 'http', 'php'],
+    },
     footer: {
       style: 'dark',
       links: [],
