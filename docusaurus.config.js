@@ -16,10 +16,6 @@ module.exports = {
       },
       items: [],
     },
-    prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      additionalLanguages: ['bash', 'http', 'php'],
-    },
     footer: {
       style: 'dark',
       links: [],
