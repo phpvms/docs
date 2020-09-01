@@ -28,6 +28,14 @@ module.exports = {
       trackingID: 'UA-100567975-3',
       anonymizeIP: true,
     },
+    links: [
+      {
+        href: 'https://forum.phpvms.net',
+        prependBaseUrlToHref: false,
+        label: 'Forum',
+        position: 'right',
+      },
+    ],
   },
   presets: [
     [

@@ -35,5 +35,8 @@ module.exports = {
     'ACARS': [
       'acars/install-server',
     ],
+    'Help': [
+      'help/getting-help',
+    ]
   },
 };
