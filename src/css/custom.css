@@ -39,3 +39,10 @@
 div.main-wrapper {
   font-size: 95%;
 }
+
+div.markdown img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

@@ -4,6 +4,13 @@ title: Installation
 sidebar_label: Installation
 ---
 
+The installation requires a few steps:
+
+1. Database Setup - right now, only MySQL (or its offshoots, like MariaDB or Percona are supported). Create the credentials for the database using either the command line or the cPanel Database Wizard.
+2. Running the installer - This is a web interface, through which you can also import your older phpVMS 2.x or 5.x install
+
+---
+
 ## Database Setup
 
 Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
@@ -26,7 +33,7 @@ You can also use the cPanel Wizard to create the credentials prior to install
 ## Running the Installer
 
 :::info
-There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly
+There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly.
 :::
 
 Once you go to your site, you'll see a page like this, click to proceed to the installer.
