@@ -30,9 +30,7 @@ Uploading and change the path of the public directory is the recommended method
   ]}>
   <TabItem value="public-dir">
   
-  This method works well if your main site is going to be phpVMS, and you're not running something like Wordpress. Running phpVMS in a subdirectory isn't recommended (see method 2 instead).
-
-  Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
+  This method works well if your main site is going to be phpVMS, and you're not running something like Wordpress. Running phpVMS in a subdirectory isn't recommended. Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
 
   ```
   /home/youruser
@@ -41,19 +39,7 @@ Uploading and change the path of the public directory is the recommended method
     public_html
   ```
 
-  Next, copy the files from the `/public` folder into the `public_html` folder, and then open the `index.php` file, to edit this line:
-
-  ```php
-  $path_to_phpvms_folder = __DIR__.'/../';
-  ```
-
-  You'll have to change it to :
-
-  ```php
-  $path_to_phpvms_folder = __DIR__.'/../phpvms';
-  ```
-
-  That will then point to the the `/phpvms` folder, if you're following the paths above
+  Next, copy the files from the `/public` folder into the `public_html` folder. As long as you named the folder `phpvms`, the `index.php` will try to autodetect the location of the phpVMS folder.
 
 :::note
   Updates/auto-updates won't update the files in the `/public_html` folder, you'll need to update them manually. The other method, the symlink method, is recommended if you have command-line access and are more comfortable creating those types of links.
