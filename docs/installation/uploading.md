@@ -3,13 +3,13 @@ id: uploading
 title: Uploading Files
 ---
 
-The first step is to upload your files, and ensure that the dependencies are loaded. If you're using a "fat" distribution, the `vendor` directory with the composer dependencies is already included.
+When uploading the files, you have several options on how to. These mainly apply to shared hosts. For your own server or if you have control over the vhost files, upload/extract the files to your desired location and point the vhost to the `/public` folder.
 
-:::note
-If you are uploading to a shared host or to cPanel, chose one of the following methods when uploading your files For your own server or if you have control over the vhost files, upload/extract the files to your desired location and point the vhost to the `/public` folder.
+:::tip
+If you are uploading to a shared host or to cPanel, chose one of the following methods when uploading your files.
 :::
 
-## Copying the public directory
+## Option 1: Copying the public directory
 
 :::tip
 Uploading and change the path of the public directory is the recommended method if you're on shared hosting
@@ -32,12 +32,13 @@ Updates/auto-updates won't update the files in the `/public_html` folder, you'll
 
 ---
 
-## Creating a Subdomain
+## Option 2: Creating a Subdomain
 
-Creating a subdomain is the next recommended method, if you're unable to change the `public_html` path (this might not always be feasiable). Upload phpVMS to a directory with the name of your subdomain, for example, `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above). In this example, I want to create the subdomain `demo.vmshost.io`.
+Creating a subdomain is the next recommended method. This works well if you have a landing or promo page on your site's main domain, and then a subdomain like `crew.yourva.com` or something similar.
+
+Upload phpVMS to a directory with the name of your subdomain, for example, `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above). In this example, I want to create the subdomain `demo.vmshost.io`.
 
 First, create a folder to extract phpVMS into:
-
 
 ```
 /home/youruser
@@ -56,7 +57,7 @@ It will look like this:
 
 ---
 
-## Symlink
+## Option 3: Symlink
 
 This method works well if your main site is going to be phpVMS, and you're not running something like Wordpress. Running phpVMS in a subdirectory isn't recommended (see method 2 instead).
 
@@ -82,6 +83,10 @@ ln -s phpvms/public/ public_html
   
 ---
 
-## Direct Upload
+## Option 4: Direct Upload (Not Recommended!)
 
-This method isn't recommended because it can potentially expose your install if the `.htaccess` or something isn't correctly configured. Upload the files directly into the `public_html` folder, and make sure the `.htaccess` file is active (check with your webhost). This uses the `public` folder directly
+:::warning
+This method isn't recommended, it could expose some sensitive directories if it isn't setup correctly.
+:::
+
+This method isn't recommended because it can potentially expose your install if the `.htaccess` or something isn't correctly configured. Upload the files directly into the `public_html` folder, and make sure the `.htaccess` file is active (check with your webhost). This uses the `public` folder directly.
