@@ -1,7 +1,11 @@
 module.exports = {
   gettingStarted: {
-    type: 'ref',
-    id: 'intro',
+    items: [
+      {
+        type: 'ref',
+        id: 'intro',
+      }
+    ]
   },
   mainSidebar: {
     'Getting Started': [
