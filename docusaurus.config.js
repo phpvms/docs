@@ -50,7 +50,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          homePageId: 'getting-started/intro',
+          homePageId: 'intro',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/phpvms/docs/tree/master/',

@@ -9,7 +9,7 @@ All of these calls require a valid API key
 
 ## User APIs
 
-### GET /api/user
+### `GET /api/user`
 
 Returns the user's information, including bids, etc. Example response:
 
@@ -55,7 +55,7 @@ Returns the user's information, including bids, etc. Example response:
 
 ---
 
-### GET /api/user/fleet
+### `GET /api/user/fleet`
 
 This returns the subfleets and aircraft that this user's rank gives them access to.
 
@@ -95,7 +95,7 @@ This returns the subfleets and aircraft that this user's rank gives them access 
 
 ---
 
-### GET /api/user/bids
+### `GET /api/user/bids`
 
 This returns the user's bids, as a list of flights.
 
@@ -170,7 +170,7 @@ This returns the user's bids, as a list of flights.
 
 ---
 
-### PUT /api/user/bids
+### `PUT /api/user/bids`
 
 Add a bid for a flight for the user. Returns the current list of bids.
 
@@ -192,7 +192,7 @@ See the `GET /api/user/bids` call
 
 ---
 
-### DELETE /api/user/bids
+### `DELETE /api/user/bids`
 
 Remove a bid for a flight for the user. Returns the current list of bids.
 
@@ -212,7 +212,7 @@ See the `GET /api/user/bids` call
 
 ## Airlines
 
-### GET /api/airlines
+### `GET /api/airlines`
 
 Get all of the airlines. Paginated
 
@@ -250,7 +250,7 @@ Get all of the airlines. Paginated
 
 ---
 
-### GET /api/airlines/{ID}
+### `GET /api/airlines/{ID}`
 
 Get information about a specific airline
 
@@ -273,7 +273,7 @@ Get information about a specific airline
 
 ## Airports
 
-### GET /api/airports
+### `GET /api/airports`
 
 Get all of the airports, paginated list
 
@@ -319,7 +319,7 @@ Get all of the airports, paginated list
 
 ---
 
-### GET /api/airports/hubs
+### `GET /api/airports/hubs`
 
 Get all of the hubs, paginated list
 
@@ -365,7 +365,7 @@ Get all of the hubs, paginated list
 
 ------
 
-### GET /api/airports/{ICAO}
+### `GET /api/airports/{ICAO}`
 
 Get the details about an airport
 
@@ -396,7 +396,7 @@ Get the details about an airport
 
 ## Fleet
 
-### GET /api/fleet
+### `GET /api/fleet`
 
 Get all of the subfleets and aircraft under the fleet. Includes the fare and airline information. Paginated
 
@@ -451,7 +451,7 @@ Get all of the subfleets and aircraft under the fleet. Includes the fare and air
 
 ---
 
-### GET /api/fleet/aircraft/{id}
+### `GET /api/fleet/aircraft/{id}`
 
 Return information about an aircraft, including the subfleet information
 
@@ -495,7 +495,7 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 
 ## Flights
 
-#### GET /api/flights
+#### `GET /api/flights`
 
 Return all of the flights, paginated
 
@@ -588,7 +588,7 @@ Return all of the flights, paginated
 
 ---
 
-### GET /api/flights/{FLIGHT ID}
+### `GET /api/flights/{FLIGHT ID}`
 
 Return details about a given flight
 
@@ -664,7 +664,7 @@ Return details about a given flight
 
 ---
 
-### GET /api/flights/search
+### `GET /api/flights/search`
 
 Do a search for a flight
 
@@ -686,7 +686,7 @@ See `GET /api/flights`
 
 ## PIREPs
 
-### GET /api/pireps/{PIREP ID}
+### `GET /api/pireps/{PIREP ID}`
 
 Retrieve the PIREP information
 
@@ -818,7 +818,7 @@ Retrieve the PIREP information
 
 ---
 
-### GET /api/pireps/{PIREP ID}/route
+### `GET /api/pireps/{PIREP ID}/route`
 
 Retrieve the route
 
@@ -959,6 +959,6 @@ Retrieve the route
 
 ---
 
-### GET /api/pireps/{PIREP ID}/acars/positions
+### `GET /api/pireps/{PIREP ID}/acars/positions`
 
 Get the ACARS data in plain rows

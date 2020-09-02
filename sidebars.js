@@ -1,19 +1,12 @@
 module.exports = {
   docs: [
-    {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: [
-        'getting-started/intro',
-        'getting-started/requirements',
-        'getting-started/download',
-      ]
-    },
+    'intro',
+    'requirements',
+    'download',
     {
       type: 'category',
       label: 'Installation',
-      items: [
+      items: [   
         'installation/uploading',
         'installation/vhost',
         'installation/installation',
