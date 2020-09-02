@@ -54,9 +54,11 @@ module.exports = {
       type: 'category',
       label: 'ACARS',
       items: [
+        'acars/overview',
         'acars/install-server',
       ]
     },
+
     'help/getting-help',
   ]
 };
