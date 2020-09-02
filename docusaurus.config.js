@@ -14,10 +14,26 @@ module.exports = {
         src: 'img/logo.svg',
         // src: 'img/logo_blue_bg.svg',
       },
-      items: [],
+      items: [
+        {
+          href: 'https://forum.phpvms.net',
+          prependBaseUrlToHref: false,
+          label: 'Forum',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/nabeelio/phpvms',
+          prependBaseUrlToHref: false,
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
     prism: {
       additionalLanguages: ['bash', 'http', 'php'],
+    },
+    colorMode: {
+      disableSwitch: true,
     },
     footer: {
       style: 'dark',
@@ -28,14 +44,6 @@ module.exports = {
       trackingID: 'UA-100567975-3',
       anonymizeIP: true,
     },
-    links: [
-      {
-        href: 'https://forum.phpvms.net',
-        prependBaseUrlToHref: false,
-        label: 'Forum',
-        position: 'right',
-      },
-    ],
   },
   presets: [
     [

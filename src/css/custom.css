@@ -32,8 +32,12 @@
 }
 
 .navbar__logo a:hover {
-  background-color: #fff;
+  color: #fff;
   font-size: 100%;
+}
+
+.navbar__link:hover, .navbar__link--active {
+  color: #fff;
 }
 
 div.main-wrapper {
