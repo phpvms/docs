@@ -5,12 +5,12 @@ module.exports = {
       label: 'Getting Started',
       collapsed: false,
       items: [
-        'intro',
+        'getting-started/intro',
         'getting-started/requirements',
+        'getting-started/download',
       ],
     },
     'Installation': [
-      'installation/download',
       'installation/uploading',
       'installation/vhost',
       'installation/installation',
