@@ -11,12 +11,13 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.61",
+    "@docusaurus/core": "^2.0.0-alpha.62",
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.61",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.62",
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
     "@mdx-js/react": "^1.5.8",
     "clsx": "^1.1.1",
+    "prism-react-renderer": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "rehype-truncate": "^1.1.0",

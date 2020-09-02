@@ -30,7 +30,8 @@ module.exports = {
       ],
     },
     prism: {
-      additionalLanguages: ['bash', 'http', 'php'],
+      theme: require('prism-react-renderer/themes/github'),
+      //additionalLanguages: ['php'],
     },
     colorMode: {
       disableSwitch: true,
@@ -40,7 +41,7 @@ module.exports = {
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} phpvms`,
     },
-    googleAnalytics: {
+    gtag: {
       trackingID: 'UA-100567975-3',
       anonymizeIP: true,
     },
@@ -49,11 +50,15 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        debug: true,
         docs: {
-          homePageId: 'intro',
+          id: 'intro',
+          // homePageId: 'intro',
+          path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/phpvms/docs/tree/master/',
+          // disableVersioning: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

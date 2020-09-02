@@ -2,6 +2,7 @@
 id: intro
 title: 'Introduction'
 hide_title: true
+slug: /
 ---
 
 Welcome to the phpVMS Docs site! phpVMS is a PHP based application to run and simulate and airline. It allowed users to register, view flight schedules that you create, and file flight reports.
