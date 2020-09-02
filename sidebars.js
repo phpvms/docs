@@ -1,5 +1,9 @@
 module.exports = {
-  someSidebar: {
+  gettingStarted: {
+    type: 'ref',
+    id: 'intro',
+  },
+  mainSidebar: {
     'Getting Started': [
       'intro',
       'getting-started/requirements',
