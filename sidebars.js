@@ -1,17 +1,14 @@
 module.exports = {
-  gettingStarted: {
-    items: [
-      {
-        type: 'ref',
-        id: 'intro',
-      }
-    ]
-  },
   mainSidebar: {
-    'Getting Started': [
-      'intro',
-      'getting-started/requirements',
-    ],
+    'Getting Started': {
+      type: 'category',
+      label: 'Getting Started',
+      collapsed: false,
+      items: [
+        'intro',
+        'getting-started/requirements',
+      ],
+    },
     'Installation': [
       'installation/download',
       'installation/uploading',
