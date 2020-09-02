@@ -1,6 +1,6 @@
 module.exports = {
   mainSidebar: {
-    'Getting Started': {
+    gettingStarted: {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
