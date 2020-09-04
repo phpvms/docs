@@ -29,7 +29,6 @@ module.exports = {
       items: [
         'customize/layouts',
         'customize/theming',
-        'customize/building-assets',
       ]
     },
     {
@@ -37,6 +36,7 @@ module.exports = {
       label: 'Developers',
       items: [
         'developers/environment',
+        'developers/building-assets',
         'developers/addons',
         'developers/awards',
       ]

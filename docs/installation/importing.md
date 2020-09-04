@@ -20,7 +20,7 @@ The importer tool can also be run on the command line, via a PHP artisan command
 This will erase all of your current data
 :::
 
-```sh
+```bash
 php artisan phpvms:importer  {db_host} {db_name} {db_user} {db_pass?}
 ```
 
@@ -32,7 +32,7 @@ Where
 
 Example:
 
-```sh
+```bash
 php artisan phpvms:importer "localhost" "phpvms_legacy" "php_legacy_username" "phpvms_legacy_password"
 ```
 

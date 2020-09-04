@@ -74,7 +74,7 @@ To make this work properly and be secure, we're going to change the `public_html
 
 SSH into your server, symlink the `public_html` folder to point to `phpvms/public` instead:
 
-```sh
+```bash
 mv public_html public_html_backup
 ln -s phpvms/public/ public_html
 ```
