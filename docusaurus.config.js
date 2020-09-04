@@ -7,6 +7,11 @@ module.exports = {
   organizationName: 'phpvms',
   projectName: 'docs',
   themeConfig: {
+    algolia: {
+      apiKey: 'dcc8192acd61e5e79696dcae190a1d0f',
+      indexName: 'phpvms',
+      searchParameters: {}, // Optional (if provided by Algolia)
+    },
     navbar: {
       title: 'phpVMS Docs',
       logo: {
@@ -22,9 +27,16 @@ module.exports = {
           position: 'right',
         },
         {
+          href: 'https://discord.gg/wvAmMnd',
+          prependBaseUrlToHref: false,
+          label: 'Discord',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/nabeelio/phpvms',
           prependBaseUrlToHref: false,
-          label: 'GitHub',
+          //label: 'GitHub',
+          className: 'header-github-link',
           position: 'right',
         },
       ],
