@@ -5,6 +5,14 @@ module.exports = {
     'download',
     {
       type: 'category',
+      label: 'Concepts',
+      items: [   
+        'concepts/basics',
+        'concepts/finances',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Installation',
       items: [   
         'installation/uploading',
