@@ -15,16 +15,19 @@ If you are uploading to a shared host or to cPanel, chose one of the following m
 Uploading and change the path of the public directory is the recommended method if you're on shared hosting
 :::
 
-This method works well if your main site is going to be phpVMS, and you're not running something like Wordpress. Running phpVMS in a subdirectory isn't recommended. Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
+This method works well if your main site is going to be phpVMS. 
+
+1. Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
+2. Copy the files from the `/public` folder into the `public_html` folder.
 
 ```
 /home/youruser
-    phpvms
+    phpvms      < Create this folder and upload phpvms into it
     public_ftp
-    public_html
+    public_html < Upload the files from phpvms/public into
 ```
 
-Next, copy the files from the `/public` folder into the `public_html` folder. As long as you named the folder `phpvms`, the `index.php` will autodetect the location of the phpVMS folder.
+As long as you named the folder `phpvms`, the `index.php` will autodetect the location of the phpVMS folder.
 
 :::note
 Updates/auto-updates won't update the files in the `/public_html` folder, you'll need to update them manually. The other method, the symlink method, is recommended if you have command-line access and are more comfortable creating those types of links.
