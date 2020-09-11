@@ -11,10 +11,11 @@ In order for some phpVMS features to work, a cronjob is required to be setup. So
 
 ### Setup
 
-You need the path to the `artisan` file that's in the root of the phpVMS install. After that, add a cronjob that runs once a minute. Do not forget to include the username, for example:
+You need the path to the `artisan` file that's in the root of the phpVMS install. After that, add a cronjob that runs once a minute. Do not forget to include the username, for example, using `crontab -e`:
 
-```cron
-* * * * * username php /path/to/phpvms/artisan schedule:run >> /dev/null 2>&1
+```bash
+# THIS IS AN EXAMPLE 
+* * * * * php /path/to/phpvms/artisan schedule:run >> /dev/null 2>&1
 ```
 
 :::tip If unsure, ask your host
