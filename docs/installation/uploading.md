@@ -9,6 +9,8 @@ When uploading the files, you have several options on how to. These mainly apply
 If you are uploading to a shared host or to cPanel, chose one of the following methods when uploading your files.
 :::
 
+---
+
 ## Option 1: Copying the public directory
 
 :::tip
