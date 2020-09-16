@@ -11,9 +11,9 @@ The installation requires a few steps:
 
 ---
 
-## Database Setup
+## 1. Database Setup
 
-Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
+Before running the install, you need to configure the database with the database itself and the credentials. Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS `phpvms` CHARACTER SET UTF8 COLLATE utf8_unicode_ci;
@@ -30,7 +30,7 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ---
 
-## Running the Installer
+## 2. Running the Installer
 
 :::info
 There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly.
