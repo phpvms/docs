@@ -45,9 +45,6 @@ module.exports = {
       theme: require('prism-react-renderer/themes/github'),
       //additionalLanguages: ['php'],
     },
-    colorMode: {
-      disableSwitch: true,
-    },
     footer: {
       style: 'dark',
       links: [],
