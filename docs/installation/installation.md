@@ -45,11 +45,13 @@ After clicking next, you'll see the requirements check page. The installer will 
 
 ![](img/03-requirements.png)
 
-The next page brings you to the database setup page. 
+The next page brings you to the database setup page. Select `MySQL` (`sqlite` requires some extra configuration)
 
 - Enter the name of your site and the URL
 - Enter your database credentials. 
-  - You can test to make sure they're working by clicking the "Test Database Credentials" button.
+  - These are the credentials created above
+  - Contact your host for the correct database server address. Usually it is `localhost` or `127.0.0.1` but it might be different
+  - You can test to make sure they're working by clicking the "Test Database Credentials" button
 
 
 ![](img/04-database-page.png)
