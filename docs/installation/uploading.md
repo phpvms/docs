@@ -64,6 +64,10 @@ It will look like this:
 
 ## Option 3: Symlink
 
+:::caution
+This is an advanced method and not recommended to use on shared hosts, only do this if you know what you're doing
+:::
+
 This method works well if your main site is going to be phpVMS, and you're not running something like Wordpress. Running phpVMS in a subdirectory isn't recommended (see method 2 instead).
 
 Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
@@ -83,8 +87,6 @@ SSH into your server, symlink the `public_html` folder to point to `phpvms/publi
 mv public_html public_html_backup
 ln -s phpvms/public/ public_html
 ```
-
-  !!! Ensure that the permissions of the `phpvms` folder are correct (normally 0770), though check with your host to make sure
   
 ---
 
