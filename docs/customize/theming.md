@@ -53,7 +53,9 @@ Important notes:
 
 #### Assets in the public folder
 
-While `laravel-theme` has a helper for the `theme_url`, in phpVMS, you should use the `public_asset()` helper function. Since phpVMS can run on both shared and on its own, the public folder path could be different. The `public_asset()` method takes care of that. It's recommended you create a new folder for your theme, under `public/assets`, and then referring to those assets like:
+While `laravel-theme` has a helper for the `theme_url`, in phpVMS, you should use the `public_asset()` helper function. Since phpVMS can run on both shared and on its own, the public folder path could be different. The `public_asset()` method takes care of that.
+
+It's recommended you create a new folder for your theme, under `public/assets` (or, `public_html/assets`, depending on how you uploaded your files), and then referring to those assets like:
 
 ```php
 echo public_asset('assets/my-theme/img/someimage.png');
