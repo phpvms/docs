@@ -21,6 +21,7 @@ This will erase all of your current data
 :::
 
 ```bash
+cd /path/to/phpvms
 php artisan phpvms:importer  {db_host} {db_name} {db_user} {db_pass?}
 ```
 

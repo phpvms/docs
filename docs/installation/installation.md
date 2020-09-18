@@ -30,7 +30,22 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ---
 
-## 2. Running the Installer
+## 2. Composer Install
+
+:::info
+If you've downloaded a release or dev tar/zip from the downloads section, you don't need this. You only need this if you've cloned the repository
+:::
+
+Update the composer dependencies; this will download and update the `vendor` folder:
+
+```bash
+cd /path/to/phpvms
+composer install
+```
+
+---
+
+## 3. Running the Installer
 
 :::info
 There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly.
