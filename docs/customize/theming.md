@@ -20,7 +20,7 @@ The quick way to create a new theme is to just copy the `default` theme to a new
   1. Copy the `resources/views/layouts/default` into a new folder, e.g, `resources/views/layouts/mytheme`
   2. Edit the `resources/views/layouts/mytheme/theme.json` file, and update the `name`
 
-If you want to edit only select templates (also recommended), set the `extends` value to `default`. Then you only need to copy over the templates that you modify, instead of all them (makes it easier to update)
+If you want to edit only select templates (also recommended), set the `extends` value to `default`. Then you only need to copy over the templates that you modify, instead of all them (this makes it easier to update phpVMS, and you also know what you've modified).
 
 ---
 
