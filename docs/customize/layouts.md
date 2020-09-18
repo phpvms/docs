@@ -29,6 +29,8 @@ See the `default/app.blade.php` as an example template, since there are several 
     <script src="{!! public_asset('/assets/system/js/phpvms.js') !!}?v={!! time() !!}"></script>
     ```
   - `@yield('scripts')` has to go right before the `</body>` tag
+- View the main `default/app.blade.php` to ensure that you've got all of the Javascript and code required. There are notes in that file as to what is absolutely required.
+
 
 ### Template basics
 

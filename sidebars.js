@@ -35,8 +35,8 @@ module.exports = {
       type: 'category',
       label: 'Themes and Layouts',
       items: [
-        'customize/theming',
         'customize/layouts',
+        'customize/theming',
       ]
     },
     {
