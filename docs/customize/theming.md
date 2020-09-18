@@ -17,8 +17,8 @@ To create a new theme, you can either copy and existing one, or use the command 
 
 The quick way to create a new theme is to just copy the `default` theme to a new folder, and edit the `theme.json` file:
 
-  1. Copy the `resources/default` into a new folder, e.g, `resources/mytheme`
-  2. Edit the `resources/mytheme/theme.json` file, and update the `name`
+  1. Copy the `resources/views/layouts/default` into a new folder, e.g, `resources/views/layouts/mytheme`
+  2. Edit the `resources/views/layouts/mytheme/theme.json` file, and update the `name`
 
 If you want to edit only select templates (also recommended), set the `extends` value to `default`. Then you only need to copy over the templates that you modify, instead of all them (makes it easier to update)
 
@@ -30,7 +30,7 @@ If you want to edit only select templates (also recommended), set the `extends` 
 You can use `theme:create` command to bootstrap these steps
 :::
 
-Into the root of the `resources/views/layouts` path, create a new folder, with a `theme.json` file. This JSON file serves as the manifest for your theme
+Into the root of the `resources/views/layouts/` path, create a new folder, with a `theme.json` file. This JSON file serves as the manifest for your theme
 
 ```json
 {
@@ -40,7 +40,7 @@ Into the root of the `resources/views/layouts` path, create a new folder, with a
 }
 ```
 
-After doing this, copy the files from `resources/default` into the new theme folder. 
+After doing this, copy the files from `resources/views/layouts/default` into the new theme folder. 
 
 #### Creating/copying an existing theme
 

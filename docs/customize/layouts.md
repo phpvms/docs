@@ -6,10 +6,10 @@ phpVMS can customized to fit your VA's look and feel. The templating is powered 
 
 ## Layout Basics
 
-At a minimum, `app.blade.php` has 3 sections that are extended by the templates.
+All of the themes are stored in the `resources/views/layouts/` folder. There is a base theme file, `app.blade.php`, which is then used by the templates. It has several required sections:
 
 :::info
-See the `default/app.blade.php` as an example template, since there are several sections of code which are required in the templates, including some Javascript and CSS.
+See the `resources/views/layouts/default/app.blade.php` as an example template, since there are several sections of code which are required in any custom templates, including some Javascript and CSS. I've tried to make notes and outline those sections in the `default/app.blade.php` file itself.
 :::
 
 - `@section('title')` is the page title, and shows up in the title bar
@@ -29,7 +29,7 @@ See the `default/app.blade.php` as an example template, since there are several 
     <script src="{!! public_asset('/assets/system/js/phpvms.js') !!}?v={!! time() !!}"></script>
     ```
   - `@yield('scripts')` has to go right before the `</body>` tag
-- View the main `default/app.blade.php` to ensure that you've got all of the Javascript and code required. There are notes in that file as to what is absolutely required.
+- View the main `resources/views/layouts/default/app.blade.php` to ensure that you've got all of the Javascript and code required. There are notes in that file as to what is absolutely required.
 
 
 ### Template basics
