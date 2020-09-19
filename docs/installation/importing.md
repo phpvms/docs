@@ -17,7 +17,7 @@ After completing the database configuration step, you'll be given the option to 
 The importer tool can also be run on the command line, via a PHP artisan command. Before running the importer, you should install phpVMS using the installer. Both the `config.php` and `env.php` files will need to exist.
 
 :::caution
-This will erase all of your current data
+This will erase all of your current data. If you've already installed, the importer plugin is disabled, and must be first enabled with `php artisan module:enable Importer`
 :::
 
 ```bash

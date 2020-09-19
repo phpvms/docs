@@ -64,6 +64,7 @@ module.exports = {
       items: [
         'acars/overview',
         'acars/install-server',
+        'acars/install-client',
       ]
     },
 
