@@ -20,6 +20,8 @@ ACARS is available for purchase on [vmshost.io](https://vmshost.io/cart.php?gid=
 - Flights rules, like lights being enabled, gear up/down, etc
 - Light footprint, low CPU and memory usage
 
+![](img/activeflight.png)
+
 ## Roadmap
 
 - Custom rules via scripts
