@@ -9,7 +9,7 @@ After downloading the latest ACARS version, on startup, you'll be brought to the
 
 ![](img/cli-setup.png)
 
-### Download the config file:
+### Download the config file
 
 You can either download the settings config file from your phpVMS profile, or just enter it manually. To download the config file, visit your VA and go to your profile:
 
