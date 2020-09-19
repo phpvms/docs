@@ -11,16 +11,16 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.63",
+    "@docusaurus/core": "^2.0.0-alpha.64",
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.63",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.64",
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
-    "@mdx-js/react": "^1.5.8",
+    "@mdx-js/react": "^1.6.18",
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "rehype-truncate": "^1.1.0",
+    "rehype-truncate": "^1.2.1",
     "remark-images": "^2.0.0"
   },
   "browserslist": {
