@@ -30,3 +30,9 @@ FSX/Prepar3d requires the `MakeRwys.exe` file, which can be downloaded from the 
 :::
 
 After selecting the directory, click `Re-Scan Scenery`. This will load the scenery database into ACARS for it to run/load later
+
+---
+
+## Hardware Configuration
+
+If you're using hardware to control the sim, ACARS heavily relies on several offsets with FSUIPC, particularly the parking brake. Ensure that the offset `0x0BC8` gets set
