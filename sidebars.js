@@ -68,7 +68,6 @@ module.exports = {
         'acars/flight',
       ]
     },
-
-    'help/getting-help',
+    'help',
   ]
 };
