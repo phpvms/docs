@@ -5,18 +5,31 @@ title: Getting Help
 
 Help is provided through community support at the forums. 
 
+---
+## Enable Debug and Debugging
+
 :::info
 Before asking for help, try to reproduce on the [demo site](https://demo.phpvms.net), and with the `default` skin
 :::
 
-### How to ask for help
+- Look at the logs - they're located in `storage/logs`
+- Enable debug logging and the Laravel Debug Toolbar:
+    - Open your `config.php`
+        - Under `app`, change `debug` to `true`, and `debug_toolbar` to `true`
+
+---
+
+## How to ask for help
+
+Without a lot of this information, it will be difficult to provide help.
 
 - A clear description of the issue
 - Versions
-    - PHP Version
-    - Database versions - MySQL, MariaDB or Percona, or whatever other backend your running
-    - **phpVMS Version**: From either the admin panel (bottom left, click on the version for the full version)
-    - Running `php artisan phpvms:version`
+    - **PHP Version**
+    - **Database versions** - MySQL, MariaDB or Percona, or whatever other backend your running
+    - **phpVMS Version**
+        - From either the admin panel (bottom left, click on the version for the full version)
+        - Running `php artisan phpvms:version`
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
