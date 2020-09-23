@@ -68,6 +68,30 @@ phpVMS takes advantage of many of the [Laravel Blade](https://laravel.com/docs/5
 @endsection
 ```
 
+---
+
+## Caching Items
+
+When making calls to models, etc in templates, to increase performance, using the `cache()->remember()` call. The call looks like:
+
+```php
+$value = cache()->remember($cache_name, $cache_time_in_seconds, $function_to_lookup);
+```
+
+An example:
+
+```php
+// Cache for 5 minutes (3600 seconds)
+$schedule_count = cache()->remember('schedule_count', 3600, function () {
+    return \App\Models\Flight::where('active', true)->count();
+});
+
+Schedule Count: {{ $schedule_count }}
+```
+
+This will greatly increase the performance on your pages
+
+---
 
 ## Resources
 
