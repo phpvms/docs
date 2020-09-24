@@ -23,6 +23,8 @@ Before asking for help, try to reproduce on the [demo site](https://demo.phpvms.
 
 Without a lot of this information, it will be difficult to provide help.
 
+#### At a minimum
+
 - A clear description of the issue
 - Versions
     - **PHP Version**
@@ -33,7 +35,10 @@ Without a lot of this information, it will be difficult to provide help.
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
-    - Screenshots
+
+#### If relevent
+
+- Screenshots
 - Logs
     - **Laravel logs**: These are located in `storage/logs`, you must include these. Look through the logs to also ensure that no sensitive information is included inadvertantly
     - **PHP logs**: These can be found wherever your PHP error logs are kept, for example, the PHP-FPM logs. Ask your host, if you don't know. They're often found in cPanel, under Error Logs.

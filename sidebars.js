@@ -14,7 +14,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Installation',
-      items: [   
+      items: [
         'installation/uploading',
         'installation/vhost',
         'installation/installation',
