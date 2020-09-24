@@ -13,14 +13,16 @@ Config maps are now only for FSX/P3D or X-Plane.
 
 A config map is an XML file which looks like this:
 
-```xml
+```xml title=configmaps/FlightFactorA320.xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Rules>
   <Rule Simulator="X-Plane" TitleContains="FlightFactor A320">
+    <!-- ... -->
     <LandingLights>
       <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
       <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
     </LandingLights>
+    <!-- ... -->
   </Rule>
 </Rules>
 ```
