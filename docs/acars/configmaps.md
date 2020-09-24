@@ -35,6 +35,7 @@ A rule defines:
 1. The feature (see below)
     - The maps - a group of datarefs or offsets which constitute that feature being "on" or "enabled"
 
+In the above example, for the FlightFactor A320, the landing lights are controlled by two datarefs, both of which the values need to be 1 or 2 for the landing lights to be considered "on".
 
 ## Features
 
