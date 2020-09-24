@@ -13,7 +13,7 @@ Config maps are now only for FSX/P3D or X-Plane.
 
 A config map is an XML file which looks like this:
 
-```xml title=configmaps/FlightFactorA320.xml
+```xml title="configmaps/FlightFactorA320.xml (truncated)"
 <?xml version="1.0" encoding="utf-8" ?>
 <Rules>
   <Rule Simulator="X-Plane" TitleContains="FlightFactor A320">
@@ -95,5 +95,6 @@ In this example for FSUIPC, the offsets use a bitmask to consider the beacon lig
 
 To create a config map, you can copy one of the existing files and modify it.
 
+- The file must be in the `configmaps/` directory
 - Name the file as specific as possible
 - Don't edit existing ones, they'll get overwritten
