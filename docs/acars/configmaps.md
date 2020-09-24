@@ -31,7 +31,10 @@ A rule defines:
 
 1. Who the rule is for
     - The simulator it's for (either `X-Plane` or `FSX/Prepar3d`)
-    - The aircraft title contains. This is how it's filtered. It must be broad but also specific to make sure it "catches" the right plane type. 
+    - The aircraft title contains. This is how it's filtered. It must be broad but also specific to make sure it "catches" the right plane type.
+        - Each word is looked for and it's AND'd. In the example above, "FlightFactor" and "A320" must be present
+        - For FSX/P3d, the value looked at is the aircraft title field, offset `0x3D00`
+        - For X-Plane, the value looked at is `sim/aircraft/view/acf_descrip`
 1. The feature (see below)
     - The maps - a group of datarefs or offsets which constitute that feature being "on" or "enabled"
 
