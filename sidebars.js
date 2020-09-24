@@ -66,6 +66,7 @@ module.exports = {
         'acars/install-server',
         'acars/install-client',
         'acars/flight',
+        'acars/configmaps',
       ]
     },
     'help',
