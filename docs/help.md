@@ -45,8 +45,7 @@ Without a lot of this information, it will be difficult to provide help.
     - **HTTP logs**: These are, for example, your Apache logs. These might be required, depending on the issue. If you're not sure how to get them, ask your host. They're often found in cPanel, under Error Logs.
 - Any and all other relevent details
 
-
-### Exporting Data for Troubleshooting
+#### Exporting Data for Troubleshooting
 
 Sometimes, additional data for troubleshooting is required. To export that data more easily, you can use the artisan YAML exporter, listing the tables to export:
 
@@ -54,6 +53,23 @@ Sometimes, additional data for troubleshooting is required. To export that data 
 cd /path/to/phpvms
 php artisan phpvms:yaml-exporter table1 table2
 ```
+
+---
+
+### vmsACARS
+
+Before asking for help, make sure to:
+
+- Rescan your scenery
+- If crashing, delete the `data` folder, and restart
+
+When asking for help:
+
+- Log files (these are in the `logs` folder - zipping and sending the whole folder is best)
+- Other relevent files, e.g, flight plans
+- System setup:
+    - Sim you're using
+    - Any flight sim hardware running/additional software (some of this has been seen to interfere)
 
 ---
 
