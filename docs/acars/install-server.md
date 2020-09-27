@@ -5,7 +5,7 @@ title: Installation (Server)
 
 ## 1. Module Installation
 
-For the server-side installation, the `VMSAcars` folder must be copied into the `modules` folder:
+For the server-side installation, open the `Web/v7` folder and copy the `VMSAcars` into your `phpvms/modules` folder:
 
 ![](img/copy_module_folder.png)
 
