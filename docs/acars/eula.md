@@ -12,11 +12,12 @@ Last updated: September 26, 2020
 
 ## INTERPRETATION AND DEFINITIONS
 
-Interpretation
+### INTERPRETATION
+
 The words of which the initial letter is capitalized have meanings defined under the following conditions. The 
 following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
 
-## DEFINITIONS
+### DEFINITIONS
 
 For the purposes of this End-User License Agreement:
 
