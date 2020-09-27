@@ -21,56 +21,54 @@ following definitions shall have the same meaning regardless of whether they app
 
 For the purposes of this End-User License Agreement:
 
-Agreement means this End-User License Agreement that forms the entire agreement between You and the Company 
+- Agreement means this End-User License Agreement that forms the entire agreement between You and the Company 
 regarding the use of the Application. This Agreement has been created with the help of the EULA Generator.
-
-Application means the software program provided by the Company downloaded by You to a Device, named vmsACARS
-
-Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to vmsACARS.
-
-Content refers to content such as text, images, or other information that can be posted, uploaded, linked to or 
+- Application means the software program provided by the Company downloaded by You to a Device, named vmsACARS
+- Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to vmsACARS.
+- Content refers to content such as text, images, or other information that can be posted, uploaded, linked to or 
 otherwise made available by You, regardless of the form of that content.
-
-Country refers to: Massachusetts, United States
-
-Device means any device that can access the Application such as a computer, a cellphone or a digital tablet.
-
-Third-Party Services means any services or content (including data, information, applications and other products 
+- Country refers to: Massachusetts, United States
+- Device means any device that can access the Application such as a computer, a cellphone or a digital tablet.
+- Third-Party Services means any services or content (including data, information, applications and other products 
 services) provided by a third-party that may be displayed, included or made available by the Application.
-
-You means the individual accessing or using the Application or the company, or other legal entity on behalf of 
+- You means the individual accessing or using the Application or the company, or other legal entity on behalf of 
 which such individual is accessing or using the Application, as applicable.
 
 ## ACKNOWLEDGEMENT
 
-By clicking the "I Agree" button, downloading or using the Application, You are agreeing to be bound by the 
-terms and conditions of this Agreement. If You do not agree to the terms of this Agreement, do not click on 
-the "I Agree" button, do not download or do not use the Application.
+These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on 
+behalf of an entity (“you”) and Us, concerning your access to and use of our Application. You agree that by 
+accessing the Application, you have read, understood, and agree to be bound by all of these Terms and 
+Conditions Use.
 
-This Agreement is a legal document between You and the Company and it governs your use of the Application made 
-available to You by the Company.
+This Agreement is a legal document between You and the Company and it governs your use of the Application
+made available to You by the Company. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS, THEN YOU 
+ARE EXPRESSLY PROHIBITED FROM USING THE APPLICATION AND YOU MUST DISCONTINUE USE IMMEDIATELY.
 
-The Application is licensed, not sold, to You by the Company for use strictly in accordance with the terms of 
-this Agreement.
+The information provided on the Application is not intended for distribution to or use by any person or 
+entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation 
+or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, 
+those persons who choose to access the Application from other locations do so on their own initiative and 
+are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
 
 ## INTELLECTUAL PROPERTY RIGHTS
 
-The Company grants You a revocable, non-exclusive, non-transferable, limited license to download, install and 
-use the Application strictly in accordance with the terms of this Agreement.
+The Company grants You a revocable, non-exclusive, non-transferable, limited license to download, install 
+and use the Application strictly in accordance with the terms of this Agreement.
 
-The license that is granted to You by the Company is solely for your personal, non-commercial purposes strictly
-in accordance with the terms of this Agreement.
+The license that is granted to You by the Company is solely for your personal, non-commercial purposes 
+strictly in accordance with the terms of this Agreement.
 
 Unless otherwise indicated, the Application is our proprietary property and all source code, databases, 
 functionality, software, website designs, audio, video, text, photographs, and graphics on the Application 
 (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the “Marks”) 
-are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various 
-other intellectual property rights and unfair competition laws of the United States, foreign jurisdictions, and 
-international conventions. The Content and the Marks are provided on the Application “AS IS” for your information 
-and personal use only. Except as expressly provided in these Terms of Use, no part of the Application and no 
-Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, 
-translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, 
-without our express prior written permission.
+are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and 
+various other intellectual property rights and unfair competition laws of the United States, foreign 
+jurisdictions, and international conventions. The Content and the Marks are provided on the Application 
+“AS IS” for your information and personal use only. Except as expressly provided in these Terms of Use, 
+no part of the Application and no Content or Marks may be copied, reproduced, aggregated, republished, 
+uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or 
+otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.
 
 ## PROHIBITED ACTIVITIES
 
@@ -134,6 +132,7 @@ Services and links thereto are  provided solely as a convenience to You and You 
 at your own risk and subject to such third parties' Terms and conditions.
 
 ## TERM AND TERMINATION
+
 This Agreement shall remain in effect until terminated by You or the Company. The Company may, in its sole 
 discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior 
 notice.
