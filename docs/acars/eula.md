@@ -1,6 +1,6 @@
 ---
 id: eula
-title: End-User License Agreement
+title: License Agreement
 hide_title: true
 ---
 

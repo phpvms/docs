@@ -63,6 +63,7 @@ module.exports = {
       label: 'ACARS',
       items: [
         'acars/overview',
+        'acars/eula',
         'acars/install-server',
         'acars/install-client',
         'acars/flight',
