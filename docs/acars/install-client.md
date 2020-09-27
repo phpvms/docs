@@ -3,15 +3,32 @@ id: install-client
 title: Installation (Client)
 ---
 
-## 1. Client Config
+---
+## Simulator Configuration
 
-After downloading the latest ACARS version, on startup, you'll be brought to the configuration/settings page:
+### FSX/Prepar3d Configuration
 
-![](img/cli-setup.png)
+To use FSX/Prepar3d, you need to install:
 
-### Download the config file
+- [FSUIPC](http://www.fsuipc.com) - the licensed version isn't required.
+- [MakeRwys](http://fsuipc.simflight.com/beta/MakeRwys.zip)
 
-You can either download the settings config file from your phpVMS profile, or just enter it manually. To download the config file, visit your VA and go to your profile:
+After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run whenever there are scenery changes (if you want gates/runways to be updated).
+
+
+### X-Plane Configuration
+
+X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConnect` folder into  your `Resources\plugins` folder.
+
+![](img/plugin-copy.png)
+
+---
+
+## Client Config
+
+### Get the URL and API Key
+
+You can either enter your URL and API key manually, or download the settings config file from your phpVMS profile. To download the config file, visit your VA and go to your profile:
 
 ![](img/profile-config-download.png)
 
@@ -19,9 +36,13 @@ And place it a folder called `My Documents/phpVMS`:
 
 ![](img/mydocs-settingsxml.png)
 
----
+### Client Settings
 
-## 2. Sim Selection
+After downloading the latest ACARS version, on startup, you'll be brought to the configuration/settings page:
+
+![](img/cli-setup.png)
+
+### Sim Selection
 
 After entering your URL and API key, select the simulator, and then select the path to the simulator (for Prepar3d or X-Plane)
 
