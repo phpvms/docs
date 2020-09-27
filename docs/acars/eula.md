@@ -6,7 +6,9 @@ hide_title: true
 
 # END-USER LICENSE AGREEMENT ("Agreement")
 
-Last updated: September 26, 2020
+> Last updated: September 26, 2020
+
+---
 
 ## INTERPRETATION AND DEFINITIONS
 
