@@ -8,9 +8,6 @@ hide_title: true
 
 Last updated: September 26, 2020
 
-Please read this End-User License Agreement carefully before clicking the "I Agree" button, downloading or 
-using vmsACARS.
-
 ## INTERPRETATION AND DEFINITIONS
 
 Interpretation
@@ -22,7 +19,7 @@ following definitions shall have the same meaning regardless of whether they app
 For the purposes of this End-User License Agreement:
 
 - Agreement means this End-User License Agreement that forms the entire agreement between You and the Company 
-regarding the use of the Application. This Agreement has been created with the help of the EULA Generator.
+regarding the use of the Application.
 - Application means the software program provided by the Company downloaded by You to a Device, named vmsACARS
 - Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to vmsACARS.
 - Content refers to content such as text, images, or other information that can be posted, uploaded, linked to or 
@@ -78,11 +75,11 @@ specifically endorsed or approved by us.
 
 As a user of the Application, you agree not to:
 
-1.  Systematically retrieve data or other content from the Application to create or compile, directly or 
-    indirectly, a collection, compilation, database, or directory without written permission from us.
-2.  Make any unauthorized use of the Application, including collecting usernames and/or email addresses of 
-    users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts 
-    by automated means or under false pretenses.
+1.  Systematically retrieve data or other content from the Application to create or compile, directly 
+    or indirectly, a collection, compilation, database, or directory without written permission from us.
+2.  Make any unauthorized use of the Application, including collecting usernames and/or email addresses 
+    of users by electronic or other means for the purpose of sending unsolicited email, or creating user 
+    accounts by automated means or under false pretenses.
 3.  Use the Application to advertise or offer to sell goods and services.
 4.  Circumvent, disable, or otherwise interfere with security-related features of the Application, including 
     features that prevent or restrict the use or copying of any Content or enforce limitations on the use of 
@@ -93,27 +90,29 @@ As a user of the Application, you agree not to:
 7.  Make improper use of our support services or submit false reports of abuse or misconduct.
 8.  Engage in any automated use of the system, such as using scripts to send comments or messages, or using 
     any data mining, robots, or similar data gathering and extraction tools.
-9.  Interfere with, disrupt, or create an undue burden on the Application or the networks or services connected 
-    to the Application.
+9.  Interfere with, disrupt, or create an undue burden on the Application or the networks or 
+    services connected to the Application.
 10. Attempt to impersonate another user or person or use the username of another user.
 11. Use any information obtained from the Application in order to harass, abuse, or harm another person.
-12. Use the Application as part of any effort to compete with us or otherwise use the Application and/or the 
-    Content for any revenue-generating endeavor or commercial enterprise.
-13. Decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up 
-    a part of the Application.
-14. Attempt to bypass any measures of the Application designed to prevent or restrict access to the Application, 
-    or any portion of the Application.
-15. Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the 
-    Application to you.
+12. Use the Application as part of any effort to compete with us or otherwise use the Application and/or 
+    the Content for any revenue-generating endeavor or commercial enterprise.
+13. Decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way 
+    making up a part of the Application.
+14. Attempt to bypass any measures of the Application designed to prevent or restrict access to the 
+    Application, or any portion of the Application.
+15. Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion 
+    of the Application to you.
 16. Delete the copyright or other proprietary rights notice from any Content.
 17. Copy or adapt the Application’s software.
-18. Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including 
-    excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with 
-    any party’s uninterrupted use and enjoyment of the Application or modifies, impairs, disrupts, alters, or 
-    interferes with the use, features, functions, operation, or maintenance of the Application.
+18. Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, 
+    including excessive use of capital letters and spamming (continuous posting of repetitive text), that 
+    interferes with any party’s uninterrupted use and enjoyment of the Application or modifies, impairs, 
+    disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of the 
+    Application.
 19. Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or 
-    distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or 
-    offline reader that accesses the Application, or using or launching any unauthorized script or other software.
+    distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, 
+    or offline reader that accesses the Application, or using or launching any unauthorized script or other 
+    software.
 20. Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Application.
 21. Use the Application in a manner inconsistent with any applicable laws or regulations.
 
@@ -150,52 +149,54 @@ Agreement.
 
 ## MODIFICATIONS AND INTERRUPTIONS
 
-We reserve the right to change, modify, or remove the contents of the Application at any time or for any reason 
-at our sole discretion without notice. However, we have no obligation to update any information on our Application. 
-We also reserve the right to modify or discontinue all or part of the Application without notice at any time. We 
-will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of 
-the Application.
+We reserve the right to change, modify, or remove the contents of the Application at any time or for any 
+reason at our sole discretion without notice. However, we have no obligation to update any information on 
+our Application. We also reserve the right to modify or discontinue all or part of the Application without 
+notice at any time. We will not be liable to you or any third party for any modification, price change, 
+suspension, or discontinuance of the Application.
 
-We cannot guarantee the Application will be available at all times. We may experience hardware, software, or other 
-problems or need to perform maintenance related to the Application, resulting in interruptions, delays, or errors. 
-We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Application at any 
-time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, 
-or inconvenience caused by your inability to access or use the Application during any downtime or discontinuance 
-of the Application. Nothing in these Terms of Use will be construed to obligate us to maintain and support the 
-Application or to supply any corrections, updates, or releases in connection therewith.
+We cannot guarantee the Application will be available at all times. We may experience hardware, software,
+or other problems or need to perform maintenance related to the Application, resulting in interruptions, 
+delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify 
+the Application at any time or for any reason without notice to you. You agree that we have no liability 
+whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Application 
+during any downtime or discontinuance of the Application. Nothing in these Terms of Use will be construed to 
+obligate us to maintain and support the Application or to supply any corrections, updates, or releases in 
+connection therewith.
 
 ## INDEMNIFICATION
 
-You agree to indemnify and hold the Company and its parents, subsidiaries, affiliates, officers, employees, agents, 
-partners and licensors (if any) harmless from any claim or demand, including reasonable attorneys' fees, due to or 
-arising out of your: (a) use of the Application; (b) violation of this Agreement or any law or regulation; or 
-(c) violation of any right of a third party.
+You agree to indemnify and hold the Company and its parents, subsidiaries, affiliates, officers, employees, 
+agents, partners and licensors (if any) harmless from any claim or demand, including reasonable attorneys' 
+fees, due to or arising out of your: (a) use of the Application; (b) violation of this Agreement or any law 
+or regulation; or (c) violation of any right of a third party.
 
 ## NO WARRANTIES
 
-The Application is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of 
-any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its 
-affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether 
-express, implied, statutory or otherwise, with respect to the Application, including all implied warranties of 
-merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of 
-course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company 
-provides no warranty or undertaking, and makes no representation of any kind that the Application will meet your 
-requirements, achieve any intended results, be compatible or work with any other software, applications, systems or 
-services, operate without interruption, meet any performance or reliability standards or be error free or that any 
-errors or defects can or will be corrected.
+The Application is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without 
+warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf 
+and on behalf of its affiliates and its and their respective licensors and service providers, expressly 
+disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Application, 
+including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, 
+and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without 
+limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of 
+any kind that the Application will meet your requirements, achieve any intended results, be compatible or work 
+with any other software, applications, systems or services, operate without interruption, meet any performance
+or reliability standards or be error free or that any errors or defects can or will be corrected.
 
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or 
-warranty of any kind, express or implied: (i) as to the operation or availability of the Application, or the 
-information, content, and materials or products included thereon; (ii) that the Application will be uninterrupted 
-or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through 
-the Application; or (iv) that the Application, its servers, the content, or e-mails sent from or on behalf of the 
-Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation 
+or warranty of any kind, express or implied: (i) as to the operation or availability of the Application, or the 
+information, content, and materials or products included thereon; (ii) that the Application will be 
+uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content 
+provided through the Application; or (iv) that the Application, its servers, the content, or e-mails sent from 
+or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other 
+harmful components.
 
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory 
-rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case 
-the exclusions and limitations set forth in this section 11 shall be applied to the greatest extent enforceable under 
-applicable law. To the extent any warranty exists under law that cannot be disclaimed, the Company shall be solely 
-responsible for such warranty.
+Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable 
+statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. 
+But in such a case the exclusions and limitations set forth in this section 11 shall be applied to the greatest 
+extent enforceable under applicable law. To the extent any warranty exists under law that cannot be disclaimed, 
+the Company shall be solely responsible for such warranty.
 
 ## LIMITATION OF LIABILITY
 
@@ -218,15 +219,15 @@ above limitation or exclusion may not apply to You.
 
 ### SEVERABILITY
 
-If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted
-to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining 
-provisions will continue in full force and effect.
+If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and 
+interpretedto accomplish the objectives of such provision to the greatest extent possible under applicable law 
+and the remaining provisions will continue in full force and effect.
 
 ### WAIVER
 
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Agreement
-shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall be 
-the waiver of a breach constitute a waiver of any subsequent breach.
+Except as provided herein, the failure to exercise a right or to require performance of an obligation under this 
+Agreementshall not effect a party's ability to exercise such right or require such performance at any time 
+thereafter nor shall be the waiver of a breach constitute a waiver of any subsequent breach.
 
 ## PRODUCT CLAIMS
 
@@ -234,28 +235,28 @@ The Company does not make any warranties concerning the Application.
 
 ## UNITED STATES LEGAL COMPLIANCE
 
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, 
-or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed 
-on any United States government list of prohibited or restricted parties.
+You represent and warrant that (i) You are not located in a country that is subject to the United States government 
+embargo, or that has been designated by the United States government as a "terrorist supporting" country, and 
+(ii) You are not listed on any United States government list of prohibited or restricted parties.
 
 ## CHANGES TO THIS AGREEMENT
 
-The Company reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is 
-material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change 
-will be determined at the sole discretion of the Company.
+The Company reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a 
+revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What 
+constitutes a material change will be determined at the sole discretion of the Company.
 
-By continuing to access or use the Application after any revisions become effective, You agree to be bound by the revised 
-terms. If You do not agree to the new terms, You are no longer authorized to use the Application.
+By continuing to access or use the Application after any revisions become effective, You agree to be bound by 
+the revised terms. If You do not agree to the new terms, You are no longer authorized to use the Application.
 
 ## GOVERNING LAW
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Agreement and your use of the Application. 
-Your use of the Application may also be subject to other local, state, national, or international laws.
+The laws of the Country, excluding its conflicts of law rules, shall govern this Agreement and your use of the 
+Application. Your use of the Application may also be subject to other local, state, national, or international laws.
 
 # ENTIRE AGREEMENT
 
-The Agreement constitutes the entire agreement between You and the Company regarding your use of the Application and 
-supersedes all prior and contemporaneous written or oral agreements between You and the Company.
+The Agreement constitutes the entire agreement between You and the Company regarding your use of the Application 
+and supersedes all prior and contemporaneous written or oral agreements between You and the Company.
 
 You may be subject to additional terms and conditions that apply when You use or purchase other Company's services, 
 which the Company will provide to You at the time of such use or purchase.
