@@ -42,8 +42,8 @@ accessing the Application, you have read, understood, and agree to be bound by a
 Conditions Use.
 
 This Agreement is a legal document between You and the Company and it governs your use of the Application
-made available to You by the Company. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS, THEN YOU 
-ARE EXPRESSLY PROHIBITED FROM USING THE APPLICATION AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+made available to You by the Company. **IF YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS, THEN YOU 
+ARE EXPRESSLY PROHIBITED FROM USING THE APPLICATION AND YOU MUST DISCONTINUE USE IMMEDIATELY.**
 
 The information provided on the Application is not intended for distribution to or use by any person or 
 entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation 
