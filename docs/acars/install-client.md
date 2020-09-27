@@ -22,6 +22,18 @@ X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConn
 
 ![](img/plugin-copy.png)
 
+
+### MSFS Configuration
+
+:::note
+Right now, this is in testing and doesn't work fully without either FSX/P3D or X-Plane. I'm working on getting native scenery scanning working
+:::
+
+To use MSFS, you need either FSX/P3D or X-Plane, in order to use a scenery database:
+
+1. In ACARS, select either of the above sims, and scan the scenery
+2. Change the active simulator to Flight Simulator, and click 'Save'
+
 ---
 
 ## Client Config
