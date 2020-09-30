@@ -16,12 +16,16 @@ Installing Redis is one way to enable optimizations. After installing, add to th
 // ...
 'database' => [
   // ...
-  'redis' => [
+  'connections' => [
+    // ...
+    'redis' => [
       'default' => [
           'host'     => 'localhost',
           'port'     => 6379,
           'database' => 1,
       ],
+    ],
+    // ...
   ],
   // ...
 ],
