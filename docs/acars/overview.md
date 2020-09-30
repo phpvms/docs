@@ -16,9 +16,9 @@ ACARS is available for purchase on [vmshost.io](https://vmshost.io/cart.php?gid=
 ## Features
 
 - Support for:
-  - FSX/Prepar3d (FSUIPC)
+  - Microsoft Flight Simulator 2020 (SimConnect) (Note: still under testing)
   - X-Plane (ACARS plugin)
-  - Microsoft Flight Simulator (SimConnect) (Note: Requires FSX/P3D or X-Plane (for now))
+  - FSX/Prepar3d (FSUIPC)
 - Automatically create and file flights
 - Search flights and retrieve bids
 - Flights rules, like lights being enabled, gear up/down, etc
