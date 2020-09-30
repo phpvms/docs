@@ -6,7 +6,9 @@ sidebar_title: Optimizing
 
 These are just some basic optimizing. For additional optimization information, refer to the Laravel docs
 
-## Redis
+## Drivers
+
+### Redis
 
 Installing Redis is one way to enable optimizations. After installing, add to the `config.php`
 
@@ -26,10 +28,14 @@ Installing Redis is one way to enable optimizations. After installing, add to th
 // ...
 ```
 
-
-## PHP-APC
+### PHP-APC
 
 PHP-APC needs to be installed server-side (as a PHP extension) for it to be made available. No additional configuration is required on the database driver level.
+
+
+### Additional Drivers
+
+Any additional drivers supported by Laravel are automatically supported by phpVMS.
 
 ---
 
@@ -134,7 +140,7 @@ This doesn't require any configuration on the server side. To enable it, add the
 This requires that the [Laravel Queue Worker](https://laravel.com/docs/7.x/queues#running-the-queue-worker) be installed and working properly
 :::
 
-phpVMS uses asyncronous queues for several tasks, including sending emails and exporting to vaCentral. The default mode is `sync`, which means the tasks are done in-line. 
+phpVMS uses asyncronous queues for several tasks, including sending emails and exporting to vaCentral. The default mode is `sync`, which means the tasks are done in-line. This could be useful if you're running a high-traffic VA and on your own VPS.
 
 #### Redis
 
