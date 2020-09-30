@@ -20,7 +20,7 @@ module.exports = {
         'installation/installation',
         'installation/cron',
         'installation/importing',
-        'installation/upgrading',
+        'installation/updating',
       ]
     },
     {
