@@ -23,6 +23,10 @@ Before asking for help, try to reproduce on the [demo site](https://demo.phpvms.
 
 Without a lot of this information, it will be difficult to provide help.
 
+### Github Issues
+
+The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues). To post an issue, you need a Github account, and then select "New Issue". After that, select "Bug Report". There is a small template there that you can use, but try to include as much of the information below:
+
 #### At a minimum
 
 - A clear description of the issue
