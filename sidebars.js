@@ -66,7 +66,14 @@ module.exports = {
         'acars/eula',
         'acars/install-server',
         'acars/install-client',
-        'acars/flight',
+        {
+          type: 'category',
+          label: 'Flight Config',
+          items: [
+            'acars/flight',
+            'acars/phases',
+          ]
+        },
         'acars/configmaps',
       ]
     },
