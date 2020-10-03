@@ -3,33 +3,36 @@ id: help
 title: Getting Help
 ---
 
-Help is provided through community support at the forums. 
+This guide details the requirements for getting help with phpVMS or vmsACARS.
 
----
-## Enable Debug and Debugging
+
+## How to ask for help
 
 :::info
 Before asking for help, try to reproduce on the [demo site](https://demo.phpvms.net), and with the `default` skin
 :::
 
-- Look at the logs - they're located in `storage/logs`
-- Enable debug logging and the Laravel Debug Toolbar:
-    - Open your `config.php`
-        - Under `app`, change `debug` to `true`, and `debug_toolbar` to `true`
-
----
-
-## How to ask for help
-
 Without a lot of this information, it will be difficult to provide help.
 
-### Github Issues
+### Where to get help
+
+#### Forums
+
+The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net)
+
+#### Discord
+
+There's also a Discord channel for quick questions. [Invite Code Here](https://discord.gg/wvAmMnd)
+
+#### Github
 
 The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues). To post an issue, you need a Github account, and then select "New Issue". After that, select "Bug Report". There is a small template there that you can use, but try to include as much of the information below:
 
-#### At a minimum
+### Information Required
 
 - A clear description of the issue
+    - What page stuff happened on
+    - Relevent data
 - Versions
     - **PHP Version**
     - **Database versions** - MySQL, MariaDB or Percona, or whatever other backend your running
@@ -39,6 +42,7 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
+- Type of hosting - shared, VPS, dedicated, etc
 
 #### If relevent
 
@@ -47,7 +51,16 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
     - **Laravel logs**: These are located in `storage/logs`, you must include these. Look through the logs to also ensure that no sensitive information is included inadvertantly
     - **PHP logs**: These can be found wherever your PHP error logs are kept, for example, the PHP-FPM logs. Ask your host, if you don't know. They're often found in cPanel, under Error Logs.
     - **HTTP logs**: These are, for example, your Apache logs. These might be required, depending on the issue. If you're not sure how to get them, ask your host. They're often found in cPanel, under Error Logs.
+- Exported data data - see below
 - Any and all other relevent details
+
+## Enable Debug and Debugging
+
+- Look at the logs - they're located in `storage/logs`
+- Enable debug logging and the Laravel Debug Toolbar:
+    - Open your `config.php`, under `app`, change: 
+        - `debug` to `true`
+        - `debug_toolbar` to `true`
 
 #### Exporting Data for Troubleshooting
 
@@ -60,7 +73,7 @@ php artisan phpvms:yaml-exporter table1 table2
 
 ---
 
-### vmsACARS
+## vmsACARS
 
 Before asking for help, make sure to:
 
@@ -74,19 +87,3 @@ When asking for help:
 - System setup:
     - Sim you're using
     - Any flight sim hardware running/additional software (some of this has been seen to interfere)
-
----
-
-## Where to ask for help
-
-### Forums
-
-The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net)
-
-### Discord
-
-There's also a Discord channel for quick questions. [Invite Code Here](https://discord.gg/wvAmMnd)
-
-### Github
-
-For bug reports, visit the [Github page](https://github.com/nabeelio/phpvms)
