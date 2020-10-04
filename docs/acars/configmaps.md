@@ -6,8 +6,10 @@ title: Config Maps
 Since developers often use custom offsets or datarefs, and not the defaults, having configmaps allows you to map an aircraft feature (landing lights, etc) to a "feature", which tells ACARS where to read the data for those features. They're stored in the `configmaps` directory.
 
 :::note
-Config maps are now only for FSX/P3D or X-Plane.
+Config maps are now only for FSX/P3D or X-Plane. A lot of developers use the default offsets or datarefs, so it may not be required to change anything
 :::
+
+If you create a configmap for an aircraft, please let me know, I can include it in ACARS to be distributed out. That would be much appreciated!
 
 ## Anatomy of a ConfigMap
 
@@ -42,7 +44,7 @@ In the above example, for the FlightFactor A320, the landing lights are controll
 
 ## Features
 
-The base rules and rule types are in the `configmaps/ConfigMap.xml` file. This list may be expanded in the future.
+The base rules and rule types are available. This list may be expanded in the future.
 
 - BeaconLights
 - LandingLights
@@ -71,6 +73,11 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
     - `X-Plane` - This is a dataref value
 3. `Value` 
     - This is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
+
+
+:::note
+A note for X-Plane: the `sim/cockpit/electrical` datarefs are usually not great to use - X-Plane emulates the electrical system, so the values may toggle between 0 and 1, for example, when the strobe light is blinking, the electrical will toggle between 0 and 1. These would show up as the strobe being on. You generally want to check any switches (see Debugging below)
+:::
 
 #### Examples
 
