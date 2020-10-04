@@ -9,7 +9,7 @@ Since developers often use custom offsets or datarefs, and not the defaults, hav
 Config maps are now only for FSX/P3D or X-Plane. A lot of developers use the default offsets or datarefs, so it may not be required to change anything
 :::
 
-If you create a configmap for an aircraft, please let me know, I can include it in ACARS to be distributed out. That would be much appreciated!
+If you create a configmap for an aircraft, please let me know, I can include it in ACARS to be distributed out. That would be much appreciated! **Always create a new file**, otherwise the defaults that are included with the distribution will be overwritten by an updates.
 
 ## Anatomy of a ConfigMap
 
