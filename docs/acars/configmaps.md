@@ -42,7 +42,7 @@ A rule defines:
 
 In the above example, for the FlightFactor A320, the landing lights are controlled by two datarefs, both of which the values need to be 1 or 2 for the landing lights to be considered "on".
 
-## Features
+### Features
 
 The base rules and rule types are available. This list may be expanded in the future.
 
@@ -53,7 +53,7 @@ The base rules and rule types are available. This list may be expanded in the fu
 - TaxiLight
 - WingLight
 
-### Mapping data to a feature
+#### Mapping data to a feature
 
 Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together, so every value in the feature must evaluate to true.
 
