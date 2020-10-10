@@ -18,7 +18,7 @@ Without a lot of this information, it will be difficult to provide help.
 
 #### Forums
 
-The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net)
+The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net). Search in the forums and on Github first for your issue before asking. For 3rd party addons, be sure to post in your own
 
 #### Discord
 
@@ -37,8 +37,10 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
     - **PHP Version**
     - **Database versions** - MySQL, MariaDB or Percona, or whatever other backend your running
     - **phpVMS Version**
-        - From either the admin panel (bottom left, click on the version for the full version)
+        - From either the admin panel (bottom left, click on the version for the full version) 
         - Running `php artisan phpvms:version`
+        ![](img/version.png)
+
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
