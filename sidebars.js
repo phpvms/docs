@@ -21,6 +21,7 @@ module.exports = {
         'installation/cron',
         'installation/importing',
         'installation/updating',
+        'installation/issues',
       ]
     },
     {
