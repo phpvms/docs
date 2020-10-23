@@ -37,6 +37,7 @@ module.exports = {
       items: [
         'customize/layouts',
         'customize/theming',
+        'customize/maps',
       ]
     },
     {
