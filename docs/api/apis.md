@@ -500,6 +500,7 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 Return all of the flights, paginated
 
 - `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+- If there is a `fares` section in the root of the `flight` object, those are the fares to use for the flight and they are overriding any fares that are returned from the subfleets.
 
 **Sample Response:**
 
@@ -563,6 +564,19 @@ Return all of the flights, paginated
               "created_at": null,
               "updated_at": null
             }
+          ],
+          "fares": [
+            {
+              "id":1,
+              "code":"code",
+              "name":"Fare name",
+              "capacity":74,
+              "cost":421,
+              "price":"50",
+              "type":0,
+              "notes":null,
+              "active":true
+            }
           ]
         }
       ]
@@ -593,6 +607,7 @@ Return all of the flights, paginated
 Return details about a given flight
 
 - `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+- If there is a `fares` section in the root of the `flight` object, those are the fares to use for the flight and they are overriding any fares that are returned from the subfleets.
 
 **Sample Response:**
 
@@ -631,6 +646,19 @@ Return details about a given flight
       "flight_type": "J",
       "notes": "",
       "active": true,
+      "fares": [
+        {
+          "id":1,
+          "code":"code",
+          "name":"Fare name",
+          "capacity":74,
+          "cost":421,
+          "price":"50",
+          "type":0,
+          "notes":null,
+          "active":true
+        }
+      ]
       "subfleet": [
         {
           "id": 1,
@@ -654,6 +682,19 @@ Return details about a given flight
               "active": true,
               "created_at": null,
               "updated_at": null
+            }
+          ],
+          "fares": [
+            {
+              "id":1,
+              "code":"code",
+              "name":"Fare name",
+              "capacity":74,
+              "cost":421,
+              "price":"50",
+              "type":0,
+              "notes":null,
+              "active":true
             }
           ]
         }
