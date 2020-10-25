@@ -10,7 +10,7 @@ module.exports = {
     algolia: {
       apiKey: 'dcc8192acd61e5e79696dcae190a1d0f',
       indexName: 'phpvms',
-      searchParameters: {}, // Optional (if provided by Algolia)
+      contextualSearch: true
     },
     navbar: {
       title: 'phpVMS Docs',
@@ -22,19 +22,16 @@ module.exports = {
       items: [
         {
           href: 'https://forum.phpvms.net',
-          prependBaseUrlToHref: false,
           label: 'Forum',
           position: 'right',
         },
         {
           href: 'https://discord.gg/wvAmMnd',
-          prependBaseUrlToHref: false,
           label: 'Discord',
           position: 'right',
         },
         {
           href: 'https://github.com/nabeelio/phpvms',
-          prependBaseUrlToHref: false,
           //label: 'GitHub',
           className: 'header-github-link',
           position: 'right',

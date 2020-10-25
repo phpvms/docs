@@ -11,15 +11,15 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.64",
+    "@docusaurus/core": "^2.0.0-alpha.66",
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.64",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.66",
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
-    "@mdx-js/react": "^1.6.18",
+    "@mdx-js/react": "^1.6.19",
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.1.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "rehype-truncate": "^1.2.1",
     "remark-images": "^2.0.0"
   },
