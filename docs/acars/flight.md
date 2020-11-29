@@ -28,7 +28,7 @@ In order for the route map to show all of your waypoints, you need to load a fli
 1. FSX/P3D (`.pln`)
 1. X-Plane (`.fms`) 
 1. MSFS (`.pln`) 
-1. Simbrief (`.xml`, exported from the SimBrief site or the SimBrief Downloader)
+1. Simbrief (`.xml`, exported from the SimBrief site or the SimBrief Downloader. There is a "phpVMS" flight plan type that's available)
 
 The routes/navpoints are then loaded from the flight plan, along with the TOD (from MSFS/Simbrief), and filed along with your PIREP.
 
