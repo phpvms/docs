@@ -68,7 +68,8 @@ ACARS defines multiple flight phases, and the transitions between them are detai
 
 ### 9. Arrived
 
-- The parking brakes are on
+- The "End Flight" button must be clicked to set the flight to arrived
+- Once "End Flight" is clicked, a button to file the PIREP will show
 
 #### Notes:
 
