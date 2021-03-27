@@ -3,7 +3,12 @@ id: updating
 title: Updating
 ---
 
-To upgrade, you can overwrite the files of your install. I recommend removing the `vendor` directory and re-uploading that, in case there were major version updates which could interfere in things. Then, visit the `/update` URL of your site (e,g `http://myva.com/update`) to complete any migrations
+1. Make a backup of your site! Skip this at your own peril. At a minimum, make a backup of the `config.php` and `env.php` files
+1. On your remote site, delete the `vendors` folder
+1. On your remote site, delete all of the files in `bootstrap/cache` and `storage/framework/cache` (delete the contents, NOT the folders)
+1. Upload all of the files, and overwrite everything. If you are using `composer`, then run a `composer install`
+1. Visit the `/update` URL of your site (e,g `http://myva.com/update`) to complete the update/installs
+1. Check the changelog for template changes so you can update your skin
 
 ---
 
@@ -12,5 +17,6 @@ To upgrade, you can overwrite the files of your install. I recommend removing th
 If you run into an error similar to this, delete your `vendor` folder and re-upload it
 
 ```
-Argument 1 passed to Carbon\CarbonInterval::setLocalTranslator() must implement interface Symfony\Component\Translation\TranslatorInterface, instance of Carbon\Translator given
+Argument 1 passed to Carbon\CarbonInterval::setLocalTranslator() must implement interface 
+Symfony\Component\Translation\TranslatorInterface, instance of Carbon\Translator given
 ```
