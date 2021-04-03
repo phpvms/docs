@@ -6,12 +6,27 @@ sidebar_label: Installation
 
 The installation requires a few steps:
 
+1. File Permissions - some folders are written into and their permissions need to be configured properly
 1. Database Setup - right now, only MySQL (or its offshoots, like MariaDB or Percona are supported). Create the credentials for the database using either the command line or the cPanel Database Wizard.
-2. Running the installer - This is a web interface, through which you can also import your older phpVMS 2.x or 5.x install
+1. Composer Install - only if you have cloned it from git or downloaded the "raw" zip/tar and not a release or distributed version
+1. Running the installer - This is a web interface, through which you can also import your older phpVMS 2.x or 5.x install
 
 ---
 
-## 1. Database Setup
+## 1. File Permissions
+
+Adjust your file permissions to have the proper owner, but also read/write permissions (`775`) for:
+
+* `bootstrap`
+* `bootstrap/cache`
+* `storage/logs`
+* `storage/framework/cache`
+* `storage/framework/session`
+* `storage/framework/views`
+
+---
+
+## 2. Database Setup
 
 Before running the install, you need to configure the database with the database itself and the credentials. Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
 
@@ -30,7 +45,7 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ---
 
-## 2. Composer Install
+## 3. Composer Install
 
 :::info
 If you've downloaded a release or dev tar/zip from the downloads section, you don't need this. You only need this if you've cloned the repository
@@ -45,7 +60,7 @@ composer install
 
 ---
 
-## 3. Running the Installer
+## 4. Running the Installer
 
 :::info
 There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly.
@@ -68,11 +83,9 @@ The next page brings you to the database setup page. Select `MySQL` (`sqlite` re
   - Contact your host for the correct database server address. Usually it is `localhost` or `127.0.0.1` but it might be different
   - You can test to make sure they're working by clicking the "Test Database Credentials" button
 
-
 ![](img/04-database-page.png)
 
 After clicking "Setup Database", you'll see the installation screen. Hit next to proceed:
-
 
 ![](img/05-database-installed.png)
 
