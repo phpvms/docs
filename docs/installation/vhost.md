@@ -22,8 +22,9 @@ If you're using Apache as your webserver, you can use a similiar vhost file.
     # Update these paths to the /public folder of phpVMS
     DocumentRoot /path/to/phpvms/public
     <Directory "/path/to/phpvms/public">
-            Options FollowSymLinks
+           Options FollowSymLinks
             ReWriteEngine On
+            AllowOverride All
     </Directory>
 
     # Example paths to log files
