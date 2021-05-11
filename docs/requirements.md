@@ -7,7 +7,7 @@ title: 'Requirements'
 
 One of the first steps in the installer is to check your server for the proper requirements.
 
-- PHP 7.3 or up, extensions required (most of these are installed by default):
+- PHP 7.3+ (not including PHP 8, yet), extensions required (most of these are installed by default):
 
   - cURL
   - JSON
