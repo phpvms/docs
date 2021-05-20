@@ -60,24 +60,16 @@ The Redis store is recommended if you have access to it
 
 Sessions can be saved in PHP.
 
-```php title="config.php"
-// ...
-'session' => [
-  'default' => 'redis',
-],
-// ...  
+```env title="env.php"
+SESSION_DRIVER=redis
 ```
 
 #### PHP APC
 
-Sessions can be saved in PHP.
+Sessions can also be saved in PHP.
 
-```php title="config.php"
-// ...
-'session' => [
-  'default' => 'apc',
-],
-// ...  
+```env title="env.php"
+SESSION_DRIVER=apc
 ```
 
 ---
@@ -112,23 +104,21 @@ This doesn't require any configuration on the server side. To enable it, add the
 
 ## Queue Driver
 
-:::caution
-This requires that the [Laravel Queue Worker](https://laravel.com/docs/7.x/queues#running-the-queue-worker) be installed and working properly
-:::
-
 phpVMS uses asyncronous queues for several tasks, including sending emails and exporting to vaCentral. The default mode is `sync`, which means the tasks are done in-line. This could be useful if you're running a high-traffic VA and on your own VPS.
 
-#### Redis
+If you're running into performance issues, try changing the `QUEUE_DRIVER` to either `database` (probably the easiest option)
+
+#### Database Driver
+
+```env title="env.php"
+QUEUE_DRIVER=database
+```
+
+#### Redis Driver
 
 If you have Redis installed, you can add the following to the `config.php` file. Add the `redis` section (if it doesn't exist) to the existing `database` array:
 
-```php title="config.php"
-// ...
-
-'queue' => [
-  'default' => 'redis',
-],
-
-//...
+```env title="env.php"
+QUEUE_DRIVER=redis
 ```
 
