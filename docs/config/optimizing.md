@@ -12,7 +12,7 @@ These are just some basic optimizing. For additional optimization information, r
 
 Installing Redis is one way to enable optimizations. After installing, add to the `config.php`
 
-```env title="env.php"
+```shell title="env.php"
 CACHE_DRIVER=redis
 ```
 
@@ -41,7 +41,7 @@ APP_ENV=production
 
 This adjusts the logging level, making it more verbose. The default value is `true`, and should be set to `false` when you're live/in-production.
 
-```env title="env.php"
+```shell title="env.php"
 APP_DEBUG=true
 DEBUG_TOOLBAR=false
 ```
@@ -60,7 +60,7 @@ The Redis store is recommended if you have access to it
 
 Sessions can be saved in PHP.
 
-```env title="env.php"
+```shell title="env.php"
 SESSION_DRIVER=redis
 ```
 
@@ -68,7 +68,7 @@ SESSION_DRIVER=redis
 
 Sessions can also be saved in PHP.
 
-```env title="env.php"
+```shell title="env.php"
 SESSION_DRIVER=apc
 ```
 
@@ -76,29 +76,35 @@ SESSION_DRIVER=apc
 
 ## Caching
 
+By default, caching is disabled.
+
+#### File
+
+You can cache to flat files, instead of hitting the database constantly. These will be stored in the `storage/framework/cache` folder
+
+```shell title="env.php"
+CACHE_DRIVER=file
+```
+
 #### Redis
 
-Instead of using PHP APC, you can also use Redis for caching; adding to the `config.php` file:
+Instead of using PHP APC, you can also use Redis for caching
 
-```php title="config.php"
-// ...
-'cache' => [
-  'default' => 'redis',
-],
-// ...
+```shell title="env.php"
+CACHE_DRIVER=redis
 ```
 
 #### PHP APC
 
-This doesn't require any configuration on the server side. To enable it, add the following to your `config.php` file:
+This doesn't require any configuration on the server side
 
-```php title="config.php"
-// ...
-'cache' => [
-  'default' => 'apc',
-],
-// ...  
+```shell title="env.php"
+CACHE_DRIVER=apc
 ```
+
+#### Other drivers
+
+You can see the `config/cache.php` file for the other available drivers (memcached, redis, etc)
 
 ---
 
@@ -110,7 +116,7 @@ If you're running into performance issues, try changing the `QUEUE_DRIVER` to ei
 
 #### Database Driver
 
-```env title="env.php"
+```shell title="env.php"
 QUEUE_DRIVER=database
 ```
 
@@ -118,7 +124,7 @@ QUEUE_DRIVER=database
 
 If you have Redis installed, you can add the following to the `config.php` file. Add the `redis` section (if it doesn't exist) to the existing `database` array:
 
-```env title="env.php"
+```shell title="env.php"
 QUEUE_DRIVER=redis
 ```
 
