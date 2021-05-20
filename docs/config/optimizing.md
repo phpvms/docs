@@ -12,24 +12,8 @@ These are just some basic optimizing. For additional optimization information, r
 
 Installing Redis is one way to enable optimizations. After installing, add to the `config.php`
 
-```php title="config.php"
-// ...
-'database' => [
-  // ...
-  'connections' => [
-    // ...
-    'redis' => [
-      'default' => [
-          'host'     => 'localhost',
-          'port'     => 6379,
-          'database' => 1,
-      ],
-    ],
-    // ...
-  ],
-  // ...
-],
-// ...
+```env title="env.php"
+CACHE_DRIVER=redis
 ```
 
 ### PHP-APC
@@ -49,29 +33,17 @@ Any additional drivers supported by Laravel are automatically supported by phpVM
 
 When going live, this should be set to `production`. By default, it's `dev`. Change this:
 
-```php title="config.php"
-// ...
-'app' => [
-    // ...  
-    'env' => 'production',  // Change it to production when live
-    // ...
-],
-// ...
+```php title="env.php"
+APP_ENV=production
 ```
 
 ### Debug Mode
 
 This adjusts the logging level, making it more verbose. The default value is `true`, and should be set to `false` when you're live/in-production.
 
-```php title="config.php"
-// ...
-'app' => [
-    // ...
-    'debug'         => true,
-    'debug_toolbar' => true,
-    // ...
-],
-// ...
+```env title="env.php"
+APP_DEBUG=true
+DEBUG_TOOLBAR=false
 ```
 
 ---
