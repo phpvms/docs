@@ -33,7 +33,7 @@ Any additional drivers supported by Laravel are automatically supported by phpVM
 
 When going live, this should be set to `production`. By default, it's `dev`. Change this:
 
-```php title="env.php"
+```shell title="env.php"
 APP_ENV=production
 ```
 
@@ -112,7 +112,7 @@ You can see the `config/cache.php` file for the other available drivers (memcach
 
 phpVMS uses asyncronous queues for several tasks, including sending emails and exporting to vaCentral. The default mode is `sync`, which means the tasks are done in-line. This could be useful if you're running a high-traffic VA and on your own VPS.
 
-If you're running into performance issues, try changing the `QUEUE_DRIVER` to either `database` (probably the easiest option)
+If you're running into performance issues, try changing the `QUEUE_DRIVER` to `database` (probably the easiest option), or another queue driver option (look in the `config/queue.php` for available options)
 
 #### Database Driver
 
@@ -122,7 +122,7 @@ QUEUE_DRIVER=database
 
 #### Redis Driver
 
-If you have Redis installed, you can add the following to the `config.php` file. Add the `redis` section (if it doesn't exist) to the existing `database` array:
+If you have Redis installed, you can use that:
 
 ```shell title="env.php"
 QUEUE_DRIVER=redis
