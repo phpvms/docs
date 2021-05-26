@@ -5,11 +5,20 @@ title: Environment Configuration
 
 ## Docker Compose
 
-The easiest way to get a local install working is using [Docker Compose](https://docs.docker.com/compose), which comes with [Docker](https://www.docker.com). Check out the latest code:
+A full development environment can be brought up using Docker, without having to install composer/npm locally
 
 ```bash
-composer install
-docker-compose up
+make docker-test
+
+# **OR** with docker-compose directly
+
+docker-compose -f docker-compose.yml -f docker-compose.local.yml up
+```
+
+Then go to `http://localhost`. If you're using dnsmasq, the `app` container is listening on `phpvms.test`, or you can add to your `/etc/hosts` file:
+
+```
+127.0.0.1   phpvms.test
 ```
 
 Then visit your site at `http://localhost`. This is what I (Nabeel) use for my day-to-day development
