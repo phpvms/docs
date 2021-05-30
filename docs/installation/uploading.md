@@ -63,6 +63,8 @@ Next, extract the phpvms files into this folder, so it looks something like:
     ...
 ```
 
+  ![](img/subdomain-folders.png)
+
 Next, create a subdomain cPanel, go to "Subdomains", and create the subdomain. For the "Document Root", enter the path above, with the public folder - `demo.vmshost.io/public`. Usually, cPanel will autocomplete the path to be the subdomain - so just add `/public` to the end of it.
 
   ![](img/subdomain-add.png)
