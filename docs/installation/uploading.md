@@ -11,35 +11,11 @@ If you are uploading to a shared host or to cPanel, chose one of the following m
 
 ---
 
-## Option 1: Copying the public directory
+## Option 1: Creating a Subdomain
 
 :::tip
-Uploading and change the path of the public directory is the recommended method if you're on shared hosting
+Creating a subdomain is the easiest and more recommended method, especially for shared hosting. This works well if you have a landing or promo page on your site's main domain, and then a subdomain like `crew.yourva.com` or something similar.
 :::
-
-This method works well if your main site is going to be phpVMS. 
-
-1. Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
-2. Copy the files from the `/public` folder into the `public_html` folder.
-
-```
-/home/youruser
-    phpvms      < Create this folder and upload phpvms into it
-    public_ftp
-    public_html < Upload the files from phpvms/public into
-```
-
-As long as you named the folder `phpvms`, the `index.php` will autodetect the location of the phpVMS folder.
-
-:::note
-Updates/auto-updates won't update the files in the `/public_html` folder, you'll need to update them manually. The other method, the symlink method, is recommended if you have command-line access and are more comfortable creating those types of links.
-:::
-
----
-
-## Option 2: Creating a Subdomain
-
-Creating a subdomain is the next recommended method. This works well if you have a landing or promo page on your site's main domain, and then a subdomain like `crew.yourva.com` or something similar.
 
 Upload phpVMS to a directory with the name of your subdomain, for example, `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above). In this example, I want to create the subdomain `demo.vmshost.io`.
 
@@ -72,6 +48,32 @@ Next, create a subdomain cPanel, go to "Subdomains", and create the subdomain. F
 It will look like this:
 
   ![](img/subdomain-view.png)
+
+---
+
+## Option 2: Copying the public directory
+
+:::tip
+Uploading and change the path of the public directory is the recommended method if you're on shared hosting
+:::
+
+This method works well if your main site is going to be phpVMS. 
+
+1. Download/upload phpVMS into a `phpvms` folder in your home folder. It should look something like:
+2. Copy the files from the `/public` folder into the `public_html` folder.
+
+```
+/home/youruser
+    phpvms      < Create this folder and upload phpvms into it
+    public_ftp
+    public_html < Upload the files from phpvms/public into
+```
+
+As long as you named the folder `phpvms`, the `index.php` will autodetect the location of the phpVMS folder.
+
+:::note
+Updates/auto-updates won't update the files in the `/public_html` folder, you'll need to update them manually. The other method, the symlink method, is recommended if you have command-line access and are more comfortable creating those types of links.
+:::
 
 ---
 
