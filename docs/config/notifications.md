@@ -1,9 +1,9 @@
 ---
 id: notifications
-title: Notification Integrations
+title: Notifications
 ---
 
-# Notification Integrations
+# Notifications
 
 phpVMS can send event notifications to different places. Currently, Discord is supported. Some of the events that are supported:
 
