@@ -31,9 +31,11 @@ Then select integrations, and then "View Webhooks", then select integrations
 
 ![](img/discord/integrations.png)
 
-Then click "Add Webhook", and fill in the information. Copy the webhook, URL, you'll need this for the admin panel
+Then click "Add Webhook", and fill in the information
 
 ![](img/discord/create-webhook.png)
+
+Copy the webhook, URL, you'll need this for the admin panel
 
 #### 2. Add the webhook(s) into settings
 
