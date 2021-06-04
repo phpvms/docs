@@ -30,6 +30,7 @@ module.exports = {
       items: [
         'config/files',
         'config/optimizing',
+        'config/notifications',
       ]
     },
     {
