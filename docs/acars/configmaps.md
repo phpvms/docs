@@ -91,8 +91,8 @@ This will then ignore any landing light rules for that specific aircraft. You ca
 
 ```xml
 <LandingLights IgnoreIf="3">
-    <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
-    <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
+  <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
+  <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
 </LandingLights>
 ```
 In this case, all of the `Key` values must match `3` in order for it to be ignored in any landing lights rules.
@@ -103,40 +103,49 @@ You can also add the flaps naming to specific aircraft which might have differen
 
 ```xml
 <Rule Simulator="X-Plane" TitleContains="Some Aircraft Name">
-    <LandingLights>
-      <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
-      <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
-    </LandingLights>
-    <Flaps>
-      <Flap Index="0" Text="Up" />
-      <Flap Index="1" Text="CONF 1+1" />
-      <Flap Index="2" Text="CONF 2" />
-      <Flap Index="3" Text="CONF 3" />
-      <Flap Index="4" Text="CONF FULL" />
-    </Flaps>
-  </Rule>
+  <Flaps>
+    <Flap Index="0" Text="Up" />
+    <Flap Index="1" Text="CONF 1+1" />
+    <Flap Index="2" Text="CONF 2" />
+    <Flap Index="3" Text="CONF 3" />
+    <Flap Index="4" Text="CONF FULL" />
+  </Flaps>
+</Rule>
 ```
 
 Then these flaps settings will be used over the generic aircraft ICAO flaps namings.
 
 ### Examples
 
-In this example, both of the datarefs, in this last, the left and right landing lights, must have a value of `1` or `2` in order for the landing lights to be considered "on"
+In this example, both of the datarefs, in this last, the left and right landing lights, must have a value of `1` or `2` in order for the landing lights to be considered "on". This aircraft config also has differing flap names.
 
 ```xml
-<LandingLights>
-    <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
-    <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
-</LandingLights>
+<Rule Simulator="X-Plane" TitleContains="Some Aircraft Name">
+  <LandingLights>
+      <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
+      <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
+  </LandingLights>
+  <Flaps>
+    <Flap Index="0" Text="Up" />
+    <Flap Index="1" Text="CONF 1+1" />
+    <Flap Index="2" Text="CONF 2" />
+    <Flap Index="3" Text="CONF 3" />
+    <Flap Index="4" Text="CONF FULL" />
+  </Flaps>
+</Rule>
 ```
 
 In this example for FSUIPC, the offsets use a bitmask to consider the beacon lights being on:
 
 ```xml
-<BeaconLights>
-    <Key Type="Mask" Key="0x0D0C" Value="2"/>
-</BeaconLights>
+<Rule Simulator="X-Plane" TitleContains="Some Aircraft Name">
+  <BeaconLights>
+      <Key Type="Mask" Key="0x0D0C" Value="2"/>
+  </BeaconLights>
+</Rule>
 ```
+
+For the remaining features, the X-Plane defaults will be used.
 
 ## Creating a config map
 
