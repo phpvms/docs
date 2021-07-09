@@ -42,7 +42,7 @@ A rule defines:
 
 In the above example, for the FlightFactor A320, the landing lights are controlled by two datarefs, both of which the values need to be 1 or 2 for the landing lights to be considered "on".
 
-### Features
+## Features
 
 The base rules and rule types are available. This list may be expanded in the future.
 
@@ -53,7 +53,7 @@ The base rules and rule types are available. This list may be expanded in the fu
 - TaxiLight
 - WingLight
 
-#### Mapping data to a feature
+### Mapping data to a feature
 
 Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together, so every value in the feature must evaluate to true.
 
@@ -79,7 +79,7 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
 A note for X-Plane: the `sim/cockpit/electrical` datarefs are usually not great to use - X-Plane emulates the electrical system, so the values may toggle between 0 and 1, for example, when the strobe light is blinking, the electrical will toggle between 0 and 1. These would show up as the strobe being on. You generally want to check any switches (see Debugging below)
 :::
 
-#### Ignoring Features
+### Ignoring Features
 
 To ignore a feature in the rules (for example, if a feature doesn't work properly), add `Ignored="True"` to the feature:
 
@@ -97,7 +97,7 @@ This will then ignore any landing light rules for that specific aircraft. You ca
 ```
 In this case, all of the `Key` values must match `3` in order for it to be ignored in any landing lights rules.
 
-#### Flaps
+### Flaps
 
 You can also add the flaps naming to specific aircraft which might have different values. The flaps have an numeric index value that's reported and then a corresponding flap name:
 
@@ -119,7 +119,7 @@ You can also add the flaps naming to specific aircraft which might have differen
 
 Then these flaps settings will be used over the generic aircraft ICAO flaps namings.
 
-#### Examples
+### Examples
 
 In this example, both of the datarefs, in this last, the left and right landing lights, must have a value of `1` or `2` in order for the landing lights to be considered "on"
 
