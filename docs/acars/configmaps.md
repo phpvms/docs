@@ -67,7 +67,8 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
     - `Number`/`Double`/`Float`
     - `Int`
     - `Short`
-    - `Mask`
+    - `Mask` - Find a value in a bit mask
+    - `String` - look for exactly matches
 2. `Key` - This is where ACARS will look to get the value. 
     - `FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
     - `X-Plane` - This is a dataref value
