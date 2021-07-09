@@ -79,6 +79,24 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
 A note for X-Plane: the `sim/cockpit/electrical` datarefs are usually not great to use - X-Plane emulates the electrical system, so the values may toggle between 0 and 1, for example, when the strobe light is blinking, the electrical will toggle between 0 and 1. These would show up as the strobe being on. You generally want to check any switches (see Debugging below)
 :::
 
+#### Ignoring Features
+
+To ignore a feature in the rules (for example, if a feature doesn't work properly), add `Ignored="True"` to the feature:
+
+```xml
+<LandingLights Ignored="True">
+```
+
+This will then ignore any landing light rules for that specific aircraft. You can also ignore a specific value, like if a switch has a 3 positions - 0 for off, 1 for on, and 3 for auto, you can ignore a rule with the value of 3:
+
+```xml
+<LandingLights IgnoreIf="3">
+    <Key Type="Int" Key="a320/Overhead/LightLandL" Value="1|2"/>
+    <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
+</LandingLights>
+```
+In this case, all of the `Key` values must match `3` in order for it to be ignored in any landing lights rules.
+
 #### Examples
 
 In this example, both of the datarefs, in this last, the left and right landing lights, must have a value of `1` or `2` in order for the landing lights to be considered "on"
@@ -105,7 +123,6 @@ To create a config map, you can copy one of the existing files and modify it.
 - The file must be in the `configmaps/` directory
 - Name the file as specific as possible
 - Don't edit existing ones, they'll get overwritten
-
 
 ## Debugging
 
