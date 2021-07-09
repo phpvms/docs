@@ -69,12 +69,14 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
     - `Short`
     - `Mask` - Find a value in a bit mask
     - `String` - look for exactly matches
+    - `IntArray`/`FloatArray` - (X-Plane) - where the DataRef returns an array of integers or floats
 2. `Key` - This is where ACARS will look to get the value. 
     - `FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
-    - `X-Plane` - This is a dataref value
+    - `X-Plane` - This is the dataref value
 3. `Value` 
     - This is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
-
+4. `Index` (required for `IntArray` and `FloatArray`)
+    - If using the above types, which index of the array to look for the value in (starts from 0)
 
 :::note
 A note for X-Plane: the `sim/cockpit/electrical` datarefs are usually not great to use - X-Plane emulates the electrical system, so the values may toggle between 0 and 1, for example, when the strobe light is blinking, the electrical will toggle between 0 and 1. These would show up as the strobe being on. You generally want to check any switches (see Debugging below)
@@ -96,7 +98,13 @@ This will then ignore any landing light rules for that specific aircraft. You ca
   <Key Type="Int" Key="a320/Overhead/LightLandR" Value="1|2"/>
 </LandingLights>
 ```
-In this case, all of the `Key` values must match `3` in order for it to be ignored in any landing lights rules.
+In this case, all of the `Key` values must match `3` in order for it to be ignored in any landing lights rules. In this next example, it's reading from an array of integers that's returned by the sim, looking at the 2nd index, and ignoring the value if it's a 3:
+
+```xml
+<StrobeLights IgnoreIf="3">
+  <Key Type="IntArray" Index="1" Key="some/integer/array" Value="1|2"/>
+</LandingLights>
+```
 
 ### Flaps
 
