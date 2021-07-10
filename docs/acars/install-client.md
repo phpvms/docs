@@ -29,7 +29,11 @@ X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConn
 Due to an MSFS limitation, sceneries purchased through the MSFS store can't be read because they're encrypted. Only sceneries purchased outside of the store and manually placed in the `Community` directory can be read
 :::
 
-To use MSFS, select "Microsoft Flight Simulator" from the simulator list and click 'Rescan Scenery'
+To use MSFS, select "Microsoft Flight Simulator" from the simulator list and click 'Rescan Scenery'. 
+
+#### Permission Denied Errors
+
+If you're getting a permission denied error, see [this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
 
 ---
 
