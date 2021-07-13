@@ -3,7 +3,7 @@ id: files
 title: Config Files
 sidebar_title: Config Files
 ---
-## Admin Panel Settings
+# Admin Panel Settings
 
 A lot of settings can be located in the phpVMS Admin panel, under settings.
 
@@ -18,31 +18,6 @@ Don't change the files in the `/config` directory; instead, edit the `env.php` f
 :::
 
 See [Laravel configuration files](https://laravel.com/docs/8.x/configuration#accessing-configuration-values) for additional documentation.
-
----
-
-### Email
-
-I recommend using a 3rd party service for sending email. They usually offer SMTP support, and great logging and analytics. Especially on a shared host, where email is locked down, and a "naughty neighbor" can quickly get the server/IP you're emailing from blacklisted.
-
-The services I recommend and use:
-
-* [Sparkpost](http://www.sparkpost.com) - Free up to 100k messages/month
-* [Mailgun](http://www.mailgun.com) - Free, up to 10k messages/month
-
-
-To configure email, in your `env.php` file, you need to configure the following options:
-
-```php title="env.php"
-MAIL_DRIVER=smtp
-MAIL_FROM_NAME='phpVMS No-Reply'
-MAIL_FROM_ADDRESS='no-reply@phpvms.net'
-MAIL_HOST=
-MAIL_PORT=
-MAIL_ENCRYPTION=
-MAIL_USERNAME=
-MAIL_PASSWORD=
-```
 
 ---
 
