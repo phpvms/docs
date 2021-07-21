@@ -14,17 +14,19 @@ Before asking for help, try to reproduce on the [demo site](https://demo.phpvms.
 
 Without a lot of this information, it will be difficult to provide help.
 
-### Where to get help
+---
 
-#### Forums
+## Where to get help
+
+### Forums
 
 The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net). Search in the forums and on Github first for your issue before asking. For 3rd party addons, be sure to post in your own
 
-#### Discord
+### Discord
 
 There's also a Discord channel for quick questions. [Invite Code Here](https://discord.gg/wvAmMnd)
 
-#### Github
+### Github
 
 The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues). To post an issue, you need a Github account, and then select "New Issue". After that, select "Bug Report". There is a small template there that you can use, but try to include as much of the information below:
 
@@ -55,6 +57,15 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
     - **HTTP logs**: These are, for example, your Apache logs. These might be required, depending on the issue. If you're not sure how to get them, ask your host. They're often found in cPanel, under Error Logs.
 - Exported data data - see below
 - Any and all other relevent details
+
+---
+
+## Log Files 
+
+
+The Laravel error logs are located in `storage/logs`.
+
+---
 
 ## Enable Debug and Debugging
 
