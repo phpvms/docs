@@ -9,7 +9,7 @@ title: Installation (Server)
 The latest [dev](http://downloads.phpvms.net/phpvms-7.0.0-dev.tar.gz) versions of phpVMS are currently required
 :::
 
-For the server-side installation, open the `Web/v7` folder and copy the `VMSAcars` into your `phpvms/modules` folder:
+For the server-side installation, open the `Web` folder and copy the `VMSAcars` into your `phpvms/modules` folder:
 
 ![](img/copy_module_folder.png)
 
