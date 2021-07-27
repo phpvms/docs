@@ -25,8 +25,3 @@ ACARS is available for purchase on [vmshost.io](https://vmshost.io/cart.php?gid=
 - Light footprint, low CPU and memory usage
 
 ![](img/activeflight.png)
-
-## Roadmap
-
-- Custom rules via scripts
-- Customize design aspect (logos, banner)
