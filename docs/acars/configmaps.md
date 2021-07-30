@@ -73,8 +73,11 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
 2. `Key` - This is where ACARS will look to get the value. 
     - `FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
     - `X-Plane` - This is the dataref value
-3. `Value` 
-    - This is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
+3. Value specifier, must be one of:
+    - `Value` - this is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
+    - `ValueGt`/`ValueGte` - Value greater than or greater than equal to, respectively
+    - `ValueLt`/`ValueLte` - Value less than or less than or equal to, respectively
+    - `ValueBtwn` - Value between; this must include two values like `0|1`, and will include the first value up to the first
 4. `Index` (required for `IntArray` and `FloatArray`)
     - If using the above types, which index of the array to look for the value in (starts from 0)
 

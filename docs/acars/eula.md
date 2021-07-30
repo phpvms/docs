@@ -4,11 +4,13 @@ title: License Agreement
 hide_title: true
 ---
 
-# END-USER LICENSE AGREEMENT ("Agreement")
+# License Agreement
 
 Last updated: September 26, 2020
 
 ---
+
+# END USER LICENSE AGREEMENT
 
 ## INTERPRETATION AND DEFINITIONS
 
