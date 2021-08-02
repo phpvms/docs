@@ -5,6 +5,8 @@ title: Config Maps
 
 Since developers often use custom offsets or datarefs, and not the defaults, having configmaps allows you to map an aircraft feature (landing lights, etc) to a "feature", which tells ACARS where to read the data for those features. They're stored in the `configmaps` directory.
 
+The configmaps are downloaded by the client on startup from the [configmaps repository](https://github.com/phpvms/configmaps), so updates can be more easily pushed out.
+
 :::note
 Config maps are now only for FSX/P3D or X-Plane. A lot of developers use the default offsets or datarefs, so it may not be required to change anything
 :::
