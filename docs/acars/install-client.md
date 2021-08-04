@@ -1,9 +1,13 @@
 ---
-id: install-client
-title: Installation (Client)
----
+# Installation (Client)
 
 ---
+## ACARS Client
+
+After downloading the zip, just extract the client into a folder (e.g, on your desktop into a folder called `ACARS`). Then you can create a desktop shortcut from the `acars.exe` for easier access.
+
+---
+
 ## Simulator Configuration
 
 ### FSX/Prepar3d Configuration
