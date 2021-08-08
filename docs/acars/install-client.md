@@ -1,4 +1,8 @@
 ---
+id: install-server
+title: Installation (Client)
+---
+
 # Installation (Client)
 
 ---
