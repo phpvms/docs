@@ -1,5 +1,5 @@
 ---
-id: install-server
+id: install-client
 title: Installation (Client)
 ---
 
