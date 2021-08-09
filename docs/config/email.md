@@ -51,9 +51,26 @@ POSTMARK_TOKEN='your postmark token'
 
 To use SES, set your `env.php` like:
 
-```bash title="ses.php"
+```bash title="env.php"
 MAIL_MAILER=postmark
 AWS_ACCESS_KEY_ID='key id'
 AWS_SECRET_ACCESS_KEY='access key'
 AWS_DEFAULT_REGION='the region if not us-east-1'
+```
+
+---
+
+## Debugging
+
+For debugging mail, you can use the service [mailtrap.io](https://mailtrap.io). Mail-trail will show all of the incoming and outgoing email in an inbox, so you can test registrations, accepts, etc. It will provide you Laravel-specific configuration, which looks something like:
+
+```bash title="env.php"
+MAIL_MAILER=smtp
+MAIL_FROM_NAME='phpVMS Admin'
+MAIL_FROM_ADDRESS='no-reply@phpvms.net'
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_ENCRYPTION=tls
+MAIL_USERNAME='as provided'
+MAIL_PASSWORD='as provided'
 ```
