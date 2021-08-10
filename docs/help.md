@@ -30,7 +30,9 @@ There's also a Discord channel for quick questions. [Invite Code Here](https://d
 
 The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues). To post an issue, you need a Github account, and then select "New Issue". After that, select "Bug Report". There is a small template there that you can use, but try to include as much of the information below:
 
-### Information Required
+---
+
+## Information Required
 
 - A clear description of the issue
     - What page stuff happened on
@@ -46,24 +48,16 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
+- Screenshots
 - Type of hosting - shared, VPS, dedicated, etc
 
-#### If relevent
+### Logs
 
-- Screenshots
-- Logs
     - **Laravel logs**: These are located in `storage/logs`, you must include these. Look through the logs to also ensure that no sensitive information is included inadvertantly
     - **PHP logs**: These can be found wherever your PHP error logs are kept, for example, the PHP-FPM logs. Ask your host, if you don't know. They're often found in cPanel, under Error Logs.
     - **HTTP logs**: These are, for example, your Apache logs. These might be required, depending on the issue. If you're not sure how to get them, ask your host. They're often found in cPanel, under Error Logs.
 - Exported data data - see below
 - Any and all other relevent details
-
----
-
-## Log Files 
-
-
-The Laravel error logs are located in `storage/logs`.
 
 ---
 
@@ -73,7 +67,7 @@ The Laravel error logs are located in `storage/logs`.
 - Enable debug logging and the Laravel Debug Toolbar:
     - Open your `config.php`, under `app`, change: 
         - `debug` to `true`
-        - `debug_toolbar` to `true`
+        - `debug_toolbar` to `true` (if you want the debug toolbar)
 
 #### Exporting Data for Troubleshooting
 
