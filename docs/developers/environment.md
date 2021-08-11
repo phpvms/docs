@@ -3,46 +3,12 @@ id: environment
 title: Environment Configuration
 ---
 
-## Docker Compose
+# Development Configuration
 
-A full development environment can be brought up using Docker, without having to install composer/npm locally
-
-```bash
-make docker-test
-
-# **OR** with docker-compose directly
-
-docker-compose -f docker-compose.yml -f docker-compose.local.yml up
-```
-
-Then go to `http://localhost`. If you're using dnsmasq, the `app` container is listening on `phpvms.test`, or you can add to your `/etc/hosts` file:
-
-```
-127.0.0.1   phpvms.test
-```
-
-Then visit your site at `http://localhost`. This is what I (Nabeel) use for my day-to-day development
-
-## Laravel Valet
-
-If you don't want to use `docker-compose`, easiest way to load locally is to install [Laravel Valet](https://laravel.com/docs/5.5/valet) (if you're running a Mac). Follow the instructions to install; you install it, go to your phpvms directory, and run:
-
-```bash
-valet link phpvms
-```
-
-Now going to `http://phpvms.test` should work. If you want to use mysql, follow the valet directions on installing mysql (`brew install mysql`) and then update the `env.php` file to point to the mysql.
-
-The default username and password are `admin@phpvms.net` and `admin`. To see the available users in the development environment, [see this file](https://github.com/nabeelio/phpvms/blob/master/app/Database/seeds/sample.yml#L11) 
-
-There is no reason you can't use [MAMP](https://www.mamp.info/en) or [XAMPP](https://www.apachefriends.org), or if you're feeling fancy, using Docker or configuring any webservers yourself.
-
----
-
-## Development Configuration
+This is for running a local configuration, for running unit-tests, etc. 
 
 :::info
-This is just how I work on phpVMS, to quickly reset the database and test/develop items locally, without having to transfer files anywhere.
+This is just how I work on phpVMS, to quickly reset the database and test/develop items locally, without having to transfer files anywhere. I mainly use the Docker Compose setup
 
 If you're on Windows, I highly recommend installing WSL with your distro of choice (I use Ubuntu). If you don't have `make` available, open the `Makefile` and look for the commands to run for the individual commands of what you're trying to run.
 :::
@@ -101,3 +67,41 @@ By default, the Makefile calls the system-wide `composer`. If your host requires
 ```bash
 COMPOSER=composer.phar make install
 ```
+
+---
+
+# Docker Compose
+
+A full development environment can be brought up using Docker, without having to install composer/npm locally
+
+```bash
+make docker-test
+
+# **OR** with docker-compose directly
+
+docker-compose -f docker-compose.yml -f docker-compose.local.yml up
+```
+
+Then go to `http://localhost`. If you're using dnsmasq, the `app` container is listening on `phpvms.test`, or you can add to your `/etc/hosts` file:
+
+```
+127.0.0.1   phpvms.test
+```
+
+Then visit your site at `http://phpvms.test`. This is what I (Nabeel) use for my day-to-day development
+
+---
+
+# Laravel Valet
+
+If you don't want to use `docker-compose`, easiest way to load locally is to install [Laravel Valet](https://laravel.com/docs/5.5/valet) (if you're running a Mac). Follow the instructions to install; you install it, go to your phpvms directory, and run:
+
+```bash
+valet link phpvms
+```
+
+Now going to `http://phpvms.test` should work. If you want to use mysql, follow the valet directions on installing mysql (`brew install mysql`) and then update the `env.php` file to point to the mysql.
+
+The default username and password are `admin@phpvms.net` and `admin`. To see the available users in the development environment, [see this file](https://github.com/nabeelio/phpvms/blob/master/app/Database/seeds/sample.yml#L11) 
+
+There is no reason you can't use [MAMP](https://www.mamp.info/en) or [XAMPP](https://www.apachefriends.org), or if you're feeling fancy, using Docker or configuring any webservers yourself.
