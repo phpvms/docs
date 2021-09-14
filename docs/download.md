@@ -9,7 +9,7 @@ There are a few ways you can obtain phpVMS and its dependencies. The full packag
 The zip/tar file from the downloads site contains all of the dependencies. The versions available are:
 
 - [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases) - The latest released versions
-- [Development branch](http://downloads.phpvms.net/phpvms-7.0.0-dev.tar.gz) - The latest commit, unstable
+- [Development branch](http://downloads.phpvms.net/phpvms-7.0.0-dev.tar.gz) - The latest commit (may be unstable)
 
 ---
 
