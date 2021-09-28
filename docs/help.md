@@ -44,7 +44,6 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
         - From either the admin panel (bottom left, click on the version for the full version) 
         - Running `php artisan phpvms:version`
         ![](img/version.png)
-
 - How to reproduce the error 
     - Include as much detail as possible
     - Include any relevent data - for example, an error with expenses, include how the expenses are configured. See "Exporting Data" below.
