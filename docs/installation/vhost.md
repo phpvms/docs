@@ -17,7 +17,7 @@ If you're using Apache as your webserver, you can use a similiar vhost file.
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName yoursite.com
-    ServiceAlias www.yoursite.com
+    ServerAlias www.yoursite.com
 
     # Update these paths to the /public folder of phpVMS
     DocumentRoot /path/to/phpvms/public
