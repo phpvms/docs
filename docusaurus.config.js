@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'docs',
   themeConfig: {
     algolia: {
-      apiKey: 'dcc8192acd61e5e79696dcae190a1d0f',
+      apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
       indexName: 'phpvms',
       contextualSearch: true
     },
