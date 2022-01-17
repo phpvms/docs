@@ -73,8 +73,10 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
     - `String` - look for exactly matches
     - `IntArray`/`FloatArray` - (X-Plane) - where the DataRef returns an array of integers or floats
 2. `Key` - This is where ACARS will look to get the value. 
-    - `FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
-    - `X-Plane` - This is the dataref value
+    - `FS9/FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
+      - **NOTE** You can use "FSUIPC" and it will detect it for the Prepar3d/FS9/FSX family
+    - `X-Plane`/`xplane` - This is the dataref value
+    - `Microsoft Flight`/`MSFS` - Currently unused
 3. Value specifier, must be one of:
     - `Value` - this is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
     - `ValueGt`/`ValueGte` - Value greater than or greater than equal to, respectively
@@ -152,7 +154,7 @@ In this example, both of the datarefs, in this last, the left and right landing 
 In this example for FSUIPC, the offsets use a bitmask to consider the beacon lights being on:
 
 ```xml
-<Rule Simulator="X-Plane" TitleContains="Some Aircraft Name">
+<Rule Simulator="Prepar3d" TitleContains="Some Aircraft Name">
   <BeaconLights>
       <Key Type="Mask" Key="0x0D0C" Value="2"/>
   </BeaconLights>
