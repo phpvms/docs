@@ -70,9 +70,10 @@ module.exports = {
         'acars/eula',
         'acars/install-server',
         'acars/install-client',
+        'acars/customization',
         {
           type: 'category',
-          label: 'Flight Config',
+          label: 'Flight Details',
           items: [
             'acars/flight',
             'acars/phases',
