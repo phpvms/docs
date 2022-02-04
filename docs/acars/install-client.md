@@ -96,6 +96,7 @@ If you configure it to point to the X-Plane root, the default share path for VMW
 ![](img/vmware-acars-config.png)
 
 Then you can launch/run ACARS as usual.
+
 ---
 
 ## Hardware Configuration
