@@ -19,7 +19,7 @@ To customize the "Rich Presence" dialog in Discord, you need to create a new App
 
 ### 1. Create the Application
 
-Visit [Discord Application Developer site](https://discord.com/developers/applications), and select "New Application". I suggest using your VA name, it will say something like "Playing <whatever you enter>" (or something like "VA Name ACARS")
+Visit [Discord Application Developer site](https://discord.com/developers/applications), and select "New Application". I suggest using your VA name, it will say something like "Playing (whatever you enter)" (or something like "VA Name ACARS")
 
 ![Default Rich Presence](img/discord-new-app.png)
 
