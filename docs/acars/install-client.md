@@ -75,7 +75,7 @@ After selecting the directory, click `Re-Scan Scenery`. This will load the scene
 
 ---
 
-# Mac/Linux Configuration
+## Mac/Linux Configuration
 
 To run ACARS with X-Plane on the Mac or Linux, you have to run Windows in a VM. On the Mac, I use [VMWare Fusion](https://www.vmware.com/products/fusion.html), which is free for personal use. The procedure below will be similar for Parallels or Virtual Box, which is roughly:
 
@@ -98,6 +98,6 @@ If you configure it to point to the X-Plane root, the default share path for VMW
 Then you can launch/run ACARS as usual.
 ---
 
-# Hardware Configuration
+## Hardware Configuration
 
 If you're using hardware to control the sim, ACARS heavily relies on several offsets with FSUIPC, particularly the parking brake. Ensure that the offset `0x0BC8` gets set
