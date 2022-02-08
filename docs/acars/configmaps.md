@@ -91,10 +91,10 @@ A note for X-Plane: the `sim/cockpit/electrical` datarefs are usually not great 
 
 ### Ignoring Features
 
-To ignore a feature in the rules (for example, if a feature doesn't work properly), add `Ignored="True"` to the feature:
+To ignore a feature in the rules (for example, if a feature doesn't work properly), add `Ignore="True"` to the feature:
 
 ```xml
-<LandingLights Ignored="True">
+<LandingLights Ignore="True">
 ```
 
 This will then ignore any landing light rules for that specific aircraft. You can also ignore a specific value, like if a switch has a 3 positions - 0 for off, 1 for on, and 3 for auto, you can ignore a rule with the value of 3:
