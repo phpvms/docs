@@ -129,7 +129,19 @@ You can also add the flaps naming to specific aircraft which might have differen
 </Rule>
 ```
 
-Then these flaps settings will be used over the generic aircraft ICAO flaps namings.
+Then these flaps settings will be used over the generic aircraft ICAO flaps namings. You can also ignore a flap state if it's a "no-op" state:
+
+```xml
+<Rule Simulator="X-Plane" TitleContains="Some Aircraft Name">
+  <Flaps>
+    <Flap Index="0" Text="Up" />
+    <Flap Index="1" Text="" Ignore="True" />
+    <Flap Index="2" Text="CONF 2" />
+    <Flap Index="3" Text="CONF 3" />
+    <Flap Index="4" Text="CONF FULL" />
+  </Flaps>
+</Rule>
+```
 
 ### Examples
 
