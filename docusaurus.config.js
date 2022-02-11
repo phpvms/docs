@@ -6,6 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'phpvms',
   projectName: 'docs',
+  trailingSlash: false,
   themeConfig: {
     algolia: {
       apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
