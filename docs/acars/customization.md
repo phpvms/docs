@@ -13,6 +13,12 @@ You can add your logo to the splash screen and the dashboard. They will be resiz
 
 ## Discord Rich Presence
 
+:::info
+
+This requires the ACARS Premium Addon
+
+:::
+
 To customize the "Rich Presence" dialog in Discord, you need to create a new Application in Discord. You'll then enter the provided `Application ID` into the admin panel. If you don't set this, the default "vmsACARS" application will be used.
 
 ![](img/discord.png)
