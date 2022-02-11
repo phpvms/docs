@@ -9,7 +9,7 @@ phpVMS 7 has a few fundamental differences from the old version, on how schedule
 
 ## Airlines
 
-One or more airlines needs to be created. Users choose and airline on registration. 
+One or more airlines needs to be created. Users choose an airline on registration. 
 
 ---
 
