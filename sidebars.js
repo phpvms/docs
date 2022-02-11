@@ -5,10 +5,10 @@ module.exports = {
     'download',
     {
       type: 'category',
-      label: 'Concepts',
+      label: 'Guides',
       items: [   
-        'concepts/basics',
-        'concepts/finances',
+        'guides/basics',
+        'guides/finances',
       ]
     },
     {
