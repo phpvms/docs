@@ -5,19 +5,26 @@ title: Cron/Scheduled Tasks
 
 In order for some phpVMS features to work, a cronjob is required to be setup. Some of the features that rely on cronjobs include:
 
+- Job queue tasks (sending emails, notifications)
 - Finances
-- Mass Emails
 - vaCentral features
 
 :::note
-If you can't run it once a minute, the lowest interval possible is fine
+If you can't run it once a minute, the lowest interval possible is fine, but should be in 5 minute increments, since there are tasks that run at 5,15, and 30 minute intervals. 
 :::
 
 ---
 
 ## Configuration on a Server
 
-If you have SSH and `crontab` access, this is the easiest way to configure the cron job. You need the path to the `artisan` file that's in the root of the phpVMS install. After that, add a cronjob that runs once a minute. Do not forget to include the username, for example, using `crontab -e`:
+If you have SSH and `crontab` access, this is the easiest way to configure the cron job. You need the path to the `bin/cron` file that's in the root of the phpVMS install. After that, add a cronjob that runs once a minute. Do not forget to include the username, for example, using `crontab -e`:
+
+```bash
+# THIS IS AN EXAMPLE 
+* * * * * php /path/to/phpvms/bin/cron >> /dev/null 2>&1
+```
+
+If your server has access to `proc_open`, you can also use the Laravel schedule runner:
 
 ```bash
 # THIS IS AN EXAMPLE 
@@ -37,7 +44,7 @@ Many hosts offer multiple PHP versions, make sure to use the path to the PHP 7.x
 With cPanel, select "Once Per Minute" under "Common Settings", and you can use a similar command.
 
 ```bash
-/usr/local/bin/ea-php74 -q /your/path/to/phpvms/artisan schedule:run
+/usr/local/bin/ea-php74 -q /your/path/to/phpvms/bin/cron
 ```
 
 ![](img/cpanel-cron.png)
