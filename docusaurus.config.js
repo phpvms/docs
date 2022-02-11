@@ -48,10 +48,6 @@ module.exports = {
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} phpvms`,
     },
-    gtag: {
-      trackingID: 'UA-100567975-3',
-      anonymizeIP: true,
-    },
   },
   presets: [
     [
@@ -69,6 +65,10 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'UA-100567975-3',
+          anonymizeIP: true,
         },
         sitemap: {
           changefreq: 'weekly',
