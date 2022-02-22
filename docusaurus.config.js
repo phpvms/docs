@@ -83,8 +83,8 @@ module.exports = {
       {
         redirects: [
           {
-            from: '/docs/acars/install-client',
-            to: '/docs/acars/user-guide',
+            from: '/acars/install-client',
+            to: '/acars/user-guide',
           },
         ]
       }
