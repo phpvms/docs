@@ -9,14 +9,16 @@ You can add your logo to the splash screen and the dashboard. They will be resiz
 
 ![](img/logo-urls.png)
 
+:::tip
+The "splash screen banner" replaces the entire splash screen, and requires the Premium addon
+:::
+
 ---
 
 ## Discord Rich Presence
 
-:::info
-
+:::tip
 This requires the ACARS Premium Addon
-
 :::
 
 To customize the "Rich Presence" dialog in Discord, you need to create a new Application in Discord. You'll then enter the provided `Application ID` into the admin panel. If you don't set this, the default "vmsACARS" application will be used.
@@ -35,7 +37,7 @@ Upload your logo and title it appropriately. **Make note of the "Application ID"
 
 Next, go to "Rich Presence" and then "Art Assets". Add your cover image here, and add a new **Rich Presence Asset** titled `logo`. This will be used in the mini box that shows up
 
-:::info
+:::note
 
 The logo asset added must be titled `logo`
 

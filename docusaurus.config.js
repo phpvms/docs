@@ -77,4 +77,17 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/acars/install-client',
+            to: '/docs/acars/user-guide',
+          },
+        ]
+      }
+    ],
+  ],
 };

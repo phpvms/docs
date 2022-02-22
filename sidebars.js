@@ -69,16 +69,8 @@ module.exports = {
         'acars/overview',
         'acars/eula',
         'acars/install-server',
-        'acars/install-client',
+        'acars/user-guide',
         'acars/customization',
-        {
-          type: 'category',
-          label: 'Flight Details',
-          items: [
-            'acars/flight',
-            'acars/phases',
-          ]
-        },
         'acars/configmaps',
       ]
     },
