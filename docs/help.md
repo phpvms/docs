@@ -63,10 +63,9 @@ The bug tracker is located on [Github](https://github.com/nabeelio/phpvms/issues
 ## Enable Debug and Debugging
 
 - Look at the logs - they're located in `storage/logs`
-- Enable debug logging and the Laravel Debug Toolbar:
-    - Open your `config.php`, under `app`, change: 
-        - `debug` to `true`
-        - `debug_toolbar` to `true` (if you want the debug toolbar)
+- Enable debug logging and the Laravel Debug Toolbar, open your `env.php`
+    - `APP_DEBUG` to `true`
+    - `DEBUG_TOOLBAR` to `true` (if you want the debug toolbar)
 
 #### Exporting Data for Troubleshooting
 
