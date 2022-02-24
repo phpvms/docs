@@ -20,3 +20,7 @@ Then go to your site's URL to the `/update` folder, and follow through the updat
 After installation, go to the admin panel, and enter your license key, from your https://vmshost.io invoice/email:
 
 ![](img/module_config.png)
+
+## 3. Premium Edition
+
+If you've purchased the Premium ACARS edition, the options in the admin panel marked "Premium" will work.
