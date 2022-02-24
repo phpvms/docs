@@ -7,11 +7,11 @@ title: Customization
 
 You can add your logo to the splash screen and the dashboard. They will be resized down to fit. Fill in the URLs to your logos. They should be PNG format (transparency is supported):
 
-![](img/logo-urls.png)
+* **Splash Screen Banner** *Premium License Required* - This replaces the large phpVMS splash screen. 500x375 recommended for best look, anything larger will be scaled down to the size.
+* **Splash Screen Logo** - This adds a small logo to the bottom right of the splash screen. This can be combined with the splash screen banner. This will be sized to 150x150
+* **Dashboard Logo** - This places a logo onto the dashboard, to the right of the user profile. This will be sized to 300x64 max.
 
-:::tip
-The "splash screen banner" replaces the entire splash screen, and requires the Premium addon
-:::
+![](img/logo-urls.png)
 
 ---
 
