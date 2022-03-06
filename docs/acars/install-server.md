@@ -23,4 +23,4 @@ After installation, go to the admin panel, and enter your license key, from your
 
 ## 3. Premium Edition
 
-If you've purchased the Premium ACARS edition, the options in the admin panel marked "Premium" will work.
+If you've purchased the Premium ACARS edition, the options in the admin panel marked "Premium" will work. There are no additional downloads - the client will check the license and enable the options locally.
