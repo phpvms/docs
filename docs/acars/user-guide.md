@@ -6,6 +6,10 @@ title: User Guide
 # Installation (Client)
 
 ---
+## .NET 5.0 Runtime
+
+If you don't have this installed, ACARS will prompt you to download it. But if you want to download ahead of time, visit the [Download Page from Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/5.0/runtime), and select the x64 version for Desktop apps
+
 ## ACARS Client
 
 After downloading the zip, just extract the client into a folder (e.g, on your desktop into a folder called `ACARS`). Then you can create a desktop shortcut from the `acars.exe` for easier access.
