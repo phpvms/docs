@@ -9,6 +9,7 @@ module.exports = {
   trailingSlash: false,
   themeConfig: {
     algolia: {
+      appId: 'A3V8IXF4VF',
       apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
       indexName: 'phpvms',
       contextualSearch: true
@@ -88,6 +89,16 @@ module.exports = {
           },
         ]
       }
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 400,
+        min: 200, 
+        steps: 2, 
+        disableInDev: false,
+      },
     ],
   ],
 };

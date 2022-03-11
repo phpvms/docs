@@ -7,8 +7,7 @@ title: 'Requirements'
 
 One of the first steps in the installer is to check your server for the proper requirements.
 
-- PHP 7.3+ (not including PHP 8, yet), extensions required (most of these are installed by default):
-
+- PHP 8.0+; extensions required (most of these are installed by default):
   - cURL
   - JSON
   - fileinfo
@@ -17,6 +16,7 @@ One of the first steps in the installer is to check your server for the proper r
   - pdo
   - tokenizer
   - bcmath
+  - intl
 - Database:
   - MySQL 5.7+ (or MySQL variant, including MariaDB and Percona)
 
@@ -30,11 +30,7 @@ One of the first steps in the installer is to check your server for the proper r
 ### Shared Hosting
 
 While shared hosts are not ideal for numerous reasons (don't use free hosts, you'll have
-a really bad time), it's still possible to run phpVMS. By just uploading the files, you
-will be able to visit the site. Assuming your host is running Apache, the `.htaccess` file
-should handle the URL rewriting. If you're unable to reach the installer (the first test
-to see if it will work with your host), contact your host's support about `.htaccess`
-support.
+a really bad time), it's still possible to run phpVMS. Read the 
 
 ---
 
