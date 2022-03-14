@@ -17,17 +17,4 @@ Laravel has a lot of basic configuration in PHP files in the `/config` directory
 Don't change the files in the `/config` directory; instead, edit the `env.php` file instead. These won't be overwritten on an update.
 :::
 
-See [Laravel configuration files](https://laravel.com/docs/8.x/configuration#accessing-configuration-values) for additional documentation.
-
----
-
-### Recaptcha
-
-Recaptcha can be enabled, get the keys [here](https://www.google.com/recaptcha/admin). Then add/change the following to your `env.php` file. The section is there by default, just without the `sitekey` and `secret`.
-
-```php title="env.php"
-CAPTCHA_ENABLED=true
-CAPTCHA_SITEKEY='YOUR SITE KEY'
-CAPTCHA_SECRET='YOUR SITE SECRET'
-CAPTCHA_DATATHEME='light'
-```
+See [Laravel configuration files](https://laravel.com/docs/9.x/configuration) for additional documentation.

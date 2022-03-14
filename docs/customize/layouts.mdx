@@ -15,7 +15,7 @@ See the `resources/views/layouts/default/app.blade.php` as an example template, 
 - `@section('title')` is the page title, and shows up in the title bar
 - `@section('content')` is the main content for the page
 - `@section('scripts')` is where any Javascript will go (note, you need to include the `<script></script>` tags when extending this section.
-- Layouts and templates follows [Laravel's Template Inheritance](https://laravel.com/docs/5.6/blade#template-inheritance)
+- Layouts and templates follows [Laravel's Template Inheritance](https://laravel.com/docs/9.x/blade#layouts-using-template-inheritance)
 - Your page layout needs to be called `app.blade.php`. This is to keep compatibility with any addons/modules that will extend the basic layout
   - All of the templates will `@extend('app')`.
 - The page layout requires several sections:
@@ -34,7 +34,7 @@ See the `resources/views/layouts/default/app.blade.php` as an example template, 
 
 ### Template basics
 
-phpVMS takes advantage of many of the [Laravel Blade](https://laravel.com/docs/5.6/blade) features, and there are no limitations placed within the system to prevent anyone from using the full power of the templating system. There are only a few guidelines, to ensure a consistent standard for addons, widgets and other customizations.
+phpVMS takes advantage of many of the [Laravel Blade](https://laravel.com/docs/9.x/blade) features, and there are no limitations placed within the system to prevent anyone from using the full power of the templating system. There are only a few guidelines, to ensure a consistent standard for addons, widgets and other customizations.
 
 - All templates extend the 'app' layout (as described above). Unless you have a custom page that has all of the HTML required
 
@@ -97,7 +97,7 @@ This will greatly increase the performance on your pages
 
 A few good resources are:
 
-- [Laravel Blade](https://laravel.com/docs/5.5/blade)
+- [Laravel Blade](https://laravel.com/docs/9.x/blade)
 - [Blade 101, Laracast Video](https://laracasts.com/series/laravel-5-fundamentals/episodes/5)
 - [Layouts and Structure, Laracast Video](https://laracasts.com/series/laravel-from-scratch-2017/episodes/10)
 
