@@ -72,11 +72,12 @@ Each `Key` consists a `Type`, `Key` and a `Value`. These are all "AND" together,
     - `Mask` - Find a value in a bit mask
     - `String` - look for exactly matches
     - `IntArray`/`FloatArray` - (X-Plane) - where the DataRef returns an array of integers or floats
+    - `LVar` - Look for an LVar value (**Microsoft Flight Simulator only**)
 2. `Key` - This is where ACARS will look to get the value. 
     - `FS9/FSX/Prepar3d` - This is an FSUIPC offset. LVars aren't supported, though you can use LINDA and FSUIPC to map an LVAR to a custom offset, and read it here. This information is up to the aircraft developer to provide.
       - **NOTE** You can use "FSUIPC" and it will detect it for the Prepar3d/FS9/FSX family
     - `X-Plane`/`xplane` - This is the dataref value
-    - `Microsoft Flight`/`MSFS` - Currently unused
+    - `Microsoft Flight`/`MSFS` - The name of the LVar to use
 3. Value specifier, must be one of:
     - `Value` - this is what value to look for, in the case of a non-boolean type. You can use the OR operator (`|`) to separate multiple values
     - `ValueGt`/`ValueGte` - Value greater than or greater than equal to, respectively
