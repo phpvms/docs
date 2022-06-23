@@ -37,11 +37,21 @@ X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConn
 
 ### MSFS Configuration
 
+#### WASM Module
+
+If you're using Microsoft Flight Simulator, then to read the LVars from the sim, you need the `FSUIPC WASM Module (Version) + WAPI (Version)` from [FSUIPC](http://www.fsuipc.com/)
+
+After downloading, open the zip, there is a zip file called `fsuipc-lvar-module.zip`. In it, there is a folder called `fsuipc-lvar-module` - place that in your `Community` folder.
+
+#### Scenery
 :::caution
 Due to an MSFS limitation, sceneries purchased through the MSFS store can't be read because they're encrypted. Only sceneries purchased outside of the store and manually placed in the `Community` directory can be read
 :::
 
-To use MSFS, select "Microsoft Flight Simulator" from the simulator list and click 'Rescan Scenery'. 
+To use MSFS, select "Microsoft Flight Simulator" from the simulator list and you will have two options:
+
+    - "Native" - this will try to scan all of the scenery folders and BGL files. 
+    - "MakeRwys" - this will use the MakeRwys output (same as P3D). The files output by `MakeRwys` need to be placed in the root of the `Community` folder
 
 #### Permission Denied Errors
 
