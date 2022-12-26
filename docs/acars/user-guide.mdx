@@ -6,11 +6,11 @@ title: User Guide
 # Installation (Client)
 
 ---
-## .NET 5.0 Runtime
+## .NET 6.0 Runtime
 
-If you don't have this installed, ACARS will prompt you to download it. But if you want to download ahead of time, visit the [Download Page from Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/5.0/runtime), and select the x64 version for Desktop apps
+If you don't have this installed, ACARS will prompt you to download it. But if you want to download ahead of time, visit the [Download Page from Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime), and select the x64 version for Desktop apps
 
-![](img/runtime-path.png)
+![](img/runtime-path-dn6.png)
 
 ## ACARS Client
 
@@ -85,7 +85,7 @@ After downloading the latest ACARS version, on startup, you'll be brought to the
 
 ### Sim Selection
 
-After entering your URL and API key, select the simulator, and then select the path to the simulator (for Prepar3d or X-Plane)
+After entering your URL and API key, select the simulator, and then select the path to the simulator's root folder (for Fs9/FsX/Prepar3d or X-Plane)
 
 :::info
 FSX/Prepar3d requires the `MakeRwys.exe` file, which can be downloaded from the [FSUIPC Page](http://fsuipc.simflight.com/beta/MakeRwys.zip). It needs to be placed in the same directory as FSX/Prepar3d, and it will create the required files needed to scan.
@@ -195,7 +195,7 @@ ACARS defines multiple flight phases, and the transitions between them are detai
 
 #### Takeoff
 
-- If you're detected to be on a runway, and your ground speed is over 40
+- If you're detected to be on a runway, and your ground speed is over 30
 - If you haven't been detected on a runway, your ground speed is over 80 (rolling)
 - You're no longer on the ground
 
