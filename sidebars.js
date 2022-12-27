@@ -29,6 +29,7 @@ module.exports = {
       label: 'Configuration',
       items: [
         'config/files',
+        'config/language',
         'config/email',
         'config/optimizing',
         'config/notifications',
