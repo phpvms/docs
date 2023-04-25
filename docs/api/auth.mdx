@@ -33,5 +33,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $json_response = \json_decode(curl_exec($ch));
 curl_close($ch);
 
-echo $json_response;
+print_r ($json_response);
 ```
