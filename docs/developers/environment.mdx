@@ -28,7 +28,7 @@ composer update
 php artisan phpvms:dev-install
 ```
 
-The `phpvms:dev-install` command creates the two config files: `config.php` and `env.php`. It will then run the migrations, and install the sample seed data, which is located in `app/Database/seeds/sample.yml`
+The `phpvms:dev-install` command creates the two config files: `config.php` and `.env`. It will then run the migrations, and install the sample seed data, which is located in `app/Database/seeds/sample.yml`
 
 Then to reset the database and reinstall the dev data:
 
@@ -100,7 +100,7 @@ If you don't want to use `docker-compose`, easiest way to load locally is to ins
 valet link phpvms
 ```
 
-Now going to `http://phpvms.test` should work. If you want to use mysql, follow the valet directions on installing mysql (`brew install mysql`) and then update the `env.php` file to point to the mysql.
+Now going to `http://phpvms.test` should work. If you want to use mysql, follow the valet directions on installing mysql (`brew install mysql`) and then update the `.env` file to point to the mysql.
 
 The default username and password are `admin@phpvms.net` and `admin`. To see the available users in the development environment, [see this file](https://github.com/nabeelio/phpvms/blob/master/app/Database/seeds/sample.yml#L11) 
 

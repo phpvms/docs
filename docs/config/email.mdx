@@ -15,9 +15,9 @@ These services are supported by Laravel natively;
 
 ### SMTP Configuration
 
-To configure SMTP, in your `env.php` file, you need to configure the following options:
+To configure SMTP, in your `.env` file, you need to configure the following options:
 
-```bash title="env.php"
+```bash title=".env"
 MAIL_MAILER=smtp
 MAIL_FROM_NAME='phpVMS No-Reply'
 MAIL_FROM_ADDRESS='no-reply@phpvms.net'
@@ -30,9 +30,9 @@ MAIL_PASSWORD=
 
 ### Mailgun Configuration
 
-To use Mailgun, set your `env.php` like:
+To use Mailgun, set your `.env` like:
 
-```bash title="env.php"
+```bash title=".env"
 MAIL_MAILER=mailgun
 MAILGUN_DOMAIN='your mailgun domain'
 MAILGUN_SECRET='your mailgun secret',
@@ -40,18 +40,18 @@ MAILGUN_SECRET='your mailgun secret',
 
 ### Postmark Configuration
 
-To use Postmark, set your `env.php` like:
+To use Postmark, set your `.env` like:
 
-```bash title="env.php"
+```bash title=".env"
 MAIL_MAILER=postmark
 POSTMARK_TOKEN='your postmark token'
 ```
 
 ### SES Configuration
 
-To use SES, set your `env.php` like:
+To use SES, set your `.env` like:
 
-```bash title="env.php"
+```bash title=".env"
 MAIL_MAILER=postmark
 AWS_ACCESS_KEY_ID='key id'
 AWS_SECRET_ACCESS_KEY='access key'
@@ -64,7 +64,7 @@ AWS_DEFAULT_REGION='the region if not us-east-1'
 
 For debugging mail, you can use the service [mailtrap.io](https://mailtrap.io). Mail-trail will show all of the incoming and outgoing email in an inbox, so you can test registrations, accepts, etc. It will provide you Laravel-specific configuration, which looks something like:
 
-```bash title="env.php"
+```bash title=".env"
 MAIL_MAILER=smtp
 MAIL_FROM_NAME='phpVMS Admin'
 MAIL_FROM_ADDRESS='no-reply@phpvms.net'

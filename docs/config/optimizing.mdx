@@ -12,7 +12,7 @@ These are just some basic optimizing. For additional optimization information, r
 
 Installing Redis is one way to enable optimizations. After installing, add to the `config.php`
 
-```shell title="env.php"
+```shell title=".env"
 CACHE_DRIVER=redis
 ```
 
@@ -33,7 +33,7 @@ Any additional drivers supported by Laravel are automatically supported by phpVM
 
 When going live, this should be set to `production`. By default, it's `dev`. Change this:
 
-```shell title="env.php"
+```shell title=".env"
 APP_ENV=production
 ```
 
@@ -41,7 +41,7 @@ APP_ENV=production
 
 This adjusts the logging level, making it more verbose. The default value is `true`, and should be set to `false` when you're live/in-production.
 
-```shell title="env.php"
+```shell title=".env"
 APP_DEBUG=true
 DEBUG_TOOLBAR=false
 ```
@@ -60,7 +60,7 @@ The Redis store is recommended if you have access to it
 
 Sessions can be saved in PHP.
 
-```shell title="env.php"
+```shell title=".env"
 SESSION_DRIVER=redis
 ```
 
@@ -68,7 +68,7 @@ SESSION_DRIVER=redis
 
 Sessions can also be saved in PHP.
 
-```shell title="env.php"
+```shell title=".env"
 SESSION_DRIVER=apc
 ```
 
@@ -82,7 +82,7 @@ By default, caching is disabled.
 
 You can cache to flat files, instead of hitting the database constantly. These will be stored in the `storage/framework/cache` folder
 
-```shell title="env.php"
+```shell title=".env"
 CACHE_DRIVER=file
 ```
 
@@ -90,7 +90,7 @@ CACHE_DRIVER=file
 
 Instead of using PHP APC, you can also use Redis for caching
 
-```shell title="env.php"
+```shell title=".env"
 CACHE_DRIVER=redis
 ```
 
@@ -98,7 +98,7 @@ CACHE_DRIVER=redis
 
 This doesn't require any configuration on the server side
 
-```shell title="env.php"
+```shell title=".env"
 CACHE_DRIVER=apc
 ```
 
@@ -116,7 +116,7 @@ If you're running into performance issues, try changing the `QUEUE_DRIVER` to `d
 
 #### Database Driver
 
-```shell title="env.php"
+```shell title=".env"
 QUEUE_DRIVER=database
 ```
 
@@ -124,7 +124,7 @@ QUEUE_DRIVER=database
 
 If you have Redis installed, you can use that:
 
-```shell title="env.php"
+```shell title=".env"
 QUEUE_DRIVER=redis
 ```
 
