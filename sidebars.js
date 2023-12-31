@@ -6,7 +6,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Guides',
-      items: [   
+      items: [
         'guides/basics',
         'guides/finances',
       ]
@@ -33,6 +33,7 @@ module.exports = {
         'config/email',
         'config/optimizing',
         'config/notifications',
+        'config/oauth',
       ]
     },
     {
