@@ -33,6 +33,7 @@ module.exports = {
         'config/email',
         'config/optimizing',
         'config/notifications',
+        'config/backups',
         'config/oauth',
       ]
     },
