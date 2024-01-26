@@ -17,7 +17,7 @@ With this configuration, a backup will be added to the `storage/app/{yourApplica
 
 ```shell title=".env"
 BACKUP_ENABLED=true
-BACKUP_NOTIFICATION_MAIL_TO=yourEmail@example.com
+BACKUP_NOTIFICATIONS_MAIL_TO=yourEmail@example.com
 ```
 
 For this feature to work, you need to have email configured (see [here](/config/email)).
@@ -31,6 +31,7 @@ By default, only failure notifications are sent via email. You can choose to rec
 ```shell title=".env"
 BACKUP_FAILED_NOTIFICATIONS_CHANNELS=mail
 BACKUP_SUCCEED_NOTIFICATIONS_CHANNELS=mail,discord
+# The following line shouldn't be added again if you already added it in the basic configuration
 BACKUP_NOTIFICATIONS_MAIL_TO=yourEmail@example.com
 BACKUP_DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/...
 ```
