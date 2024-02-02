@@ -3,7 +3,7 @@ id: email
 ---
 # Email
 
-I recommend using a 3rd party service for sending email. They usually offer SMTP support, and great logging and analytics. Especially on a shared host, where email is locked down, and a "naughty neighbor" can quickly get the server/IP you're emailing from blacklisted. I highly recommend using a service over SMTP, because SMTP slows response times down.
+It is recommended to use a 3rd party service for sending email. They usually offer SMTP support, and great logging and analytics. Especially on a shared host, where email is locked down, and a "naughty neighbor" can quickly get the server/IP you're emailing from blacklisted. I highly recommend using a service over SMTP, because SMTP slows response times down.
 
 These services are supported by Laravel natively; 
 
@@ -27,6 +27,8 @@ MAIL_ENCRYPTION=
 MAIL_USERNAME=
 MAIL_PASSWORD=
 ```
+
+For detailed settings about host, port and encryption details please check your hosting control panel (or VPS). These settings are not generic and can differ between hosting companies, even on a custom VPS these settings are local to your install (packages installed etc.) Therefore there a no generic examples for SMTP and mail settings.
 
 ### Mailgun Configuration
 
