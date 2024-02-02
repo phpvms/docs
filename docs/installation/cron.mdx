@@ -13,6 +13,10 @@ In order for some phpVMS features to work, a cronjob is required to be setup. So
 If you can't run it once a minute, the lowest interval possible is fine, but should be in 5 minute increments, since there are tasks that run at 5,15, and 30 minute intervals. 
 :::
 
+:::tip Info about "Shared Hosting"
+Many hosts limit the usage of cron, either by limiting it directly or limiting php extensions needed by cron. So if you are planning to use a "Shared Hosting", better to focus on cron and email settings first (specially if they offer a money back quarantee), if cron is failing and you can not get it working properly consider finding a different service provider. Even some hosts limit WebCron services, be advised, without a working cron you will not get the best of phpVMS v7.
+:::
+
 ---
 
 ## Configuration on a Server
