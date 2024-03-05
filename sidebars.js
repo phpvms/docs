@@ -33,8 +33,16 @@ module.exports = {
         'config/email',
         'config/optimizing',
         'config/notifications',
-        'config/backups',
+        'config/backups'
       ]
+    },
+    {
+        type: 'category',
+        label: 'OAuth',
+        items: [
+            'oauth/discord',
+            'oauth/vatsim',
+        ]
     },
     {
       type: 'category',
