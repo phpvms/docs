@@ -71,25 +71,24 @@ export class Rule {
 
 ### General Notes
 
-- There is no `setTimeout` or `async`/`await` calls
--
+- There are no `setTimeout` or `async`/`await` calls
 
-## Built-In Methods available
+# Built-In Methods available
 
-You can also browse the built-in methods available in the `mocks.js` file
+You can also browse the built-in methods available in the `mocks.js` file. They're all accessed using the `Acars` namespace, which is injected into the global namespace.
 
-##### log()
+##### Acars.Log/LogDebug/LogError()
 
 This will log out to the ACARS log
 
-##### violatedAfterDelay(name, timeout, callback)
+##### Acars.ViolatedAfterDelay(name, timeout, callback)
 
 - name: This is the name of the rule
 - timeout: In milliseconds, after how long it should be considered as violated
 - callback: The function that checks for the violation
 
 ```js
-return violatedAfterDelay("landing_lights_on", 5000, () => {
+return Acars.ViolatedAfterDelay("landing_lights_on", 5000, () => {
   if (data.GroundAltitude > 10000 && data.LandingLights) {
     return -10;
   }
@@ -98,12 +97,12 @@ return violatedAfterDelay("landing_lights_on", 5000, () => {
 })
 ```
 
-##### store(name, value) / get(name)
+##### Acars.Get(name) / Acars.Set(name, value)
 
 This can be used to store some data which will be persisted across crashes or stops/starts. This will be emptied on every new flight
 
-- name: string
-- value: string. You can use JSON.stringify() to store objects, but I recommend only smaller items
+- `name`: string
+- `value`: string. You can use JSON.stringify() to store objects, but I recommend only smaller items
 
 ---
 
