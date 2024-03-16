@@ -1,0 +1,161 @@
+---
+id: rules
+title: Custom Rules
+---
+
+For users with Premium, you can create their own rules, in Javascript. See [Custom Packaging](custom_packaging) on how to create a distribution for your VA, which can include rules, sounds and callbacks.
+
+## Rule Definitions
+
+A rule looks like:
+
+```js
+/**
+ * Rules are contained in a class. The class needs to be called Rule
+ */
+export class Rule {
+    /**
+     * This is required
+     * @type {{name: string, message: string, enabled: boolean, phases: string[]}}
+     */
+    meta = {
+        // A unique identifier
+        'name': 'Your Rule Name',
+
+        // This is the message that will show up in the log
+        'message': 'Your lights should have been on',
+
+        // Should this be run?
+        'enabled': true,
+
+        // The phases in which this rule should be run
+        'phases': ['takeoff', 'enroute'],
+    }
+
+    /**
+     * This is called to evaluate the rule. This should return the number of points
+     * that should be deducted
+     *
+     * @param {Object.<string, any>} pirep
+     * @param {Object.<string, any>} data
+     * @param {Object.<string, any>} previousData
+     *
+     * @returns {number}
+     */
+    evaluate(pirep, data, previousData) {
+        return 0
+    }
+}
+```
+
+- `meta` - This is required so ACARS knows some basic information about your script
+- `evaluate` - Called with the current PIREP information, and the current ACARS data. This needs to return an integer value.
+
+### General Notes
+
+- There is no `setTimeout` or `async`/`await` calls
+-
+
+## Built-In Methods available
+
+You can also browse the built-in methods available in the `mocks.js` file
+
+##### log()
+
+This will log out to the ACARS log
+
+##### violatedAfterDelay(name, timeout, callback)
+
+- name: This is the name of the rule
+- timeout: In milliseconds, after how long it should be considered as violated
+- callback: The function that checks for the violation
+
+```js
+return violatedAfterDelay("landing_lights_on", 5000, () => {
+  if (data.GroundAltitude > 10000 && data.LandingLights) {
+    return -10;
+  }
+
+  return 0;
+})
+```
+
+##### store(name, value) / get(name)
+
+This can be used to store some data which will be persisted across crashes or stops/starts. This will be emptied on every new flight
+
+- name: string
+- value: string. You can use JSON.stringify() to store objects, but I recommend only smaller items
+
+---
+
+## Testing
+
+What I do is create a tests folder, so it looks like this:
+
+```
+rules/
+  tests/
+    lights.test.js  < will be created below
+  lights.js
+  package.json < will created below
+manifest.json
+```
+
+Create a `package.json` file in the root of the `rules` folder, so it looks like:
+
+```json
+{
+  "name": "VA Rules",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "type": "module",
+  "scripts": {
+    "tests": "tap"
+  }
+}
+```
+
+Next, grab the `mocks.js` file from [here](). This is used to mock the methods that ACARS provides, so that in the tests, there are faked versions available. If you cloned the sample repository, this file is already there.
+
+Then, install [tap](https://node-tap.org) using:
+
+```bash
+npm install --save-dev tap
+```
+
+Next, create a `tests/lights.test.js`. The example shown above is the `Rule` class that's being assumed to be used. The important parts are commented:
+
+```js
+import t from 'tap'
+import * as Lights from '../lights.js'
+import {createMocks} from "./mocks.js"
+
+t.before(createMocks)
+
+t.test('Test the lights function', t => {
+    const rule = new Lights.Rule()
+    // You can pass the data that is only relevent to your rule here in the PIREP and Data objects
+    t.equal(rule.evaluate({}, {}), 0)
+    t.end()
+})
+```
+
+:::note
+
+You can use webpack and babel to create a smaller distribution, which you can then create a packaged, minimized build, which then can be used by ACARS. So you're welcome to create your rules using Typescript and transpile them.
+
+:::
+
+Then you can finally run your tests:
+
+```bash
+cd rules
+npm run tests
+```
+
+:::note
+
+You can use [the clock plugin](https://node-tap.org/plugins/clock) to fast forward time - call your rule, advance the clock, call it again and check for violations
+
+:::
