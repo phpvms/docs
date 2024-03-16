@@ -82,8 +82,8 @@ module.exports = {
         'acars/user-guide',
         'acars/customization',
         'acars/configmaps',
-        'acars/packaging',
-        'acars/rules',
+        // 'acars/packaging',
+        // 'acars/rules',
       ]
     },
     'help',
