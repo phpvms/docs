@@ -5,7 +5,25 @@ title: Custom Rules
 
 For users with Premium, you can create their own rules, in Javascript. See [Custom Packaging](custom_packaging) on how to create a distribution for your VA, which can include rules, sounds and callbacks.
 
-## Rule Definitions
+# How Rules Work
+
+- The rules are evaluated once every second
+- The `evaluate()` method is passed 3 peices of information:
+  1. The `Pirep` object - this contains all of the data about the PIREP, along with some additional information
+  1. The `Acars` object - contains current "sensor" information about the aircraft
+  1. The `PreviousAcars` object - contains the previous sensor information
+
+You can also store data from point in time for comparisons._createMdxContent
+
+### PIREP Object Fields
+
+-
+
+### ACARS Object Fields
+
+---
+
+# Rule Definitions
 
 A rule looks like:
 
