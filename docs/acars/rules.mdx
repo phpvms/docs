@@ -10,6 +10,7 @@ For users with Premium, you can create their own rules, in Javascript. See [Cust
 ## How Rules Work
 
 - The rules are evaluated once every second
+- The `meta` field is required
 - The `evaluate()` method is passed 3 peices of information:
   1. The `Pirep` object - this contains all of the data about the PIREP, along with some additional information
   1. The `Acars` object - contains current "sensor" information about the aircraft
@@ -17,13 +18,104 @@ For users with Premium, you can create their own rules, in Javascript. See [Cust
 
 You can also store data from point in time for comparisons._createMdxContent
 
-### PIREP Object Fields
+#### Meta Object
+
+- `name` - A name is required for your rule. Somewhat descriptive is good
+- `enabled` - `true` or `false` - whether this rule gets run or not (default: true)
+- `message` - When the rule is violated, this is the message put into the log
+- `phases` - A list of phases in which this rule will run. If it's blank, that means all phases
+  - "pushback"
+  - "taxi out",
+  - "takeoff"
+  - "enroute",
+  - "approach"
+  - "final"
+  - "landed"
+  - "taxi in"
+  - "on block"
+  - "arrived"
+  - "paused"
+- `repeatable` - If this rule can be violated multiple times or not (default: false)
+- `cooldown` - How much time, in seconds, between violations (default: 60)
+- `max_count` - If `repeatable`, how many times can it be violated (default: 3)
+
+Fields with a default value can be omitted.
+
+#### PIREP Object Fields
 
 -
 
-### ACARS Object Fields
+#### ACARS Object Fields
 
--
+```json
+{
+  "Id": "fefiaxrpbwf",
+  "Paused": false,
+  "Replay": false,
+  "Latitude": 30.19957,
+  "Longitude": -97.67124,
+  "Pitch": 0.1,
+  "Bank": 0,
+  "Heading": 0,
+  "HeadingMagnetic": 6,
+  "MagVar": 6.83,
+  "GroundAltitude": 0,
+  "PlaneAltitude": 549.72,
+  "GroundSpeed": 0,
+  "AirspeedIndicated": 0,
+  "AirspeedRedline": 0,
+  "VerticalSpeed": 0,
+  "VerticalSpeedDbl": 0,
+  "VerticalSpeedTouchdown": 0,
+  "UnlimitedFuel": false,
+  "FuelQuantity": 34923.32,
+  "TotalWeight": 148763.32,
+  "PayloadWeight": 0,
+  "ZeroFuelWeight": 113840,
+  "OnGround": true,
+  "ParkBrake": false,
+  "SimRate": 0,
+  "SimRateDbl": 1,
+  "SimGroundSpeed": 1,
+  "SlewActive": false,
+  "GearUp": false,
+  "OverspeedWarning": false,
+  "StallWarning": false,
+  "GForce": 0,
+  "GForceDbl": 0.9983974358974359,
+  "GForceTouchDown": 1.001602564102564,
+  "EngineType": 1,
+  "EngineCount": 2,
+  "EngineN2Percent": [
+    54.93,
+    54.93
+  ],
+  "EngineFuelFlow": [
+    763.75,
+    763.75
+  ],
+  "N1Percent": 0,
+  "Throttles": null,
+  "EngineRpm": 0,
+  "EngineMaxRpm": 0,
+  "ThrottlePct": 0,
+  "Engine1ThrottlePct": 0,
+  "Engine2ThrottlePct": 0,
+  "Engine3ThrottlePct": 0,
+  "Engine4ThrottlePct": 0,
+  "Flaps": 0,
+  "BeaconLights": false,
+  "NavigationLights": false,
+  "StrobeLights": false,
+  "LandingLights": false,
+  "LogoLight": true,
+  "TaxiLights": false,
+  "WingLights": true,
+  "TransponderCode": 1200,
+  "DateTime": "2024-03-18T00:21:07Z",
+  "DateTimeClient": "2024-03-17T23:21:47.1523743Z"
+}
+```
 ---
 
 ## Rule Definitions
