@@ -190,6 +190,13 @@ console.trace('...')  // this will also show a stack trace
 
 A `console.once(key, ...args)` is available; since the rules run pretty high frequency.
 
+```
+console.once(string key, ...arguments to log)
+console.log('pirep', pirep)
+```
+
+The `key` parameter is used to determine if it's been logged out laready or not.
+
 #### ViolatedAfterDelay(name, timeout, callback)
 
 - name: This is the name of the rule
