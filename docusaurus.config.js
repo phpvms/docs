@@ -1,3 +1,5 @@
+const {themes} = require('prism-react-renderer');
+
 module.exports = {
   title: 'phpVMS Docs',
   url: 'https://docs.phpvms.net',
@@ -41,8 +43,8 @@ module.exports = {
       ],
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      //additionalLanguages: ['php'],
+      theme: themes.github,
+      additionalLanguages: ['php', 'bash',],
     },
     footer: {
       style: 'dark',
@@ -95,8 +97,8 @@ module.exports = {
       {
         quality: 70,
         max: 400,
-        min: 200, 
-        steps: 2, 
+        min: 200,
+        steps: 2,
         disableInDev: false,
       },
     ],
