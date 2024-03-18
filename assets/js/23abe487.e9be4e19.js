@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkphpvms_docs=self.webpackChunkphpvms_docs||[]).push([[9627],{5623:(e,t,c)=>{c.r(t),c.d(t,{default:()=>r});var n=c(7294),s=c(9962),l=c(9802),p=c(5123);function r(){const{siteConfig:e}=(0,s.Z)();return n.createElement(l.Z,null,n.createElement("h2",null,"Site config"),n.createElement(p.Z,{src:e,collapseDepth:3}))}}}]);
