@@ -1,5 +1,7 @@
 # VSE API Docs
 These are the API Docs
+## [Pirep](#Pirep)
+
 - `Active` - Return false if the PIREP state is in one of
 the following states. Rules don't run when
 the PIREP/processing isn't active
@@ -127,8 +129,6 @@ a bid, or loaded on the screen
     - CNL - Cancelled
     - FIL - Filed
     - PSD - Paused
-## [Pirep](#Pirep)
-
 - `PlannedDistance` - Distance planned
 Might not always be set or available
   - `number`
@@ -429,6 +429,8 @@ track of if we're crossing a runway or something
 
 ---
 
+## [Features](#Features)
+
 - `AircraftIcao`
   - `string`
 - `AircraftType`
@@ -447,8 +449,6 @@ track of if we're crossing a runway or something
   - `string`
 - `EstCruiseSpeed`
   - `number`
-## [Features](#Features)
-
 - `FlapsCount`
   - `number`
 - `GearRetractable`
@@ -478,6 +478,8 @@ track of if we're crossing a runway or something
 
 ---
 
+## [Flight](#Flight)
+
 - `AltICAO`
   - `string`
 - `ArrivalICAO`
@@ -492,8 +494,6 @@ track of if we're crossing a runway or something
   - `number`
 - `Fields`
   - `System.Collections.Generic.Dictionary{string,string}`
-## [Flight](#Flight)
-
 - `FlightNumber`
   - `number`
 - `FlightTime`
@@ -519,6 +519,8 @@ track of if we're crossing a runway or something
 
 ---
 
+## [FlightPlan](#FlightPlan)
+
 - `_Points`
   - `array{array{number}}`
 - `AltICAO`
@@ -541,8 +543,6 @@ track of if we're crossing a runway or something
   - `number`
 - `FlightId`
   - `string`
-## [FlightPlan](#FlightPlan)
-
 - `FlightPlanFields`
   - `Acars.Models.FieldCollection`
 - `FlightPlanType`
@@ -601,6 +601,8 @@ track of if we're crossing a runway or something
 
 ---
 
+## [RoutePoint](#RoutePoint)
+
 - `Active`
   - `boolean`
 - `DistanceTo` - Distance of player to this point
@@ -613,12 +615,12 @@ track of if we're crossing a runway or something
   - `string`
 - `Order` - The order it's in
   - `number`
-## [RoutePoint](#RoutePoint)
-
 - `Type` - The type of nav point
   - `number`
 
 ---
+
+## [Runway](#Runway)
 
 - `ApproachingRunway`
   - `boolean`
@@ -660,8 +662,6 @@ track of if we're crossing a runway or something
   - `number`
 - `MagVar`
   - `number`
-## [Runway](#Runway)
-
 - `RunwayCenter`
   - `array{number}`
 - `RunwayID`
