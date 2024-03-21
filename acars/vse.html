@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="phpVMS Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.de1deac2.css">
-<script src="/assets/js/runtime~main.917cea5e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b5af55c2.js" defer="defer"></script>
 <script src="/assets/js/main.3a40c7e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,12 +33,12 @@ Might not always be set or available<!-- -->
 </li>
 <li><strong>Aircraft</strong> - The aircraft the pilot is flying<!-- -->
 <ul>
-<li><a href="#Aircraft"><code>Aircraft</code></a></li>
+<li><a href="#aircraft"><code>Aircraft</code></a></li>
 </ul>
 </li>
 <li><strong>Airline</strong> - The airline the pilot is a part of<!-- -->
 <ul>
-<li><a href="#Airline"><code>Airline</code></a></li>
+<li><a href="#airline"><code>Airline</code></a></li>
 </ul>
 </li>
 <li><strong>ApproachTime</strong> - Unix timestamp, the time in the sim<!-- -->
@@ -53,19 +53,19 @@ Might not always be set or available<!-- -->
 </li>
 <li><strong>ArrivalAirport</strong> - The arrival airport, null if they haven&#x27;t landed yet<!-- -->
 <ul>
-<li><a href="#Airport"><code>Airport</code></a></li>
+<li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
 <li><strong>ArrivalGate</strong> - The arrival gate, null if they aren&#x27;t at one.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Gate"><code>Gate</code></a></li>
+<li><a href="#gate"><code>Gate</code></a></li>
 </ul>
 </li>
 <li><strong>ArrivalRunway</strong> - The runway that they landed on.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Runway"><code>Runway</code></a></li>
+<li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
 <li><strong>BlocksOffTime</strong> - Unix timestamp, the time in the sim<!-- -->
@@ -102,25 +102,25 @@ Might be null if it wasn&#x27;t detected<!-- -->
 if they&#x27;re currently on a runway
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Runway"><code>Runway</code></a></li>
+<li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
 <li><strong>DepartureAirport</strong> - The airport they departed from
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Airport"><code>Airport</code></a></li>
+<li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
 <li><strong>DepartureGate</strong> - The departure gate, null if they aren&#x27;t at one.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Gate"><code>Gate</code></a></li>
+<li><a href="#gate"><code>Gate</code></a></li>
 </ul>
 </li>
 <li><strong>DepartureRunway</strong> - The runway they took off from
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
-<li><a href="#Runway"><code>Runway</code></a></li>
+<li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
 <li><strong>DirectTakeoff</strong> - Is this a direct takeoff? That means when in &quot;boarding&quot;, the OnGround flag is immediately detected as true<!-- -->
@@ -163,13 +163,13 @@ Might not always be set or available<!-- -->
 </li>
 <li><strong>Features</strong> - The startup variables/state when this PIREP started<!-- -->
 <ul>
-<li><a href="#Features"><code>Features</code></a></li>
+<li><a href="#features"><code>Features</code></a></li>
 </ul>
 </li>
 <li><strong>Flight</strong> - The flight this PIREP originated from, if it was from
 a bid, or loaded on the screen<!-- -->
 <ul>
-<li><a href="#Flight"><code>Flight</code></a></li>
+<li><a href="#flight"><code>Flight</code></a></li>
 </ul>
 </li>
 <li><strong>FlightId</strong> - The ID of the flight from phpVMS<!-- -->
@@ -184,7 +184,7 @@ a bid, or loaded on the screen<!-- -->
 </li>
 <li><strong>FlightPlan</strong>
 <ul>
-<li><a href="#FlightPlan"><code>FlightPlan</code></a></li>
+<li><a href="#flightplan"><code>FlightPlan</code></a></li>
 </ul>
 </li>
 <li><strong>FlightType</strong>
@@ -459,7 +459,7 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 <li><strong>ApproachingRunway</strong> - If the player is approaching/close to a runway (within 150 meters or so)<!-- -->
 <ul>
-<li><a href="#Runway"><code>Runway</code></a></li>
+<li><a href="#runway"><code>Runway</code></a></li>
 <li>This indicates the closest runway to the user</li>
 </ul>
 </li>
@@ -670,7 +670,7 @@ Unix timestamp, the time in the sim<!-- -->
 <li><strong>Runway</strong> - Save the runway they&#x27;re on. This gets set if they&#x27;re taxiing too, so we can keep
 track of if we&#x27;re crossing a runway or something<!-- -->
 <ul>
-<li><a href="#Runway"><code>Runway</code></a></li>
+<li><a href="#runway"><code>Runway</code></a></li>
 <li>If the pilot is on the runway</li>
 </ul>
 </li>
@@ -1118,7 +1118,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>ArrivalAirport</strong>
 <ul>
-<li><a href="#Airport"><code>Airport</code></a></li>
+<li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
 <li><strong>Briefing</strong>
@@ -1148,7 +1148,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>DepartureAirport</strong>
 <ul>
-<li><a href="#Airport"><code>Airport</code></a></li>
+<li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
 <li><strong>Distance</strong>
