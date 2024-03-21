@@ -10,21 +10,21 @@ the PIREP/processing isn't active
 Might not always be set or available
   - `number`
 - **Aircraft** - The aircraft the pilot is flying
-  - [`Aircraft`](#Aircraft)
+  - [`Aircraft`](#aircraft)
 - **Airline** - The airline the pilot is a part of
-  - [`Airline`](#Airline)
+  - [`Airline`](#airline)
 - **ApproachTime** - Unix timestamp, the time in the sim
   - `number`
 - **ApproachTimeActual** - Unix timestamp, system time
   - `number`
 - **ArrivalAirport** - The arrival airport, null if they haven't landed yet
-  - [`Airport`](#Airport)
+  - [`Airport`](#airport)
 - **ArrivalGate** - The arrival gate, null if they aren't at one.
 Might be null if it wasn't detected
-  - [`Gate`](#Gate)
+  - [`Gate`](#gate)
 - **ArrivalRunway** - The runway that they landed on.
 Might be null if it wasn't detected
-  - [`Runway`](#Runway)
+  - [`Runway`](#runway)
 - **BlocksOffTime** - Unix timestamp, the time in the sim
   - `number`
 - **BlocksOffTimeActual** - Unix timestamp, system time
@@ -40,16 +40,16 @@ Might be null if it wasn't detected
 - **CrossingRunway** - This will have a value, with the runway information,
 if they're currently on a runway
 Might be null if it wasn't detected
-  - [`Runway`](#Runway)
+  - [`Runway`](#runway)
 - **DepartureAirport** - The airport they departed from
 Might be null if it wasn't detected
-  - [`Airport`](#Airport)
+  - [`Airport`](#airport)
 - **DepartureGate** - The departure gate, null if they aren't at one.
 Might be null if it wasn't detected
-  - [`Gate`](#Gate)
+  - [`Gate`](#gate)
 - **DepartureRunway** - The runway they took off from
 Might be null if it wasn't detected
-  - [`Runway`](#Runway)
+  - [`Runway`](#runway)
 - **DirectTakeoff** - Is this a direct takeoff? That means when in "boarding", the OnGround flag is immediately detected as true
   - `boolean`
 - **DistanceToGo** - How far they ahve already travelled
@@ -68,16 +68,16 @@ Might not always be set or available
 - **Fares**
   - `Acars.Models.FareCollection`
 - **Features** - The startup variables/state when this PIREP started
-  - [`Features`](#Features)
+  - [`Features`](#features)
 - **Flight** - The flight this PIREP originated from, if it was from
 a bid, or loaded on the screen
-  - [`Flight`](#Flight)
+  - [`Flight`](#flight)
 - **FlightId** - The ID of the flight from phpVMS
   - `string`
 - **FlightNumber** - The flight number
   - `string`
 - **FlightPlan**
-  - [`FlightPlan`](#FlightPlan)
+  - [`FlightPlan`](#flightplan)
 - **FlightType**
   - `string`
 - **FuelAtApproach** - The fuel, in lbs
@@ -212,7 +212,7 @@ Unix timestamp, the time in the sim
   - `boolean`
   - If any engines are running
 - **ApproachingRunway** - If the player is approaching/close to a runway (within 150 meters or so)
-  - [`Runway`](#Runway)
+  - [`Runway`](#runway)
   - This indicates the closest runway to the user
 - **Bank**
   - `number`
@@ -318,7 +318,7 @@ Unix timestamp, the time in the sim
   - Are they in a replay?
 - **Runway** - Save the runway they're on. This gets set if they're taxiing too, so we can keep
 track of if we're crossing a runway or something
-  - [`Runway`](#Runway)
+  - [`Runway`](#runway)
   - If the pilot is on the runway
 - **SimRate**
   - `number`
@@ -526,7 +526,7 @@ track of if we're crossing a runway or something
 - **AltICAO**
   - `string`
 - **ArrivalAirport**
-  - [`Airport`](#Airport)
+  - [`Airport`](#airport)
 - **Briefing**
   - `string`
 - **CargoWeight**
@@ -538,7 +538,7 @@ track of if we're crossing a runway or something
 - **CurrentPositionIdx**
   - `number`
 - **DepartureAirport**
-  - [`Airport`](#Airport)
+  - [`Airport`](#airport)
 - **Distance**
   - `number`
 - **FlightId**
