@@ -2,117 +2,117 @@
 These are the API Docs
 ## [Pirep](#Pirep)
 
-- **Active** - Return false if the PIREP state is in one of
+- **active** - Return false if the PIREP state is in one of
 the following states. Rules don't run when
 the PIREP/processing isn't active
   - `boolean`
-- **ActualDistance** - The distance when the flightplan is measured
+- **actualDistance** - The distance when the flightplan is measured
 Might not always be set or available
   - `number`
-- **Aircraft** - The aircraft the pilot is flying
+- **aircraft** - The aircraft the pilot is flying
   - [`Aircraft`](#aircraft)
-- **Airline** - The airline the pilot is a part of
+- **airline** - The airline the pilot is a part of
   - [`Airline`](#airline)
-- **ApproachTime** - Unix timestamp, the time in the sim
+- **approachTime** - Unix timestamp, the time in the sim
   - `number`
-- **ApproachTimeActual** - Unix timestamp, system time
+- **approachTimeActual** - Unix timestamp, system time
   - `number`
-- **ArrivalAirport** - The arrival airport, null if they haven't landed yet
+- **arrivalAirport** - The arrival airport, null if they haven't landed yet
   - [`Airport`](#airport)
-- **ArrivalGate** - The arrival gate, null if they aren't at one.
+- **arrivalGate** - The arrival gate, null if they aren't at one.
 Might be null if it wasn't detected
   - [`Gate`](#gate)
-- **ArrivalRunway** - The runway that they landed on.
+- **arrivalRunway** - The runway that they landed on.
 Might be null if it wasn't detected
   - [`Runway`](#runway)
-- **BlocksOffTime** - Unix timestamp, the time in the sim
+- **blocksOffTime** - Unix timestamp, the time in the sim
   - `number`
-- **BlocksOffTimeActual** - Unix timestamp, system time
+- **blocksOffTimeActual** - Unix timestamp, system time
   - `number`
-- **BlocksOnTime** - Unix timestamp, the time in the sim
+- **blocksOnTime** - Unix timestamp, the time in the sim
   - `number`
-- **BlocksOnTimeActual** - Unix timestamp, system time
+- **blocksOnTimeActual** - Unix timestamp, system time
   - `number`
-- **BoardingTime** - Unix timestamp, the time in the sim
+- **boardingTime** - Unix timestamp, the time in the sim
   - `number`
-- **BoardingTimeActual**
+- **boardingTimeActual**
   - `number`
-- **CrossingRunway** - This will have a value, with the runway information,
+- **crossingRunway** - This will have a value, with the runway information,
 if they're currently on a runway
 Might be null if it wasn't detected
   - [`Runway`](#runway)
-- **DepartureAirport** - The airport they departed from
+- **departureAirport** - The airport they departed from
 Might be null if it wasn't detected
   - [`Airport`](#airport)
-- **DepartureGate** - The departure gate, null if they aren't at one.
+- **departureGate** - The departure gate, null if they aren't at one.
 Might be null if it wasn't detected
   - [`Gate`](#gate)
-- **DepartureRunway** - The runway they took off from
+- **departureRunway** - The runway they took off from
 Might be null if it wasn't detected
   - [`Runway`](#runway)
-- **DirectTakeoff** - Is this a direct takeoff? That means when in "boarding", the OnGround flag is immediately detected as true
+- **directTakeoff** - Is this a direct takeoff? That means when in "boarding", the OnGround flag is immediately detected as true
   - `boolean`
-- **DistanceToGo** - How far they ahve already travelled
+- **distanceToGo** - How far they ahve already travelled
 Might not always be set or available
   - `number`
-- **ElapsedTime** - Get the time elapsed, subtract the current sim time from the blocks off time
+- **elapsedTime** - Get the time elapsed, subtract the current sim time from the blocks off time
 In seconds
   - `number`
-- **ElapsedTimeHumanReadable**
+- **elapsedTimeHumanReadable**
   - `string`
-- **EngineStartStates**
+- **engineStartStates**
   - `boolean[]`
-- **EstimatedTravelTime** - The amount of time estimated that this should take. In minutes
+- **estimatedTravelTime** - The amount of time estimated that this should take. In minutes
 Might not always be set or available
   - `number`
-- **Fares**
+- **fares**
   - `Acars.Models.FareCollection`
-- **Features** - The startup variables/state when this PIREP started
+- **features** - The startup variables/state when this PIREP started
   - [`Features`](#features)
-- **Flight** - The flight this PIREP originated from, if it was from
+- **flight** - The flight this PIREP originated from, if it was from
 a bid, or loaded on the screen
   - [`Flight`](#flight)
-- **FlightId** - The ID of the flight from phpVMS
+- **flightId** - The ID of the flight from phpVMS
   - `string`
-- **FlightNumber** - The flight number
+- **flightNumber** - The flight number
   - `string`
-- **FlightPlan**
+- **flightPlan**
   - [`FlightPlan`](#flightplan)
-- **FlightType**
+- **flightType**
   - `string`
-- **FuelAtApproach** - The fuel, in lbs
+- **fuelAtApproach** - The fuel, in lbs
   - `number`
-- **FuelAtLanding** - The fuel, in lbs
+- **fuelAtLanding** - The fuel, in lbs
   - `number`
-- **FuelAtTakeOff** - The fuel, in lbs
+- **fuelAtTakeOff** - The fuel, in lbs
   - `number`
-- **FuelBlocksOff** - The fuel, in lbs
+- **fuelBlocksOff** - The fuel, in lbs
   - `number`
-- **FuelBlocksOn** - The fuel, in lbs
+- **fuelBlocksOn** - The fuel, in lbs
   - `number`
-- **FuelUsed** - The fuel, in lbs
+- **fuelUsed** - The fuel, in lbs
   - `number`
-- **Id** - The phpVMS PIREP ID
+- **id** - The phpVMS PIREP ID
   - `string`
-- **Ident**
+- **ident**
   - `string`
-- **IgnoreLightsRules**
+- **ignoreLightsRules**
   - `boolean`
-- **IsInActiveState** - Is this flight in an active state?
+- **isInActiveState** - Is this flight in an active state?
   - `boolean`
-- **IsResuming** - If this PIREP is being resumed
+- **isResuming** - If this PIREP is being resumed
   - `boolean`
-- **LandedTime** - Unix timestamp, the time in the sim
+- **landedTime** - Unix timestamp, the time in the sim
   - `number`
-- **LandedTimeActual** - Unix timestamp, system time
+- **landedTimeActual** - Unix timestamp, system time
   - `number`
-- **LandingRate**
+- **landingRate**
   - `number`
-- **Notes**
+- **notes**
   - `string`
-- **PauseLocation**
+- **pauseLocation**
   - `array{number}`
-- **Phase**
+- **phase**
   - `string`
     - INI - Initialized
     - BST - Boarding started
@@ -129,35 +129,35 @@ a bid, or loaded on the screen
     - CNL - Cancelled
     - FIL - Filed
     - PSD - Paused
-- **PlannedDistance** - Distance planned
+- **plannedDistance** - Distance planned
 Might not always be set or available
   - `number`
-- **PlannedFlightTime** - Gets or sets the planned flight time.
+- **plannedFlightTime** - Gets or sets the planned flight time.
   - `array`
   - The planned flight time.
-- **Route**
+- **route**
   - `string`
-- **RouteCode** - The route code
+- **routeCode** - The route code
   - `string`
-- **RouteLeg** - The route leg
+- **routeLeg** - The route leg
   - `string`
-- **Score**
+- **score**
   - `number`
-- **SimType** - The simulator type they're using
+- **simType** - The simulator type they're using
   - `string`
     - Prepar3d
     - X-Plane
     - Microsoft Flight Simulator
     - FSX
     - FS9
-- **SourceName**
+- **sourceName**
   - `string`
-- **StartedWithBrakes** - Did they start the flight with the brakes on? Use this to determine the criterea on
+- **startedWithBrakes** - Did they start the flight with the brakes on? Use this to determine the criterea on
 moving out of the Boarding phase
   - `boolean`
-- **StartTime** - Unix timestamp, the time in the sim
+- **startTime** - Unix timestamp, the time in the sim
   - `number`
-- **State** - The PIREP states - these match the phase
+- **state** - The PIREP states - these match the phase
   - `string`
     - Not Running
     - Initialized
@@ -175,68 +175,68 @@ moving out of the Boarding phase
     - Cancelled
     - Filed
     - Paused
-- **TakeoffTime** - Unix timestamp, the time in the sim
+- **takeoffTime** - Unix timestamp, the time in the sim
   - `number`
-- **TakeoffTimeActual** - Unix timestamp, system time
+- **takeoffTimeActual** - Unix timestamp, system time
   - `number`
-- **TaxiFuelOut** - The fuel, in lbs
+- **taxiFuelOut** - The fuel, in lbs
   - `number`
-- **TaxiInDuration**
+- **taxiInDuration**
   - `number`
-- **TaxiOutDuration**
+- **taxiOutDuration**
   - `number`
-- **TaxiOutTime** - The in-sim taxi out time
+- **taxiOutTime** - The in-sim taxi out time
 Unix timestamp, the time in the sim
   - `number`
-- **TaxiOutTimeActual** - Unix timestamp, system time
+- **taxiOutTimeActual** - Unix timestamp, system time
   - `number`
-- **ThresholdDistance** - Distance from the threshold, in feet
+- **thresholdDistance** - Distance from the threshold, in feet
   - `number`
-- **TodPauseCompleted** - Save whether we've already paused or not for the TOD
+- **todPauseCompleted** - Save whether we've already paused or not for the TOD
   - `boolean`
-- **TodPauseDistance** - Or pause the given distance before
+- **todPauseDistance** - Or pause the given distance before
   - `number`
-- **TodPauseOn** - Whether we should pause at TOD or not
+- **todPauseOn** - Whether we should pause at TOD or not
   - `boolean`
-- **TotalPauseTime**
+- **totalPauseTime**
   - `number`
 
 ---
 
 ## [Acars](#Acars)
 
-- **AllEnginesRunning** - Are all the engines on?
+- **allEnginesRunning** - Are all the engines on?
   - `boolean`
   - If all of the engines are running
-- **AnyEnginesRunning** - Are any engines on?
+- **anyEnginesRunning** - Are any engines on?
   - `boolean`
   - If any engines are running
-- **ApproachingRunway** - If the player is approaching/close to a runway (within 150 meters or so)
+- **approachingRunway** - If the player is approaching/close to a runway (within 150 meters or so)
   - [`Runway`](#runway)
   - This indicates the closest runway to the user
-- **Bank**
+- **bank**
   - `number`
   - Aircraft bank, +/-
-- **BeaconLights**
+- **beaconLights**
   - `boolean`
   - Boolean for lights
-- **EngineCount**
+- **engineCount**
   - `number`
   - The number of engines
-- **EngineFuelFlow**
+- **engineFuelFlow**
   - `number[]`
-- **EngineMaxRpm**
+- **engineMaxRpm**
   - `number`
   - The total N1 percent
-- **EngineN2Average** - Get the current engine N2 value (as an average)
+- **engineN2Average** - Get the current engine N2 value (as an average)
   - `number`
   - The average of the N2 values
-- **EngineN2Percent**
+- **engineN2Percent**
   - `number[]`
-- **EngineRpm**
+- **engineRpm**
   - `number`
   - Engine RPM
-- **EngineType** - The type of engine
+- **engineType** - The type of engine
   - `string`
     - Piston
     - Jet
@@ -244,121 +244,121 @@ Unix timestamp, the time in the sim
     - Helo
     - Rocket
     - Turboprop
-- **Flaps** - Flaps in an index amount
+- **flaps** - Flaps in an index amount
   - `number`
   - Flap position, from 0
-- **FuelQuantity**
+- **fuelQuantity**
   - `number`
   - The current fuel quantity
-- **GearUp**
+- **gearUp**
   - `boolean`
   - True if the gear is up
-- **GForce** - The current G-Force
+- **gForce** - The current G-Force
   - `number`
   - The current g-force
-- **GForceTouchDown**
+- **gForceTouchDown**
   - `number`
   - The g-force at touchdown
-- **GroundAltitude** - Altitude of plane above the ground
+- **groundAltitude** - Altitude of plane above the ground
   - `number`
   - The ground altitude (AGL)
-- **GroundSpeed**
+- **groundSpeed**
   - `number`
   - If all of the engines are running
-- **Heading**
+- **heading**
   - `number`
   - The true heading
-- **HeadingMagnetic**
+- **headingMagnetic**
   - `number`
   - The magnetic heading
-- **IndicatedAirspeed**
+- **indicatedAirspeed**
   - `number`
   - Indicated airspeed
-- **LandingLights**
+- **landingLights**
   - `boolean`
   - Boolean for lights
-- **Location**
+- **location**
   - `array{number}`
   - Coordinates of this location (x, y)
-- **LogoLight**
+- **logoLight**
   - `boolean`
   - Boolean for lights
-- **MagVar**
+- **magVar**
   - `number`
   - Magnetic variation
-- **N1Percent**
+- **n1Percent**
   - `number`
   - The total N1 percent
-- **NavigationLights**
+- **navigationLights**
   - `boolean`
   - Boolean for lights
-- **OnGround**
+- **onGround**
   - `boolean`
   - If the aircraft is on the ground
-- **OverspeedWarning**
+- **overspeedWarning**
   - `boolean`
   - If the overspeed warning is on in the sim
-- **ParkBrake**
+- **parkBrake**
   - `boolean`
   - If the parking brake is on
-- **Paused**
+- **paused**
   - `boolean`
   - Is the sim paused? inherited
-- **PayloadWeight**
+- **payloadWeight**
   - `number`
   - Weight of the payload
-- **Pitch**
+- **pitch**
   - `number`
   - Aircraft pitch, +/-
-- **PlaneAltitude** - Altitude of plane above MSL
+- **planeAltitude** - Altitude of plane above MSL
   - `number`
   - The indicated altitude
-- **Replay**
+- **replay**
   - `boolean`
   - Are they in a replay?
-- **Runway** - Save the runway they're on. This gets set if they're taxiing too, so we can keep
+- **runway** - Save the runway they're on. This gets set if they're taxiing too, so we can keep
 track of if we're crossing a runway or something
   - [`Runway`](#runway)
   - If the pilot is on the runway
-- **SimRate**
+- **simRate**
   - `number`
   - The current simulation rate
-- **SlewActive**
+- **slewActive**
   - `boolean`
   - If the slew is enabled
-- **StallWarning**
+- **stallWarning**
   - `boolean`
   - If the stall warning is on in the sim
-- **StrobeLights**
+- **strobeLights**
   - `boolean`
   - Boolean for lights
-- **TaxiLights**
+- **taxiLights**
   - `boolean`
   - Boolean for lights
-- **ThrottlePct**
+- **throttlePct**
   - `number`
   - Average throttle percent
-- **Throttles**
+- **throttles**
   - `array`
-- **TotalWeight**
+- **totalWeight**
   - `number`
   - Total weight of the a ircraft
-- **TransponderCode** - The transponder code
+- **transponderCode** - The transponder code
   - `System.UInt32`
   - Transponder code
-- **UnlimitedFuel**
+- **unlimitedFuel**
   - `boolean`
   - If unlimited fuel is enabled
-- **VerticalSpeed**
+- **verticalSpeed**
   - `number`
   - Their vertical speed (+/-)
-- **VerticalSpeedTouchdown**
+- **verticalSpeedTouchdown**
   - `number`
   - The vertical speed at touchdown
-- **WingLights**
+- **wingLights**
   - `boolean`
   - Boolean for lights
-- **ZeroFuelWeight**
+- **zeroFuelWeight**
   - `number`
   - The zero fuel weight
 
@@ -366,319 +366,279 @@ track of if we're crossing a runway or something
 
 ## [Aircraft](#Aircraft)
 
-- **Icao**
+- **icao**
   - `string`
-- **Id**
+- **id**
   - `string`
-- **Ident**
+- **ident**
   - `string`
-- **Name**
+- **name**
   - `string`
-- **Registration**
+- **registration**
   - `string`
-- **Status**
+- **status**
   - `string`
-- **Type**
+- **type**
   - `string`
 
 ---
 
 ## [Airline](#Airline)
 
-- **Iata** - The IATA of the airline
+- **iata** - The IATA of the airline
   - `string`
-- **Icao** - The ICAO of the airline
+- **icao** - The ICAO of the airline
   - `string`
-- **Id**
+- **id**
   - `number`
-- **Ident** - Show "friendlier" name for airline - the code + name
+- **ident** - Show "friendlier" name for airline - the code + name
   - `string`
-- **Name** - The full name of the airline
+- **name** - The full name of the airline
   - `string`
 
 ---
 
 ## [Airport](#Airport)
 
-- **AltitudeFeet**
+- **altitudeFeet**
   - `array`
-- **City**
+- **city**
   - `string`
-- **Country**
+- **country**
   - `string`
-- **FaaCode**
+- **iata**
   - `string`
-- **Iata**
+- **icao**
   - `string`
-- **Icao**
-  - `string`
-- **Location**
+- **location**
   - `array{number}`
-- **Name**
+- **name**
   - `string`
-- **SceneryFilePath**
+- **sceneryFilePath**
   - `string`
-- **SceneryName**
+- **sceneryName**
   - `string`
-- **State**
+- **state**
   - `string`
-- **TransitionAltitude**
+- **transitionAltitude**
   - `array`
-- **TransitionLevel**
+- **transitionLevel**
   - `array`
+
+---
+
+## [Coords](#Coords)
+
+- **lat**
+  - `number`
+- **lng**
+  - `number`
 
 ---
 
 ## [Features](#Features)
 
-- **AircraftIcao**
+- **aircraftIcao**
   - `string`
-- **AircraftType**
+- **aircraftType**
   - `string`
-- **ConfigFile**
+- **configFile**
   - `string`
-- **DateTime**
+- **dateTime**
   - `number`
-- **DateTimeClient**
+- **dateTimeClient**
   - `number`
-- **DecisionHeight**
+- **engineCount**
   - `number`
-- **EngineCount**
-  - `number`
-- **EngineType**
+- **engineType**
   - `string`
-- **EstCruiseSpeed**
+- **estCruiseSpeed**
   - `number`
-- **FlapsCount**
+- **flapsCount**
   - `number`
-- **GearRetractable**
+- **gearRetractable**
   - `boolean`
-- **Heading**
+- **heading**
   - `number`
-- **HeadingMagnetic**
+- **headingMagnetic**
   - `number`
-- **Id**
+- **id** - Store an ID for this entry
   - `string`
-- **Location**
+- **location** - Return a position
   - `array{number}`
-- **OnGround**
+- **onGround**
   - `boolean`
-- **ParkBrake**
+- **parkBrake**
   - `boolean`
-- **Paused**
+- **paused**
   - `boolean`
-- **PropMaxRpm**
+- **propMaxRpm**
   - `number`
-- **SimType**
+- **simType**
   - `string`
-- **Title**
+- **title**
   - `string`
-- **UnlimitedFuel**
+- **unlimitedFuel**
   - `boolean`
 
 ---
 
 ## [Flight](#Flight)
 
-- **AltICAO**
+- **altIcao**
   - `string`
-- **ArrivalICAO**
+- **arrivalIcao**
   - `string`
-- **ArrivalTime**
+- **arrivalTime**
   - `string`
-- **DepartureICAO**
+- **departureIcao**
   - `string`
-- **DepartureTime**
+- **departureTime**
   - `string`
-- **Distance**
+- **distance**
   - `number`
-- **Fields**
+- **fields**
   - `System.Collections.Generic.Dictionary{string,string}`
-- **FlightNumber**
+- **flightNumber**
   - `number`
-- **FlightTime**
+- **flightTime**
   - `number`
-- **FlightType**
+- **flightType**
   - `string`
-- **Id**
+- **id**
   - `string`
-- **Ident**
+- **ident**
   - `string`
-- **Level**
+- **level**
   - `number`
-- **LoadFactor**
+- **loadFactor**
   - `number`
-- **LoadFactorVariance**
+- **loadFactorVariance**
   - `number`
-- **Route**
+- **route**
   - `string`
-- **RouteCode**
+- **routeCode**
   - `string`
-- **RouteLeg**
+- **routeLeg**
   - `string`
 
 ---
 
 ## [FlightPlan](#FlightPlan)
 
-- **_Points**
-  - `array{array{number}}`
-- **AltICAO**
+- **altIcao**
   - `string`
-- **ArrivalAirport**
+- **arrivalAirport**
   - [`Airport`](#airport)
-- **Briefing**
-  - `string`
-- **CargoWeight**
+- **cargoWeight** - The total cargo weight, in lbs
   - `number`
-- **CruiseAlt**
+- **cruiseAlt**
   - `number`
-- **CurrentPoint**
-  - `array{number}`
-- **CurrentPositionIdx**
-  - `number`
-- **DepartureAirport**
+- **currentPoint**
+  - [`RoutePoint`](#routepoint)
+- **departureAirport**
   - [`Airport`](#airport)
-- **Distance**
+- **distance**
   - `number`
-- **FlightId**
+- **flightId**
   - `string`
-- **FlightPlanFields**
+- **flightPlanFields** - Bag of fields that can be set for the PIREP. These come from SimBrief.
+Can include fields like the Cost Index, etc. See the VMSAcars file format importer
   - `Acars.Models.FieldCollection`
-- **FlightPlanType**
+- **flightPlanType** - The different types of flight plans that can be parsed
   - `string`
-- **LoadedFromFile**
+- **loadedFromFile**
   - `boolean`
-- **NextPoint**
-  - `array{number}`
-- **PassengersCount**
+- **nextPoint**
+  - [`RoutePoint`](#routepoint)
+- **passengersCount** - Total number of planned passengers
   - `number`
-- **PointCount**
+- **pointCount**
   - `number`
-- **Points**
-  - `array{array{number}}`
-- **Route**
+- **points**
+  - [`array{RoutePoint}`](#array{routepoint})
+- **route** - Return the route string
   - `string`
-- **SimbriefId**
+- **simbriefId**
   - `string`
-- **TOC**
+- **toc** - The top of climb point
   - `array{number}`
-- **TOD**
+- **tod** - The route point which is the top of descent. This comes from the SimBrief
   - `array{number}`
 
 ---
 
 ## [Gate](#Gate)
 
-- **Id**
+- **id**
   - `string`
-  - The ID of the gate
-- **Location**
+- **location**
   - `array{number}`
   - Coordinates of this location (x, y)
-- **RadiusFeet**
+- **radius**
   - `number`
-  - The radius of the gate area in feet
-- **Type**
+- **type**
   - `string`
-    - None
-    - Ramp GA
-    - Ramp GA Small
-    - Ramp GA Medium
-    - Ramp GA Large
-    - Ramp GA Cargo
-    - Ramp Military Cargo
-    - Ramp Military Combat
-    - Gate Small
-    - Gate Medium
-    - Gate Heavy
-    - Dock GA
-    - Fuel
-    - Vehicles
-    - Ramp GA Extra
-    - Gate Extra
-    - Jetway
 
 ---
 
 ## [RoutePoint](#RoutePoint)
 
-- **Active**
+- **active** - If this is the currently active point
   - `boolean`
-- **DistanceTo** - Distance of player to this point
-  - `number`
-- **DistanceToNext** - Distance to the next point in the series
-  - `number`
-- **Location** - Latitude, Longitude
+- **location**
   - `array{number}`
+  - Coordinates of this location (x, y)
 - **Name** - Name of the current active nav point
   - `string`
-- **Order** - The order it's in
-  - `number`
-- **Type** - The type of nav point
-  - `number`
 
 ---
 
 ## [Runway](#Runway)
 
-- **ApproachingRunway**
+- **approachingRunway**
   - `boolean`
-- **ApproachingRunwayDistance**
+- **approachingRunwayDistance**
   - `number`
-- **BearingToMagnetic**
+- **bearingToMagnetic**
   - `number`
-- **BearingToTrue**
+- **bearingToTrue**
   - `number`
-- **Bounds**
+- **bounds**
   - `array{array{number}}`
-- **ClosedForLanding**
+- **closedForLanding**
   - `boolean`
-- **ClosedForTakeoff**
+- **closedForTakeoff**
   - `boolean`
-- **DistanceFeet**
+- **distanceNauticalMiles**
   - `number`
-- **DistanceMetres**
-  - `number`
-- **DistanceNauticalMiles**
-  - `number`
-- **EndLocation**
+- **endLocation**
   - `array{number}`
-- **HeadingMagnetic**
+- **headingMagnetic**
   - `number`
-- **HeadingTrue**
+- **headingTrue**
   - `number`
-- **Icao**
+- **icao**
   - `string`
-- **Id**
+- **id**
   - `number`
-- **IsPlayerFacingRunwayDirection**
-  - `boolean`
-- **IsPlayerOnRunway**
-  - `boolean`
-- **LengthFeet**
+- **lengthFeet**
   - `number`
-- **LengthMetres**
+- **magVar**
   - `number`
-- **MagVar**
-  - `number`
-- **RunwayCenter**
+- **runwayCenter**
   - `array{number}`
-- **RunwayID**
+- **runwayID**
   - `string`
-- **StartLocation**
+- **startLocation**
   - `array{number}`
-- **Surface**
+- **surface**
   - `string`
-- **ThresholdLocation**
+- **thresholdLocation**
   - `array{number}`
-- **ThresholdOffsetFeet**
+- **thresholdOffsetFeet**
   - `number`
-- **ThresholdOffsetMetres**
-  - `number`
-- **WidthFeet**
-  - `number`
-- **WidthMetres**
+- **widthFeet**
   - `number`
 
 ---
