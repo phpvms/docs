@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="phpVMS Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.de1deac2.css">
-<script src="/assets/js/runtime~main.b5af55c2.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8047507e.js" defer="defer"></script>
 <script src="/assets/js/main.3a40c7e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,261 +18,261 @@
 <p>These are the API Docs</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="pirep"><a href="#Pirep">Pirep</a><a href="#pirep" class="hash-link" aria-label="Direct link to pirep" title="Direct link to pirep">​</a></h2>
 <ul>
-<li><strong>Active</strong> - Return false if the PIREP state is in one of
+<li><strong>active</strong> - Return false if the PIREP state is in one of
 the following states. Rules don&#x27;t run when
 the PIREP/processing isn&#x27;t active<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>ActualDistance</strong> - The distance when the flightplan is measured
+<li><strong>actualDistance</strong> - The distance when the flightplan is measured
 Might not always be set or available<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Aircraft</strong> - The aircraft the pilot is flying<!-- -->
+<li><strong>aircraft</strong> - The aircraft the pilot is flying<!-- -->
 <ul>
 <li><a href="#aircraft"><code>Aircraft</code></a></li>
 </ul>
 </li>
-<li><strong>Airline</strong> - The airline the pilot is a part of<!-- -->
+<li><strong>airline</strong> - The airline the pilot is a part of<!-- -->
 <ul>
 <li><a href="#airline"><code>Airline</code></a></li>
 </ul>
 </li>
-<li><strong>ApproachTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>approachTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ApproachTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>approachTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ArrivalAirport</strong> - The arrival airport, null if they haven&#x27;t landed yet<!-- -->
+<li><strong>arrivalAirport</strong> - The arrival airport, null if they haven&#x27;t landed yet<!-- -->
 <ul>
 <li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
-<li><strong>ArrivalGate</strong> - The arrival gate, null if they aren&#x27;t at one.
+<li><strong>arrivalGate</strong> - The arrival gate, null if they aren&#x27;t at one.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#gate"><code>Gate</code></a></li>
 </ul>
 </li>
-<li><strong>ArrivalRunway</strong> - The runway that they landed on.
+<li><strong>arrivalRunway</strong> - The runway that they landed on.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
-<li><strong>BlocksOffTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>blocksOffTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BlocksOffTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>blocksOffTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BlocksOnTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>blocksOnTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BlocksOnTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>blocksOnTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BoardingTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>boardingTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BoardingTimeActual</strong>
+<li><strong>boardingTimeActual</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>CrossingRunway</strong> - This will have a value, with the runway information,
+<li><strong>crossingRunway</strong> - This will have a value, with the runway information,
 if they&#x27;re currently on a runway
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
-<li><strong>DepartureAirport</strong> - The airport they departed from
+<li><strong>departureAirport</strong> - The airport they departed from
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
-<li><strong>DepartureGate</strong> - The departure gate, null if they aren&#x27;t at one.
+<li><strong>departureGate</strong> - The departure gate, null if they aren&#x27;t at one.
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#gate"><code>Gate</code></a></li>
 </ul>
 </li>
-<li><strong>DepartureRunway</strong> - The runway they took off from
+<li><strong>departureRunway</strong> - The runway they took off from
 Might be null if it wasn&#x27;t detected<!-- -->
 <ul>
 <li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
-<li><strong>DirectTakeoff</strong> - Is this a direct takeoff? That means when in &quot;boarding&quot;, the OnGround flag is immediately detected as true<!-- -->
+<li><strong>directTakeoff</strong> - Is this a direct takeoff? That means when in &quot;boarding&quot;, the OnGround flag is immediately detected as true<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>DistanceToGo</strong> - How far they ahve already travelled
+<li><strong>distanceToGo</strong> - How far they ahve already travelled
 Might not always be set or available<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ElapsedTime</strong> - Get the time elapsed, subtract the current sim time from the blocks off time
+<li><strong>elapsedTime</strong> - Get the time elapsed, subtract the current sim time from the blocks off time
 In seconds<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ElapsedTimeHumanReadable</strong>
+<li><strong>elapsedTimeHumanReadable</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>EngineStartStates</strong>
+<li><strong>engineStartStates</strong>
 <ul>
 <li><code>boolean[]</code></li>
 </ul>
 </li>
-<li><strong>EstimatedTravelTime</strong> - The amount of time estimated that this should take. In minutes
+<li><strong>estimatedTravelTime</strong> - The amount of time estimated that this should take. In minutes
 Might not always be set or available<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Fares</strong>
+<li><strong>fares</strong>
 <ul>
 <li><code>Acars.Models.FareCollection</code></li>
 </ul>
 </li>
-<li><strong>Features</strong> - The startup variables/state when this PIREP started<!-- -->
+<li><strong>features</strong> - The startup variables/state when this PIREP started<!-- -->
 <ul>
 <li><a href="#features"><code>Features</code></a></li>
 </ul>
 </li>
-<li><strong>Flight</strong> - The flight this PIREP originated from, if it was from
+<li><strong>flight</strong> - The flight this PIREP originated from, if it was from
 a bid, or loaded on the screen<!-- -->
 <ul>
 <li><a href="#flight"><code>Flight</code></a></li>
 </ul>
 </li>
-<li><strong>FlightId</strong> - The ID of the flight from phpVMS<!-- -->
+<li><strong>flightId</strong> - The ID of the flight from phpVMS<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>FlightNumber</strong> - The flight number<!-- -->
+<li><strong>flightNumber</strong> - The flight number<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>FlightPlan</strong>
+<li><strong>flightPlan</strong>
 <ul>
 <li><a href="#flightplan"><code>FlightPlan</code></a></li>
 </ul>
 </li>
-<li><strong>FlightType</strong>
+<li><strong>flightType</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>FuelAtApproach</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtApproach</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FuelAtLanding</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtLanding</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FuelAtTakeOff</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtTakeOff</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FuelBlocksOff</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelBlocksOff</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FuelBlocksOn</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelBlocksOn</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FuelUsed</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelUsed</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Id</strong> - The phpVMS PIREP ID<!-- -->
+<li><strong>id</strong> - The phpVMS PIREP ID<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Ident</strong>
+<li><strong>ident</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>IgnoreLightsRules</strong>
+<li><strong>ignoreLightsRules</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>IsInActiveState</strong> - Is this flight in an active state?<!-- -->
+<li><strong>isInActiveState</strong> - Is this flight in an active state?<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>IsResuming</strong> - If this PIREP is being resumed<!-- -->
+<li><strong>isResuming</strong> - If this PIREP is being resumed<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>LandedTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>landedTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>LandedTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>landedTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>LandingRate</strong>
+<li><strong>landingRate</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Notes</strong>
+<li><strong>notes</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>PauseLocation</strong>
+<li><strong>pauseLocation</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>Phase</strong>
+<li><strong>phase</strong>
 <ul>
 <li><code>string</code>
 <ul>
@@ -295,39 +295,39 @@ a bid, or loaded on the screen<!-- -->
 </li>
 </ul>
 </li>
-<li><strong>PlannedDistance</strong> - Distance planned
+<li><strong>plannedDistance</strong> - Distance planned
 Might not always be set or available<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>PlannedFlightTime</strong> - Gets or sets the planned flight time.<!-- -->
+<li><strong>plannedFlightTime</strong> - Gets or sets the planned flight time.<!-- -->
 <ul>
 <li><code>array</code></li>
 <li>The planned flight time.</li>
 </ul>
 </li>
-<li><strong>Route</strong>
+<li><strong>route</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>RouteCode</strong> - The route code<!-- -->
+<li><strong>routeCode</strong> - The route code<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>RouteLeg</strong> - The route leg<!-- -->
+<li><strong>routeLeg</strong> - The route leg<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Score</strong>
+<li><strong>score</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>SimType</strong> - The simulator type they&#x27;re using<!-- -->
+<li><strong>simType</strong> - The simulator type they&#x27;re using<!-- -->
 <ul>
 <li><code>string</code>
 <ul>
@@ -340,23 +340,23 @@ Might not always be set or available<!-- -->
 </li>
 </ul>
 </li>
-<li><strong>SourceName</strong>
+<li><strong>sourceName</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>StartedWithBrakes</strong> - Did they start the flight with the brakes on? Use this to determine the criterea on
+<li><strong>startedWithBrakes</strong> - Did they start the flight with the brakes on? Use this to determine the criterea on
 moving out of the Boarding phase<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>StartTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>startTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>State</strong> - The PIREP states - these match the phase<!-- -->
+<li><strong>state</strong> - The PIREP states - these match the phase<!-- -->
 <ul>
 <li><code>string</code>
 <ul>
@@ -380,63 +380,63 @@ moving out of the Boarding phase<!-- -->
 </li>
 </ul>
 </li>
-<li><strong>TakeoffTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>takeoffTime</strong> - Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TakeoffTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>takeoffTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TaxiFuelOut</strong> - The fuel, in lbs<!-- -->
+<li><strong>taxiFuelOut</strong> - The fuel, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TaxiInDuration</strong>
+<li><strong>taxiInDuration</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TaxiOutDuration</strong>
+<li><strong>taxiOutDuration</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TaxiOutTime</strong> - The in-sim taxi out time
+<li><strong>taxiOutTime</strong> - The in-sim taxi out time
 Unix timestamp, the time in the sim<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TaxiOutTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>taxiOutTimeActual</strong> - Unix timestamp, system time<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ThresholdDistance</strong> - Distance from the threshold, in feet<!-- -->
+<li><strong>thresholdDistance</strong> - Distance from the threshold, in feet<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TodPauseCompleted</strong> - Save whether we&#x27;ve already paused or not for the TOD<!-- -->
+<li><strong>todPauseCompleted</strong> - Save whether we&#x27;ve already paused or not for the TOD<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>TodPauseDistance</strong> - Or pause the given distance before<!-- -->
+<li><strong>todPauseDistance</strong> - Or pause the given distance before<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>TodPauseOn</strong> - Whether we should pause at TOD or not<!-- -->
+<li><strong>todPauseOn</strong> - Whether we should pause at TOD or not<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>TotalPauseTime</strong>
+<li><strong>totalPauseTime</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
@@ -445,71 +445,71 @@ Unix timestamp, the time in the sim<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="acars"><a href="#Acars">Acars</a><a href="#acars" class="hash-link" aria-label="Direct link to acars" title="Direct link to acars">​</a></h2>
 <ul>
-<li><strong>AllEnginesRunning</strong> - Are all the engines on?<!-- -->
+<li><strong>allEnginesRunning</strong> - Are all the engines on?<!-- -->
 <ul>
 <li><code>boolean</code></li>
 <li>If all of the engines are running</li>
 </ul>
 </li>
-<li><strong>AnyEnginesRunning</strong> - Are any engines on?<!-- -->
+<li><strong>anyEnginesRunning</strong> - Are any engines on?<!-- -->
 <ul>
 <li><code>boolean</code></li>
 <li>If any engines are running</li>
 </ul>
 </li>
-<li><strong>ApproachingRunway</strong> - If the player is approaching/close to a runway (within 150 meters or so)<!-- -->
+<li><strong>approachingRunway</strong> - If the player is approaching/close to a runway (within 150 meters or so)<!-- -->
 <ul>
 <li><a href="#runway"><code>Runway</code></a></li>
 <li>This indicates the closest runway to the user</li>
 </ul>
 </li>
-<li><strong>Bank</strong>
+<li><strong>bank</strong>
 <ul>
 <li><code>number</code></li>
 <li>Aircraft bank, +/-</li>
 </ul>
 </li>
-<li><strong>BeaconLights</strong>
+<li><strong>beaconLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>EngineCount</strong>
+<li><strong>engineCount</strong>
 <ul>
 <li><code>number</code></li>
 <li>The number of engines</li>
 </ul>
 </li>
-<li><strong>EngineFuelFlow</strong>
+<li><strong>engineFuelFlow</strong>
 <ul>
 <li><code>number[]</code></li>
 </ul>
 </li>
-<li><strong>EngineMaxRpm</strong>
+<li><strong>engineMaxRpm</strong>
 <ul>
 <li><code>number</code></li>
 <li>The total N1 percent</li>
 </ul>
 </li>
-<li><strong>EngineN2Average</strong> - Get the current engine N2 value (as an average)<!-- -->
+<li><strong>engineN2Average</strong> - Get the current engine N2 value (as an average)<!-- -->
 <ul>
 <li><code>number</code></li>
 <li>The average of the N2 values</li>
 </ul>
 </li>
-<li><strong>EngineN2Percent</strong>
+<li><strong>engineN2Percent</strong>
 <ul>
 <li><code>number[]</code></li>
 </ul>
 </li>
-<li><strong>EngineRpm</strong>
+<li><strong>engineRpm</strong>
 <ul>
 <li><code>number</code></li>
 <li>Engine RPM</li>
 </ul>
 </li>
-<li><strong>EngineType</strong> - The type of engine<!-- -->
+<li><strong>engineType</strong> - The type of engine<!-- -->
 <ul>
 <li><code>string</code>
 <ul>
@@ -523,235 +523,235 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 </ul>
 </li>
-<li><strong>Flaps</strong> - Flaps in an index amount<!-- -->
+<li><strong>flaps</strong> - Flaps in an index amount<!-- -->
 <ul>
 <li><code>number</code></li>
 <li>Flap position, from 0</li>
 </ul>
 </li>
-<li><strong>FuelQuantity</strong>
+<li><strong>fuelQuantity</strong>
 <ul>
 <li><code>number</code></li>
 <li>The current fuel quantity</li>
 </ul>
 </li>
-<li><strong>GearUp</strong>
+<li><strong>gearUp</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>True if the gear is up</li>
 </ul>
 </li>
-<li><strong>GForce</strong> - The current G-Force<!-- -->
+<li><strong>gForce</strong> - The current G-Force<!-- -->
 <ul>
 <li><code>number</code></li>
 <li>The current g-force</li>
 </ul>
 </li>
-<li><strong>GForceTouchDown</strong>
+<li><strong>gForceTouchDown</strong>
 <ul>
 <li><code>number</code></li>
 <li>The g-force at touchdown</li>
 </ul>
 </li>
-<li><strong>GroundAltitude</strong> - Altitude of plane above the ground<!-- -->
+<li><strong>groundAltitude</strong> - Altitude of plane above the ground<!-- -->
 <ul>
 <li><code>number</code></li>
 <li>The ground altitude (AGL)</li>
 </ul>
 </li>
-<li><strong>GroundSpeed</strong>
+<li><strong>groundSpeed</strong>
 <ul>
 <li><code>number</code></li>
 <li>If all of the engines are running</li>
 </ul>
 </li>
-<li><strong>Heading</strong>
+<li><strong>heading</strong>
 <ul>
 <li><code>number</code></li>
 <li>The true heading</li>
 </ul>
 </li>
-<li><strong>HeadingMagnetic</strong>
+<li><strong>headingMagnetic</strong>
 <ul>
 <li><code>number</code></li>
 <li>The magnetic heading</li>
 </ul>
 </li>
-<li><strong>IndicatedAirspeed</strong>
+<li><strong>indicatedAirspeed</strong>
 <ul>
 <li><code>number</code></li>
 <li>Indicated airspeed</li>
 </ul>
 </li>
-<li><strong>LandingLights</strong>
+<li><strong>landingLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>Location</strong>
+<li><strong>location</strong>
 <ul>
 <li><code>array{number}</code></li>
 <li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
-<li><strong>LogoLight</strong>
+<li><strong>logoLight</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>MagVar</strong>
+<li><strong>magVar</strong>
 <ul>
 <li><code>number</code></li>
 <li>Magnetic variation</li>
 </ul>
 </li>
-<li><strong>N1Percent</strong>
+<li><strong>n1Percent</strong>
 <ul>
 <li><code>number</code></li>
 <li>The total N1 percent</li>
 </ul>
 </li>
-<li><strong>NavigationLights</strong>
+<li><strong>navigationLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>OnGround</strong>
+<li><strong>onGround</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If the aircraft is on the ground</li>
 </ul>
 </li>
-<li><strong>OverspeedWarning</strong>
+<li><strong>overspeedWarning</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If the overspeed warning is on in the sim</li>
 </ul>
 </li>
-<li><strong>ParkBrake</strong>
+<li><strong>parkBrake</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If the parking brake is on</li>
 </ul>
 </li>
-<li><strong>Paused</strong>
+<li><strong>paused</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Is the sim paused? inherited</li>
 </ul>
 </li>
-<li><strong>PayloadWeight</strong>
+<li><strong>payloadWeight</strong>
 <ul>
 <li><code>number</code></li>
 <li>Weight of the payload</li>
 </ul>
 </li>
-<li><strong>Pitch</strong>
+<li><strong>pitch</strong>
 <ul>
 <li><code>number</code></li>
 <li>Aircraft pitch, +/-</li>
 </ul>
 </li>
-<li><strong>PlaneAltitude</strong> - Altitude of plane above MSL<!-- -->
+<li><strong>planeAltitude</strong> - Altitude of plane above MSL<!-- -->
 <ul>
 <li><code>number</code></li>
 <li>The indicated altitude</li>
 </ul>
 </li>
-<li><strong>Replay</strong>
+<li><strong>replay</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Are they in a replay?</li>
 </ul>
 </li>
-<li><strong>Runway</strong> - Save the runway they&#x27;re on. This gets set if they&#x27;re taxiing too, so we can keep
+<li><strong>runway</strong> - Save the runway they&#x27;re on. This gets set if they&#x27;re taxiing too, so we can keep
 track of if we&#x27;re crossing a runway or something<!-- -->
 <ul>
 <li><a href="#runway"><code>Runway</code></a></li>
 <li>If the pilot is on the runway</li>
 </ul>
 </li>
-<li><strong>SimRate</strong>
+<li><strong>simRate</strong>
 <ul>
 <li><code>number</code></li>
 <li>The current simulation rate</li>
 </ul>
 </li>
-<li><strong>SlewActive</strong>
+<li><strong>slewActive</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If the slew is enabled</li>
 </ul>
 </li>
-<li><strong>StallWarning</strong>
+<li><strong>stallWarning</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If the stall warning is on in the sim</li>
 </ul>
 </li>
-<li><strong>StrobeLights</strong>
+<li><strong>strobeLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>TaxiLights</strong>
+<li><strong>taxiLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>ThrottlePct</strong>
+<li><strong>throttlePct</strong>
 <ul>
 <li><code>number</code></li>
 <li>Average throttle percent</li>
 </ul>
 </li>
-<li><strong>Throttles</strong>
+<li><strong>throttles</strong>
 <ul>
 <li><code>array</code></li>
 </ul>
 </li>
-<li><strong>TotalWeight</strong>
+<li><strong>totalWeight</strong>
 <ul>
 <li><code>number</code></li>
 <li>Total weight of the a ircraft</li>
 </ul>
 </li>
-<li><strong>TransponderCode</strong> - The transponder code<!-- -->
+<li><strong>transponderCode</strong> - The transponder code<!-- -->
 <ul>
 <li><code>System.UInt32</code></li>
 <li>Transponder code</li>
 </ul>
 </li>
-<li><strong>UnlimitedFuel</strong>
+<li><strong>unlimitedFuel</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>If unlimited fuel is enabled</li>
 </ul>
 </li>
-<li><strong>VerticalSpeed</strong>
+<li><strong>verticalSpeed</strong>
 <ul>
 <li><code>number</code></li>
 <li>Their vertical speed (+/-)</li>
 </ul>
 </li>
-<li><strong>VerticalSpeedTouchdown</strong>
+<li><strong>verticalSpeedTouchdown</strong>
 <ul>
 <li><code>number</code></li>
 <li>The vertical speed at touchdown</li>
 </ul>
 </li>
-<li><strong>WingLights</strong>
+<li><strong>wingLights</strong>
 <ul>
 <li><code>boolean</code></li>
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>ZeroFuelWeight</strong>
+<li><strong>zeroFuelWeight</strong>
 <ul>
 <li><code>number</code></li>
 <li>The zero fuel weight</li>
@@ -761,37 +761,37 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="aircraft"><a href="#Aircraft">Aircraft</a><a href="#aircraft" class="hash-link" aria-label="Direct link to aircraft" title="Direct link to aircraft">​</a></h2>
 <ul>
-<li><strong>Icao</strong>
+<li><strong>icao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Id</strong>
+<li><strong>id</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Ident</strong>
+<li><strong>ident</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Name</strong>
+<li><strong>name</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Registration</strong>
+<li><strong>registration</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Status</strong>
+<li><strong>status</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Type</strong>
+<li><strong>type</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
@@ -800,27 +800,27 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="airline"><a href="#Airline">Airline</a><a href="#airline" class="hash-link" aria-label="Direct link to airline" title="Direct link to airline">​</a></h2>
 <ul>
-<li><strong>Iata</strong> - The IATA of the airline<!-- -->
+<li><strong>iata</strong> - The IATA of the airline<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Icao</strong> - The ICAO of the airline<!-- -->
+<li><strong>icao</strong> - The ICAO of the airline<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Id</strong>
+<li><strong>id</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Ident</strong> - Show &quot;friendlier&quot; name for airline - the code + name<!-- -->
+<li><strong>ident</strong> - Show &quot;friendlier&quot; name for airline - the code + name<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Name</strong> - The full name of the airline<!-- -->
+<li><strong>name</strong> - The full name of the airline<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
@@ -829,181 +829,185 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="airport"><a href="#Airport">Airport</a><a href="#airport" class="hash-link" aria-label="Direct link to airport" title="Direct link to airport">​</a></h2>
 <ul>
-<li><strong>AltitudeFeet</strong>
+<li><strong>altitudeFeet</strong>
 <ul>
 <li><code>array</code></li>
 </ul>
 </li>
-<li><strong>City</strong>
+<li><strong>city</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Country</strong>
+<li><strong>country</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>FaaCode</strong>
+<li><strong>iata</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Iata</strong>
+<li><strong>icao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Icao</strong>
-<ul>
-<li><code>string</code></li>
-</ul>
-</li>
-<li><strong>Location</strong>
+<li><strong>location</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>Name</strong>
+<li><strong>name</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>SceneryFilePath</strong>
+<li><strong>sceneryFilePath</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>SceneryName</strong>
+<li><strong>sceneryName</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>State</strong>
+<li><strong>state</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>TransitionAltitude</strong>
+<li><strong>transitionAltitude</strong>
 <ul>
 <li><code>array</code></li>
 </ul>
 </li>
-<li><strong>TransitionLevel</strong>
+<li><strong>transitionLevel</strong>
 <ul>
 <li><code>array</code></li>
 </ul>
 </li>
 </ul>
 <hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coords"><a href="#Coords">Coords</a><a href="#coords" class="hash-link" aria-label="Direct link to coords" title="Direct link to coords">​</a></h2>
+<ul>
+<li><strong>lat</strong>
+<ul>
+<li><code>number</code></li>
+</ul>
+</li>
+<li><strong>lng</strong>
+<ul>
+<li><code>number</code></li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="features"><a href="#Features">Features</a><a href="#features" class="hash-link" aria-label="Direct link to features" title="Direct link to features">​</a></h2>
 <ul>
-<li><strong>AircraftIcao</strong>
+<li><strong>aircraftIcao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>AircraftType</strong>
+<li><strong>aircraftType</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>ConfigFile</strong>
+<li><strong>configFile</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>DateTime</strong>
+<li><strong>dateTime</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>DateTimeClient</strong>
+<li><strong>dateTimeClient</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>DecisionHeight</strong>
+<li><strong>engineCount</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>EngineCount</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>EngineType</strong>
+<li><strong>engineType</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>EstCruiseSpeed</strong>
+<li><strong>estCruiseSpeed</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FlapsCount</strong>
+<li><strong>flapsCount</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>GearRetractable</strong>
+<li><strong>gearRetractable</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>Heading</strong>
+<li><strong>heading</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>HeadingMagnetic</strong>
+<li><strong>headingMagnetic</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Id</strong>
+<li><strong>id</strong> - Store an ID for this entry<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Location</strong>
+<li><strong>location</strong> - Return a position<!-- -->
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>OnGround</strong>
+<li><strong>onGround</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>ParkBrake</strong>
+<li><strong>parkBrake</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>Paused</strong>
+<li><strong>paused</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>PropMaxRpm</strong>
+<li><strong>propMaxRpm</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>SimType</strong>
+<li><strong>simType</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Title</strong>
+<li><strong>title</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>UnlimitedFuel</strong>
+<li><strong>unlimitedFuel</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
@@ -1012,92 +1016,92 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="flight"><a href="#Flight">Flight</a><a href="#flight" class="hash-link" aria-label="Direct link to flight" title="Direct link to flight">​</a></h2>
 <ul>
-<li><strong>AltICAO</strong>
+<li><strong>altIcao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>ArrivalICAO</strong>
+<li><strong>arrivalIcao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>ArrivalTime</strong>
+<li><strong>arrivalTime</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>DepartureICAO</strong>
+<li><strong>departureIcao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>DepartureTime</strong>
+<li><strong>departureTime</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Distance</strong>
+<li><strong>distance</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Fields</strong>
+<li><strong>fields</strong>
 <ul>
 <li><code>System.Collections.Generic.Dictionary{string,string}</code></li>
 </ul>
 </li>
-<li><strong>FlightNumber</strong>
+<li><strong>flightNumber</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FlightTime</strong>
+<li><strong>flightTime</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FlightType</strong>
+<li><strong>flightType</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Id</strong>
+<li><strong>id</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Ident</strong>
+<li><strong>ident</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Level</strong>
+<li><strong>level</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>LoadFactor</strong>
+<li><strong>loadFactor</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>LoadFactorVariance</strong>
+<li><strong>loadFactorVariance</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Route</strong>
+<li><strong>route</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>RouteCode</strong>
+<li><strong>routeCode</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>RouteLeg</strong>
+<li><strong>routeLeg</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
@@ -1106,112 +1110,98 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="flightplan"><a href="#FlightPlan">FlightPlan</a><a href="#flightplan" class="hash-link" aria-label="Direct link to flightplan" title="Direct link to flightplan">​</a></h2>
 <ul>
-<li><strong>_Points</strong>
-<ul>
-<li><code>array{array{number}}</code></li>
-</ul>
-</li>
-<li><strong>AltICAO</strong>
+<li><strong>altIcao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>ArrivalAirport</strong>
+<li><strong>arrivalAirport</strong>
 <ul>
 <li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
-<li><strong>Briefing</strong>
-<ul>
-<li><code>string</code></li>
-</ul>
-</li>
-<li><strong>CargoWeight</strong>
+<li><strong>cargoWeight</strong> - The total cargo weight, in lbs<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>CruiseAlt</strong>
+<li><strong>cruiseAlt</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>CurrentPoint</strong>
+<li><strong>currentPoint</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#routepoint"><code>RoutePoint</code></a></li>
 </ul>
 </li>
-<li><strong>CurrentPositionIdx</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>DepartureAirport</strong>
+<li><strong>departureAirport</strong>
 <ul>
 <li><a href="#airport"><code>Airport</code></a></li>
 </ul>
 </li>
-<li><strong>Distance</strong>
+<li><strong>distance</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>FlightId</strong>
+<li><strong>flightId</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>FlightPlanFields</strong>
+<li><strong>flightPlanFields</strong> - Bag of fields that can be set for the PIREP. These come from SimBrief.
+Can include fields like the Cost Index, etc. See the VMSAcars file format importer<!-- -->
 <ul>
 <li><code>Acars.Models.FieldCollection</code></li>
 </ul>
 </li>
-<li><strong>FlightPlanType</strong>
+<li><strong>flightPlanType</strong> - The different types of flight plans that can be parsed<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>LoadedFromFile</strong>
+<li><strong>loadedFromFile</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>NextPoint</strong>
+<li><strong>nextPoint</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#routepoint"><code>RoutePoint</code></a></li>
 </ul>
 </li>
-<li><strong>PassengersCount</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>PointCount</strong>
+<li><strong>passengersCount</strong> - Total number of planned passengers<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Points</strong>
+<li><strong>pointCount</strong>
 <ul>
-<li><code>array{array{number}}</code></li>
+<li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Route</strong>
+<li><strong>points</strong>
+<ul>
+<li><a href="#array%7Broutepoint%7D"><code>array{RoutePoint}</code></a></li>
+</ul>
+</li>
+<li><strong>route</strong> - Return the route string<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>SimbriefId</strong>
+<li><strong>simbriefId</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>TOC</strong>
+<li><strong>toc</strong> - The top of climb point<!-- -->
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>TOD</strong>
+<li><strong>tod</strong> - The route point which is the top of descent. This comes from the SimBrief<!-- -->
 <ul>
 <li><code>array{number}</code></li>
 </ul>
@@ -1220,71 +1210,40 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="gate"><a href="#Gate">Gate</a><a href="#gate" class="hash-link" aria-label="Direct link to gate" title="Direct link to gate">​</a></h2>
 <ul>
-<li><strong>Id</strong>
+<li><strong>id</strong>
 <ul>
 <li><code>string</code></li>
-<li>The ID of the gate</li>
 </ul>
 </li>
-<li><strong>Location</strong>
+<li><strong>location</strong>
 <ul>
 <li><code>array{number}</code></li>
 <li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
-<li><strong>RadiusFeet</strong>
+<li><strong>radius</strong>
 <ul>
 <li><code>number</code></li>
-<li>The radius of the gate area in feet</li>
 </ul>
 </li>
-<li><strong>Type</strong>
+<li><strong>type</strong>
 <ul>
-<li><code>string</code>
-<ul>
-<li>None</li>
-<li>Ramp GA</li>
-<li>Ramp GA Small</li>
-<li>Ramp GA Medium</li>
-<li>Ramp GA Large</li>
-<li>Ramp GA Cargo</li>
-<li>Ramp Military Cargo</li>
-<li>Ramp Military Combat</li>
-<li>Gate Small</li>
-<li>Gate Medium</li>
-<li>Gate Heavy</li>
-<li>Dock GA</li>
-<li>Fuel</li>
-<li>Vehicles</li>
-<li>Ramp GA Extra</li>
-<li>Gate Extra</li>
-<li>Jetway</li>
-</ul>
-</li>
+<li><code>string</code></li>
 </ul>
 </li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="routepoint"><a href="#RoutePoint">RoutePoint</a><a href="#routepoint" class="hash-link" aria-label="Direct link to routepoint" title="Direct link to routepoint">​</a></h2>
 <ul>
-<li><strong>Active</strong>
+<li><strong>active</strong> - If this is the currently active point<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>DistanceTo</strong> - Distance of player to this point<!-- -->
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>DistanceToNext</strong> - Distance to the next point in the series<!-- -->
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>Location</strong> - Latitude, Longitude<!-- -->
+<li><strong>location</strong>
 <ul>
 <li><code>array{number}</code></li>
+<li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
 <li><strong>Name</strong> - Name of the current active nav point<!-- -->
@@ -1292,161 +1251,116 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Order</strong> - The order it&#x27;s in<!-- -->
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>Type</strong> - The type of nav point<!-- -->
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="runway"><a href="#Runway">Runway</a><a href="#runway" class="hash-link" aria-label="Direct link to runway" title="Direct link to runway">​</a></h2>
 <ul>
-<li><strong>ApproachingRunway</strong>
+<li><strong>approachingRunway</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>ApproachingRunwayDistance</strong>
+<li><strong>approachingRunwayDistance</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BearingToMagnetic</strong>
+<li><strong>bearingToMagnetic</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>BearingToTrue</strong>
+<li><strong>bearingToTrue</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Bounds</strong>
+<li><strong>bounds</strong>
 <ul>
 <li><code>array{array{number}}</code></li>
 </ul>
 </li>
-<li><strong>ClosedForLanding</strong>
+<li><strong>closedForLanding</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>ClosedForTakeoff</strong>
+<li><strong>closedForTakeoff</strong>
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>DistanceFeet</strong>
+<li><strong>distanceNauticalMiles</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>DistanceMetres</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>DistanceNauticalMiles</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>EndLocation</strong>
+<li><strong>endLocation</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>HeadingMagnetic</strong>
+<li><strong>headingMagnetic</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>HeadingTrue</strong>
+<li><strong>headingTrue</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>Icao</strong>
+<li><strong>icao</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>Id</strong>
+<li><strong>id</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>IsPlayerFacingRunwayDirection</strong>
-<ul>
-<li><code>boolean</code></li>
-</ul>
-</li>
-<li><strong>IsPlayerOnRunway</strong>
-<ul>
-<li><code>boolean</code></li>
-</ul>
-</li>
-<li><strong>LengthFeet</strong>
+<li><strong>lengthFeet</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>LengthMetres</strong>
+<li><strong>magVar</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>MagVar</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>RunwayCenter</strong>
+<li><strong>runwayCenter</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>RunwayID</strong>
+<li><strong>runwayID</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>StartLocation</strong>
+<li><strong>startLocation</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>Surface</strong>
+<li><strong>surface</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>ThresholdLocation</strong>
+<li><strong>thresholdLocation</strong>
 <ul>
 <li><code>array{number}</code></li>
 </ul>
 </li>
-<li><strong>ThresholdOffsetFeet</strong>
+<li><strong>thresholdOffsetFeet</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>ThresholdOffsetMetres</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>WidthFeet</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
-<li><strong>WidthMetres</strong>
+<li><strong>widthFeet</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
@@ -1460,6 +1374,6 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </ul>
 </li>
 </ul>
-<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#coords" class="table-of-contents__link toc-highlight">Coords</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
 </body>
 </html>
