@@ -278,7 +278,7 @@ Unix timestamp, the time in the sim
   - `boolean`
   - Boolean for lights
 - **location**
-  - `array{number}`
+  - [`Coords`](#coords)
   - Coordinates of this location (x, y)
 - **logoLight**
   - `boolean`
@@ -389,8 +389,6 @@ track of if we're crossing a runway or something
   - `string`
 - **icao** - The ICAO of the airline
   - `string`
-- **id**
-  - `number`
 - **ident** - Show "friendlier" name for airline - the code + name
   - `string`
 - **name** - The full name of the airline
@@ -411,7 +409,7 @@ track of if we're crossing a runway or something
 - **icao**
   - `string`
 - **location**
-  - `array{number}`
+  - [`Coords`](#coords)
 - **name**
   - `string`
 - **sceneryFilePath**
@@ -427,11 +425,11 @@ track of if we're crossing a runway or something
 
 ---
 
-## [Coords](#Coords)
-
+- **Coords**
+  - See `Coords`
 - **lat**
   - `number`
-- **lng**
+- **lon**
   - `number`
 
 ---
@@ -465,7 +463,7 @@ track of if we're crossing a runway or something
 - **id** - Store an ID for this entry
   - `string`
 - **location** - Return a position
-  - `array{number}`
+  - [`Coords`](#coords)
 - **onGround**
   - `boolean`
 - **parkBrake**
@@ -573,7 +571,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 - **id**
   - `string`
 - **location**
-  - `array{number}`
+  - [`Coords`](#coords)
   - Coordinates of this location (x, y)
 - **radius**
   - `number`
@@ -587,7 +585,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 - **active** - If this is the currently active point
   - `boolean`
 - **location**
-  - `array{number}`
+  - [`Coords`](#coords)
   - Coordinates of this location (x, y)
 - **Name** - Name of the current active nav point
   - `string`
@@ -596,54 +594,46 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 
 ## [Runway](#Runway)
 
-- **approachingRunway**
+- **approachingRunway** - Are they approaching the runway? Within 200 meters or so
   - `boolean`
-- **approachingRunwayDistance**
+- **approachingRunwayDistance** - Distance to the approaching runway. Don't care about which edge
   - `number`
-- **bearingToMagnetic**
+- **bearingToMagnetic** - The bearing in degrees MAGNETIC to the threshold of this runway.
+<p>NOTE: this is only filled in if a reference position has been set</p>
   - `number`
-- **bearingToTrue**
+- **bearingToTrue** - The bearing in degrees TRUE to the threshold of this runway.
+<p>NOTE: this is only filled in if a reference position has been set</p>
   - `number`
-- **bounds**
-  - `array{array{number}}`
-- **closedForLanding**
+- **closedForLanding** - True if this runway is closed to landing traffic
   - `boolean`
-- **closedForTakeoff**
+- **closedForTakeoff** - True if this runway is closed to traffic taking off
   - `boolean`
-- **distanceNauticalMiles**
+- **distanceNauticalMiles** - The distance to this runway's threshold in Nautical Miles.
+<p>NOTE: this is only filled in if a reference position has been set</p>
   - `number`
-- **endLocation**
-  - `array{number}`
-- **headingMagnetic**
+- **endLocation** - The runway ending location
+  - [`Coords`](#coords)
+- **headingMagnetic** - The Magnetic Heading of the runway
   - `number`
-- **headingTrue**
+- **headingTrue** - The True Heading of the runway
   - `number`
 - **icao**
   - `string`
 - **id**
-  - `number`
-- **lengthFeet**
+  - `string`
+- **lengthFeet** - The length of the runway in Feet
   - `number`
 - **magVar**
   - `number`
-- **runwayCenter**
-  - `array{number}`
-- **runwayID**
+- **runwayCenter** - The center position of the runway
+  - [`Coords`](#coords)
+- **startLocation** - The FlightSim's start location for this runway. Used to position the player for takeoff.
+  - [`Coords`](#coords)
+- **surface** - The type of surface the runway has
   - `string`
-- **startLocation**
-  - `array{number}`
-- **surface**
-  - `string`
-- **thresholdLocation**
-  - `array{number}`
-- **thresholdOffsetFeet**
+- **thresholdLocation** - The Longitude/Latitude of runway threshold
+  - [`Coords`](#coords)
+- **thresholdOffsetFeet** - The distance from the threshold to the real start of the runway in Feet
   - `number`
-- **widthFeet**
+- **widthFeet** - The width of the runway in Feet
   - `number`
-
----
-
-- **Acars.Domain.VSE.**
-  - See `Acars.Domain.VSE.`
-
----
