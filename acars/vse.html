@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="phpVMS Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.de1deac2.css">
-<script src="/assets/js/runtime~main.8047507e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8183fdc4.js" defer="defer"></script>
 <script src="/assets/js/main.3a40c7e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -591,7 +591,7 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 <li><strong>location</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 <li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
@@ -810,11 +810,6 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>id</strong>
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
 <li><strong>ident</strong> - Show &quot;friendlier&quot; name for airline - the code + name<!-- -->
 <ul>
 <li><code>string</code></li>
@@ -856,7 +851,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>location</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
 <li><strong>name</strong>
@@ -891,14 +886,18 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 </ul>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coords"><a href="#Coords">Coords</a><a href="#coords" class="hash-link" aria-label="Direct link to coords" title="Direct link to coords">​</a></h2>
 <ul>
+<li><strong>Coords</strong>
+<ul>
+<li>See <code>Coords</code></li>
+</ul>
+</li>
 <li><strong>lat</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>lng</strong>
+<li><strong>lon</strong>
 <ul>
 <li><code>number</code></li>
 </ul>
@@ -974,7 +973,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>location</strong> - Return a position<!-- -->
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
 <li><strong>onGround</strong>
@@ -1217,7 +1216,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 </li>
 <li><strong>location</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 <li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
@@ -1242,7 +1241,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 </li>
 <li><strong>location</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 <li>Coordinates of this location (x, y)</li>
 </ul>
 </li>
@@ -1255,57 +1254,55 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="runway"><a href="#Runway">Runway</a><a href="#runway" class="hash-link" aria-label="Direct link to runway" title="Direct link to runway">​</a></h2>
 <ul>
-<li><strong>approachingRunway</strong>
+<li><strong>approachingRunway</strong> - Are they approaching the runway? Within 200 meters or so<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>approachingRunwayDistance</strong>
+<li><strong>approachingRunwayDistance</strong> - Distance to the approaching runway. Don&#x27;t care about which edge<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>bearingToMagnetic</strong>
+<li><strong>bearingToMagnetic</strong> - The bearing in degrees MAGNETIC to the threshold of this runway.
+<p>NOTE: this is only filled in if a reference position has been set</p>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>bearingToTrue</strong>
+<li><strong>bearingToTrue</strong> - The bearing in degrees TRUE to the threshold of this runway.
+<p>NOTE: this is only filled in if a reference position has been set</p>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>bounds</strong>
-<ul>
-<li><code>array{array{number}}</code></li>
-</ul>
-</li>
-<li><strong>closedForLanding</strong>
+<li><strong>closedForLanding</strong> - True if this runway is closed to landing traffic<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>closedForTakeoff</strong>
+<li><strong>closedForTakeoff</strong> - True if this runway is closed to traffic taking off<!-- -->
 <ul>
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>distanceNauticalMiles</strong>
+<li><strong>distanceNauticalMiles</strong> - The distance to this runway&#x27;s threshold in Nautical Miles.
+<p>NOTE: this is only filled in if a reference position has been set</p>
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>endLocation</strong>
+<li><strong>endLocation</strong> - The runway ending location<!-- -->
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
-<li><strong>headingMagnetic</strong>
+<li><strong>headingMagnetic</strong> - The Magnetic Heading of the runway<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>headingTrue</strong>
+<li><strong>headingTrue</strong> - The True Heading of the runway<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
@@ -1317,10 +1314,10 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 </li>
 <li><strong>id</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>string</code></li>
 </ul>
 </li>
-<li><strong>lengthFeet</strong>
+<li><strong>lengthFeet</strong> - The length of the runway in Feet<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
@@ -1330,50 +1327,36 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>runwayCenter</strong>
+<li><strong>runwayCenter</strong> - The center position of the runway<!-- -->
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
-<li><strong>runwayID</strong>
+<li><strong>startLocation</strong> - The FlightSim&#x27;s start location for this runway. Used to position the player for takeoff.<!-- -->
+<ul>
+<li><a href="#coords"><code>Coords</code></a></li>
+</ul>
+</li>
+<li><strong>surface</strong> - The type of surface the runway has<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>startLocation</strong>
+<li><strong>thresholdLocation</strong> - The Longitude/Latitude of runway threshold<!-- -->
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
-<li><strong>surface</strong>
-<ul>
-<li><code>string</code></li>
-</ul>
-</li>
-<li><strong>thresholdLocation</strong>
-<ul>
-<li><code>array{number}</code></li>
-</ul>
-</li>
-<li><strong>thresholdOffsetFeet</strong>
+<li><strong>thresholdOffsetFeet</strong> - The distance from the threshold to the real start of the runway in Feet<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>widthFeet</strong>
+<li><strong>widthFeet</strong> - The width of the runway in Feet<!-- -->
 <ul>
 <li><code>number</code></li>
 </ul>
 </li>
-</ul>
-<hr>
-<ul>
-<li><strong>Acars.Domain.VSE.</strong>
-<ul>
-<li>See <code>Acars.Domain.VSE.</code></li>
-</ul>
-</li>
-</ul>
-<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#coords" class="table-of-contents__link toc-highlight">Coords</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
 </body>
 </html>
