@@ -41,9 +41,10 @@ php artisan phpvms:importer "localhost" "phpvms_legacy" "php_legacy_username" "p
 
 Due to some changes with how some of the fundamentals have changed within the system, be aware of the following:
 
-* Users will have to reset their passwords
+* Users will have to reset their passwords by using the 'forgot password' option on the sign-in page
 * Column names don't entirely match up between the databases
 * IDs will differ (numeric, or PIREP IDs will be converted to the new alphanumeric format)
+* To ensure a correct import of finances, PIREPs must either be accepted or rejected in version 5 before launching the import, but they should not be left pending.
 
 #### Post Import Notes
 
