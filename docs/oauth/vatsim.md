@@ -7,7 +7,7 @@ sidebar_title: VATSIM
 First, you need to [create a vatsim organization](https://auth.vatsim.net/organization/requirements) on the VATSIM website.
 
 After your organization has been approved by VATSIM, you can create a new OAuth client.
-Go to the [Organizations](https://auth-dev.vatsim.net/organization) tab and into the organization you created. Navigate to the 'OAuth clients' tab and add a new client.
+Go to the [Organizations](https://auth.vatsim.net/organization) tab and into the organization you created. Navigate to the 'OAuth clients' tab and add a new client.
 In the redirect URL, enter: `https://yourdomain.com/oauth/vatsim/callback`
 
 ![](img/create-vatsim.png)
