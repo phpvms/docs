@@ -41,6 +41,7 @@ module.exports = {
         label: 'OAuth',
         items: [
             'oauth/discord',
+            'oauth/ivao',
             'oauth/vatsim',
         ]
     },
