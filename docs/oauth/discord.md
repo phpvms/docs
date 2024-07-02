@@ -32,3 +32,12 @@ Place the token in the `.env`:
 ```shell title=".env"
 DISCORD_BOT_TOKEN={your_bot_token_copied_before}
 ```
+
+## Customizing scopes
+
+You can add scopes to the OAuth request in addition to the default scopes by adding your scopes to the `.env` file, separated by commas.
+See [Discord Scopes List](https://discord.com/developers/docs/topics/oauth2)
+
+```shell title=".env"
+DISCORD_SCOPES=scope1,scope2
+```
