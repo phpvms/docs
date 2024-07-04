@@ -3,7 +3,7 @@ id: environment
 title: Environment Configuration
 ---
 
-# Development Configuration
+# Environment Configuration
 
 This is for running a local configuration, for running unit-tests, etc. 
 
@@ -13,86 +13,85 @@ This is just how I work on phpVMS, to quickly reset the database and test/develo
 If you're on Windows, I highly recommend installing WSL with your distro of choice (I use Ubuntu). If you don't have `make` available, open the `Makefile` and look for the commands to run for the individual commands of what you're trying to run.
 :::
 
-### Creating and Resetting the Environment
+:::info
+You may want to disable caching during development phases to ensure your changes are applied correctly, as caching cna prevent changes from taking effect. 
+To do this, set `CACHE_DRIVER=null` in your `.env` file.
 
-:::caution
-This requires sqlite to be installed on your system
 :::
 
-To quickly setup a running install, you can do this:
+:::info
+We strongly recommend reading the [Laravel Documentation](https://laravel.com/docs/11.x), as it's more detailed and up-to-date. Since phpVMS is based on Laravel, the installation process is the same.
+In addition, you can simply use the `php artisan phpvms:dev-install` command to set up a development database.
+:::
+
+## Creating and Resetting the Environment with docker
+
+We are using [Laravel Sail](https://laravel.com/docs/11.x/sail#main-content) which provides a simple way to set up and manage a local development environment for laravel apps using Docker.
+
+Before you begin, ensure you have docker installed on your system
 
 ```bash
 git clone https://github.com/nabeelio/phpvms.git phpvms
 cd phpvms
-composer update
-php artisan phpvms:dev-install
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
+    
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan phpvms:dev-install
 ```
 
-The `phpvms:dev-install` command creates the two config files: `config.php` and `.env`. It will then run the migrations, and install the sample seed data, which is located in `app/Database/seeds/sample.yml`
+The `phpvms:dev-install` command creates the `.env` config file. It will then run the migrations, and install the sample seed data, which is located in `app/Database/seeds/sample.yml`
 
 Then to reset the database and reinstall the dev data:
 
 ```bash
-php artisan phpvms:dev-install --reset-db
+./vendor/bin/sail artisan phpvms:dev-install --reset-db
 ```
 
-This does require sqlite. If you want to use MySQL, you need to run the phpVMS installer, so it can generate the config files for MySQL (or you can modify the generated `config.php`), then you can run the above command to reset the database and migrations in MySQL.
+This does require sqlite. If you want to use MySQL, you need to run the phpVMS installer, so it can generate the config files for MySQL (or you can modify the generated `.env`), then you can run the above command to reset the database and migrations in MySQL.
 
-#### Resetting the Environment
+### Resetting the Environment
 
 To reset the database/clear cache, use this command.
 
 ```bash
-make reload-db
+./vendor/bin/sail artisan database:create --reset
+./vendor/bin/sail artisan migrate --seed
 ```
 
 You can run the `reload-db` command as much as you want. If you log in using the default login (admin@phpvms.net), this won't log you out, it'll just reload the database with all the sample data (from app/Database/seeds/sample.yml)
 
----
+### Updating
 
-## Updating
-
-extract files and run the migrations:
+Extract files and run the migrations:
 
 ```bash
-php artisan migrate
+git pull origin dev
+./vendor/bin/sail artisan migrate
 ```
-
 ---
+## Without Docker
 
-## Composer Access
+If you don't want to use Docker, you can use other software like [Laravel Herd](https://herd.laravel.com) (Mac/Windows) or [Laragon](https://laragon.org/) (Windows only).
 
-By default, the Makefile calls the system-wide `composer`. If your host requires a certain path or name for composer, add `COMPOSER=` to the front of the `make` command, e.g:
+There are many tutorials on how to install Laravel applications with these softwares, but here are the basics:
 
 ```bash
-COMPOSER=composer.phar make install
+git clone https://github.com/nabeelio/phpvms.git phpvms
+cd phpvms
+
+composer install 
+php artisan phpvms:dev-install
 ```
+
+This does require sqlite. If you want to use MySQL, you need to run the phpVMS installer, so it can generate the config files for MySQL (or you can modify the generated `.env`), then you can run the above command to reset the database and migrations in MySQL.
 
 ---
-
-# Docker Compose
-
-A full development environment can be brought up using Docker, without having to install composer/npm locally
-
-```bash
-make docker-test
-
-# **OR** with docker-compose directly
-
-docker-compose -f docker-compose.yml -f docker-compose.local.yml up
-```
-
-Then go to `http://localhost`. If you're using dnsmasq, the `app` container is listening on `phpvms.test`, or you can add to your `/etc/hosts` file:
-
-```
-127.0.0.1   phpvms.test
-```
-
-Then visit your site at `http://phpvms.test`. This is what I (Nabeel) use for my day-to-day development
-
----
-
-# Laravel Valet
+## Laravel Valet
 
 If you don't want to use `docker-compose`, easiest way to load locally is to install [Laravel Valet](https://laravel.com/docs/5.5/valet) (if you're running a Mac). Follow the instructions to install; you install it, go to your phpvms directory, and run:
 
@@ -105,3 +104,4 @@ Now going to `http://phpvms.test` should work. If you want to use mysql, follow 
 The default username and password are `admin@phpvms.net` and `admin`. To see the available users in the development environment, [see this file](https://github.com/nabeelio/phpvms/blob/master/app/Database/seeds/sample.yml#L11) 
 
 There is no reason you can't use [MAMP](https://www.mamp.info/en) or [XAMPP](https://www.apachefriends.org), or if you're feeling fancy, using Docker or configuring any webservers yourself.
+
