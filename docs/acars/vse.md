@@ -5,7 +5,7 @@ These are the API Docs
 - **active** - Return false if the PIREP state is in one of
 the following states. Rules don't run when
 the PIREP/processing isn't active
-  - `boolean`
+`  - boolean`
 ### Example
 
 ```csharp
@@ -13,15 +13,18 @@ pirep
 ```
 - **actualDistance** - The distance when the flightplan is measured
 Might not always be set or available
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **aircraft** - The aircraft the pilot is flying
   - [`Aircraft`](#aircraft)
 - **airline** - The airline the pilot is a part of
   - [`Airline`](#airline)
 - **approachTime** - A DateTime object, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **approachTimeActual** - A DateTime object, system time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **approachTimeSystem** - A DateTime object, system time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **arrivalAirport** - The arrival airport, null if they haven't landed yet
   - [`Airport`](#airport)
 - **arrivalGate** - The arrival gate, null if they aren't at one.
@@ -31,17 +34,23 @@ Might be null if it wasn't detected
 Might be null if it wasn't detected
   - [`Runway`](#runway)
 - **blocksOffTime** - DateTime object, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **blocksOffTimeActual** - A DateTime object. Real time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **blocksOffTimeSystem** - A DateTime object. Real time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **blocksOnTime** - A DateTime object, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **blocksOnTimeActual** - A DateTime object, system time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **blocksOnTimeSystem** - A DateTime object, system time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **boardingTime** - Unix timestamp, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **boardingTimeActual** - A DateTime object, sim time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **boardingTimeSystem** - A DateTime object, sim time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **crossingRunway** - This will have a value, with the runway information,
 if they're currently on a runway
 Might be null if it wasn't detected
@@ -61,75 +70,86 @@ console.log(pirep.DepartureGate)
 Might be null if it wasn't detected
   - [`Runway`](#runway)
 - **directTakeoff** - Is this a direct takeoff? That means when in "boarding", the OnGround flag is immediately detected as true
-  - `boolean`
+`  - boolean`
 - **distanceToGo** - How far they ahve already travelled
 Might not always be set or available
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **elapsedTime** - Get the time elapsed, subtract the current sim time from the blocks off time
-  - [See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.TimeSpan?view=net-8.0#properties)
+`  - TimeSpan`
+[  - See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpanview=net8.0#properties)
 ### Example
 
 ```csharp
 console.log(pirep.elapsedTime.TotalMinutes)
 ```
 - **elapsedTimeHumanReadable**
-  - `string`
+`  - string`
 - **engineStartStates**
-  - `boolean[]`
+`  - boolean[]`
 - **fares**
-  - `Acars.Models.Client.FareCollection`
+`  - Acars.Models.Client.FareCollection`
 - **features** - The startup variables/state when this PIREP started
   - [`Features`](#features)
 - **flight** - The flight this PIREP originated from, if it was from
 a bid, or loaded on the screen
   - [`Flight`](#flight)
 - **flightId** - The ID of the flight from phpVMS
-  - `string`
+`  - string`
 ### Example
 
 ```csharp
 pirep.
 ```
 - **flightNumber**
-  - `string`
+`  - string`
 - **flightPlan**
   - [`FlightPlan`](#flightplan)
 - **flightType**
-  - `string`
+`  - string`
 - **fuelAtApproach** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **fuelAtLanding** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **fuelAtTakeOff** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **fuelBlocksOff** - Weight
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **fuelBlocksOn** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **fuelUsed** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **id** - The phpVMS PIREP ID
-  - `string`
+`  - string`
 - **ident**
-  - `string`
+`  - string`
 - **ignoreLightsRules**
-  - `boolean`
+`  - boolean`
 - **isInActiveState** - Is this flight in an active state?
-  - `boolean`
+`  - boolean`
 - **isResuming** - If this PIREP is being resumed
-  - `boolean`
+`  - boolean`
 - **landedTime** - A DateTime object, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **landedTimeActual** - A DateTime object, system time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **landedTimeSystem** - A DateTime object, system time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **landingRate**
-  - [See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
+`  - Speed`
+[See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
 - **notes**
-  - `string`
+`  - string`
 - **pauseLocation**
   - [`Coords`](#coords)
 - **phase**
-  - `string`
+`  - string`
     - INI - Initialized
     - BST - Boarding started
     - PBT - Pushback started
@@ -147,34 +167,36 @@ pirep.
     - PSD - Paused
 - **plannedDistance** - Distance planned
 Might not always be set or available
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **plannedFlightTime** - Gets or sets the planned flight time.
-  - `number`
+`  - number`
   - The planned flight time.
 - **route**
-  - `string`
+`  - string`
 - **routeCode** - The route code
-  - `string`
+`  - string`
 - **routeLeg** - The route leg
-  - `string`
+`  - string`
 - **score**
-  - `number`
+`  - number`
 - **simType** - The simulator type they're using
-  - `string`
+`  - string`
     - Prepar3d
     - X-Plane
     - Microsoft Flight Simulator
     - FSX
     - FS9
 - **sourceName**
-  - `string`
+`  - string`
 - **startedWithBrakes** - Did they start the flight with the brakes on? Use this to determine the criterea on
 moving out of the Boarding phase
-  - `boolean`
+`  - boolean`
 - **startTime** - DateTime object, the time in the sim
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **state** - The PIREP states - these match the phase
-  - `string`
+`  - string`
     - Not Running
     - Initialized
     - Boarding
@@ -192,39 +214,49 @@ moving out of the Boarding phase
     - Filed
     - Paused
 - **takeoffTime** - A DateTime object, sim time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **takeoffTimeActual** - A DateTime object, system time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **takeoffTimeSystem** - A DateTime object, system time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **taxiFuelOut** - The fuel
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **taxiInDuration** - Timespan object
-  - [See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.TimeSpan?view=net-8.0#properties)
+`  - TimeSpan`
+[  - See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpanview=net8.0#properties)
 ### Example
 
 ```csharp
 console.log(pirep.taxiInDuration.TotalMinutes)
 ```
 - **taxiOutDuration** - Timespan object
-  - [See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.TimeSpan?view=net-8.0#properties)
+`  - TimeSpan`
+[  - See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpanview=net8.0#properties)
 ### Example
 
 ```csharp
 console.log(pirep.taxiOutDuration.TotalMinutes)
 ```
 - **taxiOutTime** - A DateTime object, sim time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
-- **taxiOutTimeActual** - A DateTime object, system time
-  - [See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.DateTime?view=net-8.0#properties)
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **taxiOutTimeSystem** - A DateTime object, system time
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **thresholdDistance** - Distance from the threshold
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **todPauseCompleted** - Save whether we've already paused or not for the TOD
-  - `boolean`
+`  - boolean`
 - **todPauseDistance** - Or pause the given distance before
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **todPauseOn** - Whether we should pause at TOD or not
-  - `boolean`
+`  - boolean`
 - **totalPauseTime** - Timespan object
-  - [See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.TimeSpan?view=net-8.0#properties)
+`  - TimeSpan`
+[  - See System.TimeSpan reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpanview=net8.0#properties)
 ### Example
 
 ```csharp
@@ -236,7 +268,7 @@ console.log(pirep.totalPauseTime.TotalMinutes)
 ## [Acars](#Acars)
 
 - **allEnginesRunning** - Are all the engines on?
-  - `boolean`
+`  - boolean`
   - If all of the engines are running
 ### Example
 
@@ -244,7 +276,7 @@ console.log(pirep.totalPauseTime.TotalMinutes)
 console.once(data.AllEnginesRunning)
 ```
 - **anyEnginesRunning** - Are any engines on?
-  - `boolean`
+`  - boolean`
   - If any engines are running
 ### Example
 
@@ -267,7 +299,7 @@ console.once(data.AnyEnginesRunning)
 </pre>
 ```
 - **bank**
-  - `number`
+`  - number`
   - Aircraft bank, +/-
 ### Example
 
@@ -275,7 +307,7 @@ console.once(data.AnyEnginesRunning)
 console.once(data.Bank)
 ```
 - **beaconLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -283,7 +315,7 @@ console.once(data.Bank)
 console.once(data.BeaconLights)
 ```
 - **engineCount**
-  - `number`
+`  - number`
   - The number of engines
 ### Example
 
@@ -291,9 +323,11 @@ console.once(data.BeaconLights)
 console.once(data.EngineCount)
 ```
 - **engineFuelFlow**
-  - [See MassFlow[] reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/MassFlow[].json)
+`  - MassFlow[]`
+[See MassFlow[] reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/MassFlow[].json)
 - **engineMaxRpm** - Has units
-  - [See RotationalSpeed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json)
+`  - RotationalSpeed`
+[See RotationalSpeed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json)
   - The total N1 percent
 ### Example
 
@@ -301,7 +335,7 @@ console.once(data.EngineCount)
 console.once(data.EngineMaxRpm.RevolutionPerMinute)
 ```
 - **engineN2Average** - Get the current engine N2 value (as an average)
-  - `number`
+`  - number`
   - The average of the N2 values
 ### Example
 
@@ -309,9 +343,10 @@ console.once(data.EngineMaxRpm.RevolutionPerMinute)
 console.once(data.EngineN2Average);
 ```
 - **engineN2Percent**
-  - `number[]`
+`  - number[]`
 - **engineRpm**
-  - [See RotationalSpeed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json)
+`  - RotationalSpeed`
+[See RotationalSpeed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json)
   - Engine RPM
 ### Example
 
@@ -319,7 +354,7 @@ console.once(data.EngineN2Average);
 console.once(data.EngineRpm)
 ```
 - **engineType** - The type of engine
-  - `string`
+`  - string`
     - Piston
     - Jet
     - None
@@ -332,7 +367,7 @@ console.once(data.EngineRpm)
 console.once(data.EngineType)
 ```
 - **flaps** - Flaps in an index amount
-  - `number`
+`  - number`
   - Flap position, from 0
 ### Example
 
@@ -340,7 +375,8 @@ console.once(data.EngineType)
 console.once(data.Flaps)
 ```
 - **fuelQuantity**
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
   - The current fuel quantity (weight)
 ### Example
 
@@ -348,7 +384,7 @@ console.once(data.Flaps)
 console.once(data.FuelQuantity)
 ```
 - **gearUp**
-  - `boolean`
+`  - boolean`
   - True if the gear is up
 ### Example
 
@@ -356,7 +392,7 @@ console.once(data.FuelQuantity)
 console.once(data.GearUp)
 ```
 - **gForce** - The current G-Force
-  - `number`
+`  - number`
   - The current g-force
 ### Example
 
@@ -364,7 +400,7 @@ console.once(data.GearUp)
 console.once(data.GForce)
 ```
 - **gForceTouchDown**
-  - `number`
+`  - number`
   - The g-force at touchdown
 ### Example
 
@@ -372,7 +408,8 @@ console.once(data.GForce)
 console.once(data.GForceTouchDown)
 ```
 - **groundAltitude** - Altitude of plane above the ground. Has units, like .Feet/.Meters
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
   - The ground altitude (AGL)
 ### Example
 
@@ -380,7 +417,8 @@ console.once(data.GForceTouchDown)
 console.once(data.GroundAltitude.Feet)
 ```
 - **groundSpeed**
-  - [See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
+`  - Speed`
+[See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
   - If all of the engines are running. Has units, like .Knots
 ### Example
 
@@ -388,7 +426,7 @@ console.once(data.GroundAltitude.Feet)
 console.once(data.GroundSpeed.Knots)
 ```
 - **heading**
-  - `number`
+`  - number`
   - The true heading
 ### Example
 
@@ -396,7 +434,7 @@ console.once(data.GroundSpeed.Knots)
 console.once(data.Heading)
 ```
 - **headingMagnetic**
-  - `number`
+`  - number`
   - The magnetic heading
 ### Example
 
@@ -404,7 +442,8 @@ console.once(data.Heading)
 console.once(data.HeadingMagnetic)
 ```
 - **indicatedAirspeed** - The indicated airspeed
-  - [See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
+`  - Speed`
+[See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
   - Indicated airspeed. Has units, like .Knots
 ### Example
 
@@ -412,7 +451,7 @@ console.once(data.HeadingMagnetic)
 console.once(data.AirspeedIndicated.Knots)
 ```
 - **landingLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -429,7 +468,7 @@ const lat = pirep.ArrivalGate.Location[0]
 const lng = pirep.ArrivalGate.Location[1]
 ```
 - **logoLight**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -437,7 +476,7 @@ const lng = pirep.ArrivalGate.Location[1]
 console.once(data.LogoLight)
 ```
 - **magVar**
-  - `number`
+`  - number`
   - Magnetic variation
 ### Example
 
@@ -445,7 +484,7 @@ console.once(data.LogoLight)
 console.once(data.MagVar)
 ```
 - **n1Percent**
-  - `number`
+`  - number`
   - The total N1 percent
 ### Example
 
@@ -453,7 +492,7 @@ console.once(data.MagVar)
 console.once(data.N1Percent)
 ```
 - **navigationLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -461,7 +500,7 @@ console.once(data.N1Percent)
 console.once(data.NavigationLights)
 ```
 - **onGround**
-  - `boolean`
+`  - boolean`
   - If the aircraft is on the ground
 ### Example
 
@@ -469,7 +508,7 @@ console.once(data.NavigationLights)
 console.once(data.OnGround)
 ```
 - **overspeedWarning**
-  - `boolean`
+`  - boolean`
   - If the overspeed warning is on in the sim
 ### Example
 
@@ -477,7 +516,7 @@ console.once(data.OnGround)
 console.once(data.OverspeedWarning)
 ```
 - **parkBrake**
-  - `boolean`
+`  - boolean`
   - If the parking brake is on
 ### Example
 
@@ -485,7 +524,7 @@ console.once(data.OverspeedWarning)
 console.once(data.ParkBrake)
 ```
 - **paused**
-  - `boolean`
+`  - boolean`
   - Is the sim paused? inherited
 ### Example
 
@@ -493,14 +532,15 @@ console.once(data.ParkBrake)
 console.once(data.Paused)
 ```
 - **payloadWeight** - Weight of the payload
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 ### Example
 
 ```csharp
 console.once(data.PayloadWeight)
 ```
 - **pitch**
-  - `number`
+`  - number`
   - Aircraft pitch, +/-
 ### Example
 
@@ -508,7 +548,8 @@ console.once(data.PayloadWeight)
 console.once(data.Pitch)
 ```
 - **planeAltitude** - Altitude of plane above MSL. Has units, like .Feet/.Meters
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
   - The indicated altitude
 ### Example
 
@@ -516,7 +557,7 @@ console.once(data.Pitch)
 console.once(data.PlaneAltitude.Feet/Meters)
 ```
 - **replay**
-  - `boolean`
+`  - boolean`
   - Are they in a replay?
 ### Example
 
@@ -535,7 +576,7 @@ if (data.Runway) {
 }
 ```
 - **simRate**
-  - `number`
+`  - number`
   - The current simulation rate
 ### Example
 
@@ -543,7 +584,7 @@ if (data.Runway) {
 console.once(data.SimRate)
 ```
 - **slewActive**
-  - `boolean`
+`  - boolean`
   - If the slew is enabled
 ### Example
 
@@ -551,7 +592,7 @@ console.once(data.SimRate)
 console.once(data.SlewActive)
 ```
 - **stallWarning**
-  - `boolean`
+`  - boolean`
   - If the stall warning is on in the sim
 ### Example
 
@@ -559,7 +600,7 @@ console.once(data.SlewActive)
 console.once(data.StallWarning)
 ```
 - **strobeLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -567,7 +608,7 @@ console.once(data.StallWarning)
 console.once(data.StrobeLights)
 ```
 - **taxiLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -575,7 +616,7 @@ console.once(data.StrobeLights)
 console.once(data.TaxiLights)
 ```
 - **throttlePct**
-  - `number`
+`  - number`
   - Average throttle percent
 ### Example
 
@@ -583,16 +624,18 @@ console.once(data.TaxiLights)
 console.once(data.ThrottlePct)
 ```
 - **throttles**
-  - `array`
+`  - array`
 - **totalWeight** - Total weight of the aircraft
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 ### Example
 
 ```csharp
 console.once(data.TotalWeight)
 ```
 - **transponderCode** - The transponder code
-  - [See System.UInt32 reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.UInt32?view=net-8.0#properties)
+`  - UInt32`
+[  - See System.UInt32 reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.UInt32view=net8.0#properties)
   - Transponder code
 ### Example
 
@@ -600,7 +643,7 @@ console.once(data.TotalWeight)
 console.once(data.BeaconLights)
 ```
 - **unlimitedFuel**
-  - `boolean`
+`  - boolean`
   - If unlimited fuel is enabled
 ### Example
 
@@ -608,7 +651,8 @@ console.once(data.BeaconLights)
 console.once(data.UnlimitedFuel)
 ```
 - **verticalSpeed**
-  - [See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
+`  - Speed`
+[See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
     Their vertical speed (+/-). Has units - FeetPerMinute
 ### Example
 
@@ -616,7 +660,8 @@ console.once(data.UnlimitedFuel)
 console.once(data.VerticalSpeed.FeetPerMinute)
 ```
 - **verticalSpeedTouchdown**
-  - [See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
+`  - Speed`
+[See Speed reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json)
   - The vertical speed at touchdown
 ### Example
 
@@ -624,7 +669,7 @@ console.once(data.VerticalSpeed.FeetPerMinute)
 console.once(data.VerticalSpeedTouchdown)
 ```
 - **wingLights**
-  - `boolean`
+`  - boolean`
   - Boolean for lights
 ### Example
 
@@ -632,7 +677,8 @@ console.once(data.VerticalSpeedTouchdown)
 console.once(data.WingLights)
 ```
 - **zeroFuelWeight** - The zero fuel weight
-  - [See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 ### Example
 
 ```csharp
@@ -644,209 +690,220 @@ console.once(data.ZeroFuelWeight)
 ## [Aircraft](#Aircraft)
 
 - **icao**
-  - `string`
+`  - string`
 - **id**
-  - `string`
+`  - string`
 - **ident**
-  - `string`
+`  - string`
 - **name**
-  - `string`
+`  - string`
 - **registration**
-  - `string`
+`  - string`
 - **status**
-  - `string`
+`  - string`
 - **type**
-  - `string`
+`  - string`
 
 ---
 
 ## [Airline](#Airline)
 
 - **iata** - The IATA of the airline
-  - `string`
+`  - string`
 - **icao** - The ICAO of the airline
-  - `string`
+`  - string`
 - **ident** - Show "friendlier" name for airline - the code + name
-  - `string`
+`  - string`
 - **name** - The full name of the airline
-  - `string`
+`  - string`
 
 ---
 
 ## [Airport](#Airport)
 
-- **altitudeFeet**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+- **altitude**
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **city**
-  - `string`
+`  - string`
 - **country**
-  - `string`
+`  - string`
+- **distance**
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **iata**
-  - `string`
+`  - string`
 - **icao**
-  - `string`
+`  - string`
 - **location**
   - [`Coords`](#coords)
 - **name**
-  - `string`
+`  - string`
 - **sceneryFilePath**
-  - `string`
+`  - string`
 - **sceneryName**
-  - `string`
+`  - string`
 - **state**
-  - `string`
+`  - string`
 - **transitionAltitude**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **transitionLevel**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 
 ---
 
 - **Coords**
-  - See `Coords`
+See `Coords`
 - **lat**
-  - `number`
+`  - number`
 - **lon**
-  - `number`
+`  - number`
 
 ---
 
 ## [Features](#Features)
 
 - **aircraftIcao**
-  - `string`
+`  - string`
 - **aircraftType**
-  - `string`
+`  - string`
 - **configFile**
-  - `string`
+`  - string`
 - **dateTime**
-  - `number`
-- **dateTimeClient**
-  - `number`
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
+- **dateTimeSystem**
+`  - DateTime`
+[  - See System.DateTime reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.DateTimeview=net8.0#properties)
 - **engineCount**
-  - `number`
+`  - number`
 - **engineType**
-  - `string`
-- **estCruiseSpeed**
-  - `number`
+`  - string`
 - **flapsCount**
-  - `number`
+`  - number`
 - **gearRetractable**
-  - `boolean`
+`  - boolean`
 - **heading**
-  - `number`
+`  - number`
 - **headingMagnetic**
-  - `number`
+`  - number`
 - **id** - Store an ID for this entry
-  - `string`
+`  - string`
 - **location** - Return a position
   - [`Coords`](#coords)
 - **onGround**
-  - `boolean`
+`  - boolean`
 - **parkBrake**
-  - `boolean`
+`  - boolean`
 - **paused**
-  - `boolean`
-- **propMaxRpm**
-  - `number`
+`  - boolean`
 - **simType**
-  - `string`
+`  - string`
 - **title**
-  - `string`
+`  - string`
 - **unlimitedFuel**
-  - `boolean`
+`  - boolean`
 
 ---
 
 ## [Flight](#Flight)
 
 - **altIcao**
-  - `string`
+`  - string`
 - **arrivalIcao**
-  - `string`
+`  - string`
 - **arrivalTime**
-  - `string`
+`  - string`
 - **departureIcao**
-  - `string`
+`  - string`
 - **departureTime**
-  - `string`
+`  - string`
 - **distance**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **fields**
-  - [See System.Collections.Generic.Dictionary{string,string} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.Collections?view=net-8.0#properties)
+`  - Dictionary{string,string}`
+[  - See System.Collections.Generic.Dictionary{string,string} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary{string,string}view=net8.0#properties)
 - **flightNumber**
-  - `number`
+`  - number`
 - **flightTime**
-  - `number`
+`  - number`
 - **flightType**
-  - `string`
+`  - string`
 - **id**
-  - `string`
+`  - string`
 - **ident**
-  - `string`
+`  - string`
 - **level**
-  - `number`
+`  - number`
 - **loadFactor**
-  - `number`
+`  - number`
 - **loadFactorVariance**
-  - `number`
+`  - number`
 - **route**
-  - `string`
+`  - string`
 - **routeCode**
-  - `string`
+`  - string`
 - **routeLeg**
-  - `string`
+`  - string`
 
 ---
 
 ## [FlightPlan](#FlightPlan)
 
 - **altIcao**
-  - `string`
+`  - string`
 - **arrivalAirport**
   - [`Airport`](#airport)
 - **cargoWeight** - The total cargo weight, in lbs
-  - `number`
+`  - Mass`
+[See Mass reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json)
 - **cruiseAlt**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **currentPoint**
   - [`RoutePoint`](#routepoint)
 - **departureAirport**
   - [`Airport`](#airport)
 - **distance** - Calculate the distance of this route
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **flightId** - The remote ID
-  - `string`
+`  - string`
 - **flightPlanFields** - Bag of fields that can be set for the PIREP. These come from SimBrief.
 Can include fields like the Cost Index, etc. See the VMSAcars file format importer
-  - `Acars.Models.Client.FieldCollection`
+`  - Acars.Models.Client.FieldCollection`
 - **flightPlanType** - The different types of flight plans that can be parsed
-  - `string`
+`  - string`
 - **loadedFromFile**
-  - `boolean`
+`  - boolean`
 - **nextPoint**
   - [`RoutePoint`](#routepoint)
 - **passengersCount** - Total number of planned passengers
-  - `number`
+`  - number`
 - **pointCount**
-  - `number`
+`  - number`
 - **points**
-  - `array{Acars.Domain.VSE.RoutePoint}`
+`  - array{Acars.Domain.VSE.RoutePoint}`
 - **route** - Return the route string
-  - `string`
+`  - string`
 - **simbriefId**
-  - `string`
+`  - string`
 - **toc** - The top of climb point
-  - [See System.Nullable{Acars.Domain.VSE.Coords} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.Nullable{Acars?view=net-8.0#properties)
+`  - Coords}`
+[  - See System.Nullable{Acars.Domain.VSE.Coords} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable{Acars.Domain.VSE.Coords}view=net8.0#properties)
 - **tod** - The route point which is the top of descent. This comes from the SimBrief
-  - [See System.Nullable{Acars.Domain.VSE.Coords} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/system.Nullable{Acars?view=net-8.0#properties)
+`  - Coords}`
+[  - See System.Nullable{Acars.Domain.VSE.Coords} reference for properties](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable{Acars.Domain.VSE.Coords}view=net8.0#properties)
 
 ---
 
 ## [Gate](#Gate)
 
 - **id**
-  - `string`
+`  - string`
 - **location**
   - [`Coords`](#coords)
   - Coordinates of this location (x, y)
@@ -857,9 +914,10 @@ const lat = pirep.ArrivalGate.Location[0]
 const lng = pirep.ArrivalGate.Location[1]
 ```
 - **radius**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **type** - The type of gate
-  - `string`
+`  - string`
     - None
     - Ramp GA
     - Ramp GA Small
@@ -888,7 +946,7 @@ console.log(pirep.ArrivalGate.Type);
 ## [RoutePoint](#RoutePoint)
 
 - **active** - If this is the currently active point
-  - `boolean`
+`  - boolean`
 - **location**
   - [`Coords`](#coords)
   - Coordinates of this location (x, y)
@@ -899,60 +957,65 @@ const lat = pirep.ArrivalGate.Location[0]
 const lng = pirep.ArrivalGate.Location[1]
 ```
 - **Name** - Name of the current active nav point
-  - `string`
+`  - string`
 
 ---
 
 ## [Runway](#Runway)
 
 - **approachingRunway** - Are they approaching the runway? Within 200 meters or so
-  - `boolean`
+`  - boolean`
 - **approachingRunwayDistance** - Distance to the approaching runway. Don't care about which edge
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **bearingToMagnetic** - The bearing in degrees MAGNETIC to the threshold of this runway.
 <p>NOTE: this is only filled in if a reference position has been set</p>
-  - `number`
+`  - number`
 - **bearingToTrue** - The bearing in degrees TRUE to the threshold of this runway.
 <p>NOTE: this is only filled in if a reference position has been set</p>
-  - `number`
+`  - number`
 - **closedForLanding** - True if this runway is closed to landing traffic
-  - `boolean`
+`  - boolean`
 - **closedForTakeoff** - True if this runway is closed to traffic taking off
-  - `boolean`
+`  - boolean`
 - **distance**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **endLocation** - The runway ending location
   - [`Coords`](#coords)
 - **headingMagnetic** - The Magnetic Heading of the runway
-  - `number`
+`  - number`
 - **headingTrue** - The True Heading of the runway
-  - `number`
+`  - number`
 - **icao**
-  - `string`
+`  - string`
 - **id**
-  - `string`
-- **lengthFeet** - Length of the runway
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - string`
+- **length** - Length of the runway
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 - **magVar**
-  - `number`
+`  - number`
 - **runwayCenter** - The center position of the runway
   - [`Coords`](#coords)
 - **runwayId**
-  - `VMSL.Scenery.SimObjects.RunwayId`
+`  - VMSL.Scenery.SimObjects.RunwayId`
 - **startLocation** - The FlightSim's start location for this runway. Used to position the player for takeoff.
   - [`Coords`](#coords)
 - **surface** - The type of surface the runway has
-  - `string`
+`  - string`
 - **thresholdLocation** - The Longitude/Latitude of runway threshold
   - [`Coords`](#coords)
 - **thresholdOffset**
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
-- **widthFeet** - Width of the runway
-  - [See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
+- **width** - Width of the runway
+`  - Length`
+[See Length reference for unit properties](https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json)
 
 ---
 
 - **Acars.Domain.VSE.**
-  - See `Acars.Domain.VSE.`
+See `Acars.Domain.VSE.`
 
 ---
