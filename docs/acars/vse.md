@@ -8,15 +8,17 @@ the PIREP/processing isn't active
   - `boolean`
 - **actualDistance** - The distance when the flightplan is measured
 Might not always be set or available
-  - `number`
+  - `UnitsNet.Length`
 - **aircraft** - The aircraft the pilot is flying
   - [`Aircraft`](#aircraft)
 - **airline** - The airline the pilot is a part of
   - [`Airline`](#airline)
-- **approachTime** - Unix timestamp, the time in the sim
-  - `number`
-- **approachTimeActual** - Unix timestamp, system time
-  - `number`
+- **approachTime** - A DateTime object, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **approachTimeActual** - A DateTime object, system time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
 - **arrivalAirport** - The arrival airport, null if they haven't landed yet
   - [`Airport`](#airport)
 - **arrivalGate** - The arrival gate, null if they aren't at one.
@@ -25,18 +27,24 @@ Might be null if it wasn't detected
 - **arrivalRunway** - The runway that they landed on.
 Might be null if it wasn't detected
   - [`Runway`](#runway)
-- **blocksOffTime** - Unix timestamp, the time in the sim
-  - `number`
-- **blocksOffTimeActual** - Unix timestamp, system time
-  - `number`
-- **blocksOnTime** - Unix timestamp, the time in the sim
-  - `number`
-- **blocksOnTimeActual** - Unix timestamp, system time
-  - `number`
-- **boardingTime** - Unix timestamp, the time in the sim
-  - `number`
-- **boardingTimeActual**
-  - `number`
+- **blocksOffTime** - DateTime object, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **blocksOffTimeActual** - A DateTime object. Real time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **blocksOnTime** - A DateTime object, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **blocksOnTimeActual** - A DateTime object, system time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **boardingTime** - Unix timestamp, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **boardingTimeActual** - A DateTime object, sim time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
 - **crossingRunway** - This will have a value, with the runway information,
 if they're currently on a runway
 Might be null if it wasn't detected
@@ -54,19 +62,17 @@ Might be null if it wasn't detected
   - `boolean`
 - **distanceToGo** - How far they ahve already travelled
 Might not always be set or available
-  - `number`
+  - `UnitsNet.Length`
 - **elapsedTime** - Get the time elapsed, subtract the current sim time from the blocks off time
-In seconds
-  - `number`
+Timespan object. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+  - `System.TimeSpan`
 - **elapsedTimeHumanReadable**
   - `string`
 - **engineStartStates**
   - `boolean[]`
-- **estimatedTravelTime** - The amount of time estimated that this should take. In minutes
-Might not always be set or available
-  - `number`
 - **fares**
-  - `Acars.Models.FareCollection`
+  - `Acars.Models.Client.FareCollection`
 - **features** - The startup variables/state when this PIREP started
   - [`Features`](#features)
 - **flight** - The flight this PIREP originated from, if it was from
@@ -74,24 +80,30 @@ a bid, or loaded on the screen
   - [`Flight`](#flight)
 - **flightId** - The ID of the flight from phpVMS
   - `string`
-- **flightNumber** - The flight number
+- **flightNumber**
   - `string`
 - **flightPlan**
   - [`FlightPlan`](#flightplan)
 - **flightType**
   - `string`
-- **fuelAtApproach** - The fuel, in lbs
-  - `number`
-- **fuelAtLanding** - The fuel, in lbs
-  - `number`
-- **fuelAtTakeOff** - The fuel, in lbs
-  - `number`
-- **fuelBlocksOff** - The fuel, in lbs
-  - `number`
-- **fuelBlocksOn** - The fuel, in lbs
-  - `number`
-- **fuelUsed** - The fuel, in lbs
-  - `number`
+- **fuelAtApproach** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **fuelAtLanding** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **fuelAtTakeOff** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **fuelBlocksOff** - Weight. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **fuelBlocksOn** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **fuelUsed** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
 - **id** - The phpVMS PIREP ID
   - `string`
 - **ident**
@@ -102,16 +114,18 @@ a bid, or loaded on the screen
   - `boolean`
 - **isResuming** - If this PIREP is being resumed
   - `boolean`
-- **landedTime** - Unix timestamp, the time in the sim
-  - `number`
-- **landedTimeActual** - Unix timestamp, system time
-  - `number`
+- **landedTime** - A DateTime object, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **landedTimeActual** - A DateTime object, system time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
 - **landingRate**
-  - `number`
+  - `UnitsNet.Speed`
 - **notes**
   - `string`
 - **pauseLocation**
-  - `array{number}`
+  - [`Coords`](#coords)
 - **phase**
   - `string`
     - INI - Initialized
@@ -131,9 +145,9 @@ a bid, or loaded on the screen
     - PSD - Paused
 - **plannedDistance** - Distance planned
 Might not always be set or available
-  - `number`
+  - `UnitsNet.Length`
 - **plannedFlightTime** - Gets or sets the planned flight time.
-  - `array`
+  - `number`
   - The planned flight time.
 - **route**
   - `string`
@@ -155,8 +169,9 @@ Might not always be set or available
 - **startedWithBrakes** - Did they start the flight with the brakes on? Use this to determine the criterea on
 moving out of the Boarding phase
   - `boolean`
-- **startTime** - Unix timestamp, the time in the sim
-  - `number`
+- **startTime** -  DateTime object, the time in the sim. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
 - **state** - The PIREP states - these match the phase
   - `string`
     - Not Running
@@ -175,31 +190,39 @@ moving out of the Boarding phase
     - Cancelled
     - Filed
     - Paused
-- **takeoffTime** - Unix timestamp, the time in the sim
-  - `number`
-- **takeoffTimeActual** - Unix timestamp, system time
-  - `number`
-- **taxiFuelOut** - The fuel, in lbs
-  - `number`
-- **taxiInDuration**
-  - `number`
-- **taxiOutDuration**
-  - `number`
-- **taxiOutTime** - The in-sim taxi out time
-Unix timestamp, the time in the sim
-  - `number`
-- **taxiOutTimeActual** - Unix timestamp, system time
-  - `number`
-- **thresholdDistance** - Distance from the threshold, in feet
-  - `number`
+- **takeoffTime** - A DateTime object, sim time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **takeoffTimeActual** - A DateTime object, system time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **taxiFuelOut** - The fuel. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
+- **taxiInDuration** - Timespan object. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+  - `System.TimeSpan`
+- **taxiOutDuration** - Timespan object. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+  - `System.TimeSpan`
+- **taxiOutTime** - A DateTime object, sim time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **taxiOutTimeActual** - A DateTime object, system time. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+  - `System.DateTime`
+- **thresholdDistance** - Distance from the threshold. See:
+https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+  - `UnitsNet.Length`
 - **todPauseCompleted** - Save whether we've already paused or not for the TOD
   - `boolean`
 - **todPauseDistance** - Or pause the given distance before
   - `number`
 - **todPauseOn** - Whether we should pause at TOD or not
   - `boolean`
-- **totalPauseTime**
-  - `number`
+- **totalPauseTime** - Timespan object. See:
+https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+  - `System.TimeSpan`
 
 ---
 
@@ -224,9 +247,9 @@ Unix timestamp, the time in the sim
   - `number`
   - The number of engines
 - **engineFuelFlow**
-  - `number[]`
-- **engineMaxRpm**
-  - `number`
+  - `UnitsNet.MassFlow[]`
+- **engineMaxRpm** - Has units. See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json
+  - `UnitsNet.RotationalSpeed`
   - The total N1 percent
 - **engineN2Average** - Get the current engine N2 value (as an average)
   - `number`
@@ -234,7 +257,7 @@ Unix timestamp, the time in the sim
 - **engineN2Percent**
   - `number[]`
 - **engineRpm**
-  - `number`
+  - `UnitsNet.RotationalSpeed`
   - Engine RPM
 - **engineType** - The type of engine
   - `string`
@@ -248,8 +271,8 @@ Unix timestamp, the time in the sim
   - `number`
   - Flap position, from 0
 - **fuelQuantity**
-  - `number`
-  - The current fuel quantity
+  - `UnitsNet.Mass`
+  - The current fuel quantity (weight)
 - **gearUp**
   - `boolean`
   - True if the gear is up
@@ -259,21 +282,24 @@ Unix timestamp, the time in the sim
 - **gForceTouchDown**
   - `number`
   - The g-force at touchdown
-- **groundAltitude** - Altitude of plane above the ground
-  - `number`
+- **groundAltitude** - Altitude of plane above the ground. Has units, like .Feet/.Meters
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+  - `UnitsNet.Length`
   - The ground altitude (AGL)
 - **groundSpeed**
-  - `number`
-  - If all of the engines are running
+  - `UnitsNet.Speed`
+  - If all of the engines are running. Has units, like .Knots
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
 - **heading**
   - `number`
   - The true heading
 - **headingMagnetic**
   - `number`
   - The magnetic heading
-- **indicatedAirspeed**
-  - `number`
-  - Indicated airspeed
+- **indicatedAirspeed** - The indicated airspeed
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
+  - `UnitsNet.Speed`
+  - Indicated airspeed. Has units, like .Knots
 - **landingLights**
   - `boolean`
   - Boolean for lights
@@ -304,14 +330,15 @@ Unix timestamp, the time in the sim
 - **paused**
   - `boolean`
   - Is the sim paused? inherited
-- **payloadWeight**
-  - `number`
-  - Weight of the payload
+- **payloadWeight** - Weight of the payload
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
 - **pitch**
   - `number`
   - Aircraft pitch, +/-
-- **planeAltitude** - Altitude of plane above MSL
-  - `number`
+- **planeAltitude** - Altitude of plane above MSL. Has units, like .Feet/.Meters
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+  - `UnitsNet.Length`
   - The indicated altitude
 - **replay**
   - `boolean`
@@ -340,9 +367,9 @@ track of if we're crossing a runway or something
   - Average throttle percent
 - **throttles**
   - `array`
-- **totalWeight**
-  - `number`
-  - Total weight of the a ircraft
+- **totalWeight** - Total weight of the aircraft
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
 - **transponderCode** - The transponder code
   - `System.UInt32`
   - Transponder code
@@ -350,17 +377,18 @@ track of if we're crossing a runway or something
   - `boolean`
   - If unlimited fuel is enabled
 - **verticalSpeed**
-  - `number`
-  - Their vertical speed (+/-)
+  - `UnitsNet.Speed`
+    Their vertical speed (+/-). Has units - FeetPerMinute
+    See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
 - **verticalSpeedTouchdown**
-  - `number`
+  - `UnitsNet.Speed`
   - The vertical speed at touchdown
 - **wingLights**
   - `boolean`
   - Boolean for lights
-- **zeroFuelWeight**
-  - `number`
-  - The zero fuel weight
+- **zeroFuelWeight** - The zero fuel weight
+See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+  - `UnitsNet.Mass`
 
 ---
 
@@ -399,7 +427,7 @@ track of if we're crossing a runway or something
 ## [Airport](#Airport)
 
 - **altitudeFeet**
-  - `array`
+  - `UnitsNet.Length`
 - **city**
   - `string`
 - **country**
@@ -419,9 +447,9 @@ track of if we're crossing a runway or something
 - **state**
   - `string`
 - **transitionAltitude**
-  - `array`
+  - `UnitsNet.Length`
 - **transitionLevel**
-  - `array`
+  - `UnitsNet.Length`
 
 ---
 
@@ -494,7 +522,7 @@ track of if we're crossing a runway or something
 - **departureTime**
   - `string`
 - **distance**
-  - `number`
+  - `UnitsNet.Length`
 - **fields**
   - `System.Collections.Generic.Dictionary{string,string}`
 - **flightNumber**
@@ -538,11 +566,11 @@ track of if we're crossing a runway or something
   - [`Airport`](#airport)
 - **distance**
   - `number`
-- **flightId**
+- **flightId** - The remote ID
   - `string`
 - **flightPlanFields** - Bag of fields that can be set for the PIREP. These come from SimBrief.
 Can include fields like the Cost Index, etc. See the VMSAcars file format importer
-  - `Acars.Models.FieldCollection`
+  - `Acars.Models.Client.FieldCollection`
 - **flightPlanType** - The different types of flight plans that can be parsed
   - `string`
 - **loadedFromFile**
@@ -574,9 +602,26 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
   - [`Coords`](#coords)
   - Coordinates of this location (x, y)
 - **radius**
-  - `number`
-- **type**
+  - `UnitsNet.Length`
+- **type** - The type of gate
   - `string`
+    - None
+    - Ramp GA
+    - Ramp GA Small
+    - Ramp GA Medium
+    - Ramp GA Large
+    - Ramp GA Cargo
+    - Ramp Military Cargo
+    - Ramp Military Combat
+    - Gate Small
+    - Gate Medium
+    - Gate Heavy
+    - Dock GA
+    - Fuel
+    - Vehicles
+    - Ramp GA Extra
+    - Gate Extra
+    - Jetway
 
 ---
 
@@ -597,7 +642,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 - **approachingRunway** - Are they approaching the runway? Within 200 meters or so
   - `boolean`
 - **approachingRunwayDistance** - Distance to the approaching runway. Don't care about which edge
-  - `number`
+  - `UnitsNet.Length`
 - **bearingToMagnetic** - The bearing in degrees MAGNETIC to the threshold of this runway.
 <p>NOTE: this is only filled in if a reference position has been set</p>
   - `number`
@@ -608,9 +653,8 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
   - `boolean`
 - **closedForTakeoff** - True if this runway is closed to traffic taking off
   - `boolean`
-- **distanceNauticalMiles** - The distance to this runway's threshold in Nautical Miles.
-<p>NOTE: this is only filled in if a reference position has been set</p>
-  - `number`
+- **distance**
+  - `UnitsNet.Length`
 - **endLocation** - The runway ending location
   - [`Coords`](#coords)
 - **headingMagnetic** - The Magnetic Heading of the runway
@@ -621,19 +665,28 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
   - `string`
 - **id**
   - `string`
-- **lengthFeet** - The length of the runway in Feet
-  - `number`
+- **lengthFeet** - Length of the runway
+  - `UnitsNet.Length`
 - **magVar**
   - `number`
 - **runwayCenter** - The center position of the runway
   - [`Coords`](#coords)
+- **runwayId**
+  - `VMSL.Scenery.SimObjects.RunwayId`
 - **startLocation** - The FlightSim's start location for this runway. Used to position the player for takeoff.
   - [`Coords`](#coords)
 - **surface** - The type of surface the runway has
   - `string`
 - **thresholdLocation** - The Longitude/Latitude of runway threshold
   - [`Coords`](#coords)
-- **thresholdOffsetFeet** - The distance from the threshold to the real start of the runway in Feet
-  - `number`
-- **widthFeet** - The width of the runway in Feet
-  - `number`
+- **thresholdOffset**
+  - `UnitsNet.Length`
+- **widthFeet** - Width of the runway
+  - `UnitsNet.Length`
+
+---
+
+- **Acars.Domain.VSE.**
+  - See `Acars.Domain.VSE.`
+
+---
