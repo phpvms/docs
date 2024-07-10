@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="phpVMS Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.de1deac2.css">
-<script src="/assets/js/runtime~main.36593a70.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.710da97a.js" defer="defer"></script>
 <script src="/assets/js/main.2ab2241b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -28,7 +28,7 @@ the PIREP/processing isn&#x27;t active<!-- -->
 <li><strong>actualDistance</strong> - The distance when the flightplan is measured
 Might not always be set or available<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>aircraft</strong> - The aircraft the pilot is flying<!-- -->
@@ -41,14 +41,16 @@ Might not always be set or available<!-- -->
 <li><a href="#airline"><code>Airline</code></a></li>
 </ul>
 </li>
-<li><strong>approachTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>approachTime</strong> - A DateTime object, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>approachTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>approachTimeActual</strong> - A DateTime object, system time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
 <li><strong>arrivalAirport</strong> - The arrival airport, null if they haven&#x27;t landed yet<!-- -->
@@ -68,34 +70,40 @@ Might be null if it wasn&#x27;t detected<!-- -->
 <li><a href="#runway"><code>Runway</code></a></li>
 </ul>
 </li>
-<li><strong>blocksOffTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>blocksOffTime</strong> - DateTime object, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>blocksOffTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>blocksOffTimeActual</strong> - A DateTime object. Real time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>blocksOnTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>blocksOnTime</strong> - A DateTime object, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>blocksOnTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>blocksOnTimeActual</strong> - A DateTime object, system time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>boardingTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>boardingTime</strong> - Unix timestamp, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>boardingTimeActual</strong>
+<li><strong>boardingTimeActual</strong> - A DateTime object, sim time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
 <li><strong>crossingRunway</strong> - This will have a value, with the runway information,
@@ -131,13 +139,14 @@ Might be null if it wasn&#x27;t detected<!-- -->
 <li><strong>distanceToGo</strong> - How far they ahve already travelled
 Might not always be set or available<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>elapsedTime</strong> - Get the time elapsed, subtract the current sim time from the blocks off time
-In seconds<!-- -->
+Timespan object. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.TimeSpan</code></li>
 </ul>
 </li>
 <li><strong>elapsedTimeHumanReadable</strong>
@@ -150,15 +159,9 @@ In seconds<!-- -->
 <li><code>boolean[]</code></li>
 </ul>
 </li>
-<li><strong>estimatedTravelTime</strong> - The amount of time estimated that this should take. In minutes
-Might not always be set or available<!-- -->
-<ul>
-<li><code>number</code></li>
-</ul>
-</li>
 <li><strong>fares</strong>
 <ul>
-<li><code>Acars.Models.FareCollection</code></li>
+<li><code>Acars.Models.Client.FareCollection</code></li>
 </ul>
 </li>
 <li><strong>features</strong> - The startup variables/state when this PIREP started<!-- -->
@@ -177,7 +180,7 @@ a bid, or loaded on the screen<!-- -->
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>flightNumber</strong> - The flight number<!-- -->
+<li><strong>flightNumber</strong>
 <ul>
 <li><code>string</code></li>
 </ul>
@@ -192,34 +195,40 @@ a bid, or loaded on the screen<!-- -->
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>fuelAtApproach</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtApproach</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>fuelAtLanding</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtLanding</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>fuelAtTakeOff</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelAtTakeOff</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>fuelBlocksOff</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelBlocksOff</strong> - Weight. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>fuelBlocksOn</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelBlocksOn</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>fuelUsed</strong> - The fuel, in lbs<!-- -->
+<li><strong>fuelUsed</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
 <li><strong>id</strong> - The phpVMS PIREP ID<!-- -->
@@ -247,19 +256,21 @@ a bid, or loaded on the screen<!-- -->
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>landedTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>landedTime</strong> - A DateTime object, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>landedTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>landedTimeActual</strong> - A DateTime object, system time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
 <li><strong>landingRate</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Speed</code></li>
 </ul>
 </li>
 <li><strong>notes</strong>
@@ -269,7 +280,7 @@ a bid, or loaded on the screen<!-- -->
 </li>
 <li><strong>pauseLocation</strong>
 <ul>
-<li><code>array{number}</code></li>
+<li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
 <li><strong>phase</strong>
@@ -298,12 +309,12 @@ a bid, or loaded on the screen<!-- -->
 <li><strong>plannedDistance</strong> - Distance planned
 Might not always be set or available<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>plannedFlightTime</strong> - Gets or sets the planned flight time.<!-- -->
 <ul>
-<li><code>array</code></li>
+<li><code>number</code></li>
 <li>The planned flight time.</li>
 </ul>
 </li>
@@ -351,9 +362,10 @@ moving out of the Boarding phase<!-- -->
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>startTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>startTime</strong> -  DateTime object, the time in the sim. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
 <li><strong>state</strong> - The PIREP states - these match the phase<!-- -->
@@ -380,45 +392,52 @@ moving out of the Boarding phase<!-- -->
 </li>
 </ul>
 </li>
-<li><strong>takeoffTime</strong> - Unix timestamp, the time in the sim<!-- -->
+<li><strong>takeoffTime</strong> - A DateTime object, sim time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>takeoffTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>takeoffTimeActual</strong> - A DateTime object, system time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>taxiFuelOut</strong> - The fuel, in lbs<!-- -->
+<li><strong>taxiFuelOut</strong> - The fuel. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
-<li><strong>taxiInDuration</strong>
+<li><strong>taxiInDuration</strong> - Timespan object. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.TimeSpan</code></li>
 </ul>
 </li>
-<li><strong>taxiOutDuration</strong>
+<li><strong>taxiOutDuration</strong> - Timespan object. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.TimeSpan</code></li>
 </ul>
 </li>
-<li><strong>taxiOutTime</strong> - The in-sim taxi out time
-Unix timestamp, the time in the sim<!-- -->
+<li><strong>taxiOutTime</strong> - A DateTime object, sim time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>taxiOutTimeActual</strong> - Unix timestamp, system time<!-- -->
+<li><strong>taxiOutTimeActual</strong> - A DateTime object, system time. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.DateTime</code></li>
 </ul>
 </li>
-<li><strong>thresholdDistance</strong> - Distance from the threshold, in feet<!-- -->
+<li><strong>thresholdDistance</strong> - Distance from the threshold. See:
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>todPauseCompleted</strong> - Save whether we&#x27;ve already paused or not for the TOD<!-- -->
@@ -436,9 +455,10 @@ Unix timestamp, the time in the sim<!-- -->
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>totalPauseTime</strong>
+<li><strong>totalPauseTime</strong> - Timespan object. See:
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties</a>
 <ul>
-<li><code>number</code></li>
+<li><code>System.TimeSpan</code></li>
 </ul>
 </li>
 </ul>
@@ -483,12 +503,12 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 <li><strong>engineFuelFlow</strong>
 <ul>
-<li><code>number[]</code></li>
+<li><code>UnitsNet.MassFlow[]</code></li>
 </ul>
 </li>
-<li><strong>engineMaxRpm</strong>
+<li><strong>engineMaxRpm</strong> - Has units. See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.RotationalSpeed</code></li>
 <li>The total N1 percent</li>
 </ul>
 </li>
@@ -505,7 +525,7 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 <li><strong>engineRpm</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.RotationalSpeed</code></li>
 <li>Engine RPM</li>
 </ul>
 </li>
@@ -531,8 +551,8 @@ Unix timestamp, the time in the sim<!-- -->
 </li>
 <li><strong>fuelQuantity</strong>
 <ul>
-<li><code>number</code></li>
-<li>The current fuel quantity</li>
+<li><code>UnitsNet.Mass</code></li>
+<li>The current fuel quantity (weight)</li>
 </ul>
 </li>
 <li><strong>gearUp</strong>
@@ -553,16 +573,18 @@ Unix timestamp, the time in the sim<!-- -->
 <li>The g-force at touchdown</li>
 </ul>
 </li>
-<li><strong>groundAltitude</strong> - Altitude of plane above the ground<!-- -->
+<li><strong>groundAltitude</strong> - Altitude of plane above the ground. Has units, like .Feet/.Meters
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 <li>The ground altitude (AGL)</li>
 </ul>
 </li>
 <li><strong>groundSpeed</strong>
 <ul>
-<li><code>number</code></li>
-<li>If all of the engines are running</li>
+<li><code>UnitsNet.Speed</code></li>
+<li>If all of the engines are running. Has units, like .Knots
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json</a></li>
 </ul>
 </li>
 <li><strong>heading</strong>
@@ -577,10 +599,11 @@ Unix timestamp, the time in the sim<!-- -->
 <li>The magnetic heading</li>
 </ul>
 </li>
-<li><strong>indicatedAirspeed</strong>
+<li><strong>indicatedAirspeed</strong> - The indicated airspeed
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json</a>
 <ul>
-<li><code>number</code></li>
-<li>Indicated airspeed</li>
+<li><code>UnitsNet.Speed</code></li>
+<li>Indicated airspeed. Has units, like .Knots</li>
 </ul>
 </li>
 <li><strong>landingLights</strong>
@@ -643,10 +666,10 @@ Unix timestamp, the time in the sim<!-- -->
 <li>Is the sim paused? inherited</li>
 </ul>
 </li>
-<li><strong>payloadWeight</strong>
+<li><strong>payloadWeight</strong> - Weight of the payload
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
-<li>Weight of the payload</li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
 <li><strong>pitch</strong>
@@ -655,9 +678,10 @@ Unix timestamp, the time in the sim<!-- -->
 <li>Aircraft pitch, +/-</li>
 </ul>
 </li>
-<li><strong>planeAltitude</strong> - Altitude of plane above MSL<!-- -->
+<li><strong>planeAltitude</strong> - Altitude of plane above MSL. Has units, like .Feet/.Meters
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json</a>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 <li>The indicated altitude</li>
 </ul>
 </li>
@@ -715,10 +739,10 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li><code>array</code></li>
 </ul>
 </li>
-<li><strong>totalWeight</strong>
+<li><strong>totalWeight</strong> - Total weight of the aircraft
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
-<li>Total weight of the a ircraft</li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
 <li><strong>transponderCode</strong> - The transponder code<!-- -->
@@ -735,13 +759,14 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>verticalSpeed</strong>
 <ul>
-<li><code>number</code></li>
-<li>Their vertical speed (+/-)</li>
+<li><code>UnitsNet.Speed</code>
+Their vertical speed (+/-). Has units - FeetPerMinute
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json</a></li>
 </ul>
 </li>
 <li><strong>verticalSpeedTouchdown</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Speed</code></li>
 <li>The vertical speed at touchdown</li>
 </ul>
 </li>
@@ -751,10 +776,10 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li>Boolean for lights</li>
 </ul>
 </li>
-<li><strong>zeroFuelWeight</strong>
+<li><strong>zeroFuelWeight</strong> - The zero fuel weight
+See <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json" target="_blank" rel="noopener noreferrer">https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json</a>
 <ul>
-<li><code>number</code></li>
-<li>The zero fuel weight</li>
+<li><code>UnitsNet.Mass</code></li>
 </ul>
 </li>
 </ul>
@@ -826,7 +851,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <ul>
 <li><strong>altitudeFeet</strong>
 <ul>
-<li><code>array</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>city</strong>
@@ -876,12 +901,12 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>transitionAltitude</strong>
 <ul>
-<li><code>array</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>transitionLevel</strong>
 <ul>
-<li><code>array</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 </ul>
@@ -1042,7 +1067,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 </li>
 <li><strong>distance</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>fields</strong>
@@ -1144,7 +1169,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li><code>number</code></li>
 </ul>
 </li>
-<li><strong>flightId</strong>
+<li><strong>flightId</strong> - The remote ID<!-- -->
 <ul>
 <li><code>string</code></li>
 </ul>
@@ -1152,7 +1177,7 @@ track of if we&#x27;re crossing a runway or something<!-- -->
 <li><strong>flightPlanFields</strong> - Bag of fields that can be set for the PIREP. These come from SimBrief.
 Can include fields like the Cost Index, etc. See the VMSAcars file format importer<!-- -->
 <ul>
-<li><code>Acars.Models.FieldCollection</code></li>
+<li><code>Acars.Models.Client.FieldCollection</code></li>
 </ul>
 </li>
 <li><strong>flightPlanType</strong> - The different types of flight plans that can be parsed<!-- -->
@@ -1222,12 +1247,32 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 </li>
 <li><strong>radius</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
-<li><strong>type</strong>
+<li><strong>type</strong> - The type of gate<!-- -->
 <ul>
-<li><code>string</code></li>
+<li><code>string</code>
+<ul>
+<li>None</li>
+<li>Ramp GA</li>
+<li>Ramp GA Small</li>
+<li>Ramp GA Medium</li>
+<li>Ramp GA Large</li>
+<li>Ramp GA Cargo</li>
+<li>Ramp Military Cargo</li>
+<li>Ramp Military Combat</li>
+<li>Gate Small</li>
+<li>Gate Medium</li>
+<li>Gate Heavy</li>
+<li>Dock GA</li>
+<li>Fuel</li>
+<li>Vehicles</li>
+<li>Ramp GA Extra</li>
+<li>Gate Extra</li>
+<li>Jetway</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1261,7 +1306,7 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 </li>
 <li><strong>approachingRunwayDistance</strong> - Distance to the approaching runway. Don&#x27;t care about which edge<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>bearingToMagnetic</strong> - The bearing in degrees MAGNETIC to the threshold of this runway.
@@ -1286,10 +1331,9 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <li><code>boolean</code></li>
 </ul>
 </li>
-<li><strong>distanceNauticalMiles</strong> - The distance to this runway&#x27;s threshold in Nautical Miles.
-<p>NOTE: this is only filled in if a reference position has been set</p>
+<li><strong>distance</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>endLocation</strong> - The runway ending location<!-- -->
@@ -1317,9 +1361,9 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <li><code>string</code></li>
 </ul>
 </li>
-<li><strong>lengthFeet</strong> - The length of the runway in Feet<!-- -->
+<li><strong>lengthFeet</strong> - Length of the runway<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
 <li><strong>magVar</strong>
@@ -1330,6 +1374,11 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <li><strong>runwayCenter</strong> - The center position of the runway<!-- -->
 <ul>
 <li><a href="#coords"><code>Coords</code></a></li>
+</ul>
+</li>
+<li><strong>runwayId</strong>
+<ul>
+<li><code>VMSL.Scenery.SimObjects.RunwayId</code></li>
 </ul>
 </li>
 <li><strong>startLocation</strong> - The FlightSim&#x27;s start location for this runway. Used to position the player for takeoff.<!-- -->
@@ -1347,16 +1396,25 @@ Can include fields like the Cost Index, etc. See the VMSAcars file format import
 <li><a href="#coords"><code>Coords</code></a></li>
 </ul>
 </li>
-<li><strong>thresholdOffsetFeet</strong> - The distance from the threshold to the real start of the runway in Feet<!-- -->
+<li><strong>thresholdOffset</strong>
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
-<li><strong>widthFeet</strong> - The width of the runway in Feet<!-- -->
+<li><strong>widthFeet</strong> - Width of the runway<!-- -->
 <ul>
-<li><code>number</code></li>
+<li><code>UnitsNet.Length</code></li>
 </ul>
 </li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
+</ul>
+<hr>
+<ul>
+<li><strong>Acars.Domain.VSE.</strong>
+<ul>
+<li>See <code>Acars.Domain.VSE.</code></li>
+</ul>
+</li>
+</ul>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/phpvms/docs/tree/master/docs/acars/vse.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#pirep" class="table-of-contents__link toc-highlight">Pirep</a></li><li><a href="#acars" class="table-of-contents__link toc-highlight">Acars</a></li><li><a href="#aircraft" class="table-of-contents__link toc-highlight">Aircraft</a></li><li><a href="#airline" class="table-of-contents__link toc-highlight">Airline</a></li><li><a href="#airport" class="table-of-contents__link toc-highlight">Airport</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#flight" class="table-of-contents__link toc-highlight">Flight</a></li><li><a href="#flightplan" class="table-of-contents__link toc-highlight">FlightPlan</a></li><li><a href="#gate" class="table-of-contents__link toc-highlight">Gate</a></li><li><a href="#routepoint" class="table-of-contents__link toc-highlight">RoutePoint</a></li><li><a href="#runway" class="table-of-contents__link toc-highlight">Runway</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 phpvms</div></div></div></footer></div>
 </body>
 </html>
