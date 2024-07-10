@@ -13,11 +13,13 @@ Might not always be set or available
   - [`Aircraft`](#aircraft)
 - **airline** - The airline the pilot is a part of
   - [`Airline`](#airline)
-- **approachTime** - A DateTime object, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **approachTime** - A DateTime object, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **approachTimeActual** - A DateTime object, system time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **approachTimeActual** - A DateTime object, system time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
 - **arrivalAirport** - The arrival airport, null if they haven't landed yet
   - [`Airport`](#airport)
@@ -27,23 +29,29 @@ Might be null if it wasn't detected
 - **arrivalRunway** - The runway that they landed on.
 Might be null if it wasn't detected
   - [`Runway`](#runway)
-- **blocksOffTime** - DateTime object, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **blocksOffTime** - DateTime object, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **blocksOffTimeActual** - A DateTime object. Real time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **blocksOffTimeActual** - A DateTime object. Real time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **blocksOnTime** - A DateTime object, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **blocksOnTime** - A DateTime object, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **blocksOnTimeActual** - A DateTime object, system time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **blocksOnTimeActual** - A DateTime object, system time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **boardingTime** - Unix timestamp, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **boardingTime** - Unix timestamp, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **boardingTimeActual** - A DateTime object, sim time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **boardingTimeActual** - A DateTime object, sim time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
 - **crossingRunway** - This will have a value, with the runway information,
 if they're currently on a runway
@@ -64,8 +72,8 @@ Might be null if it wasn't detected
 Might not always be set or available
   - `UnitsNet.Length`
 - **elapsedTime** - Get the time elapsed, subtract the current sim time from the blocks off time
-Timespan object. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties">See TimeSpan
+properties</a>
   - `System.TimeSpan`
 - **elapsedTimeHumanReadable**
   - `string`
@@ -86,23 +94,28 @@ a bid, or loaded on the screen
   - [`FlightPlan`](#flightplan)
 - **flightType**
   - `string`
-- **fuelAtApproach** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelAtApproach** - The fuel
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **fuelAtLanding** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelAtLanding** - The fuel
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **fuelAtTakeOff** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelAtTakeOff** - The fuel
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **fuelBlocksOff** - Weight. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelBlocksOff** - Weight <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **fuelBlocksOn** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelBlocksOn** - The fuel
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **fuelUsed** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **fuelUsed** - The fuel
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
 - **id** - The phpVMS PIREP ID
   - `string`
@@ -114,11 +127,13 @@ https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.j
   - `boolean`
 - **isResuming** - If this PIREP is being resumed
   - `boolean`
-- **landedTime** - A DateTime object, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **landedTime** - A DateTime object, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **landedTimeActual** - A DateTime object, system time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **landedTimeActual** - A DateTime object, system time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
 - **landingRate**
   - `UnitsNet.Speed`
@@ -169,8 +184,8 @@ Might not always be set or available
 - **startedWithBrakes** - Did they start the flight with the brakes on? Use this to determine the criterea on
 moving out of the Boarding phase
   - `boolean`
-- **startTime** -  DateTime object, the time in the sim. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **startTime** - DateTime object, the time in the sim
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime properties</a>
   - `System.DateTime`
 - **state** - The PIREP states - these match the phase
   - `string`
@@ -190,29 +205,36 @@ https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#proper
     - Cancelled
     - Filed
     - Paused
-- **takeoffTime** - A DateTime object, sim time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **takeoffTime** - A DateTime object, sim time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **takeoffTimeActual** - A DateTime object, system time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **takeoffTimeActual** - A DateTime object, system time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **taxiFuelOut** - The fuel. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+- **taxiFuelOut** - The fuel. <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See unit
+conversion properties</a>
   - `UnitsNet.Mass`
-- **taxiInDuration** - Timespan object. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+- **taxiInDuration** - Timespan object
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties">See TimeSpan
+properties</a>
   - `System.TimeSpan`
-- **taxiOutDuration** - Timespan object. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+- **taxiOutDuration** - Timespan object
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties">See TimeSpan
+properties</a>
   - `System.TimeSpan`
-- **taxiOutTime** - A DateTime object, sim time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **taxiOutTime** - A DateTime object, sim time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **taxiOutTimeActual** - A DateTime object, system time. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties
+- **taxiOutTimeActual** - A DateTime object, system time
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-8.0#properties">See DateTime
+properties</a>
   - `System.DateTime`
-- **thresholdDistance** - Distance from the threshold. See:
-https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+- **thresholdDistance** - Distance from the threshold
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json">See
+unit conversion properties</a>
   - `UnitsNet.Length`
 - **todPauseCompleted** - Save whether we've already paused or not for the TOD
   - `boolean`
@@ -220,8 +242,9 @@ https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length
   - `number`
 - **todPauseOn** - Whether we should pause at TOD or not
   - `boolean`
-- **totalPauseTime** - Timespan object. See:
-https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties
+- **totalPauseTime** - Timespan object
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#properties">See TimeSpan
+properties</a>
   - `System.TimeSpan`
 
 ---
@@ -248,7 +271,9 @@ https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#proper
   - The number of engines
 - **engineFuelFlow**
   - `UnitsNet.MassFlow[]`
-- **engineMaxRpm** - Has units. See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json
+- **engineMaxRpm** - Has units.
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/RotationalSpeed.json">See
+for details about unit properties</a>
   - `UnitsNet.RotationalSpeed`
   - The total N1 percent
 - **engineN2Average** - Get the current engine N2 value (as an average)
@@ -273,6 +298,8 @@ https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#proper
 - **fuelQuantity**
   - `UnitsNet.Mass`
   - The current fuel quantity (weight)
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See
+for details about unit properties</a>
 - **gearUp**
   - `boolean`
   - True if the gear is up
@@ -283,13 +310,14 @@ https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-8.0#proper
   - `number`
   - The g-force at touchdown
 - **groundAltitude** - Altitude of plane above the ground. Has units, like .Feet/.Meters
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json">See
+for details about unit properties</a>
   - `UnitsNet.Length`
   - The ground altitude (AGL)
-- **groundSpeed**
+- **groundSpeed** - <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json">See
+    for details about unit properties</a>
   - `UnitsNet.Speed`
   - If all of the engines are running. Has units, like .Knots
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
 - **heading**
   - `number`
   - The true heading
@@ -297,7 +325,8 @@ See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Sp
   - `number`
   - The magnetic heading
 - **indicatedAirspeed** - The indicated airspeed
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json">See
+for details about unit properties</a>
   - `UnitsNet.Speed`
   - Indicated airspeed. Has units, like .Knots
 - **landingLights**
@@ -331,13 +360,15 @@ See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Sp
   - `boolean`
   - Is the sim paused? inherited
 - **payloadWeight** - Weight of the payload
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+/// <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See
+for details about unit properties</a>
   - `UnitsNet.Mass`
 - **pitch**
   - `number`
   - Aircraft pitch, +/-
 - **planeAltitude** - Altitude of plane above MSL. Has units, like .Feet/.Meters
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Length.json">See
+for details about unit properties</a>
   - `UnitsNet.Length`
   - The indicated altitude
 - **replay**
@@ -368,7 +399,8 @@ track of if we're crossing a runway or something
 - **throttles**
   - `array`
 - **totalWeight** - Total weight of the aircraft
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See
+for details about unit properties</a>
   - `UnitsNet.Mass`
 - **transponderCode** - The transponder code
   - `System.UInt32`
@@ -376,18 +408,20 @@ See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Ma
 - **unlimitedFuel**
   - `boolean`
   - If unlimited fuel is enabled
-- **verticalSpeed**
+- **verticalSpeed** - <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json">See
+    for details about unit properties</a>
   - `UnitsNet.Speed`
     Their vertical speed (+/-). Has units - FeetPerMinute
-    See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json
-- **verticalSpeedTouchdown**
+- **verticalSpeedTouchdown** - <a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Speed.json">See
+    for details about unit properties</a>
   - `UnitsNet.Speed`
   - The vertical speed at touchdown
 - **wingLights**
   - `boolean`
   - Boolean for lights
 - **zeroFuelWeight** - The zero fuel weight
-See https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json
+<a href="https://github.com/angularsen/UnitsNet/blob/master/Common/UnitDefinitions/Mass.json">See
+for details about unit properties</a>
   - `UnitsNet.Mass`
 
 ---
