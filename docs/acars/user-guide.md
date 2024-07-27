@@ -16,6 +16,10 @@ If you don't have this installed, ACARS will prompt you to download it. But if y
 
 After downloading the zip, just extract the client into a folder (e.g, on your desktop into a folder called `ACARS`). Then you can create a desktop shortcut from the `acars.exe` for easier access.
 
+:::caution
+vmsACARS files should NOT be placed in OneDrive synced locations/folders, if you have OneDrive installed and enabled please use another location other than your desktop or documents folders for acars extraction.
+:::
+
 ---
 
 ## Simulator Configuration
