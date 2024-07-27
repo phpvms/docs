@@ -38,18 +38,23 @@ X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConn
 
 ![](img/plugin-copy.png)
 
+Also it is possible to copy the plugin automatically from vmsAcars settings, be sure X-Plane is not running and click the `Copy Plugin To X-Plane` button after selecting your X-Plane root/main folder.
 
 ### MSFS Configuration
 
 #### WASM Module
 
-If you're using Microsoft Flight Simulator, then to read the LVars from the sim, you need the `FSUIPC WASM Module (Version) + WAPI (Version)` from [FSUIPC](http://www.fsuipc.com/)
+If you're using Microsoft Flight Simulator, to read the LVars from the sim you need the `FSUIPC WASM Module (Version)` from [FSUIPC](https://www.fsuipc.com/) , `fsuipc-lvar-module` folder needs to be manually placed in your community folder.
 
-After downloading, open the zip, there is a zip file called `fsuipc-lvar-module.zip`. In it, there is a folder called `fsuipc-lvar-module` - place that in your `Community` folder.
+![](img/fsuipc_lvar.png)
+
+Also it is possible to install the WASM Module with FSUIPC main installer. While installing or updating it, be sure you have the WASM Module option enabled.
+
+![](img/fsuipc_install.png)
 
 #### Scenery
 :::caution
-Due to an MSFS limitation, sceneries purchased through the MSFS store can't be read because they're encrypted. Only sceneries purchased outside of the store and manually placed in the `Community` directory can be read
+Due to an MSFS limitation, sceneries purchased through the MSFS store can't be scanned because they're encrypted. Only sceneries purchased outside of the store and manually placed in the `Community` directory can be scanned
 :::
 
 To use MSFS, select "Microsoft Flight Simulator" from the simulator list and you will have two options:
