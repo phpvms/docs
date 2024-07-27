@@ -40,6 +40,8 @@ X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the `AcarsConn
 
 Also it is possible to copy the plugin automatically from vmsAcars settings, be sure X-Plane is not running and click the `Copy Plugin To X-Plane` button after selecting your X-Plane root/main folder.
 
+![](img/xplane_button.png)
+
 ### MSFS Configuration
 
 #### WASM Module
