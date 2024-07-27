@@ -20,13 +20,13 @@ To do this, set `CACHE_DRIVER=null` in your `.env` file.
 :::
 
 :::info
-We strongly recommend reading the [Laravel Documentation](https://laravel.com/docs/11.x), as it's more detailed and up-to-date. Since phpVMS is based on Laravel, the installation process is the same.
+We strongly recommend reading the [Laravel Documentation](https://laravel.com/docs/10.x), as it's more detailed and up-to-date. Since phpVMS is based on Laravel, the installation process is the same.
 In addition, you can simply use the `php artisan phpvms:dev-install` command to set up a development database.
 :::
 
 ## Creating and Resetting the Environment with docker
 
-We are using [Laravel Sail](https://laravel.com/docs/11.x/sail#main-content) which provides a simple way to set up and manage a local development environment for laravel apps using Docker.
+We are using [Laravel Sail](https://laravel.com/docs/10.x/sail#main-content) which provides a simple way to set up and manage a local development environment for laravel apps using Docker.
 
 Before you begin, ensure you have docker installed on your system
 
