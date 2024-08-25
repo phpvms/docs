@@ -90,7 +90,7 @@ public function check($landing_rate = null): bool
 {
     // Have the default landing rate if it hasn't been set in the admin
     // It's best to make sure you set a default value if you're using it
-    $landing_rate ??= 200;    
+    $landing_rate ??= -200;    
     
     if($this->user->last_pirep->landing_rate >= (int) $landing_rate) {
         return true;
