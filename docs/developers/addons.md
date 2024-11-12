@@ -340,3 +340,9 @@ class PirepAcceptedListener {
 ```
 
 The methods in the repositories largely mirror the Model methods, but can automatically handle searches, etc. The docs for the repositories [are available here](https://github.com/andersao/l5-repository#prettusrepositorycontractsrepositoryinterface). You can read more about the repository pattern [here](https://bosnadev.com/2015/03/07/using-repository-pattern-in-laravel-5/?utm_source=prettus-l5-repository&utm_medium=readme&utm_campaign=prettus-l5-repository)
+
+## Module Owned Flights
+
+In phpVMS's Flights Table, if your module needs to generate flights for the user to fly, modules can use the `owner` polymoprhic relationship.
+
+When a flight is owned by a module, the flight will not be subject to phpVMS's core automation (e.g. hiding and showing flights). Therefore, you must define your own automation regarding how flights behave and are accessible.
