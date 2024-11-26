@@ -346,3 +346,24 @@ The methods in the repositories largely mirror the Model methods, but can automa
 In phpVMS's Flights Table, if your module needs to generate flights for the user to fly, modules can use the `owner` polymoprhic relationship.
 
 When a flight is owned by a module, the flight will not be subject to phpVMS's core automation (e.g. hiding and showing flights). Therefore, you must define your own automation regarding how flights behave and are accessible.
+
+You can use the owner polymorphic relationship in two ways. The first way involves just setting the type. The type is what's checked in the core code to validate the existence of a module owned flight.
+
+In this case, one way to utilize this, especially if you don't have a relationship to a model setup, is to set one of your module's service providers as the class. For example:
+
+```php
+$flight->owner_type = FreeFlightProvider::class;
+```
+
+If you do have a model, say a flight is attached to a `Tour` model, can add the ID to the specific model.
+
+```php
+// Get a tour
+$tour = Tour::find(1);
+
+// Attach it to the flight
+$flight->owner_type = Tour::class;
+$flight->owner_id = $tour->id;
+```
+
+If you have a polymorphic relationship setup on the Tour model, you can use the operators given via Laravel. See the [Polymorphic Relationship docs](https://laravel.com/docs/11.x/eloquent-relationships#polymorphic-relationships) for more info.
