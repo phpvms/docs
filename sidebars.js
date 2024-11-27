@@ -82,9 +82,8 @@ module.exports = {
         'acars/install-server',
         'acars/user-guide',
         'acars/customization',
-        'acars/configmaps',
-        // 'acars/packaging',
-        // 'acars/rules',
+        'acars/aircraftconfigs',
+        'acars/rules',
       ]
     },
     'help',
