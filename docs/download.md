@@ -13,8 +13,8 @@ Use the **development branch** version, as the latest beta may be out of date.
 :::
 
 - [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases) - The latest released versions
-- [Development branch, TAR.GZ](http://downloads.phpvms.net/phpvms-7.0.0-dev.tar.gz) - The latest development build, may contain new bugs or non-documented features
-- [Development branch, ZIP](http://downloads.phpvms.net/phpvms-7.0.0-dev.zip) - The latest development build, may contain new bugs or non-documented features
+- [Development branch, TAR.GZ](https://phpvms.cdn.vmslabs.net/phpvms-latest-dev.tar.gz) - The latest development build, may contain new bugs or non-documented features
+- [Development branch, ZIP](https://phpvms.cdn.vmslabs.net/phpvms-latest-dev.zip) - The latest development build, may contain new bugs or non-documented features
 
 ---
 
