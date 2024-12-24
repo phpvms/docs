@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="phpVMS Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.7ac28924.css">
-<script src="/assets/js/runtime~main.fc27027d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c878b5f0.js" defer="defer"></script>
 <script src="/assets/js/main.40ab806f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,6 +21,7 @@
 <p><img decoding="async" loading="lazy" src="/assets/images/runtime-path-dn6-0c8d89fdb52c62e110d61dafa416a6cf.png" width="1388" height="893" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="acars-client">ACARS Client<a href="#acars-client" class="hash-link" aria-label="Direct link to ACARS Client" title="Direct link to ACARS Client">​</a></h2>
 <p>After downloading the zip, just extract the client into a folder (e.g, on your desktop into a folder called <code>ACARS</code>). Then you can create a desktop shortcut from the <code>acars.exe</code> for easier access.</p>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>vmsACARS files should NOT be placed in OneDrive synced locations/folders, if you have OneDrive installed and enabled please use another location other than your desktop or documents folders for acars extraction.</p></div></div>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="simulator-configuration">Simulator Configuration<a href="#simulator-configuration" class="hash-link" aria-label="Direct link to Simulator Configuration" title="Direct link to Simulator Configuration">​</a></h2>
 <hr>
@@ -34,12 +35,16 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="x-plane-configuration">X-Plane Configuration<a href="#x-plane-configuration" class="hash-link" aria-label="Direct link to X-Plane Configuration" title="Direct link to X-Plane Configuration">​</a></h3>
 <p>X-Plane uses a custom plugin. Open the <code>X-Plane</code> folder, and copy the <code>AcarsConnect</code> folder into  your <code>Resources\plugins</code> folder.</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/plugin-copy-68dc8fc70e8be65daaff414a7cbc647e.png" width="1044" height="194" class="img_ev3q"></p>
+<p>Also it is possible to copy the plugin automatically from vmsAcars settings, be sure X-Plane is not running and click the <code>Copy Plugin To X-Plane</code> button after selecting your X-Plane root/main folder.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/xplane_button-633d04e29e015b81fec4d463efd24aea.png" width="956" height="197" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="msfs-configuration">MSFS Configuration<a href="#msfs-configuration" class="hash-link" aria-label="Direct link to MSFS Configuration" title="Direct link to MSFS Configuration">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="wasm-module">WASM Module<a href="#wasm-module" class="hash-link" aria-label="Direct link to WASM Module" title="Direct link to WASM Module">​</a></h4>
-<p>If you&#x27;re using Microsoft Flight Simulator, then to read the LVars from the sim, you need the <code>FSUIPC WASM Module (Version) + WAPI (Version)</code> from <a href="http://www.fsuipc.com/" target="_blank" rel="noopener noreferrer">FSUIPC</a></p>
-<p>After downloading, open the zip, there is a zip file called <code>fsuipc-lvar-module.zip</code>. In it, there is a folder called <code>fsuipc-lvar-module</code> - place that in your <code>Community</code> folder.</p>
+<p>If you&#x27;re using Microsoft Flight Simulator, to read the LVars from the sim you need the <code>FSUIPC WASM Module (Version)</code> from <a href="https://www.fsuipc.com/" target="_blank" rel="noopener noreferrer">FSUIPC</a> , <code>fsuipc-lvar-module</code> folder needs to be manually placed in your community folder.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/fsuipc_lvar-ec749345e2bf095cbea85cf4d9f262f0.png" width="1340" height="105" class="img_ev3q"></p>
+<p>Also it is possible to install the WASM Module with FSUIPC main installer. While installing or updating it, be sure you have the WASM Module option enabled.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/fsuipc_install-aab41d89a3d34d671685be04454521c9.png" width="502" height="389" class="img_ev3q"></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="scenery">Scenery<a href="#scenery" class="hash-link" aria-label="Direct link to Scenery" title="Direct link to Scenery">​</a></h4>
-<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Due to an MSFS limitation, sceneries purchased through the MSFS store can&#x27;t be read because they&#x27;re encrypted. Only sceneries purchased outside of the store and manually placed in the <code>Community</code> directory can be read</p></div></div>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Due to an MSFS limitation, sceneries purchased through the MSFS store can&#x27;t be scanned because they&#x27;re encrypted. Only sceneries purchased outside of the store and manually placed in the <code>Community</code> directory can be scanned</p></div></div>
 <p>To use MSFS, select &quot;Microsoft Flight Simulator&quot; from the simulator list and you will have two options:</p>
 <ul>
 <li>&quot;Native&quot; - this will try to scan all of the scenery folders and BGL files.</li>
