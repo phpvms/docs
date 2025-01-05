@@ -4,7 +4,7 @@ title: Updating
 ---
 
 1. Make a backup of your site! Skip this at your own peril. At a minimum, make a backup of the `.env` files. Also, make note of any changes you made to files in the `/config` folder - I recommend making a backup of this as well and checking to see if there are changes to any of those files which might need to be copied over.
-1. On your remote site (through your FTP client or SSH), delete the `vendors` folder
+1. On your remote site (through your FTP client or SSH), delete the `vendor` folder
 1. On your remote site (through your FTP client or SSH), delete all of the files in `bootstrap/cache` and `storage/framework/cache` (delete the contents, NOT the folders)
 1. Upload all of the files (or upload latest build via your file manager and unpack), and overwrite everything.
 1. If you are using `composer`, then run `composer install` command via shell/terminal
