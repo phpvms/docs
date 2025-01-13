@@ -1,6 +1,6 @@
 ---
-id: importing
-title: Importing
+id: legacy-upgrade
+title: Upgrading from 5.x
 ---
 You can import through either the installer or the command line after install.
 
