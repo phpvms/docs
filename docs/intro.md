@@ -48,5 +48,3 @@ phpVMS is open-source and licensed under [BSD 3-Clause License](https://opensour
 > CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 > OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 > OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The `powered by phpVMS` must also be displayed on the site (not hidden), unless the license for removing attribution has been paid for (on a per-site/VA basis)
