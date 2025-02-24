@@ -11,6 +11,9 @@ These services are supported by Laravel natively;
 * [Postmark](https://postmarkapp.com) - Tell their support you were referred for a free month
 * [Amazon SES](https://aws.amazon.com/ses/) - Super cheap, free if you're using EC2
 
+> [!IMPORTANT]  
+> Do not forget cleaning application cache after editing `.env` variables. Otherwise settings you defined/altered will not be loaded. 
+
 ---
 
 ### SMTP Configuration
@@ -54,7 +57,7 @@ POSTMARK_TOKEN='your postmark token'
 To use SES, set your `.env` like:
 
 ```bash title=".env"
-MAIL_MAILER=postmark
+MAIL_MAILER=ses
 AWS_ACCESS_KEY_ID='key id'
 AWS_SECRET_ACCESS_KEY='access key'
 AWS_DEFAULT_REGION='the region if not us-east-1'
