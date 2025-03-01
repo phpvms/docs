@@ -82,13 +82,16 @@ php artisan phpvms:yaml-exporter table1 table2
 
 Before asking for help, make sure to:
 
-- Rescan your scenery
+- Rescan your scenery (Required for FS9, FSX, P3D and X-Plane)  
 - If crashing, delete the `data` folder, and restart
+- If using MSFS (2020 and/or 2024) be sure your `fsuipc-lvar-module` is up to date (Also known as FsUipc WASM Module)
 
 When asking for help:
 
-- Log files (these are in the `logs` folder - zipping and sending the whole folder is best)
-- Other relevent files, e.g, flight plans
+- Log files (zipping and sending the whole folder is best);  
+  - For v1: these are in the `logs` folder of your vmsAcars install directory  
+  - For v2: these are in the `Documents\vmsacars\logs` folder
+- Other relevant files, e.g, flight plans
 - System setup:
     - Sim you're using
     - Any flight sim hardware running/additional software (some of this has been seen to interfere)
