@@ -82,9 +82,16 @@ module.exports = {
         'acars/eula',
         'acars/install-server',
         'acars/user-guide',
-        'acars/customization',
-        'acars/aircraftconfigs',
-        'acars/rules',
+        {
+          type: 'category',
+          label: 'Customizing and Plugins',
+          items: [
+            'acars/customizing/customization',
+            'acars/customizing/aircraftconfigs',
+            'acars/customizing/rules',
+            'acars/customizing/tutorial',
+          ]
+        }
       ]
     },
     'help',
