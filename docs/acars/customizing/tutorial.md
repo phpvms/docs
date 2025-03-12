@@ -32,7 +32,6 @@ ACARS_SCRIPTS_PATH=$HOME/Documents/vmsacars/data/$ACARS_PROFILE_NAME/config
 
 # Name of the distribution zip file that's created
 ACARS_DIST_ZIP=dist.zip
-
 ```
 
 ---
@@ -96,7 +95,7 @@ export default class ExampleRule implements Rule {
 Run the following to compile the Typescript and build the distribution:
 
 ```bash
-npm run local
+npm run dev
 ```
 
 This will also watch the `src/` directory for changes and recompile and copy
