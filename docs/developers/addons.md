@@ -243,9 +243,9 @@ The `app/Database/migrations` directory has the core migrations and is a good re
 
 !!!! Add new migration files when you have to modify a table, etc, after you've released it into the wild. The migrations that are run are kept track of, so if it's seen that it's already run the file, it won't run it again.
 
-:::warning
+:::warning[Table Name Convention]
 
-When naming your tables, a standard convention that is wise to follow is to prefix your addon's tables with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
+When naming tables, table names *should* be prefixed with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
 
 Not prefixing your tables could lead to unintended consequences, including but not limited to:
 
