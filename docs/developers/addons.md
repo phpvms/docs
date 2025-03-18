@@ -227,17 +227,6 @@ The right relationships make life easier. See the Laravel documentation on relat
 
 Laravel includes a way to create and update tables, called [migrations](https://laravel.com/docs/5.5/migrations).  Migrations are ways to programmatically define your tables, and let the framework worry about the exact syntax to use. The advantage to this abstraction is being.
 
-:::warning
-
-When naming your tables, a standard convention that is wise to follow is to prefix your addon's tables with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
-
-Not prefixing your tables could lead to unintended consequences, including but not limited to:
-
-* Conflicting with future phpVMS core features that would use the same table name, thereby making it more difficult to update phpVMS at a later date.
-* Conflicting with other addons by other 3rd party modules that don't head this warning.
-
-:::
-
 ! You should *not* be using raw SQL
 
 There is an `artisan` helper to generate migrations:
@@ -253,6 +242,17 @@ The `app/Database/migrations` directory has the core migrations and is a good re
 !!! Design your tables well - follow the guidelines set by Laravel, and you'll have a much better time.
 
 !!!! Add new migration files when you have to modify a table, etc, after you've released it into the wild. The migrations that are run are kept track of, so if it's seen that it's already run the file, it won't run it again.
+
+:::warning
+
+When naming your tables, a standard convention that is wise to follow is to prefix your addon's tables with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
+
+Not prefixing your tables could lead to unintended consequences, including but not limited to:
+
+* Conflicting with future phpVMS core features that would use the same table name, thereby making it more difficult to update phpVMS at a later date.
+* Conflicting with other addons by other 3rd party modules that don't head this warning.
+
+:::
 
 ### Seeding Data
 
