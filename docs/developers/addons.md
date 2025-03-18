@@ -23,6 +23,14 @@ Which generates the basic structure in the `/modules` folder. After generating t
 All of the examples below will be based on a module named `Sample`. To see the source for the module, [check it out on GitHub](https://github.com/nabeelio/phpvms-module).
 :::
 
+:::tip
+
+When naming your module, it is recommended that if your module name runs the risk of being generic, to prefix your module name with a unique identifier. For example, instead of naming your module `Tours`, name it `XXTours` (The XX in the example being the identifier or brand name you choose)
+
+In doing this, you reduce the chance of your module name conflicting directly with another module.
+
+:::
+
 ---
 
 ## Namespacing
@@ -166,6 +174,8 @@ if(Auth::check())
 
 # Database Access
 
+
+
 ## Models
 Models are the more basic way to access your database tables. For example, if you have a table called `sample_table`, a model called `SampleTable` would make most sense. While table names generally refer to objects in the plural, a model is named for an item in it's singular form.
 
@@ -216,6 +226,17 @@ The right relationships make life easier. See the Laravel documentation on relat
 ## Creating and modifying tables with migrations
 
 Laravel includes a way to create and update tables, called [migrations](https://laravel.com/docs/5.5/migrations).  Migrations are ways to programmatically define your tables, and let the framework worry about the exact syntax to use. The advantage to this abstraction is being.
+
+:::warning
+
+When naming your tables, a standard convention that is wise to follow is to prefix your addon's tables with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
+
+Not prefixing your tables could lead to unintended consequences, including but not limited to:
+
+* Conflicting with future phpVMS core features that would use the same table name, thereby making it more difficult to update phpVMS at a later date.
+* Conflicting with other addons by other 3rd party modules that don't head this warning.
+
+:::
 
 ! You should *not* be using raw SQL
 
