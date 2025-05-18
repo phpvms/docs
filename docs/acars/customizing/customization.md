@@ -32,7 +32,7 @@ Visit [Discord Application Developer site](https://discord.com/developers/applic
 
 ![Default Rich Presence](img/discord-new-app.png)
 
-Upload your logo and title it appropriately. **Make note of the "Application ID" here, this will go into the admin panel.** 
+Upload your logo and title it appropriately. **Make note of the "Application ID" here, this will go into the admin panel.**
 
 #### 2. Add your logos to the art assets
 
@@ -59,25 +59,5 @@ Set the application ID in the admin panel.
 This requires the ACARS Premium Addon
 :::
 
-You can create a zip file and upload your custom configurations. The directory structure should match the following:
-
-
-```
-/aircraft_custom/
-  /<Profile Name>/ 
-    Place your configs here
-/rules_custom/
-  /<Profile Name>/
-    Place your custom rules here
-```
-
-This zip will get extracted into the `configs` directory. The **profile name** can be found by seeing what your profile is - for example, open the json file for your VA in the `config/profiles` folder, and find the `Name` value:
-
-```
-{
-  "Name": "phpvms.net",
-  "Url": "https://demo.phpvms.net",
-  "Domain": "phpvms.net",
-  ...
-}
-```
+You can create a zip file and upload your custom configurations. Follow the
+instructions in the [acars-pdk](https://github.com/phpvms/acars-pdk) repository.
