@@ -14,8 +14,15 @@ module.exports = {
       appId: 'A3V8IXF4VF',
       apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
       indexName: 'phpvms',
-      contextualSearch: true
+      contextualSearch: true,
     },
+    metadata: [
+      {
+        name: 'keywords',
+        content:
+          'phpvms, vmsacars, virtual airline, virtual airline management system, phpvms documentation, phpvms user guide, phpvms installation guide',
+      },
+    ],
     navbar: {
       title: 'phpVMS Docs',
       logo: {
@@ -44,7 +51,7 @@ module.exports = {
     },
     prism: {
       theme: themes.github,
-      additionalLanguages: ['php', 'bash',],
+      additionalLanguages: ['php', 'bash'],
     },
     footer: {
       style: 'dark',
@@ -56,7 +63,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        debug: true,
+        debug: false,
         docs: {
           id: 'intro',
           // homePageId: 'intro',
@@ -89,8 +96,8 @@ module.exports = {
             from: '/acars/install-client',
             to: '/acars/user-guide',
           },
-        ]
-      }
+        ],
+      },
     ],
     [
       '@docusaurus/plugin-ideal-image',

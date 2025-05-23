@@ -3,11 +3,15 @@ id: overview
 title: Overview
 ---
 
-The ACARS application is designed to run with phpVMS 7 to automatically report your pilot reports from the new Microsoft Flight Simulator, Prepar3d, FSX and X-Plane. 
+The ACARS application is designed to run with phpVMS 7 to automatically report
+your pilot reports from the new Microsoft Flight Simulator, Prepar3d, FSX and
+X-Plane.
 
 ## Purchase
 
-ACARS is available for purchase on [vmshost.io](https://vmshost.io/cart.php?gid=6). There is also a "premium" version, which unlocks extra customization options.
+ACARS is available for purchase on
+[vmshost.io](https://vmshost.io/cart.php?gid=6). There is also a "premium"
+version, which unlocks extra customization options.
 
 ## Features
 

@@ -5,38 +5,43 @@ hide_title: true
 slug: /
 ---
 
-Welcome to the phpVMS Docs site! phpVMS is a PHP based application to run and simulate and airline. It allowed users to register, view flight schedules that you create, and file flight reports.
+Welcome to the phpVMS Docs site! phpVMS is a PHP based application to run and
+simulate and airline. It allowed users to register, view flight schedules that
+you create, and file flight reports.
 
 ![](img/dashboard.png)
 
 ## Demo
 
-The demo site is located at [https://demo.phpvms.net](https://demo.phpvms.net). The login to the admin is `admin@phpvms.net` with a password of `admin`. The demo is reset occasionally.
+The demo site is located at [https://demo.phpvms.net](https://demo.phpvms.net).
+The login to the admin is `admin@phpvms.net` with a password of `admin`. The
+demo is reset occasionally.
 
 ## Source
 
-The source is hosted on github: [https://github.com/nabeelio/phpvms](https://github.com/nabeelio/phpvms)
+The source is hosted on github:
+[https://github.com/nabeelio/phpvms](https://github.com/nabeelio/phpvms)
 
 ## License
 
-phpVMS is open-source and licensed under [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)
+phpVMS is open-source and licensed under
+[BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)
 
 > BSD 3-Clause License
-> 
-> Copyright (c) phpvms https://phpvms.net
-> All rights reserved.
-> 
+>
+> Copyright (c) phpvms https://phpvms.net All rights reserved.
+>
 > Redistribution and use in source and binary forms, with or without
 > modification, are permitted provided that the following conditions are met:
 >
-> * Redistributions of source code must retain the above copyright notice, this
+> - Redistributions of source code must retain the above copyright notice, this
 >   list of conditions and the following disclaimer.
-> * Redistributions in binary form must reproduce the above copyright notice,
+> - Redistributions in binary form must reproduce the above copyright notice,
 >   this list of conditions and the following disclaimer in the documentation
 >   and/or other materials provided with the distribution.
-> * Neither the name of the copyright holder nor the names of its
->   contributors may be used to endorse or promote products derived from
->   this software without specific prior written permission.
+> - Neither the name of the copyright holder nor the names of its contributors
+>   may be used to endorse or promote products derived from this software
+>   without specific prior written permission.
 >
 > THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 > AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE

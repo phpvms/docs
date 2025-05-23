@@ -1,24 +1,33 @@
 ---
 id: email
 ---
+
 # Email
 
-It is recommended to use a 3rd party service for sending email. They usually offer SMTP support, and great logging and analytics. Especially on a shared host, where email is locked down, and a "naughty neighbor" can quickly get the server/IP you're emailing from blacklisted. I highly recommend using a service over SMTP, because SMTP slows response times down.
+It is recommended to use a 3rd party service for sending email. They usually
+offer SMTP support, and great logging and analytics. Especially on a shared
+host, where email is locked down, and a "naughty neighbor" can quickly get the
+server/IP you're emailing from blacklisted. I highly recommend using a service
+over SMTP, because SMTP slows response times down.
 
-These services are supported by Laravel natively; 
+These services are supported by Laravel natively;
 
-* [Mailgun](http://www.mailgun.com) - Free, up to 10k messages/month
-* [Postmark](https://postmarkapp.com) - Tell their support you were referred for a free month
-* [Amazon SES](https://aws.amazon.com/ses/) - Super cheap, free if you're using EC2
+- [Mailgun](http://www.mailgun.com) - Free, up to 10k messages/month
+- [Postmark](https://postmarkapp.com) - Tell their support you were referred for
+  a free month
+- [Amazon SES](https://aws.amazon.com/ses/) - Super cheap, free if you're using
+  EC2
 
 > [!IMPORTANT]  
-> Do not forget cleaning application cache after editing `.env` variables. Otherwise settings you defined/altered will not be loaded. 
+> Do not forget cleaning application cache after editing `.env` variables.
+> Otherwise settings you defined/altered will not be loaded.
 
 ---
 
 ### SMTP Configuration
 
-To configure SMTP, in your `.env` file, you need to configure the following options:
+To configure SMTP, in your `.env` file, you need to configure the following
+options:
 
 ```bash title=".env"
 MAIL_MAILER=smtp
@@ -31,7 +40,11 @@ MAIL_USERNAME=
 MAIL_PASSWORD=
 ```
 
-For detailed settings about host, port and encryption details please check your hosting control panel (or VPS). These settings are not generic and can differ between hosting companies, even on a custom VPS these settings are local to your install (packages installed etc.) Therefore there a no generic examples for SMTP and mail settings.
+For detailed settings about host, port and encryption details please check your
+hosting control panel (or VPS). These settings are not generic and can differ
+between hosting companies, even on a custom VPS these settings are local to your
+install (packages installed etc.) Therefore there a no generic examples for SMTP
+and mail settings.
 
 ### Mailgun Configuration
 
@@ -67,7 +80,10 @@ AWS_DEFAULT_REGION='the region if not us-east-1'
 
 ## Debugging
 
-For debugging mail, you can use the service [mailtrap.io](https://mailtrap.io). Mail-trail will show all of the incoming and outgoing email in an inbox, so you can test registrations, accepts, etc. It will provide you Laravel-specific configuration, which looks something like:
+For debugging mail, you can use the service [mailtrap.io](https://mailtrap.io).
+Mail-trail will show all of the incoming and outgoing email in an inbox, so you
+can test registrations, accepts, etc. It will provide you Laravel-specific
+configuration, which looks something like:
 
 ```bash title=".env"
 MAIL_MAILER=smtp
