@@ -25,16 +25,17 @@
     "@docusaurus/plugin-sitemap": "~3",
     "@docusaurus/preset-classic": "~3",
     "@docusaurus/theme-live-codeblock": "~3",
-    "@mdx-js/react": "^3.0.0",
-    "prism-react-renderer": "^2.1.0",
+    "@mdx-js/react": "^3",
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
     "nan": "^2.14.2",
+    "prettier": "^3.5.3",
+    "prism-react-renderer": "^2.1.0",
     "rehype-truncate": "^1.2.2",
     "remark-images": "^2.0.0",
     "url-loader": "^4.1.1"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

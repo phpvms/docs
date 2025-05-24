@@ -3,9 +3,7 @@ id: apis
 title: APIs
 ---
 
-:::note
-All of these calls require a valid API key
-:::
+:::note All of these calls require a valid API key :::
 
 ## User APIs
 
@@ -17,39 +15,35 @@ Returns the user's information, including bids, etc. Example response:
 
 ```json
 {
-	"data": {
-       "id":2,
-       "name":"Adam Lockman PhD",
-       "email":"miles.sporer@example.net",
-       "apikey":null,
-       "rank_id":"1",
-       "home_airport": "KJFK",
-       "curr_airport": "KJFK",
-       "last_pirep_id": 1,
-       "flights":0,
-       "flight_time":914,
-       "balance":0,
-       "timezone": "American/Chicago",
-       "status":0,
-       "state":1,
-       "airline":{
-          "id":1,
-          "icao":"VMS",
-          "iata":"VMS",
-          "name":"phpVMS Airlines",
-          "country":"United States",
-          "logo":null
-       },
-       "bids":[
-
-       ],
-       "rank":{
-          "name":"New Pilot",
-          "subfleets":[
-
-          ]
-       }
+  "data": {
+    "id": 2,
+    "name": "Adam Lockman PhD",
+    "email": "miles.sporer@example.net",
+    "apikey": null,
+    "rank_id": "1",
+    "home_airport": "KJFK",
+    "curr_airport": "KJFK",
+    "last_pirep_id": 1,
+    "flights": 0,
+    "flight_time": 914,
+    "balance": 0,
+    "timezone": "American/Chicago",
+    "status": 0,
+    "state": 1,
+    "airline": {
+      "id": 1,
+      "icao": "VMS",
+      "iata": "VMS",
+      "name": "phpVMS Airlines",
+      "country": "United States",
+      "logo": null
+    },
+    "bids": [],
+    "rank": {
+      "name": "New Pilot",
+      "subfleets": []
     }
+  }
 }
 ```
 
@@ -57,39 +51,40 @@ Returns the user's information, including bids, etc. Example response:
 
 ### `GET /api/user/fleet`
 
-This returns the subfleets and aircraft that this user's rank gives them access to.
+This returns the subfleets and aircraft that this user's rank gives them access
+to.
 
 **Sample Response:**
 
 ```json
 {
-	"data": [
+  "data": [
+    {
+      "id": 1,
+      "airline_id": 1,
+      "name": "Boeing 747-400",
+      "type": "B744",
+      "fuel_type": null,
+      "cargo_capacity": null,
+      "fuel_capacity": null,
+      "gross_weight": null,
+      "aircraft": [
         {
-            "id":1,
-            "airline_id":1,
-            "name":"Boeing 747-400",
-            "type":"B744",
-            "fuel_type":null,
-            "cargo_capacity":null,
-            "fuel_capacity":null,
-            "gross_weight":null,
-            "aircraft":[
-            {
-                "id":1,
-                "subfleet_id":"1",
-                "icao":"B744",
-                "airport_id":"KJFK",
-                "hex_code":null,
-                "name":"Boeing 747 \"The Queen\"",
-                "registration":"NC17",
-                "tail_number":"17",
-                "active":true,
-                "created_at":"2018-01-08 21:37:13",
-                "updated_at":"2018-01-08 21:37:13"
-            }
-            ]
+          "id": 1,
+          "subfleet_id": "1",
+          "icao": "B744",
+          "airport_id": "KJFK",
+          "hex_code": null,
+          "name": "Boeing 747 \"The Queen\"",
+          "registration": "NC17",
+          "tail_number": "17",
+          "active": true,
+          "created_at": "2018-01-08 21:37:13",
+          "updated_at": "2018-01-08 21:37:13"
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 
@@ -123,9 +118,9 @@ This returns the user's bids, as a list of flights.
       "route_code": null,
       "route_leg": null,
       "distance": {
-          "mi": 2028,
-          "nmi": 1762.283818574514,
-          "km": 3263.749632
+        "mi": 2028,
+        "nmi": 1762.283818574514,
+        "km": 3263.749632
       },
       "dpt_airport_id": "KAUS",
       "arr_airport_id": "KJFK",
@@ -182,7 +177,7 @@ Add a bid for a flight for the user. Returns the current list of bids.
 
 ```json
 {
-    "flight_id": "flightid_1"
+  "flight_id": "flightid_1"
 }
 ```
 
@@ -200,7 +195,7 @@ Remove a bid for a flight for the user. Returns the current list of bids.
 
 ```json
 {
-    "flight_id": "flightid_1"
+  "flight_id": "flightid_1"
 }
 ```
 
@@ -220,31 +215,31 @@ Get all of the airlines. Paginated
 
 ```json
 {
-   "data":[
-      {
-         "id":1,
-         "icao": "VMS",
-         "iata": "VMS",
-         "name": "phpVMS Airlines",
-         "country": "United States",
-         "logo": null
-      }
-   ],
-   "links":{
-      "first":"http://phpvms.test/api/airlines?page=1",
-      "last":"http://phpvms.test/api/airlines?page=1",
-      "prev":null,
-      "next":null
-   },
-   "meta":{
-      "current_page":1,
-      "from":1,
-      "last_page":1,
-      "path":"http://phpvms.test/api/airlines",
-      "per_page":50,
-      "to":1,
-      "total":1
-   }
+  "data": [
+    {
+      "id": 1,
+      "icao": "VMS",
+      "iata": "VMS",
+      "name": "phpVMS Airlines",
+      "country": "United States",
+      "logo": null
+    }
+  ],
+  "links": {
+    "first": "http://phpvms.test/api/airlines?page=1",
+    "last": "http://phpvms.test/api/airlines?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "path": "http://phpvms.test/api/airlines",
+    "per_page": 50,
+    "to": 1,
+    "total": 1
+  }
 }
 ```
 
@@ -258,14 +253,14 @@ Get information about a specific airline
 
 ```json
 {
-	"data": {
-        "id":1,
-        "icao": "VMS",
-        "iata": "VMS",
-        "name": "phpVMS Airlines",
-        "country": "United States",
-        "logo": null
-    }
+  "data": {
+    "id": 1,
+    "icao": "VMS",
+    "iata": "VMS",
+    "name": "phpVMS Airlines",
+    "country": "United States",
+    "logo": null
+  }
 }
 ```
 
@@ -281,39 +276,39 @@ Get all of the airports, paginated list
 
 ```json
 {
-   "data":[
-      {
-         "id":"KJFK",
-         "iata":"KJFK",
-         "icao":"KJFK",
-         "name":"John F Kennedy International Airport",
-         "city":"New York",
-         "country":"United States",
-         "location":null,
-         "hub": true,
-         "fuel_100ll_cost": 0.00,
-         "fuel_jeta_cost": 0.00,
-         "fuel_mogas_cost": 0.00,
-         "tz":"America/New_York",
-         "lat":40.6398,
-         "lon":-73.7789
-      }
-   ],
-   "links":{
-      "first":"http://phpvms.test/api/airports?page=1",
-      "last":"http://phpvms.test/api/airports?page=2",
-      "prev":null,
-      "next":"http://phpvms.test/api/airports?page=2"
-   },
-   "meta":{
-      "current_page":1,
-      "from":1,
-      "last_page":2,
-      "path":"http://phpvms.test/api/airports",
-      "per_page":50,
-      "to":2,
-      "total":2
-   }
+  "data": [
+    {
+      "id": "KJFK",
+      "iata": "KJFK",
+      "icao": "KJFK",
+      "name": "John F Kennedy International Airport",
+      "city": "New York",
+      "country": "United States",
+      "location": null,
+      "hub": true,
+      "fuel_100ll_cost": 0.0,
+      "fuel_jeta_cost": 0.0,
+      "fuel_mogas_cost": 0.0,
+      "tz": "America/New_York",
+      "lat": 40.6398,
+      "lon": -73.7789
+    }
+  ],
+  "links": {
+    "first": "http://phpvms.test/api/airports?page=1",
+    "last": "http://phpvms.test/api/airports?page=2",
+    "prev": null,
+    "next": "http://phpvms.test/api/airports?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 2,
+    "path": "http://phpvms.test/api/airports",
+    "per_page": 50,
+    "to": 2,
+    "total": 2
+  }
 }
 ```
 
@@ -327,43 +322,43 @@ Get all of the hubs, paginated list
 
 ```json
 {
-   "data":[
-      {
-         "id":"KJFK",
-         "iata":"KJFK",
-         "icao":"KJFK",
-         "name":"John F Kennedy International Airport",
-         "city":"New York",
-         "country":"United States",
-         "location":null,
-         "hub": true,
-         "fuel_100ll_cost": 0.00,
-         "fuel_jeta_cost": 0.00,
-         "fuel_mogas_cost": 0.00,
-         "tz":"America/New_York",
-         "lat":40.6398,
-         "lon":-73.7789
-      }
-   ],
-   "links":{
-      "first":"http://phpvms.test/api/airports?page=1",
-      "last":"http://phpvms.test/api/airports?page=2",
-      "prev":null,
-      "next":"http://phpvms.test/api/airports?page=2"
-   },
-   "meta":{
-      "current_page":1,
-      "from":1,
-      "last_page":2,
-      "path":"http://phpvms.test/api/airports",
-      "per_page":50,
-      "to":2,
-      "total":2
-   }
+  "data": [
+    {
+      "id": "KJFK",
+      "iata": "KJFK",
+      "icao": "KJFK",
+      "name": "John F Kennedy International Airport",
+      "city": "New York",
+      "country": "United States",
+      "location": null,
+      "hub": true,
+      "fuel_100ll_cost": 0.0,
+      "fuel_jeta_cost": 0.0,
+      "fuel_mogas_cost": 0.0,
+      "tz": "America/New_York",
+      "lat": 40.6398,
+      "lon": -73.7789
+    }
+  ],
+  "links": {
+    "first": "http://phpvms.test/api/airports?page=1",
+    "last": "http://phpvms.test/api/airports?page=2",
+    "prev": null,
+    "next": "http://phpvms.test/api/airports?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 2,
+    "path": "http://phpvms.test/api/airports",
+    "per_page": 50,
+    "to": 2,
+    "total": 2
+  }
 }
 ```
 
-------
+---
 
 ### `GET /api/airports/{ICAO}`
 
@@ -373,22 +368,22 @@ Get the details about an airport
 
 ```json
 {
-	"data": {
-        "id":"KJFK",
-        "iata":"KJFK",
-        "icao":"KJFK",
-        "name":"John F Kennedy International Airport",
-        "city":"New York",
-        "country":"United States",
-        "location":null,
-        "hub": true,
-        "fuel_100ll_cost": 0.00,
-        "fuel_jeta_cost": 0.00,
-        "fuel_mogas_cost": 0.00,
-        "tz":"America/New_York",
-        "lat":40.6398,
-        "lon":-73.7789
-    }
+  "data": {
+    "id": "KJFK",
+    "iata": "KJFK",
+    "icao": "KJFK",
+    "name": "John F Kennedy International Airport",
+    "city": "New York",
+    "country": "United States",
+    "location": null,
+    "hub": true,
+    "fuel_100ll_cost": 0.0,
+    "fuel_jeta_cost": 0.0,
+    "fuel_mogas_cost": 0.0,
+    "tz": "America/New_York",
+    "lat": 40.6398,
+    "lon": -73.7789
+  }
 }
 ```
 
@@ -398,54 +393,55 @@ Get the details about an airport
 
 ### `GET /api/fleet`
 
-Get all of the subfleets and aircraft under the fleet. Includes the fare and airline information. Paginated
+Get all of the subfleets and aircraft under the fleet. Includes the fare and
+airline information. Paginated
 
 **Sample Response:**
 
 ```json
 {
-   "data":[
-      {
-         "id":1,
-         "airline_id":1,
-         "name":"Boeing 747-400",
-         "type":"B744",
-         "fuel_type":null,
-         "cargo_capacity":null,
-         "fuel_capacity":null,
-         "gross_weight":null,
-         "aircraft":[
-            {
-               "id":1,
-               "subfleet_id":"1",
-               "icao":"B744",
-               "airport_id":"KJFK",
-               "hex_code":null,
-               "name":"Boeing 747 \"The Queen\"",
-               "registration":"NC17",
-               "tail_number":"17",
-               "active":true,
-               "created_at":"2018-01-08 21:37:13",
-               "updated_at":"2018-01-08 21:37:13"
-            }
-         ]
-      }
-   ],
-   "links":{
-      "first":"http://phpvms.test/api/fleet?page=1",
-      "last":"http://phpvms.test/api/fleet?page=1",
-      "prev":null,
-      "next":null
-   },
-   "meta":{
-      "current_page":1,
-      "from":1,
-      "last_page":1,
-      "path":"http://phpvms.test/api/fleet",
-      "per_page":50,
-      "to":2,
-      "total":2
-   }
+  "data": [
+    {
+      "id": 1,
+      "airline_id": 1,
+      "name": "Boeing 747-400",
+      "type": "B744",
+      "fuel_type": null,
+      "cargo_capacity": null,
+      "fuel_capacity": null,
+      "gross_weight": null,
+      "aircraft": [
+        {
+          "id": 1,
+          "subfleet_id": "1",
+          "icao": "B744",
+          "airport_id": "KJFK",
+          "hex_code": null,
+          "name": "Boeing 747 \"The Queen\"",
+          "registration": "NC17",
+          "tail_number": "17",
+          "active": true,
+          "created_at": "2018-01-08 21:37:13",
+          "updated_at": "2018-01-08 21:37:13"
+        }
+      ]
+    }
+  ],
+  "links": {
+    "first": "http://phpvms.test/api/fleet?page=1",
+    "last": "http://phpvms.test/api/fleet?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "path": "http://phpvms.test/api/fleet",
+    "per_page": 50,
+    "to": 2,
+    "total": 2
+  }
 }
 ```
 
@@ -465,29 +461,29 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 
 ```json
 {
-	"data": {
-        "id":1,
-        "subfleet_id":"1",
-        "icao":"B744",
-        "airport_id":"KJFK",
-        "hex_code":null,
-        "name":"Boeing 747 \"The Queen\"",
-        "registration":"NC17",
-        "tail_number":"17",
-        "active":true,
-        "subfleet": {
-            "id":1,
-            "airline_id":1,
-            "name":"Boeing 747-400",
-            "type":"B744",
-            "fuel_type":null,
-            "cargo_capacity":null,
-            "fuel_capacity":null,
-            "gross_weight":null
-        },
-        "created_at":"2018-01-08 21:37:13",
-        "updated_at":"2018-01-08 21:37:13"
-    }
+  "data": {
+    "id": 1,
+    "subfleet_id": "1",
+    "icao": "B744",
+    "airport_id": "KJFK",
+    "hex_code": null,
+    "name": "Boeing 747 \"The Queen\"",
+    "registration": "NC17",
+    "tail_number": "17",
+    "active": true,
+    "subfleet": {
+      "id": 1,
+      "airline_id": 1,
+      "name": "Boeing 747-400",
+      "type": "B744",
+      "fuel_type": null,
+      "cargo_capacity": null,
+      "fuel_capacity": null,
+      "gross_weight": null
+    },
+    "created_at": "2018-01-08 21:37:13",
+    "updated_at": "2018-01-08 21:37:13"
+  }
 }
 ```
 
@@ -499,7 +495,8 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 
 Return all of the flights, paginated
 
-- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible
+  values
 
 **Sample Response:**
 
@@ -525,9 +522,9 @@ Return all of the flights, paginated
       "route_code": null,
       "route_leg": null,
       "distance": {
-          "mi": 2028,
-          "nmi": 1762.283818574514,
-          "km": 3263.749632
+        "mi": 2028,
+        "nmi": 1762.283818574514,
+        "km": 3263.749632
       },
       "dpt_airport_id": "KAUS",
       "arr_airport_id": "KJFK",
@@ -566,15 +563,15 @@ Return all of the flights, paginated
           ],
           "fares": [
             {
-              "id":1,
-              "code":"code",
-              "name":"Fare name",
-              "capacity":74,
-              "cost":421,
-              "price":"50",
-              "type":0,
-              "notes":null,
-              "active":true
+              "id": 1,
+              "code": "code",
+              "name": "Fare name",
+              "capacity": 74,
+              "cost": 421,
+              "price": "50",
+              "type": 0,
+              "notes": null,
+              "active": true
             }
           ]
         }
@@ -605,86 +602,87 @@ Return all of the flights, paginated
 
 Return details about a given flight
 
-- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible
+  values
 
 **Sample Response:**
 
 ```json
 {
-    "data": {
-      "id": "flightid_1",
-      "airline": {
-        "id": 1,
-        "icao": "VMS",
-        "iata": "VM",
-        "name": "phpvms airlines",
-        "country": null,
-        "logo": null,
-        "active": true,
-        "total_flights": 0,
-        "total_time": 0,
-        "created_at": "2018-01-06 20:24:13",
-        "updated_at": "2018-01-06 20:24:13"
-      },
-      "flight_number": 100,
-      "route_code": null,
-      "route_leg": null,
-      "dpt_airport_id": "KAUS",
-      "arr_airport_id": "KJFK",
-      "alt_airport_id": null,
-      "distance": {
-          "mi": 2028,
-          "nmi": 1762.283818574514,
-          "km": 3263.749632
-      },
-      "route": "KAUS SID TNV J87 IAH J2 LCH J22 MEI J239 ATL J52 AJFEB J14 BYJAC Q60 JAXSN J14 COLIN J61 HUBBS J55 SIE STAR KJFK",
-      "dpt_time": "6PM CST",
-      "arr_time": "11PM EST",
-      "flight_time": 360,
-      "flight_type": "J",
-      "notes": "",
+  "data": {
+    "id": "flightid_1",
+    "airline": {
+      "id": 1,
+      "icao": "VMS",
+      "iata": "VM",
+      "name": "phpvms airlines",
+      "country": null,
+      "logo": null,
       "active": true,
-      "subfleet": [
-        {
-          "id": 1,
-          "airline_id": 1,
-          "name": "747-400 Winglets",
-          "type": "744W",
-          "fuel_type": null,
-          "cargo_capacity": null,
-          "fuel_capacity": null,
-          "gross_weight": null,
-          "aircraft": [
-            {
-              "id": 1,
-              "subfleet_id": "1",
-              "icao": null,
-              "airport_id": null,
-              "hex_code": null,
-              "name": "Boeing 747-400",
-              "registration": "NC17",
-              "tail_number": "17",
-              "active": true,
-              "created_at": null,
-              "updated_at": null
-            }
-          ],
-          "fares": [
-            {
-              "id":1,
-              "code":"code",
-              "name":"Fare name",
-              "capacity":74,
-              "cost":421,
-              "price":"50",
-              "type":0,
-              "notes":null,
-              "active":true
-            }
-          ]
-        }
-      ]
-    }
+      "total_flights": 0,
+      "total_time": 0,
+      "created_at": "2018-01-06 20:24:13",
+      "updated_at": "2018-01-06 20:24:13"
+    },
+    "flight_number": 100,
+    "route_code": null,
+    "route_leg": null,
+    "dpt_airport_id": "KAUS",
+    "arr_airport_id": "KJFK",
+    "alt_airport_id": null,
+    "distance": {
+      "mi": 2028,
+      "nmi": 1762.283818574514,
+      "km": 3263.749632
+    },
+    "route": "KAUS SID TNV J87 IAH J2 LCH J22 MEI J239 ATL J52 AJFEB J14 BYJAC Q60 JAXSN J14 COLIN J61 HUBBS J55 SIE STAR KJFK",
+    "dpt_time": "6PM CST",
+    "arr_time": "11PM EST",
+    "flight_time": 360,
+    "flight_type": "J",
+    "notes": "",
+    "active": true,
+    "subfleet": [
+      {
+        "id": 1,
+        "airline_id": 1,
+        "name": "747-400 Winglets",
+        "type": "744W",
+        "fuel_type": null,
+        "cargo_capacity": null,
+        "fuel_capacity": null,
+        "gross_weight": null,
+        "aircraft": [
+          {
+            "id": 1,
+            "subfleet_id": "1",
+            "icao": null,
+            "airport_id": null,
+            "hex_code": null,
+            "name": "Boeing 747-400",
+            "registration": "NC17",
+            "tail_number": "17",
+            "active": true,
+            "created_at": null,
+            "updated_at": null
+          }
+        ],
+        "fares": [
+          {
+            "id": 1,
+            "code": "code",
+            "name": "Fare name",
+            "capacity": 74,
+            "cost": 421,
+            "price": "50",
+            "type": 0,
+            "notes": null,
+            "active": true
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -716,7 +714,8 @@ See `GET /api/flights`
 
 Retrieve the PIREP information
 
-- `status` - See [PIREP Status](/rest-api/types#pirep-status) for possible values
+- `status` - See [PIREP Status](/rest-api/types#pirep-status) for possible
+  values
 
 **Sample Response:**
 

@@ -6,10 +6,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Guides',
-      items: [
-        'guides/basics',
-        'guides/finances',
-      ]
+      items: ['guides/basics', 'guides/finances'],
     },
     {
       type: 'category',
@@ -23,7 +20,7 @@ module.exports = {
         'installation/updating',
         'installation/docker',
         'installation/issues',
-      ]
+      ],
     },
     {
       type: 'category',
@@ -34,26 +31,18 @@ module.exports = {
         'config/email',
         'config/optimizing',
         'config/notifications',
-        'config/backups'
-      ]
+        'config/backups',
+      ],
     },
     {
-        type: 'category',
-        label: 'OAuth',
-        items: [
-            'oauth/discord',
-            'oauth/ivao',
-            'oauth/vatsim',
-        ]
+      type: 'category',
+      label: 'OAuth',
+      items: ['oauth/discord', 'oauth/ivao', 'oauth/vatsim'],
     },
     {
       type: 'category',
       label: 'Themes and Layouts',
-      items: [
-        'customize/layouts',
-        'customize/theming',
-        'customize/maps',
-      ]
+      items: ['customize/layouts', 'customize/theming', 'customize/maps'],
     },
     {
       type: 'category',
@@ -63,16 +52,12 @@ module.exports = {
         'developers/building-assets',
         'developers/addons',
         'developers/awards',
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'API',
-      items: [
-        'api/overview',
-        'api/auth',
-        'api/apis',
-      ]
+      items: ['api/overview', 'api/auth', 'api/apis'],
     },
     {
       type: 'category',
@@ -82,18 +67,21 @@ module.exports = {
         'acars/eula',
         'acars/install-server',
         'acars/user-guide',
+        'acars/customization',
         {
           type: 'category',
-          label: 'Customizing and Plugins',
+          label: 'Plugins',
           items: [
-            'acars/customizing/customization',
-            'acars/customizing/aircraftconfigs',
-            'acars/customizing/rules',
-            'acars/customizing/tutorial',
-          ]
-        }
-      ]
+            'acars/plugins/getting-started',
+            'acars/plugins/aircraftconfigs',
+            'acars/plugins/rules',
+            'acars/plugins/callbacks',
+            'acars/plugins/tutorial',
+            'acars/plugins/reference',
+          ],
+        },
+      ],
     },
     'help',
-  ]
+  ],
 };

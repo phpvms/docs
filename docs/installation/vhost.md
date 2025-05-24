@@ -3,11 +3,11 @@ id: vhost
 title: VHost Configuration
 ---
 
-If you're configuring your own VPS/webserver, the vhosts should point to the `public` directory.
+If you're configuring your own VPS/webserver, the vhosts should point to the
+`public` directory.
 
-:::info
-These are only example configurations and may require some tweaking, depending on the software versions
-:::
+:::info These are only example configurations and may require some tweaking,
+depending on the software versions :::
 
 ## Apache
 
@@ -35,7 +35,10 @@ If you're using Apache as your webserver, you can use a similiar vhost file.
 
 ## nginx
 
-If you're setting up a VPS with nginx, you can use a similiar vhost configuration. This is the vhost I use on the demo site. This passes the PHP files to the FastCGI PHP handler, as well as enables the short, "friendly" URLS that Laravel requires.
+If you're setting up a VPS with nginx, you can use a similiar vhost
+configuration. This is the vhost I use on the demo site. This passes the PHP
+files to the FastCGI PHP handler, as well as enables the short, "friendly" URLS
+that Laravel requires.
 
 ```nginx
 server {
@@ -70,4 +73,5 @@ server {
 
 ## More details
 
-For more information, view the [Laravel Web Server Configuration Docs](https://laravel.com/docs/9.x/deployment#server-configuration)
+For more information, view the
+[Laravel Web Server Configuration Docs](https://laravel.com/docs/9.x/deployment#server-configuration)

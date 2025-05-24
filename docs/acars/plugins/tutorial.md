@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: Plugin Tutorial
+title: Tutorial
 ---
 
 # Setting Up Your Environment
@@ -8,10 +8,11 @@ title: Plugin Tutorial
 You are required to have Node.js installed on your machine. You can download it
 from [here](https://nodejs.org/en/download/).
 
-Create a new plugin repository by cloning the [acars-pdk](https://github.com/phpvms/acars-pdk) repository by
-clicking "Use this template", and then "Creat a new repository"
+Create a new plugin repository by cloning the
+[acars-pdk](https://github.com/phpvms/acars-pdk) repository by clicking "Use
+this template", and then "Creat a new repository"
 
-![](img/clone-repo.png)
+![](../img/clone-repo.png)
 
 Clone your new repository to your local machine
 
@@ -44,16 +45,15 @@ Create a rule file under `src/rules/example.ts`, and you can use the following:
 /**
  * This is an example rule that you can use as a template
  */
-import { Meta, Rule, RuleValue } from '../types/rule'
-import { Pirep, Telemetry } from '../types/types'
-import { PirepState } from '../defs.js'
+import {Meta, Rule, RuleValue} from '../types/rule';
+import {Pirep, Telemetry} from '../types/types';
+import {PirepState} from '../defs.js';
 
 /**
  * This is the rule class that will be used to check the rule
  * The name doesn't really matter, but it should be unique
  */
 export default class ExampleRule implements Rule {
-
   /*
    * You can look at the definition of Meta for the fields
    * But you can also add additional fields for your rule
@@ -70,10 +70,9 @@ export default class ExampleRule implements Rule {
     max_count: 3,
     points: -1,
     delay_time: 5000,
-  }
+  };
 
   violated(pirep: Pirep, data: Telemetry, previousData?: Telemetry): RuleValue {
-
     /*
      * This will check that this rule has been violated
      * for this number of milliseconds specified in the
@@ -83,9 +82,9 @@ export default class ExampleRule implements Rule {
       this.meta.name,
       this.meta.delay_time,
       (): RuleValue => {
-        return ['The example was violated!', this.meta.points]
+        return ['The example was violated!', this.meta.points];
       },
-    )
+    );
   }
 }
 ```
@@ -102,19 +101,18 @@ This will also watch the `src/` directory for changes and recompile and copy
 them. Next, launch ACARS, and start a flight. In the logs, you should see a log
 that looks like:
 
-
 > Adding module file:///path/to/data/phpvms.net/config/aircraft/example.js
 
-Now the above rule won't do anything, because we haven't added any active states.
-Make sure that you're still running the above `npm run local` command, and let's
-change the rule to add states it's valid in:
+Now the above rule won't do anything, because we haven't added any active
+states. Make sure that you're still running the above `npm run local` command,
+and let's change the rule to add states it's valid in:
 
 ```typescript
 meta: Meta = {
   // ...
   states: [PirepState.Boarding],
   // ...
-}
+};
 ```
 
 You should see the rule being copied to the directory, and then ACARS reloading
