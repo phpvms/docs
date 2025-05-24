@@ -14,10 +14,14 @@ All of the themes are stored in the `resources/views/layouts/` folder. There is
 a base theme file, `app.blade.php`, which is then used by the templates. It has
 several required sections:
 
-:::info See the `resources/views/layouts/default/app.blade.php` as an example
-template, since there are several sections of code which are required in any
-custom templates, including some Javascript and CSS. I've tried to make notes
-and outline those sections in the `default/app.blade.php` file itself. :::
+:::info
+
+See the `resources/views/layouts/default/app.blade.php` as an example template,
+since there are several sections of code which are required in any custom
+templates, including some Javascript and CSS. I've tried to make notes and
+outline those sections in the `default/app.blade.php` file itself.
+
+:::
 
 - `@section('title')` is the page title, and shows up in the title bar
 - `@section('content')` is the main content for the page

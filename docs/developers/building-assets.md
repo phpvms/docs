@@ -45,10 +45,14 @@ Each of those folders have a `js` and `css` folder, and the respective assets
 are placed in those folders. After building those assets, the files are placed
 into there.
 
-:::caution On an update, the files in `public/assets/*` will be overwritten, so
-be careful when updating to make sure those files aren't overwritten. You can do
-a diff against the original JS files in `resources/js` and then rebuild, to make
-sure your changes are included :::
+:::caution
+
+On an update, the files in `public/assets/*` will be overwritten, so be careful
+when updating to make sure those files aren't overwritten. You can do a diff
+against the original JS files in `resources/js` and then rebuild, to make sure
+your changes are included
+
+:::
 
 ---
 

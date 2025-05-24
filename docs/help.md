@@ -7,8 +7,12 @@ This guide details the requirements for getting help with phpVMS or vmsACARS.
 
 ## How to ask for help
 
-:::info Before asking for help, try to reproduce on the
-[demo site](https://demo.phpvms.net), and with the `default` skin :::
+:::info
+
+Before asking for help, try to reproduce on the
+[demo site](https://demo.phpvms.net), and with the `default` skin
+
+:::
 
 Without a lot of this information, it will be difficult to provide help.
 

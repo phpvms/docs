@@ -7,32 +7,23 @@ title: User Guide
 
 ---
 
-## .NET 6.0 Runtime
-
-If you don't have this installed, ACARS will prompt you to download it. But if
-you want to download ahead of time, visit the
-[Download Page from Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime),
-and select the x64 version for Desktop apps
-
-![](img/runtime-path-dn6.png)
-
 ## ACARS Client
 
 After downloading the zip, just extract the client into a folder (e.g, on your
 desktop into a folder called `ACARS`). Then you can create a desktop shortcut
 from the `acars.exe` for easier access.
 
-:::caution vmsACARS files should NOT be placed in OneDrive synced
-locations/folders, if you have OneDrive installed and enabled please use another
-location other than your desktop or documents folders for acars extraction. :::
+:::danger
+
+vmsACARS files should **NOT** be placed in OneDrive synced locations/folders, if
+you have OneDrive installed and enabled please use another location other than
+your desktop or documents folders for acars extraction.
+
+:::
 
 ---
 
-## Simulator Configuration
-
----
-
-### FSX/Prepar3d Configuration
+## FSX/Prepar3d Configuration
 
 To use FSX/Prepar3d, you need to install:
 
@@ -42,7 +33,7 @@ To use FSX/Prepar3d, you need to install:
 After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run
 whenever there are scenery changes (if you want gates/runways to be updated).
 
-### X-Plane Configuration
+## X-Plane Configuration
 
 X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the
 `AcarsConnect` folder into your `Resources\plugins` folder.
@@ -55,9 +46,9 @@ selecting your X-Plane root/main folder.
 
 ![](img/xplane_button.png)
 
-### MSFS Configuration
+## MSFS Configuration
 
-#### WASM Module
+### WASM Module
 
 If you're using Microsoft Flight Simulator, to read the LVars from the sim you
 need the `FSUIPC WASM Module (Version)` from [FSUIPC](https://www.fsuipc.com/) ,
@@ -66,22 +57,11 @@ folder.
 
 ![](img/fsuipc_lvar.png)
 
-Also it is possible to install the WASM Module with FSUIPC main installer. While
-installing or updating it, be sure you have the WASM Module option enabled.
+Also, it is possible to install the WASM Module with FSUIPC main installer.
+While installing or updating it, be sure you have the WASM Module option
+enabled.
 
 ![](img/fsuipc_install.png)
-
-#### Scenery
-
-:::caution Due to an MSFS limitation, sceneries purchased through the MSFS store
-can't be scanned because they're encrypted. Only sceneries purchased outside of
-the store and manually placed in the `Community` directory can be scanned :::
-
-To use MSFS, select "Microsoft Flight Simulator" from the simulator list and you
-will have two options:
-
-    - "Native" - this will try to scan all of the scenery folders and BGL files.
-    - "MakeRwys" - this will use the MakeRwys output (same as P3D). The files output by `MakeRwys` need to be placed in the root of the `Community` folder
 
 #### Permission Denied Errors
 
@@ -118,10 +98,14 @@ configuration/settings page:
 After entering your URL and API key, select the simulator, and then select the
 path to the simulator's root folder (for Fs9/FsX/Prepar3d or X-Plane)
 
-:::info FSX/Prepar3d requires the `MakeRwys.exe` file, which can be downloaded
-from the [FSUIPC Page](http://fsuipc.simflight.com/beta/MakeRwys.zip). It needs
-to be placed in the same directory as FSX/Prepar3d, and it will create the
-required files needed to scan. :::
+:::info
+
+FSX/Prepar3d requires the `MakeRwys.exe` file, which can be downloaded from the
+[FSUIPC Page](http://fsuipc.simflight.com/beta/MakeRwys.zip). It needs to be
+placed in the same directory as FSX/Prepar3d, and it will create the required
+files needed to scan.
+
+:::
 
 After selecting the directory, click `Re-Scan Scenery`. This will load the
 scenery database into ACARS for it to run/load later
@@ -148,8 +132,12 @@ Then click "Open In Guest", and you can follow the above instructions for then
 installing the plugin. Then, in ACARS, properly set the "Scenery Path" and IP to
 your Mac machine:
 
-:::info If you configure it to point to the X-Plane root, the default share path
-for VMWare Fusion would be `\\vmware-host\Shared Folders\X-Plane 11`. :::
+:::info
+
+If you configure it to point to the X-Plane root, the default share path for
+VMWare Fusion would be `\\vmware-host\Shared Folders\X-Plane 11`.
+
+:::
 
 ![](img/vmware-acars-config.png)
 

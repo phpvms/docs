@@ -8,17 +8,25 @@ to shared hosts. For your own server or if you have control over the vhost
 files, upload/extract the files to your desired location and point the vhost to
 the `/public` folder.
 
-:::tip If you are uploading to a shared host or to cPanel, chose one of the
-following methods when uploading your files. :::
+:::tip
+
+If you are uploading to a shared host or to cPanel, chose one of the following
+methods when uploading your files.
+
+:::
 
 ---
 
 ## Option 1: Creating a Subdomain
 
-:::tip Creating a subdomain is the easiest and more recommended method,
-especially for shared hosting. This works well if you have a landing or promo
-page on your site's main domain, and then a subdomain like `crew.yourva.com` or
-something similar. :::
+:::tip
+
+Creating a subdomain is the easiest and more recommended method, especially for
+shared hosting. This works well if you have a landing or promo page on your
+site's main domain, and then a subdomain like `crew.yourva.com` or something
+similar.
+
+:::
 
 Upload phpVMS to a directory with the name of your subdomain, for example,
 `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above).
@@ -61,8 +69,12 @@ It will look like this:
 
 ## Option 2: Copying the public directory
 
-:::tip Uploading and change the path of the public directory is the recommended
-method if you're on shared hosting :::
+:::tip
+
+Uploading and change the path of the public directory is the recommended method
+if you're on shared hosting
+
+:::
 
 This method works well if your main site is going to be phpVMS.
 
@@ -80,17 +92,25 @@ This method works well if your main site is going to be phpVMS.
 As long as you named the folder `phpvms`, the `index.php` will autodetect the
 location of the phpVMS folder.
 
-:::note Updates/auto-updates won't update the files in the `/public_html`
-folder, you'll need to update them manually. The other method, the symlink
-method, is recommended if you have command-line access and are more comfortable
-creating those types of links. :::
+:::note
+
+Updates/auto-updates won't update the files in the `/public_html` folder, you'll
+need to update them manually. The other method, the symlink method, is
+recommended if you have command-line access and are more comfortable creating
+those types of links.
+
+:::
 
 ---
 
 ## Option 3: Symlink
 
-:::caution This is an advanced method and not recommended to use on shared
-hosts, only do this if you know what you're doing :::
+:::danger
+
+This is an advanced method and not recommended to use on shared hosts, only do
+this if you know what you're doing
+
+:::
 
 This method works well if your main site is going to be phpVMS, and you're not
 running something like Wordpress. Running phpVMS in a subdirectory isn't
@@ -124,8 +144,12 @@ ln -s phpvms/public/ public_html
 
 ## Option 4: Direct Upload (Not Recommended!)
 
-:::warning This method isn't recommended, it could expose some sensitive
-directories if it isn't setup correctly. :::
+:::danger
+
+This method isn't recommended, it could expose some sensitive directories if it
+isn't setup correctly.
+
+:::
 
 This method isn't recommended because it can potentially expose your install if
 the `.htaccess` or something isn't correctly configured. Upload the files

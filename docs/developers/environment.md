@@ -7,26 +7,32 @@ title: Environment Configuration
 
 This is for running a local configuration, for running unit-tests, etc.
 
-:::info This is just how I work on phpVMS, to quickly reset the database and
+:::note
+
+This is just how I work on phpVMS, to quickly reset the database and
 test/develop items locally, without having to transfer files anywhere. I mainly
 use the Docker Compose setup
 
 If you're on Windows, I highly recommend installing WSL with your distro of
 choice (I use Ubuntu). If you don't have `make` available, open the `Makefile`
 and look for the commands to run for the individual commands of what you're
-trying to run. :::
-
-:::info You may want to disable caching during development phases to ensure your
-changes are applied correctly, as caching cna prevent changes from taking
-effect. To do this, set `CACHE_DRIVER=null` in your `.env` file.
+trying to run.
 
 :::
 
-:::info We strongly recommend reading the
+### Disable Caching
+
+You may want to disable caching during development phases to ensure your changes
+are applied correctly, as caching cna prevent changes from taking effect. To do
+this, set `CACHE_DRIVER=null` in your `.env` file.
+
+### Laravel Documentation
+
+We strongly recommend reading the
 [Laravel Documentation](https://laravel.com/docs/10.x), as it's more detailed
 and up-to-date. Since phpVMS is based on Laravel, the installation process is
 the same. In addition, you can simply use the `php artisan phpvms:dev-install`
-command to set up a development database. :::
+command to set up a development database.
 
 ## Creating and Resetting the Environment with docker
 

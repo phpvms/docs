@@ -36,7 +36,11 @@ know what you've modified).
 
 ### New Theme from Scratch
 
-:::tip You can use `theme:create` command to bootstrap these steps :::
+:::tip
+
+You can use `theme:create` command to bootstrap these steps
+
+:::
 
 Into the root of the `resources/views/layouts/` path, create a new folder, with
 a `theme.json` file. This JSON file serves as the manifest for your theme

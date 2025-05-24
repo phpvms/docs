@@ -58,7 +58,11 @@ DEBUG_TOOLBAR=false
 Sessions store the logged in users and other information. By default, they're
 stored on disk.
 
-:::info The Redis store is recommended if you have access to it :::
+:::info
+
+The Redis store is recommended if you have access to it
+
+:::
 
 #### Redis
 

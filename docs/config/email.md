@@ -18,9 +18,12 @@ These services are supported by Laravel natively;
 - [Amazon SES](https://aws.amazon.com/ses/) - Super cheap, free if you're using
   EC2
 
-> [!IMPORTANT]  
-> Do not forget cleaning application cache after editing `.env` variables.
-> Otherwise settings you defined/altered will not be loaded.
+:::warning
+
+Do not forget cleaning application cache after editing `.env` variables.
+Otherwise, settings you defined/altered will not be loaded.
+
+:::
 
 ---
 

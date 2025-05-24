@@ -11,7 +11,11 @@ it if you want to create backups of your files and database.
 Backups are scheduled nightly, and an older backup is removed, ensuring you have
 multiple backups available (e.g., last night's, the one before, etc.).
 
-:::caution Backups can consume up to 5GB of disk space. :::
+:::warning
+
+Backups can consume a large amount of data and disk space
+
+:::
 
 ## Basic Configuration
 

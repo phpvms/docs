@@ -20,8 +20,12 @@ mail, and select configs from the `/config` directory. This file is used as an
 override (in the previous version of phpVMS, the `local.config.php` file is the
 same concept).
 
-:::caution Don't change the files in the `/config` directory; instead, edit the
-`.env` file. This file will not be overwritten on an update. :::
+:::caution
+
+Don't change the files in the `/config` directory; instead, edit the `.env`
+file. This file will not be overwritten on an update.
+
+:::
 
 See [Laravel configuration files](https://laravel.com/docs/9.x/configuration)
 for additional documentation.

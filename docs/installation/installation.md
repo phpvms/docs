@@ -39,10 +39,14 @@ itself and the credentials. Refer to your hosts documentation for specifics -
 the database name, username and password here are just examples, replace them
 with your own. This example is for MySQL:
 
-:::caution Character Set and Collation If you're using a non-English language,
-make sure that you're setting the `CHARACTER SET` and `COLLATE` properly (see
-below for the utf8 values). By default it's `latin` which would result in
-corrupted characters :::
+:::caution
+
+Character Set and Collation If you're using a non-English language, make sure
+that you're setting the `CHARACTER SET` and `COLLATE` properly (see below for
+the utf8 values). By default it's `latin` which would result in corrupted
+characters
+
+:::
 
 ```sql
 CREATE DATABASE IF NOT EXISTS `phpvms` CHARACTER SET UTF8 COLLATE utf8_unicode_ci;
@@ -61,8 +65,11 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ## 3. Composer Install
 
-:::info If you've downloaded a release or dev tar/zip from the downloads
-section, you don't need this. You only need this if you've cloned the repository
+:::info
+
+If you've downloaded a release or dev tar/zip from the downloads section, you
+don't need this. You only need this if you've cloned the repository
+
 :::
 
 Update the composer dependencies; this will download and update the `vendor`
@@ -77,9 +84,12 @@ composer install
 
 ## 4. Running the Installer
 
-:::info There isn't a `setup` folder in the tar file. It's done as a Laravel
-route, which serves to see that your webserver/htaccess files are working
-correctly. :::
+:::info
+
+There isn't a `setup` folder in the tar file. It's done as a Laravel route,
+which serves to see that your webserver/htaccess files are working correctly.
+
+:::
 
 Once you go to your site, you'll see a page like this, click to proceed to the
 installer.

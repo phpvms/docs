@@ -6,8 +6,12 @@ title: VHost Configuration
 If you're configuring your own VPS/webserver, the vhosts should point to the
 `public` directory.
 
-:::info These are only example configurations and may require some tweaking,
-depending on the software versions :::
+:::info
+
+These are only example configurations and may require some tweaking, depending
+on the software versions
+
+:::
 
 ## Apache
 

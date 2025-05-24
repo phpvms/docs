@@ -10,19 +10,23 @@ Some of the features that rely on cronjobs include:
 - Finances
 - vaCentral features
 
-:::note If you can't run it once a minute, the lowest interval possible is fine,
-but should be in 5 minute increments, since there are tasks that run at 5,15,
-and 30 minute intervals. :::
+:::note
 
-:::tip Info about "Shared Hosting" Many hosts limit the usage of cron, either by
-limiting it directly or limiting php extensions needed by cron. So if you are
-planning to use a "Shared Hosting", better to focus on cron and email settings
-first (specially if they offer a money back quarantee), if cron is failing and
-you can not get it working properly consider finding a different service
-provider. Even some hosts limit WebCron services, be advised, without a working
-cron you will not get the best of phpVMS v7. :::
+If you can't run it once a minute, the lowest interval possible is fine, but
+should be in 5 minute increments, since there are tasks that run at 5,15, and 30
+minute intervals.
 
----
+:::
+
+## Info about "Shared Hosting"
+
+Many hosts limit the usage of cron, either by limiting it directly or limiting
+php extensions needed by cron. So if you are planning to use a "Shared Hosting",
+better to focus on cron and email settings first (specially if they offer a
+money back quarantee), if cron is failing and you can not get it working
+properly consider finding a different service provider. Even some hosts limit
+WebCron services, be advised, without a working cron you will not get the best
+of phpVMS v7.
 
 ## Configuration on a Server
 
@@ -52,9 +56,13 @@ phpVMS, in the admin panel, can suggest a cron path/command for you, under
 `Admin -> Maintenance`. However, before trying that, try setting it up according
 to your host's instructions.
 
-:::tip Note the "Domain Specific Example" Many hosts offer multiple PHP
-versions, make sure to use the path to the PHP 7.x version in the cronjob.
-Contact your host! Point them to this page. The example below uses PHP 7.4. :::
+:::tip
+
+Note the "Domain Specific Example" Many hosts offer multiple PHP versions, make
+sure to use the path to the PHP 7.x version in the cronjob. Contact your host!
+Point them to this page. The example below uses PHP 7.4.
+
+:::
 
 With cPanel, select "Once Per Minute" under "Common Settings", and you can use a
 similar command.

@@ -26,7 +26,11 @@ resized down to fit. Fill in the URLs to your logos. They should be PNG format
 
 ## Discord Rich Presence
 
-:::tip This requires the ACARS Premium Addon :::
+:::tip
+
+This requires the ACARS Premium Addon
+
+:::
 
 To customize the "Rich Presence" dialog in Discord, you need to create a new
 Application in Discord. You'll then enter the provided `Application ID` into the
