@@ -28,17 +28,21 @@ the module, if you want to make it available on composer, edit the
 
 :::tip
 
-All of the examples below will be based on a module named `Sample`. To
-see the source for the module,
+All of the examples below will be based on a module named `Sample`. To see the
+source for the module,
 [check it out on GitHub](https://github.com/nabeelio/phpvms-module).
 
 :::
 
 :::tip
 
-When naming your module, it is recommended that if your module name runs the risk of being generic, to prefix your module name with a unique identifier. For example, instead of naming your module `Tours`, name it `XXTours` (The XX in the example being the identifier or brand name you choose)
+When naming your module, it is recommended that if your module name runs the
+risk of being generic, to prefix your module name with a unique identifier. For
+example, instead of naming your module `Tours`, name it `XXTours` (The XX in the
+example being the identifier or brand name you choose)
 
-In doing this, you reduce the chance of your module name conflicting directly with another module.
+In doing this, you reduce the chance of your module name conflicting directly
+with another module.
 
 :::
 
@@ -152,8 +156,7 @@ don't need to call a check or something in every method.
 
 :::note
 
-Read more about
-[Laravel Middleware](https://laravel.com/docs/9.x/middleware)
+Read more about [Laravel Middleware](https://laravel.com/docs/9.x/middleware)
 
 :::
 
@@ -204,8 +207,6 @@ if(Auth::check())
 ---
 
 # Database Access
-
-
 
 ## Models
 
@@ -294,32 +295,33 @@ straight-forward, without having to run any SQL manually.
 The `app/Database/migrations` directory has the core migrations and is a good
 reference on field types, especially if you're looking to add relationships.
 
-:::note
-
-Design your tables well - follow the guidelines set by Laravel, and you'll
+**Design your tables well** - follow the guidelines set by Laravel, and you'll
 have a much better time.
 
-:::
-
-
 :::note
 
-Add new migration files when you have to modify a table, etc, after you've
+Add new migration files when you have to modify a table, etc., after you've
 released it into the wild. The migrations that are run are kept track of, so if
 it's seen that it's already run the file, it won't run it again.
 
 :::
 
-:::warning[Table Name Convention]
+### Table Name Convention
 
-When naming tables, table names *should* be prefixed with a short indentifier that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`, `sp_`, etc.). For example, instead of naming a table `tours`, name it `ch_tours`. This includes pivot tables. See Laravel documentation on how to override the default conventions for table names, foreign relationships, etc. where required.
+When naming tables, table names _should_ be prefixed with a short indentifier
+that is unqiue to your addon or group of addons (e.g. `disposable_`, `ch_`,
+`sp_`, etc.). For example, instead of naming a table `tours`, name it
+`ch_tours`. This includes pivot tables. See Laravel documentation on how to
+override the default conventions for table names, foreign relationships, etc.
+where required.
 
-Not prefixing your tables could lead to unintended consequences, including but not limited to:
+**Not prefixing your tables could lead to unintended consequences**, including
+but not limited to:
 
-* Conflicting with future phpVMS core features that would use the same table name, thereby making it more difficult to update phpVMS at a later date.
-* Conflicting with other addons by other 3rd party modules that don't head this warning.
-
-:::
+- Conflicting with future phpVMS core features that would use the same table
+  name, thereby making it more difficult to update phpVMS at a later date.
+- Conflicting with other addons by other 3rd party modules that don't head this
+  warning.
 
 ### Seeding Data
 
@@ -341,7 +343,7 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('myaddon_settings', function (Blueprint $table) {
         	// ... Create all the columns
         });
 
@@ -360,7 +362,7 @@ class CreateSettingsTable extends Migration
 
         ];
 
-        $this->addData('settings', $settings);
+        $this->addData('myaddon_settings', $settings);
     }
 
     // Not showning the down()
