@@ -18,7 +18,7 @@ with the phpVMS codebase.
 
 To generate a module, run:
 
-```bash
+```shell
 php artisan module:make {ModuleName}
 ```
 
@@ -26,9 +26,13 @@ Which generates the basic structure in the `/modules` folder. After generating
 the module, if you want to make it available on composer, edit the
 `composer.json` file, setting your `VENDOR` and author information.
 
-:::tip All of the examples below will be based on a module named `Sample`. To
+:::tip
+
+All of the examples below will be based on a module named `Sample`. To
 see the source for the module,
-[check it out on GitHub](https://github.com/nabeelio/phpvms-module). :::
+[check it out on GitHub](https://github.com/nabeelio/phpvms-module).
+
+:::
 
 ---
 
@@ -76,8 +80,6 @@ When a module is created, a directory structure like this is created:
 ---
 
 ### Automatic Installation
-
-:::note Still being written :::
 
 To be able to publish to composer, add `joshbrw/laravel-module-installer` as a
 dependency in your module's `composer.json` file, and then set the `type` in the
@@ -140,8 +142,12 @@ don't need to call a check or something in every method.
 'middleware' => ['api.auth'] # for API routes, you can add this middlware to require API auth
 ```
 
-:::note Read more about
-[Laravel Middleware](https://laravel.com/docs/9.x/middleware) :::
+:::note
+
+Read more about
+[Laravel Middleware](https://laravel.com/docs/9.x/middleware)
+
+:::
 
 ---
 
@@ -257,11 +263,15 @@ Laravel includes a way to create and update tables, called
 programmatically define your tables, and let the framework worry about the exact
 syntax to use. The advantage to this abstraction is being.
 
-! You should _not_ be using raw SQL
+:::warning
+
+You should _not_ be using raw SQL
+
+:::
 
 There is an `artisan` helper to generate migrations:
 
-```bash
+```shell
 php artisan module:make-migration create_sample_table ModuleName
 ```
 
@@ -274,12 +284,21 @@ straight-forward, without having to run any SQL manually.
 The `app/Database/migrations` directory has the core migrations and is a good
 reference on field types, especially if you're looking to add relationships.
 
-!!! Design your tables well - follow the guidelines set by Laravel, and you'll
+:::note
+
+Design your tables well - follow the guidelines set by Laravel, and you'll
 have a much better time.
 
-!!!! Add new migration files when you have to modify a table, etc, after you've
+:::
+
+
+:::note
+
+Add new migration files when you have to modify a table, etc, after you've
 released it into the wild. The migrations that are run are kept track of, so if
 it's seen that it's already run the file, it won't run it again.
+
+:::
 
 ### Seeding Data
 
