@@ -96,7 +96,8 @@ will use.
 #### Example
 
 ```typescript
-setup() {
+setup()
+{
   Acars.Set('above_1k', false)
   Acars.Set('launched_message', false)
 }
@@ -105,7 +106,13 @@ setup() {
 ### 2. `run()`
 
 ```typescript
-run(pirep: Pirep, data: Telemetry, previousData?: Telemetry): void
+run(pirep
+:
+Pirep, data
+:
+Telemetry, previousData ? : Telemetry
+):
+void
 ```
 
 #### Purpose
@@ -171,7 +178,17 @@ etc.).
 #### Example
 
 ```typescript
-phaseChange(pirep: Pirep, data: Telemetry, newPhase: PirepState, oldPhase: PirepState) {
+phaseChange(pirep
+:
+Pirep, data
+:
+Telemetry, newPhase
+:
+PirepState, oldPhase
+:
+PirepState
+)
+{
   Acars.AddPirepLog(`Phase changed from ${oldPhase} to ${newPhase}`)
 
   if (newPhase === PirepState.TaxiOut) {
@@ -219,6 +236,6 @@ export default class MyScript implements CallbackHook {
 
 ### Sounds
 
-Place your sounds (`mp3` or `wav`) format in the `src/sounds` directory (create
-it if it doesn't exist). When you call `Acars.PlayAudio`, it will look in this
-directory for them.
+Place your sounds, in mp3, 44100hz stereo format in the `src/sounds` directory (
+create it if it doesn't exist). When you call `Acars.PlayAudio`, it will look in
+this directory for them.

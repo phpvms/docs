@@ -14,7 +14,7 @@ Before asking for help, try to reproduce on the
 
 :::
 
-Without a lot of this information, it will be difficult to provide help.
+Without a lot of this information, it will be challenging to provide help.
 
 ---
 
@@ -23,7 +23,7 @@ Without a lot of this information, it will be difficult to provide help.
 ### Forums
 
 The forums are located at [https://forum.phpvms.net](https://forum.phpvms.net).
-Search in the forums and on Github first for your issue before asking. For 3rd
+Search in the forums and on GitHub first for your issue before asking. For third
 party addons, be sure to post in your own
 
 ### Discord
@@ -34,8 +34,8 @@ There's also a Discord channel for quick questions.
 ### Github
 
 The bug tracker is located on
-[Github](https://github.com/nabeelio/phpvms/issues). To post an issue, you need
-a Github account, and then select "New Issue". After that, select "Bug Report".
+[GitHub](https://github.com/nabeelio/phpvms/issues). To post an issue, you need
+a GitHub account, and then select "New Issue." After that, select "Bug Report."
 There is a small template there that you can use, but try to include as much of
 the information below:
 
@@ -45,27 +45,27 @@ the information below:
 
 - A clear description of the issue
   - What page stuff happened on
-  - Relevent data
+  - Relevant data
 - Versions
   - **PHP Version**
-  - **Database versions** - MySQL, MariaDB or Percona, or whatever other backend
-    your running
+  - **Database versions—**MySQL, MariaDB or Percona, or whatever other backend
+    you're running
   - **phpVMS Version**
     - From either the admin panel (bottom left, click on the version for the
       full version)
     - Running `php artisan phpvms:version` ![](img/version.png)
 - How to reproduce the error
   - Include as much detail as possible
-  - Include any relevent data - for example, an error with expenses, include how
+  - Include any relevant data—for example, an error with expenses, include how
     the expenses are configured. See "Exporting Data" below.
 - Screenshots
-- Type of hosting - shared, VPS, dedicated, etc
+- Type of hosting—shared, VPS, dedicated, etc.
 
 ### Logs
 
 - **Laravel logs**: These are located in `storage/logs`, you must include these.
   Look through the logs to also ensure that no sensitive information is included
-  inadvertantly
+  inadvertently
 - **PHP logs**: These can be found wherever your PHP error logs are kept, for
   example, the PHP-FPM logs. Ask your host, if you don't know. They're often
   found in cPanel, under Error Logs.
@@ -73,13 +73,13 @@ the information below:
   required, depending on the issue. If you're not sure how to get them, ask your
   host. They're often found in cPanel, under Error Logs.
 - Exported data data - see below
-- Any and all other relevent details
+- Any other relevant details
 
 ---
 
 ## Enable Debug and Debugging
 
-- Look at the logs - they're located in `storage/logs`
+- Look at the logs—they're located in `storage/logs`
 - Enable debug logging and the Laravel Debug Toolbar, open your `.env`
   - `APP_DEBUG` to `true`
   - `DEBUG_TOOLBAR` to `true` (if you want the debug toolbar)
@@ -104,7 +104,7 @@ Before asking for help, make sure to:
 - Rescan your scenery (Required for FS9, FSX, P3D and X-Plane)
 - If crashing, delete the `data` folder, and restart
 - If using MSFS (2020 and/or 2024) be sure your `fsuipc-lvar-module` is up to
-  date (Also known as FsUipc WASM Module)
+  date (Also known as FSUIPC WASM Module)
 
 When asking for help:
 
