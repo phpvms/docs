@@ -9,17 +9,13 @@ title: User Guide
 
 ## ACARS Client
 
-After downloading the zip, just extract the client into a folder (e.g, on your
-desktop into a folder called `ACARS`). Then you can create a desktop shortcut
-from the `acars.exe` for easier access.
+After downloading the installer, extract it and run it. It will install into:
 
-:::danger
+```
+%LocalAppData%\vmsacars\current
+```
 
-vmsACARS files should **NOT** be placed in OneDrive synced locations/folders, if
-you have OneDrive installed and enabled please use another location other than
-your desktop or documents folders for acars extraction.
-
-:::
+Desktop and start menu shortcuts will be created, and the program will be registered
 
 ---
 
@@ -32,6 +28,8 @@ To use FSX/Prepar3d, you need to install:
 
 After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run
 whenever there are scenery changes (if you want gates/runways to be updated).
+ACARS will automatically detected changes to the MakeRwys files, and will
+update its internal database accordingly.
 
 ### X-Plane Configuration
 
