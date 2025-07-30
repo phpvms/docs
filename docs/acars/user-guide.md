@@ -23,7 +23,7 @@ your desktop or documents folders for acars extraction.
 
 ---
 
-## FSX/Prepar3d Configuration
+### FSX/Prepar3d Configuration
 
 To use FSX/Prepar3d, you need to install:
 
@@ -33,7 +33,7 @@ To use FSX/Prepar3d, you need to install:
 After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run
 whenever there are scenery changes (if you want gates/runways to be updated).
 
-## X-Plane Configuration
+### X-Plane Configuration
 
 X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the
 `AcarsConnect` folder into your `Resources\plugins` folder.
@@ -46,9 +46,9 @@ selecting your X-Plane root/main folder.
 
 ![](img/xplane_button.png)
 
-## MSFS Configuration
+### MSFS Configuration
 
-### WASM Module
+#### WASM Module
 
 If you're using Microsoft Flight Simulator, to read the LVars from the sim you
 need the `FSUIPC WASM Module (Version)` from [FSUIPC](https://www.fsuipc.com/) ,
@@ -63,9 +63,9 @@ enabled.
 
 ![](img/fsuipc_install.png)
 
-#### Permission Denied Errors
+##### Permission Denied Errors
 
-If you're getting a permission denied error, see
+If you're getting a permission-denied error, see
 [this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
 
 ---
@@ -76,13 +76,13 @@ If you're getting a permission denied error, see
 
 ### Get the URL and API Key
 
-You can either enter your URL and API key manually, or download the settings
+You can either enter your URL and API key manually or download the settings
 config file from your phpVMS profile. To download the config file, visit your VA
 and go to your profile:
 
 ![](img/profile-config-download.png)
 
-And place it a folder called `My Documents/phpVMS`:
+And place it a folder called `Documents\vmsacars\profiles`:
 
 ![](img/mydocs-settingsxml.png)
 
@@ -106,9 +106,6 @@ placed in the same directory as FSX/Prepar3d, and it will create the required
 files needed to scan.
 
 :::
-
-After selecting the directory, click `Re-Scan Scenery`. This will load the
-scenery database into ACARS for it to run/load later
 
 ---
 
