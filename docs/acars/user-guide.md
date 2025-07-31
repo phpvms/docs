@@ -3,6 +3,11 @@ id: user-guide
 title: User Guide
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 # Installation (Client)
 
 ---
@@ -19,52 +24,62 @@ Desktop and start menu shortcuts will be created, and the program will be regist
 
 ---
 
-### FSX/Prepar3d Configuration
+## Simulator Configuration
+<Tabs>
+  <TabItem value="msfs" label="MSFS 2020/2024" default>
+    #### WASM Module
 
-To use FSX/Prepar3d, you need to install:
+    If you're using Microsoft Flight Simulator, to read the LVars from the sim you
+    need the `FSUIPC WASM Module (Version)` from [FSUIPC](https://www.fsuipc.com/) ,
+    `fsuipc-lvar-module` folder needs to be manually placed in your community
+    folder.
 
-- [FSUIPC](http://www.fsuipc.com) - the licensed version isn't required.
-- [MakeRwys](http://fsuipc.simflight.com/beta/MakeRwys.zip)
+    ![](img/fsuipc_lvar.png)
 
-After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run
-whenever there are scenery changes (if you want gates/runways to be updated).
-ACARS will automatically detected changes to the MakeRwys files, and will
-update its internal database accordingly.
+    Also, it is possible to install the WASM Module with FSUIPC main installer.
+    While installing or updating it, be sure you have the WASM Module option
+    enabled.
 
-### X-Plane Configuration
+    ![](img/fsuipc_install.png)
 
-X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the
-`AcarsConnect` folder into your `Resources\plugins` folder.
+    ##### Permission Denied Errors
 
-![](img/plugin-copy.png)
+    If you're getting a permission-denied error, see
+    [this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
+  </TabItem>
+  <TabItem value="xplane" label="X-Plane">
 
-Also it is possible to copy the plugin automatically from vmsAcars settings, be
-sure X-Plane is not running and click the `Copy Plugin To X-Plane` button after
-selecting your X-Plane root/main folder.
+    X-Plane uses a custom plugin. Open the `X-Plane` folder, and copy the
+    `AcarsConnect` folder into your `Resources\plugins` folder.
 
-![](img/xplane_button.png)
+    ![](img/plugin-copy.png)
 
-### MSFS Configuration
+    Also it is possible to copy the plugin automatically from vmsAcars settings, be
+    sure X-Plane is not running and click the `Copy Plugin To X-Plane` button after
+    selecting your X-Plane root/main folder.
 
-#### WASM Module
+    ![](img/xplane_button.png)
+  </TabItem>
+  <TabItem value="banana" label="Prepar3d/FSX">
+    To use FSX/Prepar3d, you need to install:
 
-If you're using Microsoft Flight Simulator, to read the LVars from the sim you
-need the `FSUIPC WASM Module (Version)` from [FSUIPC](https://www.fsuipc.com/) ,
-`fsuipc-lvar-module` folder needs to be manually placed in your community
-folder.
+    - [FSUIPC](http://www.fsuipc.com) - the licensed version isn't required.
+    - [MakeRwys](http://fsuipc.simflight.com/beta/MakeRwys.zip)
 
-![](img/fsuipc_lvar.png)
+    After installing both, run `MakeRwys`. `MakeRwys` also needs to be re-run
+    whenever there are scenery changes (if you want gates/runways to be updated).
+    ACARS will automatically detected changes to the MakeRwys files, and will
+    update its internal database accordingly.
 
-Also, it is possible to install the WASM Module with FSUIPC main installer.
-While installing or updating it, be sure you have the WASM Module option
-enabled.
+    #### Hardware Configuration
 
-![](img/fsuipc_install.png)
+    If you're using hardware to control the sim, ACARS heavily relies on several
+    offsets with FSUIPC, particularly the parking brake. Ensure that the offset
+    `0x0BC8` gets set
 
-##### Permission Denied Errors
+  </TabItem>
+</Tabs>
 
-If you're getting a permission-denied error, see
-[this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
 
 ---
 
@@ -118,33 +133,12 @@ Parallels or Virtual Box, which is roughly:
 1. Copy the `AcarsConnect` plugin to the `Resources\plugin` folder (see above)
 1. Set the IP address in ACARS to the IP of the host
 
-In order to get the scenery scanning working properly, add X-Plane as a shared
-folder:
-
-![](img/vmware-sharing.png)
 
 Then click "Open In Guest", and you can follow the above instructions for then
-installing the plugin. Then, in ACARS, properly set the "Scenery Path" and IP to
+installing the plugin. Then, in ACARS, properly set the IP to
 your Mac machine:
 
-:::info
-
-If you configure it to point to the X-Plane root, the default share path for
-VMWare Fusion would be `\\vmware-host\Shared Folders\X-Plane 11`.
-
-:::
-
-![](img/vmware-acars-config.png)
-
 Then you can launch/run ACARS as usual.
-
----
-
-### Hardware Configuration
-
-If you're using hardware to control the sim, ACARS heavily relies on several
-offsets with FSUIPC, particularly the parking brake. Ensure that the offset
-`0x0BC8` gets set
 
 ---
 
@@ -184,18 +178,6 @@ supported:
 
 The routes/navpoints are then loaded from the flight plan, along with the TOD
 (from MSFS/Simbrief), and filed along with your PIREP.
-
----
-
-## Lights and Aircraft Features
-
-Lights and other features for aircraft may not work on all aircraft, due to the
-way developers differently implement the on/off switches/flags for these (for
-example, PMDG implements their lights differently for each aircraft). There is a
-`ConfigMap.xml` file that can be edited (make sure to create backups before
-updated - enhancements to this coming soon) which uses the aircraft name/title
-to determine which offsets (for FSUIPC) or data refs (X-Plane) are used to
-detect those features.
 
 ---
 
@@ -301,8 +283,6 @@ the phases properly for both IFR and VFR flights.
 ## Debugging
 
 To debug whether the lights are working or not, you can open the "Debug" window.
-To open it, go to the "Map" page, and double-click on "Flight Status". It will
-open up the debug window, then you can scroll down to the lights, and see the
-values for the lights being returned:
+To open it, go to the "Map" page, click the three dots, and select "Debug Window"
 
 ![](img/data-window.png)
