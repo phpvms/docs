@@ -11,11 +11,8 @@ anything but upload it.
 
 The zip/tar file from the downloads site contains all of the dependencies.
 
-:::tip Use the **development branch** version, as the latest beta may be out of
-date. :::
-
 - [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases) -
-  The latest released versions
+  The latest released versions !!! DO NOT DOWNLOAD THE SOURCE CODE !!!
 - [Development branch, TAR.GZ](https://phpvms.cdn.vmslabs.net/phpvms-latest-dev.tar.gz) -
   The latest development build, may contain new bugs or non-documented features
 - [Development branch, ZIP](https://phpvms.cdn.vmslabs.net/phpvms-latest-dev.zip) -
@@ -35,4 +32,4 @@ composer install
 ```
 
 After running `composer install`, you can continue the installation
-instructions.
+instructions. DO NOT USE `composer update` as it may break your install.
