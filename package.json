@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "~3",
-    "@docusaurus/plugin-client-redirects": "~3",
+    "@docusaurus/plugin-client-redirects": "^3.10.1",
     "@docusaurus/plugin-ideal-image": "~3",
     "@docusaurus/plugin-pwa": "^3.10.1",
     "@docusaurus/plugin-sitemap": "~3",

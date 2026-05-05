@@ -53,11 +53,6 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://discord.gg/wvAmMnd',
-          label: 'Discord',
-          position: 'right',
-        },
-        {
           href: 'https://github.com/nabeelio/phpvms',
           //label: 'GitHub',
           className: 'header-github-link',
@@ -91,7 +86,7 @@ module.exports = {
           versions: {
             current: {
               label: 'v8.x',
-              path: 'next',
+              path: '8.x',
               banner: 'unreleased',
             },
             'v7.x': {
@@ -103,7 +98,7 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         gtag: {
-          trackingID: 'UA-100567975-3',
+          trackingID: 'G-DW1H3QQJ5B',
           anonymizeIP: true,
         },
         sitemap: {
@@ -119,10 +114,33 @@ module.exports = {
       {
         redirects: [
           {
+            // Legacy path (no longer exists in any version) → v7.x user guide
             from: '/acars/install-client',
             to: '/acars/user-guide',
           },
         ],
+        // When v8.x ships as the released version, set the
+        // PHPVMS_DOCS_V8_RELEASED env var (or flip the default below to
+        // true) and also change `lastVersion` in the docs preset to 'v8.x'.
+        // This will rewrite every URL like /8.x/foo to /foo (the new
+        // canonical root path), keeping legacy /8.x/* links working.
+        createRedirects(existingPath) {
+          const v8Released =
+            process.env.PHPVMS_DOCS_V8_RELEASED === 'true' || false;
+          if (!v8Released) {
+            return undefined;
+          }
+          // After v8.x is released, the v8 docs live at the site root ('/').
+          // Map root paths to their /8.x/* equivalents so old links resolve.
+          if (
+            existingPath !== '/' &&
+            !existingPath.startsWith('/v7.x/') &&
+            !existingPath.startsWith('/8.x/')
+          ) {
+            return [`/8.x${existingPath}`];
+          }
+          return undefined;
+        },
       },
     ],
     [

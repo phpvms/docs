@@ -29,3 +29,17 @@ file. This file will not be overwritten on an update.
 
 See [Laravel configuration files](https://laravel.com/docs/9.x/configuration)
 for additional documentation.
+
+---
+
+## Language
+
+You can change the system language to one of the available translations. Check
+`phpvms/resources/lang/` to see which locale codes are available.
+
+For example, to use Brazilian Portuguese, confirm that
+`phpvms/resources/lang/pt-br` exists, then add the locale to your `.env`:
+
+```
+APP_LOCALE=pt-br
+```

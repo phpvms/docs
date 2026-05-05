@@ -64,6 +64,11 @@ div.markdown img {
     no-repeat;
 }
 
+/* Spacing between top-level sidebar sections (phpVMS / ACARS / Developers) */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item + .menu__list-item {
+  margin-top: 40px;
+}
+
 html[data-theme='light'] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
