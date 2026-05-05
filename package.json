@@ -21,7 +21,7 @@
   "dependencies": {
     "@docusaurus/core": "~3",
     "@docusaurus/plugin-client-redirects": "~3",
-    "@docusaurus/plugin-ideal-image": "^3.7.0",
+    "@docusaurus/plugin-ideal-image": "~3",
     "@docusaurus/plugin-sitemap": "~3",
     "@docusaurus/preset-classic": "~3",
     "@docusaurus/theme-live-codeblock": "~3",
@@ -37,5 +37,8 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "overrides": {
+    "@babel/runtime": "^7.28.0"
   }
 }

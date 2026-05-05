@@ -3,9 +3,9 @@ id: rules
 title: Custom Rules
 ---
 
-For users with Premium, you can create their own rules, in Javascript. See
-[Custom Packaging](./packaging.md) on how to create a distribution for your VA,
-which can include rules, sounds and callbacks.
+For users with Premium, you can create their own rules, in Javascript. Rules
+can be packaged alongside aircraft configs, sounds, and callbacks for
+distribution to your VA.
 
 See the documentation at the
 [acars-pdk repository](https://github.com/phpvms/acars-pdk) on how to create

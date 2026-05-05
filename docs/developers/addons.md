@@ -389,7 +389,7 @@ unsure).
 # Event Listeners
 
 Available events from the main app are listed in the
-[app/Events](/nabeelio/phpvms/tree/master/app/Events) directory. Subscribing to
+[app/Events](https://github.com/nabeelio/phpvms/tree/master/app/Events) directory. Subscribing to
 events follows the
 [Laravel Events](https://laravel.com/docs/5.5/events#event-subscribers) format.
 Create the event listener in your `$MODULE\Listeners` folder (e.g,
@@ -428,7 +428,7 @@ logic without reusing code.
 
 While you can use and import models directly, it's recommended to use the
 repositories, in the
-[app/Repositories](/nabeelio/phpvms/tree/master/app/Repositories) are listed
+[app/Repositories](https://github.com/nabeelio/phpvms/tree/master/app/Repositories) are listed
 [here](https://github.com/andersao/l5-repository#prettusrepositorycontractsrepositoryinterface).
 Repositories give the added benefits of automatically caching and flushing the
 cache when data is added/updated.
