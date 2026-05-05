@@ -9,7 +9,19 @@ module.exports = {
   organizationName: 'phpvms',
   projectName: 'docs',
   trailingSlash: false,
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    imageZoom: {
+      selector: '.markdown img',
+      options: {
+        margin: 24,
+        background: 'rgba(0, 0, 0, 0.7)',
+        scrollOffset: 0,
+      },
+    },
     algolia: {
       appId: 'A3V8IXF4VF',
       apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
@@ -31,6 +43,10 @@ module.exports = {
         // src: 'img/logo_blue_bg.svg',
       },
       items: [
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
         {
           href: 'https://forum.phpvms.net',
           label: 'Forum',
@@ -65,13 +81,23 @@ module.exports = {
       {
         debug: false,
         docs: {
-          id: 'intro',
           // homePageId: 'intro',
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/phpvms/docs/tree/master/',
-          // disableVersioning: true,
+          disableVersioning: false,
+          lastVersion: 'v7.x',
+          versions: {
+            current: {
+              label: 'v8.x',
+              path: 'next',
+              banner: 'unreleased',
+            },
+            'v7.x': {
+              label: 'v7.x',
+            },
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -109,5 +135,36 @@ module.exports = {
         disableInDev: false,
       },
     ],
+    'plugin-image-zoom',
+    /*
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo.svg',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#2196f3',
+          },
+        ],
+      },
+    ],
+    */
   ],
 };
