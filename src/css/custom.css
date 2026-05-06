@@ -340,6 +340,19 @@ aside.theme-doc-sidebar-container > div {
   background: transparent !important;
 }
 
+/* Mobile TOC ("On this page") collapse caret.
+   Theme uses CSS modules with hashed class names. Wrapper has stable
+   `.theme-doc-toc-mobile` + hashed `tocCollapsibleExpanded` (only when
+   open). Default theme assumes up-arrow icon (collapsed=180=down,
+   expanded=0=up), but our --ifm-menu-link-sublist-icon is a right-
+   chevron. Override: collapsed = right (0deg), expanded = down (90deg). */
+.theme-doc-toc-mobile > button::after {
+  transform: rotate(0deg) !important;
+}
+.theme-doc-toc-mobile[class*='Expanded'] > button::after {
+  transform: rotate(90deg) !important;
+}
+
 /* Vercel-style sidebar items: hover/active bg stretches edge-to-edge
    within the sidebar column (including the chevron area for sub-cats),
    matching width across leaf links and sub-category headers. */
@@ -474,6 +487,41 @@ ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-4::b
 /* Dark mode tweaks */
 html[data-theme='dark'] .theme-doc-sidebar-container {
   border-right-color: var(--ifm-color-emphasis-200);
+}
+
+/* Mobile slide-in sidebar (hamburger menu).
+   Infima defaults the panel background to --ifm-navbar-background-color,
+   which we've set to blue. Override to match the page surface.
+   `--ifm-background-color` is `transparent` in Infima's light theme, so we
+   use `--ifm-background-surface-color` (white in light, #242526 in dark)
+   which is the panel/card surface variable. */
+.navbar-sidebar {
+  background-color: var(--ifm-background-surface-color) !important;
+}
+.navbar-sidebar__items {
+  background-color: var(--ifm-background-surface-color);
+}
+.navbar-sidebar .menu__link,
+.navbar-sidebar .navbar-sidebar__back {
+  color: var(--ifm-menu-color);
+}
+.navbar-sidebar .navbar__link {
+  color: var(--ifm-font-color-base);
+}
+
+/* Brand row inside the mobile panel: site title was inheriting the
+   navbar's white-on-blue color and blending into the now-white panel.
+   Force a dark gray and kill the hover color shift so it stays put. */
+.navbar-sidebar__brand .navbar__brand,
+.navbar-sidebar__brand .navbar__title,
+.navbar-sidebar__brand .navbar__brand:hover,
+.navbar-sidebar__brand .navbar__title:hover {
+  color: var(--ifm-color-emphasis-800) !important;
+}
+
+/* Close button (X) on the brand row — also white-on-blue by default */
+.navbar-sidebar__close {
+  color: var(--ifm-color-emphasis-800);
 }
 
 /* Pagination (prev/next links at bottom of doc): drop the boxed border so
