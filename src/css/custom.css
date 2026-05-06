@@ -14,14 +14,18 @@
   --ifm-color-primary-light: #078bd4;
   --ifm-color-primary-lighter: #0791de;
   --ifm-color-primary-lightest: #0ba3f7;
-  --ifm-navbar-background-color: #067ec1;
-  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-800);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-height: 60px;
 
-  /* Typography — Vercel-style airy reading rhythm */
-  --ifm-font-family-base: 'Geist', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', system-ui, sans-serif;
-  --ifm-font-family-monospace: 'Geist Mono', ui-monospace, SFMono-Regular,
-    Menlo, monospace;
+  /* Typography*/
+  --ifm-font-family-base:
+    'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+    sans-serif;
+  --ifm-font-family-monospace:
+    'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --ifm-font-size-base: 15px;
   --ifm-line-height-base: 1.7;
   --ifm-code-font-size: 90%;
@@ -47,18 +51,44 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+/* Default navbar is sticky/fixed; let it scroll with the page like a
+   normal header. */
+.navbar {
+  position: static;
+}
+
 .navbar__logo {
-  background-color: #fff;
   font-size: 100%;
+  height: 48px;
+  margin-left: 0.9rem;
 }
 
-.navbar__logo a:hover {
-  color: #fff;
-  font-size: 100%;
+.navbar__logo img {
+  height: 100%;
+  width: auto;
 }
 
-.navbar__link:hover, .navbar__link--active {
-  color: #fff;
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* Top-nav site title ("phpvms Docs"): kill hover styling so it reads as
+   static branding, not a hoverable link. Scoped to the desktop navbar
+   only — mobile sidebar brand has its own rules below. */
+.navbar > .navbar__inner .navbar__brand,
+.navbar > .navbar__inner .navbar__brand:hover,
+.navbar > .navbar__inner .navbar__title,
+.navbar > .navbar__inner .navbar__title:hover {
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* Dark mode: keep navbar dark instead of inheriting white from light mode */
+html[data-theme='dark'] {
+  --ifm-navbar-background-color: #1b1b1d;
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-900);
+  --ifm-navbar-shadow: none;
 }
 
 /* Airy heading rhythm — generous top margins, no dividers (Vercel-style) */
@@ -147,6 +177,8 @@
 }
 .theme-doc-toc-desktop {
   padding-top: 3rem;
+  /* Navbar scrolls with page; pin TOC near top of viewport when sticky. */
+  top: 1rem !important;
 }
 .theme-doc-toc-desktop::before {
   content: 'On This Page';
@@ -221,8 +253,11 @@ div.markdown img {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-    no-repeat;
+  background-color: var(--ifm-navbar-link-color);
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 /* ============================================================
@@ -246,6 +281,9 @@ div.markdown img {
 
 aside.theme-doc-sidebar-container > div {
   border-right: none !important;
+  /* Navbar is no longer fixed; pin sidebar to top of viewport instead
+     of leaving a navbar-height gap. */
+  top: 0 !important;
 }
 
 .theme-doc-sidebar-menu.menu__list {
@@ -263,7 +301,10 @@ aside.theme-doc-sidebar-container > div {
 }
 
 /* Section header (top-level category link) */
-.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link,
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__list-item-collapsible
+  > .menu__link,
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link--sublist {
   text-transform: uppercase;
   font-size: 12.5px;
@@ -275,12 +316,18 @@ aside.theme-doc-sidebar-container > div {
   background: transparent !important;
 }
 
-.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible:hover > .menu__link {
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__list-item-collapsible:hover
+  > .menu__link {
   color: var(--ifm-color-emphasis-800);
 }
 
 /* Hide caret on top-level headers — they're labels, click goes to landing doc */
-.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__caret {
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__list-item-collapsible
+  > .menu__caret {
   display: none;
 }
 
@@ -308,9 +355,14 @@ aside.theme-doc-sidebar-container > div {
 }
 
 /* Expanded — point down */
-.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__caret::before,
-.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__link--sublist-caret::after,
-.menu__list-item:not(.menu__list-item--collapsed) > .menu__link--sublist-caret::after {
+.menu__list-item:not(.menu__list-item--collapsed)
+  > .menu__list-item-collapsible
+  > .menu__caret::before,
+.menu__list-item:not(.menu__list-item--collapsed)
+  > .menu__list-item-collapsible
+  > .menu__link--sublist-caret::after,
+.menu__list-item:not(.menu__list-item--collapsed)
+  > .menu__link--sublist-caret::after {
   transform: rotate(90deg) !important;
 }
 
@@ -420,15 +472,19 @@ aside.theme-doc-sidebar-container > div {
 }
 
 /* Hide CSS fallback inside any <ul> that JS has taken over */
-ul.menu__list[data-bar-injected="1"] > li > ::before,
-ul.menu__list[data-bar-injected="1"] li::before {
+ul.menu__list[data-bar-injected='1'] > li > ::before,
+ul.menu__list[data-bar-injected='1'] li::before {
   /* Scope: only kill ::before on items inside a JS-managed rail. The
      fallback ::before is on the <li> itself, so this targets it. */
 }
-ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-link-level-3::before,
-ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-link-level-4::before,
-ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-3::before,
-ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-4::before {
+ul.menu__list[data-bar-injected='1']
+  .theme-doc-sidebar-item-link-level-3::before,
+ul.menu__list[data-bar-injected='1']
+  .theme-doc-sidebar-item-link-level-4::before,
+ul.menu__list[data-bar-injected='1']
+  .theme-doc-sidebar-item-category-level-3::before,
+ul.menu__list[data-bar-injected='1']
+  .theme-doc-sidebar-item-category-level-4::before {
   display: none;
 }
 
@@ -455,7 +511,10 @@ ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-4::b
 }
 
 /* Sub-category labels (e.g. ACARS > For Pilots): subtle, smaller weight */
-.theme-doc-sidebar-menu.menu__list .menu__list .menu__list-item-collapsible > .menu__link {
+.theme-doc-sidebar-menu.menu__list
+  .menu__list
+  .menu__list-item-collapsible
+  > .menu__link {
   color: var(--ifm-color-emphasis-800);
   font-weight: 500;
 }
@@ -474,8 +533,10 @@ ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-4::b
 
 /* Guide rail only inside expanded sub-categories (level-2 and deeper),
    never directly under top-level headings (phpvms / ACARS / Developers) */
-.theme-doc-sidebar-item-category-level-2:not(.menu__list-item--collapsed) > .menu__list,
-.theme-doc-sidebar-item-category-level-3:not(.menu__list-item--collapsed) > .menu__list {
+.theme-doc-sidebar-item-category-level-2:not(.menu__list-item--collapsed)
+  > .menu__list,
+.theme-doc-sidebar-item-category-level-3:not(.menu__list-item--collapsed)
+  > .menu__list {
   border-left: 1px solid var(--ifm-color-emphasis-200);
 }
 
@@ -646,7 +707,9 @@ html:hover {
 }
 
 /* Dark mode: brighter thumb for contrast */
-html[data-theme='dark'] .theme-doc-sidebar-container:hover ::-webkit-scrollbar-thumb,
+html[data-theme='dark']
+  .theme-doc-sidebar-container:hover
+  ::-webkit-scrollbar-thumb,
 html[data-theme='dark'] .theme-doc-toc-desktop:hover::-webkit-scrollbar-thumb,
 html[data-theme='dark']:hover::-webkit-scrollbar-thumb {
   background-color: var(--ifm-color-emphasis-400);
@@ -756,7 +819,9 @@ html[data-theme='dark'] .mermaid-zoom-stage > svg {
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   font-family: inherit;
 }
 .mermaid-zoom-btn:hover,

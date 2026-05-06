@@ -65,11 +65,9 @@ module.exports = {
       },
     ],
     navbar: {
-      title: 'phpvms Docs',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-        // src: 'img/logo_blue_bg.svg',
+        alt: 'phpvms Logo',
+        src: 'img/logo_blue.svg',
       },
       items: [
         {
