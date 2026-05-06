@@ -1,0 +1,16 @@
+{
+  "_comment": "Auto-restart docusaurus dev server when config/sidebar/clientModules change. Hot-reload alone covers markdown body + CSS + React components, but structural changes require a full restart.",
+  "watch": [
+    "sidebars.js",
+    "docusaurus.config.js",
+    "src/clientModules"
+  ],
+  "ext": "js,json,ts",
+  "delay": "500",
+  "ignore": [
+    ".docusaurus",
+    "build",
+    "node_modules"
+  ],
+  "exec": "docusaurus start --no-open"
+}

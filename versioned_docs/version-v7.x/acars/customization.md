@@ -10,7 +10,7 @@ resized down to fit. Fill in the URLs to your logos. They should be PNG format
 (transparency is supported):
 
 - **Splash Screen Banner** _Premium License Required_ - This replaces the large
-  phpVMS splash screen. 500x375 recommended for best look, anything larger will
+  phpvms splash screen. 500x375 recommended for best look, anything larger will
   be scaled down to the size.
 - **Splash Screen Logo** - This adds a small logo to the bottom right of the
   splash screen. This can be combined with the splash screen banner. This will

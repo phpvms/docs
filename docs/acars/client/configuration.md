@@ -7,7 +7,7 @@ sidebar_label: Configuration
 ## Get the URL and API Key
 
 You can either enter your URL and API key manually or download the settings
-config file from your phpVMS profile. To download the config file, visit your VA
+config file from your phpvms profile. To download the config file, visit your VA
 and go to your profile:
 
 ![](../img/profile-config-download.png)

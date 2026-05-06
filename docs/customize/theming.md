@@ -29,7 +29,7 @@ folder, and edit the `theme.json` file:
 
 If you want to edit only select templates (also recommended), set the `extends`
 value to `default`. Then you only need to copy over the templates that you
-modify, instead of all them (this makes it easier to update phpVMS, and you also
+modify, instead of all them (this makes it easier to update phpvms, and you also
 know what you've modified).
 
 ---
@@ -74,8 +74,8 @@ Important notes:
 
 #### Assets in the public folder
 
-While `laravel-theme` has a helper for the `theme_url`, in phpVMS, you should
-use the `public_asset()` helper function. Since phpVMS can run on both shared
+While `laravel-theme` has a helper for the `theme_url`, in phpvms, you should
+use the `public_asset()` helper function. Since phpvms can run on both shared
 and on its own, the public folder path could be different. The `public_asset()`
 method takes care of that.
 

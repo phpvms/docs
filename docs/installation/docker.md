@@ -1,9 +1,9 @@
 ---
 id: docker
-title: Installing with Docker
+title: Docker
 ---
 
-phpVMS includes a `docker-compose.dev.yml` which is used by Laravel Sail. This
+phpvms includes a `docker-compose.dev.yml` which is used by Laravel Sail. This
 works great for local development. For production, a sample `docker-compose.yml`
 is included, with a few points below:
 

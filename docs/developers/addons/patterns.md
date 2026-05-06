@@ -4,7 +4,7 @@ title: Patterns & Conventions
 ---
 
 A few design patterns will keep your addon maintainable and consistent with
-phpVMS core. These are conventions, not hard requirements — but following
+phpvms core. These are conventions, not hard requirements — but following
 them makes your code easier to test, easier to debug, and easier for other
 developers to contribute to.
 
@@ -52,7 +52,7 @@ class SampleReportService
 
 Core service classes live under
 [`app/Services/`](https://github.com/nabeelio/phpvms/tree/master/app/Services)
-and are the canonical place to look for "how does phpVMS do X" — they're
+and are the canonical place to look for "how does phpvms do X" — they're
 also the safe entry points for mutating core data from your addon.
 
 ## Dependency injection
@@ -152,7 +152,7 @@ If your module needs to generate flights for users to fly, attach them to
 your module via the **`owner` polymorphic relationship** on the `Flight`
 model.
 
-When a flight is owned by a module, **phpVMS core automation no longer
+When a flight is owned by a module, **phpvms core automation no longer
 applies to it** (no automatic showing/hiding, no schedule-based filtering,
 etc.). You're responsible for defining how those flights behave and when
 they're visible.

@@ -36,8 +36,8 @@ class Report extends Model
 }
 ```
 
-phpVMS provides `App\Contracts\Model` as a convenience base class — extend
-it instead of `Illuminate\Database\Eloquent\Model` to pick up phpVMS's
+phpvms provides `App\Contracts\Model` as a convenience base class — extend
+it instead of `Illuminate\Database\Eloquent\Model` to pick up phpvms's
 shared traits and conventions.
 
 See the [Laravel Eloquent docs](https://laravel.com/docs/eloquent) for full
@@ -49,7 +49,7 @@ Every table your addon creates **must** start with your author prefix —
 the first segment of your registry name. For an addon registered as
 `acme/reports`, every table must match `^acme_*`.
 
-Unprefixed (or wrongly prefixed) table names will collide with phpVMS core
+Unprefixed (or wrongly prefixed) table names will collide with phpvms core
 or other addons, and the
 [addon registry migration linter](#migration-rules) will reject your
 submission.
@@ -174,7 +174,7 @@ relationships — useful when joining a project you didn't write.
 
 ## Migrations
 
-phpVMS uses [Laravel migrations](https://laravel.com/docs/migrations) to
+phpvms uses [Laravel migrations](https://laravel.com/docs/migrations) to
 version your database schema. Generate a new migration with:
 
 ```shell
@@ -190,7 +190,7 @@ for field types, indexes, and foreign keys.
 
 ### Migration syntax
 
-phpVMS uses Laravel's modern **anonymous-class** migration style:
+phpvms uses Laravel's modern **anonymous-class** migration style:
 
 ```php
 <?php
@@ -302,7 +302,7 @@ write `acme_*` tables.
 Not prefixing your tables (or using a prefix that doesn't match your
 namespace) will:
 
-- Conflict with future phpVMS core tables, breaking upgrades.
+- Conflict with future phpvms core tables, breaking upgrades.
 - Conflict with other addons that share the same generic name.
 - **Be rejected** by the [registry migration linter](#migration-rules) if
   you publish your addon.
@@ -321,7 +321,7 @@ as the author segment — see [Publishing](./publishing.md#naming-rules).
 ## Migration rules
 
 If you plan to publish your addon to the
-[phpVMS addon registry](./publishing.md), every migration under
+[phpvms addon registry](./publishing.md), every migration under
 `database/migrations/` is statically analysed at PR time using an
 allow-list. The author namespace is the first segment of your registry
 name — for `acme/reports` the namespace is `acme`, and your tables must
@@ -342,7 +342,7 @@ match `^acme_*`.
 
 ### Why allow-list, not deny-list
 
-A deny-list of "core tables" would need updating every time phpVMS adds a
+A deny-list of "core tables" would need updating every time phpvms adds a
 table. The allow-list catches **all** core tables (none start with
 `{author}_`) and **all** other authors' tables automatically. It also lets
 you share tables across your own addons — `acme/reports` may legitimately
@@ -427,14 +427,14 @@ rules are tunable.
 
 ## Seeding initial data
 
-phpVMS supports two ways of seeding data: phpVMS's `addData()` migration
+phpvms supports two ways of seeding data: phpvms's `addData()` migration
 helper for setup data shipped with a release, and Laravel's standard seeder
 classes for everything else.
 
-### Inside a migration (phpVMS-specific)
+### Inside a migration (phpvms-specific)
 
 For rows that **must** exist for the addon to work — config defaults,
-default categories, lookup tables — use phpVMS's `$this->addData()`
+default categories, lookup tables — use phpvms's `$this->addData()`
 helper inside `up()`. Extending `App\Contracts\Migration` (instead of
 Laravel's base `Migration`) makes it available:
 

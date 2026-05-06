@@ -14,25 +14,9 @@ The installation requires a few steps:
 1. Composer Install - only if you have cloned it from git or downloaded the
    "raw" zip/tar and not a release or distributed version
 1. Running the installer - This is a web interface, through which you can also
-   import your older phpVMS 2.x or 5.x install
+   import your older phpvms 2.x or 5.x install
 
----
-
-## 1. File Permissions
-
-Adjust your file permissions to have the proper owner, but also read/write
-permissions (`775`) for:
-
-- `bootstrap`
-- `bootstrap/cache`
-- `storage/logs`
-- `storage/framework/cache`
-- `storage/framework/session`
-- `storage/framework/views`
-
----
-
-## 2. Database Setup
+## 1. Create the Database
 
 Before running the install, you need to configure the database with the database
 itself and the credentials. Refer to your hosts documentation for specifics -
@@ -61,35 +45,7 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ![](img/cpanel-db-1.png)
 
----
-
-## 3. Composer Install
-
-:::info
-
-If you've downloaded a release or dev tar/zip from the downloads section, you
-don't need this. You only need this if you've cloned the repository
-
-:::
-
-Update the composer dependencies; this will download and update the `vendor`
-folder:
-
-```bash
-cd /path/to/phpvms
-composer install
-```
-
----
-
-## 4. Running the Installer
-
-:::info
-
-There isn't a `setup` folder in the tar file. It's done as a Laravel route,
-which serves to see that your webserver/htaccess files are working correctly.
-
-:::
+## 2. Go to the Installer
 
 Once you go to your site, you'll see a page like this, click to proceed to the
 installer.
@@ -99,7 +55,14 @@ installer.
 After clicking next, you'll see the requirements check page. The installer will
 only let you proceeed if all of the requirements are met.
 
+### Requirements Check
+
 ![](img/03-requirements.png)
+
+This will make sure that all of the required extensions are installed and
+enabled, and the file permissions are set correctly.
+
+### Database Credentials
 
 The next page brings you to the database setup page. Select `MySQL` (`sqlite`
 requires some extra configuration)
@@ -119,11 +82,11 @@ proceed:
 
 ![](img/05-database-installed.png)
 
-## New Install
+### Initial Airline Setup
 
-You'll be brought to the initial setup screen. There is an option here to update
-yourCreate your first airline here, along with your user and password. This will
-be automatically made as an admin user.
+You'll be brought to the initial setup screen.Create your first airline here,
+along with your user and password. This will be automatically made as an admin
+user.
 
 ![](img/06-va-information.png)
 
@@ -133,21 +96,10 @@ installation is complete!
 
 ![](img/10-completed.png)
 
-### Upgrading from legacy
-
-![](img/07-importer.png)
-
-For the database information, enter the credentials and information to your old
-database
-
----
-
 ## Next Steps
 
-1. Read [about the configuration files (email, etc)](config/files.md).
-1. [Setup the cron task on your server](cron.md)
-
----
+1. Read [about the configuration files (email, etc)](../config/files.md).
+2. [Setup the cron task on your server](./cron.md)
 
 ## Troubleshooting
 
@@ -156,12 +108,20 @@ database
 If you're getting a 404 when trying to access the installer, this is either
 because:
 
-1. You haven't uploaded the files properly —
-   [read Uploading Files](/installation/uploading)
-1. Your vhost isn't correct — [read VHost Configuration](/installation/vhost)
-1. Your host doesn't support `.htaccess` files — contact your host
+1. You haven't uploaded the files properly — [read Uploading Files](./download.md)
+2. Your vhost isn't correct — [read VHost Configuration](./vhost.md)
+3. Your host doesn't support `.htaccess` files — contact your host
 
 ### Permissions Errors
 
 The installer will present a list of folders which need to have write access by
 your webserver user. Contact your host if you're having problems with this.
+
+These directories need to be writable:
+
+- `bootstrap`
+- `bootstrap/cache`
+- `storage/logs`
+- `storage/framework/cache`
+- `storage/framework/session`
+- `storage/framework/views`

@@ -14,7 +14,7 @@ The installation requires a few steps:
 1. Composer Install - only if you have cloned it from git or downloaded the
    "raw" zip/tar and not a release or distributed version
 1. Running the installer - This is a web interface, through which you can also
-   import your older phpVMS 2.x or 5.x install
+   import your older phpvms 2.x or 5.x install
 
 ---
 

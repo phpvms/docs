@@ -23,11 +23,11 @@ IVAO_CLIENT_SECRET={your_client_secret}
 You can retrieve your client ID and your client secret from the OAuth clients
 page after creating the client as explained above.
 
-Now, your users can link their IVAO account to their phpVMS account and use
+Now, your users can link their IVAO account to their phpvms account and use
 their IVAO account to log in. The link between the two accounts is automatically
 established when clicking the "Login with IVAO" button on the login page.
 However, if the email address of the IVAO account is different from the email
-address of the phpVMS account, it must be done manually on the profile page.
+address of the phpvms account, it must be done manually on the profile page.
 
 ## Customizing scopes
 

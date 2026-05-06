@@ -26,7 +26,7 @@ available. No additional configuration is required on the database driver level.
 ### Additional Drivers
 
 Any additional drivers supported by Laravel are automatically supported by
-phpVMS.
+phpvms.
 
 ---
 
@@ -120,7 +120,7 @@ You can see the `config/cache.php` file for the other available drivers
 
 ## Queue Driver
 
-phpVMS uses asyncronous queues for several tasks, including sending emails and
+phpvms uses asyncronous queues for several tasks, including sending emails and
 exporting to vaCentral. The default mode is `sync`, which means the tasks are
 done in-line. This could be useful if you're running a high-traffic VA and on
 your own VPS.

@@ -1,11 +1,13 @@
 ---
-id: intro
-title: 'Introduction'
-hide_title: true
+id: welcome
+title: 'Welcome'
 slug: /
+hide_title: true
+hide_table_of_contents: true
 ---
+# phpvms - Virtual Airline Management
 
-Welcome to the phpVMS Docs site! phpVMS is a PHP based application to run and
+Welcome to the phpvms Docs site! phpvms is a PHP based application to run and
 simulate and airline. It allowed users to register, view flight schedules that
 you create, and file flight reports.
 
@@ -22,5 +24,5 @@ demo is reset occasionally.
 The source is hosted on github:
 [https://github.com/nabeelio/phpvms](https://github.com/nabeelio/phpvms)
 
-phpVMS is open-source and licensed under the
+phpvms is open-source and licensed under the
 [BSD 3-Clause License](https://github.com/nabeelio/phpvms/blob/dev/LICENSE).

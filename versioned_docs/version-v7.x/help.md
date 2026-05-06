@@ -3,7 +3,7 @@ id: help
 title: Getting Help
 ---
 
-This guide details the requirements for getting help with phpVMS or vmsACARS.
+This guide details the requirements for getting help with phpvms or vmsACARS.
 
 ## How to ask for help
 
@@ -50,7 +50,7 @@ the information below:
   - **PHP Version**
   - **Database versions—**MySQL, MariaDB or Percona, or whatever other backend
     you're running
-  - **phpVMS Version**
+  - **phpvms Version**
     - From either the admin panel (bottom left, click on the version for the
       full version)
     - Running `php artisan phpvms:version` ![](img/version.png)

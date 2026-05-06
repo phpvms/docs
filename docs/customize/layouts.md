@@ -3,7 +3,7 @@ id: layouts
 title: Layouts and Template Basics
 ---
 
-phpVMS can customized to fit your VA's look and feel. The templating is powered
+phpvms can customized to fit your VA's look and feel. The templating is powered
 by [Laravel Blade](https://laravel.com/docs/7.x/blade). To understand skinning
 and changing templates, study the Laravel Blade documents, and then the below
 will make more sense.
@@ -50,7 +50,7 @@ outline those sections in the `default/app.blade.php` file itself.
 
 ### Template basics
 
-phpVMS takes advantage of many of the
+phpvms takes advantage of many of the
 [Laravel Blade](https://laravel.com/docs/9.x/blade) features, and there are no
 limitations placed within the system to prevent anyone from using the full power
 of the templating system. There are only a few guidelines, to ensure a

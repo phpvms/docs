@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-phpVMS includes a REST API that can be used for retrieving or saving
+phpvms includes a REST API that can be used for retrieving or saving
 information.
 
 ---

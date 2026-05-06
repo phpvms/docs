@@ -2,43 +2,45 @@
  * Single sidebar split into three top-level audience sections, all expanded
  * by default so it reads as one continuous list with section headings.
  *
- *   phpVMS       — operators running a phpVMS install
+ *   phpvms       — operators running a phpvms install
  *   ACARS        — operators, pilots, and ACARS plugin developers
- *   Developers   — phpVMS core, addon, and theme authors
+ *   Developers   — phpvms core, addon, and theme authors
  */
 module.exports = {
   docs: [
     // ---------------------------------------------------------------------
-    // phpVMS — for VA operators running phpVMS
+    // phpvms — for VA operators running phpvms
     // ---------------------------------------------------------------------
     {
       type: 'category',
-      label: 'phpVMS',
+      label: 'phpvms',
       collapsed: false,
       collapsible: true,
       items: [
-        'intro',
+        'welcome',
+        'requirements',
+        'whats-new',
         {
           type: 'category',
-          label: 'Introduction',
-          items: ['requirements', 'download', 'help'],
-        },
-        {
-          type: 'category',
-          label: 'Getting Started',
+          label: 'Concepts',
           items: ['guides/basics', 'guides/finances'],
         },
         {
           type: 'category',
           label: 'Installation',
           items: [
-            'installation/uploading',
-            'installation/vhost',
+            {
+              type: 'category',
+              label: 'Get the Files',
+              items: [
+                'installation/download',
+                'installation/vhost',
+                'installation/docker',
+              ],
+            },
             'installation/installation',
-            'installation/docker',
             'installation/cron',
             'installation/updating',
-            'installation/legacy-upgrade',
           ],
         },
         {
@@ -50,18 +52,19 @@ module.exports = {
             'config/notifications',
             'config/backups',
             'config/optimizing',
+            {
+              type: 'category',
+              label: 'OAuth',
+              items: ['oauth/discord', 'oauth/ivao', 'oauth/vatsim'],
+            },
           ],
         },
         {
           type: 'category',
-          label: 'Layouts',
-          items: ['customize/layouts'],
+          label: 'Theming',
+          items: ['customize/layouts', 'customize/theming', 'customize/maps'],
         },
-        {
-          type: 'category',
-          label: 'OAuth',
-          items: ['oauth/discord', 'oauth/ivao', 'oauth/vatsim'],
-        },
+        'help',
       ],
     },
 
@@ -107,7 +110,7 @@ module.exports = {
     },
 
     // ---------------------------------------------------------------------
-    // Developers — phpVMS core, addon, and theme authors
+    // Developers — phpvms core, addon, and theme authors
     // ---------------------------------------------------------------------
     {
       type: 'category',
@@ -118,25 +121,16 @@ module.exports = {
         'developers/environment',
         {
           type: 'category',
-          label: 'Getting Started',
-          items: ['developers/building-assets'],
-        },
-        {
-          type: 'category',
-          label: 'Theming',
-          items: ['customize/theming', 'customize/maps'],
-        },
-        {
-          type: 'category',
           label: 'Addons',
           items: [
             'developers/addons/overview',
+            'developers/addons/publishing',
             'developers/addons/routing-controllers',
             'developers/addons/database',
             'developers/addons/templating',
             'developers/addons/events',
             'developers/addons/patterns',
-            'developers/addons/publishing',
+            'developers/building-assets',
             'developers/awards',
           ],
         },

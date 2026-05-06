@@ -9,8 +9,8 @@ If you're getting a 404 when trying to access the installer, this is either
 because:
 
 1. You haven't uploaded the files properly -
-   [read Uploading Files](/installation/uploading)
-1. Your vhost isn't correct - [read VHost Configuration](/installation/vhost)
+   [read Uploading Files](./uploading.md)
+1. Your vhost isn't correct - [read VHost Configuration](./vhost.md)
 1. Your host doesn't support `.htaccess` files - contact your host
 
 ## Permissions Errors

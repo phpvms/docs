@@ -23,7 +23,7 @@ If you're using Apache as your webserver, you can use a similiar vhost file.
     ServerName yoursite.com
     ServerAlias www.yoursite.com
 
-    # Update these paths to the /public folder of phpVMS
+    # Update these paths to the /public folder of phpvms
     DocumentRoot /path/to/phpvms/public
     <Directory "/path/to/phpvms/public">
            Options FollowSymLinks
@@ -52,7 +52,7 @@ server {
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log;
 
-    # The vhost root should point to the /public directory of phpVMS
+    # The vhost root should point to the /public directory of phpvms
     root /var/www/public;
     index index.php index.html index.htm;
 

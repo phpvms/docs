@@ -1,7 +1,7 @@
 const {themes} = require('prism-react-renderer');
 
 module.exports = {
-  title: 'phpVMS Docs',
+  title: 'phpvms Docs',
   url: 'https://docs.phpvms.net',
   baseUrl: '/',
   onBrokenLinks: 'log',
@@ -13,11 +13,33 @@ module.exports = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-  clientModules: [require.resolve('./src/clientModules/tocBar.js')],
+  clientModules: [
+    require.resolve('./src/clientModules/tocBar.js'),
+    require.resolve('./src/clientModules/mermaidZoom.js'),
+  ],
   stylesheets: [
     {
       href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
       type: 'text/css',
+    },
+  ],
+  /*
+   * Defensive gtag shim. The Docusaurus gtag plugin's onRouteDidUpdate
+   * calls window.gtag('event', 'page_view') unconditionally, but if the
+   * user runs an adblocker (uBlock Origin, Brave Shields, etc.) the
+   * plugin's inline GTM bootstrap is stripped, leaving window.gtag
+   * undefined and producing "gtag is not a function" errors on every
+   * route change.
+   *
+   * Pre-define a no-op `window.gtag` here in headTags so it's
+   * guaranteed to exist by the time the plugin's client module fires.
+   * If the real gtag loads (no blocker), it overwrites this stub.
+   */
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `if(typeof window!=="undefined"&&typeof window.gtag!=="function"){window.gtag=function(){};}`,
     },
   ],
   themeConfig: {
@@ -43,7 +65,7 @@ module.exports = {
       },
     ],
     navbar: {
-      title: 'phpVMS Docs',
+      title: 'phpvms Docs',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',

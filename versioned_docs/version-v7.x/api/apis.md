@@ -495,7 +495,7 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 
 Return all of the flights, paginated
 
-- `flight_type`. See [Flight Types](/guides/basics#flight-types) for possible
+- `flight_type`. See [Flight Types](../guides/basics.md#flight-types) for possible
   values
 
 **Sample Response:**
@@ -602,7 +602,7 @@ Return all of the flights, paginated
 
 Return details about a given flight
 
-- `flight_type`. See [Flight Types](/guides/basics#flight-types) for possible
+- `flight_type`. See [Flight Types](../guides/basics.md#flight-types) for possible
   values
 
 **Sample Response:**

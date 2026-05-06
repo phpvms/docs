@@ -32,10 +32,10 @@ requirements.
 ### Shared Hosting
 
 While shared hosts are not ideal for numerous reasons, it's still possible to
-run phpVMS.  
+run phpvms.  
 Check especially CRON features/capabilities and hidden limits the provider
 applies while advertising the service as "limitless". Ram or resource usage
-limits (like I/O) may directly affect phpVMS and your operations.
+limits (like I/O) may directly affect phpvms and your operations.
 
 _Don't use free hosts, you'll have a really bad time and they can not be
 supported._

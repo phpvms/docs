@@ -90,7 +90,7 @@ Desktop and start menu shortcuts will be created, and the program will be regist
 ### Get the URL and API Key
 
 You can either enter your URL and API key manually or download the settings
-config file from your phpVMS profile. To download the config file, visit your VA
+config file from your phpvms profile. To download the config file, visit your VA
 and go to your profile:
 
 ![](img/profile-config-download.png)
@@ -174,7 +174,7 @@ supported:
 1. X-Plane (`.fms`)
 1. MSFS (`.pln`)
 1. Simbrief (`.xml`, exported from the SimBrief site or the SimBrief Downloader.
-   There is a "phpVMS" flight plan type that's available)
+   There is a "phpvms" flight plan type that's available)
 
 The routes/navpoints are then loaded from the flight plan, along with the TOD
 (from MSFS/Simbrief), and filed along with your PIREP.

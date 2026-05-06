@@ -3,7 +3,7 @@ id: download
 title: 'Download'
 ---
 
-There are a few ways you can obtain phpVMS and its dependencies. The full
+There are a few ways you can obtain phpvms and its dependencies. The full
 package method already includes the `vendor` directory and you don't need to do
 anything but upload it.
 

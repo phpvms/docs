@@ -34,7 +34,7 @@ options:
 
 ```bash title=".env"
 MAIL_MAILER=smtp
-MAIL_FROM_NAME='phpVMS No-Reply'
+MAIL_FROM_NAME='phpvms No-Reply'
 MAIL_FROM_ADDRESS='no-reply@phpvms.net'
 MAIL_HOST=
 MAIL_PORT=
@@ -90,7 +90,7 @@ configuration, which looks something like:
 
 ```bash title=".env"
 MAIL_MAILER=smtp
-MAIL_FROM_NAME='phpVMS Admin'
+MAIL_FROM_NAME='phpvms Admin'
 MAIL_FROM_ADDRESS='no-reply@phpvms.net'
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525

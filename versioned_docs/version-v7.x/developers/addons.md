@@ -10,7 +10,7 @@ their own views/templates, you want a widget.
 At their core, the module system uses
 [laravel-modules](https://nwidart.com/laravel-modules/v2/introduction). The
 stubs are modified so the generation create the structure that is compatible
-with the phpVMS codebase.
+with the phpvms codebase.
 
 ---
 
@@ -318,8 +318,8 @@ where required.
 **Not prefixing your tables could lead to unintended consequences**, including
 but not limited to:
 
-- Conflicting with future phpVMS core features that would use the same table
-  name, thereby making it more difficult to update phpVMS at a later date.
+- Conflicting with future phpvms core features that would use the same table
+  name, thereby making it more difficult to update phpvms at a later date.
 - Conflicting with other addons by other 3rd party modules that don't head this
   warning.
 
@@ -467,10 +467,10 @@ You can read more about the repository pattern
 
 ## Module Owned Flights
 
-In phpVMS's Flights Table, if your module needs to generate flights for the user
+In phpvms's Flights Table, if your module needs to generate flights for the user
 to fly, modules can use the `owner` polymoprhic relationship.
 
-When a flight is owned by a module, the flight will not be subject to phpVMS's
+When a flight is owned by a module, the flight will not be subject to phpvms's
 core automation (e.g. hiding and showing flights). Therefore, you must define
 your own automation regarding how flights behave and are accessible.
 

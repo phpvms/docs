@@ -3,7 +3,7 @@ id: basics
 title: Basics
 ---
 
-phpVMS 7 has a few fundamental differences from the old version, on how
+phpvms 7 has a few fundamental differences from the old version, on how
 schedules and flights are handled.
 
 ---
@@ -44,7 +44,7 @@ properties can be changed on a per-subfleet basis.
 
 ## Subfleets and Aircraft
 
-A new feature in phpVMS 7 are subfleets. Subfleets can be thought of as
+A new feature in phpvms 7 are subfleets. Subfleets can be thought of as
 aircraft-groups. Airlines often group aircraft by equipment types; as a
 real-world example, British Airways has a subfleet for their 767-336ER
 Rolls-Royce RB211-524H aircraft, of which there are 7, and the aircraft in this
@@ -54,7 +54,7 @@ subfleet into one subfleet that has first, business and economy classes (with a
 name of "767-336ER RR RB211-524H-**FJY**") and another 767 subfleet with only
 first and economy classes (with a name of 767-336ER RR RB211-524H-**FY**)
 
-In phpVMS, you can create as many subfleets as you like, with as many aircraft
+In phpvms, you can create as many subfleets as you like, with as many aircraft
 in those subfleets as you want. At a minimum, one subfleet is required, and
 there's no restriction on the types of aircraft that can be included. This way,
 potentially dozens of aircraft don't need to be assigned to the same route.

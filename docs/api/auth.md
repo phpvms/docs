@@ -4,7 +4,7 @@ title: Authentication
 ---
 
 Each user is given an API key (and can regenerate it) when they register.
-Requests to a phpVMS API will require an `X-API-Key` header, with this key.
+Requests to a phpvms API will require an `X-API-Key` header, with this key.
 Addons can take advantage of this by adding the `api.auth` middleware to their
 route group.
 

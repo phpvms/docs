@@ -46,7 +46,7 @@ A typical module view extends a layout and yields content:
 @endsection
 ```
 
-You can also extend phpVMS's main layouts directly:
+You can also extend phpvms's main layouts directly:
 
 ```blade
 @extends('layouts.app')

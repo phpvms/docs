@@ -5,7 +5,7 @@ title: Notifications
 
 # Notifications
 
-phpVMS can send event notifications to different places. Currently, Discord is
+phpvms can send event notifications to different places. Currently, Discord is
 supported. Some of the events that are supported:
 
 - PIREP prefile notifications
@@ -22,7 +22,7 @@ more restricted permissions:
 
 ## Discord
 
-phpVMS can send notifications to a Discord channel. To configure this, you need
+phpvms can send notifications to a Discord channel. To configure this, you need
 to create a webhook.
 [See the documentation for webhooks from Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks).
 This requires a webhook for the notification of public events, and an optional

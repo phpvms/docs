@@ -3,7 +3,7 @@ id: cron
 title: Cron/Scheduled Tasks
 ---
 
-In order for some phpVMS features to work, a cronjob is required to be setup.
+In order for some phpvms features to work, a cronjob is required to be setup.
 Some of the features that rely on cronjobs include:
 
 - Job queue tasks (sending emails, notifications)
@@ -26,13 +26,13 @@ better to focus on cron and email settings first (specially if they offer a
 money back quarantee), if cron is failing and you can not get it working
 properly consider finding a different service provider. Even some hosts limit
 WebCron services, be advised, without a working cron you will not get the best
-of phpVMS v7.
+of phpvms v7.
 
 ## Configuration on a Server
 
 If you have SSH and `crontab` access, this is the easiest way to configure the
 cron job. You need the path to the `bin/cron` file that's in the root of the
-phpVMS install. After that, add a cronjob that runs once a minute. Do not forget
+phpvms install. After that, add a cronjob that runs once a minute. Do not forget
 to include the username, for example, using `crontab -e`:
 
 ```bash
@@ -52,7 +52,7 @@ runner:
 
 ## cPanel Configuration
 
-phpVMS, in the admin panel, can suggest a cron path/command for you, under
+phpvms, in the admin panel, can suggest a cron path/command for you, under
 `Admin -> Maintenance`. However, before trying that, try setting it up according
 to your host's instructions.
 

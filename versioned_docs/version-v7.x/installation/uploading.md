@@ -28,11 +28,11 @@ similar.
 
 :::
 
-Upload phpVMS to a directory with the name of your subdomain, for example,
+Upload phpvms to a directory with the name of your subdomain, for example,
 `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above).
 In this example, I want to create the subdomain `demo.vmshost.io`.
 
-First, create a folder to extract phpVMS into:
+First, create a folder to extract phpvms into:
 
 ```
 /home/youruser
@@ -76,9 +76,9 @@ if you're on shared hosting
 
 :::
 
-This method works well if your main site is going to be phpVMS.
+This method works well if your main site is going to be phpvms.
 
-1. Download/upload phpVMS into a `phpvms` folder in your home folder. It should
+1. Download/upload phpvms into a `phpvms` folder in your home folder. It should
    look something like:
 2. Copy the files from the `/public` folder into the `public_html` folder.
 
@@ -90,7 +90,7 @@ This method works well if your main site is going to be phpVMS.
 ```
 
 As long as you named the folder `phpvms`, the `index.php` will autodetect the
-location of the phpVMS folder.
+location of the phpvms folder.
 
 :::note
 
@@ -112,11 +112,11 @@ this if you know what you're doing
 
 :::
 
-This method works well if your main site is going to be phpVMS, and you're not
-running something like Wordpress. Running phpVMS in a subdirectory isn't
+This method works well if your main site is going to be phpvms, and you're not
+running something like Wordpress. Running phpvms in a subdirectory isn't
 recommended (see method 2 instead).
 
-Download/upload phpVMS into a `phpvms` folder in your home folder. It should
+Download/upload phpvms into a `phpvms` folder in your home folder. It should
 look something like:
 
 ```
@@ -127,8 +127,8 @@ look something like:
 ```
 
 To make this work properly and be secure, we're going to change the
-`public_html` directory to point into the phpVMS public directory. Then you can
-upload files as usual, but phpVMS will be the primary entry point. When you
+`public_html` directory to point into the phpvms public directory. Then you can
+upload files as usual, but phpvms will be the primary entry point. When you
 create folder/files in the `public_html` directory, they'll actually get created
 into the `phpvms/public` folder.
 

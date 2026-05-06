@@ -9,7 +9,7 @@ This is for running a local configuration, for running unit-tests, etc.
 
 :::note
 
-This is just how I work on phpVMS, to quickly reset the database and
+This is just how I work on phpvms, to quickly reset the database and
 test/develop items locally, without having to transfer files anywhere. I mainly
 use the Docker Compose setup
 
@@ -30,7 +30,7 @@ this, set `CACHE_DRIVER=null` in your `.env` file.
 
 We strongly recommend reading the
 [Laravel Documentation](https://laravel.com/docs/10.x), as it's more detailed
-and up-to-date. Since phpVMS is based on Laravel, the installation process is
+and up-to-date. Since phpvms is based on Laravel, the installation process is
 the same. In addition, you can simply use the `php artisan phpvms:dev-install`
 command to set up a development database.
 
@@ -66,7 +66,7 @@ Then to reset the database and reinstall the dev data:
 ./vendor/bin/sail artisan phpvms:dev-install --reset-db
 ```
 
-This does require sqlite. If you want to use MySQL, you need to run the phpVMS
+This does require sqlite. If you want to use MySQL, you need to run the phpvms
 installer, so it can generate the config files for MySQL (or you can modify the
 generated `.env`), then you can run the above command to reset the database and
 migrations in MySQL.
@@ -112,7 +112,7 @@ composer install
 php artisan phpvms:dev-install
 ```
 
-This does require sqlite. If you want to use MySQL, you need to run the phpVMS
+This does require sqlite. If you want to use MySQL, you need to run the phpvms
 installer, so it can generate the config files for MySQL (or you can modify the
 generated `.env`), then you can run the above command to reset the database and
 migrations in MySQL.

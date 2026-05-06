@@ -24,7 +24,7 @@ This PDK includes build scripts to:
 
 First, fork the [acars-pdk](https://github.com/phpvms/acars-pdk) repository.
 Follow the setup below. Then start editing the scripts in the `/src` directory,
-depending on what you want to do. Then, you upload it, and phpVMS will
+depending on what you want to do. Then, you upload it, and phpvms will
 distribute it to all of your pilots.
 
 - Complete the setup, including the `.env` file
@@ -32,7 +32,7 @@ distribute it to all of your pilots.
 - Run `npm run dev` to then test in ACARS
 - Run `npm run dist` to create the ZIP
 - Upload this zip somewhere
-- Update the phpVMS ACARS Admin to point to the above URL
+- Update the phpvms ACARS Admin to point to the above URL
 - ???
 - Profit!
 

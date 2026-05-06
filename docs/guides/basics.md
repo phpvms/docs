@@ -3,117 +3,334 @@ id: basics
 title: Basics
 ---
 
-phpVMS 7 has a few fundamental differences from the old version, on how
-schedules and flights are handled.
+# How phpvms Works
 
----
+phpvms is built around a set of entities that work together to model how a real
+airline operates. This page explains how those pieces fit together — and the
+order to set them up — before you dive into the admin panel.
 
 ## Airlines
 
-One or more airlines needs to be created. Users choose an airline on
-registration.
+An airline owns multiple subfleets; each subfleet contains aircraft. Aircraft
+never live outside a subfleet.
+
+```mermaid
+flowchart TD
+    A[Airline] --> S1[Subfleet]
+    A --> S2[Subfleet]
+    A --> S3[Subfleet]
+    S1 --> AC1[Aircraft]
+    S1 --> AC2[Aircraft]
+    S2 --> AC3[Aircraft]
+    S3 --> AC4[Aircraft]
+    S3 --> AC5[Aircraft]
+```
+
+## Subfleets
+
+A subfleet is a key unit: it bundles **fares** (with overridable
+price/cost/capacity), gates access by **rank**, optionally requires **type
+ratings**, and is what **flights** reference when scheduling.
+
+```mermaid
+flowchart LR
+    F[Fares<br/>price/cost/capacity] -.attached to.-> S
+    R[Ranks<br/>with pay rates] -.allowed on.-> S
+    T[Type Ratings] -.required by.-> S
+    S((Subfleet)) --> AC[Aircraft]
+    S -.assigned to.-> FL[Flights]
+```
+
+## The Pilot's Loop
+
+Two scopes: what an **admin** configures, and what a **pilot** drives. Dashed
+arrows cross between them — that's where pilot activity references
+admin-configured entities.
+
+```mermaid
+flowchart TB
+    subgraph AIRLINE_SCOPE["Airline & Operations (Admin manages)"]
+        direction TB
+        AL[Airline]
+        AP[Airports<br/>some flagged as hubs]
+        SF[Subfleets]
+        AC[Aircraft]
+        FA[Fares]
+        RK[Ranks]
+        TR[Type Ratings]
+        FL[Flights]
+
+        AL --> SF
+        SF --> AC
+        SF -.->|allows| FA
+        SF -.->|gated by| RK
+        SF -.->|requires| TR
+        FL -.->|uses| SF
+        FL -.->|departs / arrives| AP
+        SF -.->|optional base| AP
+    end
+
+    subgraph PILOT_SCOPE["Pilot Scope (User-driven)"]
+        direction TB
+        US[User]
+        BD[Bid]
+        PR[PIREP]
+        AW[Awards]
+
+        US -->|reserves| BD
+        US -->|files| PR
+        US -.->|earns| AW
+        US -.->|holds| TR2[Type Ratings]
+    end
+
+    %% Cross-scope: how the pilot scope connects to operations
+    BD -.->|on a| FL
+    BD -.->|with an| AC
+    PR -.->|against a| FL
+    PR -.->|in an| AC
+    US -.->|belongs to| AL
+    US -.->|home hub| AP
+    US -.->|has a| RK
+    TR2 === TR
+```
+
+The `===` link shows pilot type-ratings and subfleet-required type- ratings are
+the same entity, just rendered in both scopes for clarity.
+
+The whole airline economy hangs off accepted PIREPs: a pilot bids on a flight +
+aircraft, files a PIREP, an admin accepts it, and the system posts journal
+entries (revenue, fuel, pay), credits hours, re-checks awards, and may
+auto-promote rank. Until a PIREP is accepted, no money moves and no hours are
+credited.
+
+## Configuration Order
+
+After installation, configure your airline in this order. Each step depends on
+the previous one.
+
+```mermaid
+flowchart TD
+    A[1. Settings &<br/>Airline] --> B[2. Airports<br/>+ Hubs]
+    B --> C[3. Aircraft Types<br/>& SimBrief Airframes]
+    C --> D[4. Subfleets]
+    D --> E[5. Aircraft<br/>assigned to Subfleets]
+    D --> F[6. Fares<br/>attached to Subfleets]
+    D --> G[7. Ranks<br/>allowed Subfleets]
+    E --> H[8. Flights]
+    F --> H
+    G --> H
+    H --> I[9. Awards<br/>optional]
+    H --> J[10. Open registration]
+```
+
+**Why this order:** Subfleets are a branching unit — Aircraft live inside them,
+Fares attach to them, Ranks gate them, and Flights reference them. Get airlines,
+airports, and the aircraft types you need first, then build subfleets, then
+everything else slots in.
+
+## Core entities
+
+### Airline
+
+Container for everything: flights, aircraft (via subfleets), and pilots. You
+need at least one. Pilots pick an airline at registration, and most resources
+scope to it.
+
+Key fields: ICAO code (3 letters, e.g. `BAW`), IATA code (2 letters, e.g. `BA`),
+name, callsign.
+
+You can run multi-airline VAs — pilots register under one, and admins can
+transfer them later.
+
+### Airport
+
+Every airport in your network. Mark airports as **hubs** to make them selectable
+as a pilot's home base.
+
+- ICAO is the primary key (e.g. `EGLL`).
+- `hub` is a boolean flag — non-hub airports are still usable as flight
+  departure/arrival points; the flag only controls whether pilots can pick them
+  at registration.
+- Subfleets can optionally be based at a specific hub airport.
+
+### Subfleet
+
+The most important abstraction in phpvms. A subfleet is a **named group of
+aircraft** that share fares, ranks, and (optionally) a base hub.
+
+Think of it as how a real airline groups its fleet operationally — British
+Airways' "767-336ER RR RB211 short-haul Y-class" is a subfleet, and so is
+"777-200ER GE90 long-haul J/Y".
+
+A subfleet defines:
+
+- **Type** (an arbitrary code, e.g. `B763-LH-FJY`)
+- **Name** (human label)
+- **Airline** it belongs to
+- **Hub airport** (optional — restricts where its aircraft are based)
+- **Fuel type, cargo capacity** (operational defaults)
+- **Allowed Fares** (M2M — you can override price/cost/capacity per subfleet
+  without creating duplicate Fare records)
+- **Allowed Ranks** (M2M — only pilots at these ranks can fly this subfleet,
+  with per-rank ACARS and manual pay rates)
+- **Required Type Ratings** (M2M — pilots need the rating to fly)
+
+You can have as many subfleets as you want with as much overlap as you need.
+
+### Aircraft
+
+A specific airframe — a tail number, an ICAO type, and a current location. Every
+aircraft belongs to **exactly one subfleet**, which is how it inherits fares,
+allowed ranks, and required type ratings.
+
+Key fields: registration (`G-CIVA`), ICAO (`B744`), name, status, condition,
+current airport.
+
+Aircraft track their own state: which airport they're parked at, hours flown,
+condition (so you can model maintenance if you enable it).
+
+### Fare
+
+A passenger or cargo class — `Y` (Economy), `J` (Business), `F` (First), `C`
+(Cargo), etc. A fare has:
+
+- **Code** (e.g. `Y`)
+- **Name** (e.g. `Economy`)
+- **Type** — passenger or cargo
+- **Capacity, Price, Cost** — defaults that subfleets can override
+
+Fares are **shared across the system** but their economics get overridden when
+attached to a subfleet, so you can have one global "Economy" fare and let each
+subfleet set its own seat count and ticket price.
+
+### Rank
+
+A pilot's progression tier. Ranks unlock subfleets and can carry pay rates that
+override the subfleet defaults.
+
+Each rank has:
+
+- **Hours required** to reach it
+- **Allowed Subfleets** (M2M with `subfleet_rank` pivot — `acars_pay` and
+  `manual_pay` columns let you set per-rank pay rates)
+- **Auto-promote** flag (auto-advance pilots when they hit the hours)
+
+### Flight
+
+The schedule template — what we used to call a "schedule" pre-v7. A flight is a
+route an airline offers; pilots bid on it and file PIREPs against it.
+
+A flight has:
+
+- **Airline + flight number** (and optional code/leg if numbers collide)
+- **Departure / arrival / alternate airports**
+- **Flight type** — IATA SSIM service code (most common: `J` scheduled
+  passenger, `F` scheduled cargo, `C` charter passenger)
+- **Allowed Subfleets** (M2M — pilots see only aircraft from subfleets they're
+  rank-permitted on)
+- **Per-flight Fare overrides** (M2M `flight_fare` — overrides the subfleet
+  defaults for this specific route)
+- **Active / visible** windows, day-of-week filters, distance, route string
+
+#### Flight types (IATA SSIM)
+
+The most common, in **bold**:
+
+| Code  | Meaning                                         |
+| ----- | ----------------------------------------------- |
+| **J** | **Scheduled passenger – normal service**        |
+| **F** | **Scheduled cargo and/or mail**                 |
+| **C** | **Charter – passenger only**                    |
+| A     | Additional cargo/mail                           |
+| E     | Special VIP flight (FAA/government)             |
+| G     | Additional flights – passenger normal service   |
+| H     | Charter – cargo and/or mail                     |
+| I     | Ambulance                                       |
+| K     | Training                                        |
+| M     | Mail service                                    |
+| O     | Charter requiring special handling              |
+| P     | Positioning – non-revenue (ferry/delivery/demo) |
+| T     | Technical test                                  |
+| W     | Military                                        |
+| X     | Technical stop                                  |
+
+Flight numbers don't have to be globally unique — but if a duplicate is
+detected, the create/edit fails unless you supply a route code or leg.
+
+### PIREP
+
+A **pilot report** — what a pilot files after flying. This is the core
+transaction in phpvms: it triggers finances, hour tracking, rank progression,
+and award checks.
+
+A PIREP captures:
+
+- The Flight it was flown against (optional — pilots can file free-form PIREPs
+  without a Flight)
+- Aircraft used, dpt/arr/alt airports
+- Block time, flight time, fuel used, distance, route
+- Fare counts (`PirepFare` rows snapshot how many of each class were carried)
+- Live ACARS position rows if a tracker was used
+- Journal transactions for revenue/fuel/pay/expenses
+
+PIREPs go through a state machine: `pending` → `accepted` / `rejected` →
+`cancelled`. Acceptance is what posts the financial entries to the airline's
+journal.
+
+### Bid
+
+A reservation. A pilot **bids** on a `Flight + Aircraft` combination to lock it
+for themselves before flying. Configurable: bids may be soft (advisory) or hard
+(block other pilots).
+
+### Award
+
+Pluggable achievement system. Each award references a class (`ref_model_type`)
+that decides if a user qualifies — examples ship in `app/Awards/` and you can
+add custom ones via modules. Earned awards appear on the pilot's profile.
+
+### User
+
+A pilot. Belongs to an Airline, holds a Rank, has a home Airport (their hub),
+and a current Airport (where they last flew to). Users also carry type ratings
+(M2M) which gate access to subfleets that require specific ratings.
+
+## Glossary: easily confused concepts
+
+**Aircraft vs Subfleet** A subfleet is a _category_; an aircraft is a _specific
+tail number_. You can't assign an aircraft directly to a flight or rank — you
+assign the subfleet, and any aircraft inside it inherits that relationship.
+
+**Flight vs PIREP** A flight is the _schedule template_ (BAW178 LHR → JFK). A
+PIREP is the _one-time report_ of a pilot actually flying it. One flight has
+many PIREPs over time. PIREPs can also exist without a flight (free- form /
+non-scheduled).
+
+**Hub vs Home Airport vs Current Airport**
+
+- **Hub** — an airport flagged `hub=true`, selectable at registration
+- **Home Airport** — the user's permanent base (their chosen hub)
+- **Current Airport** — where the user's last PIREP arrived; resets on each
+  accepted PIREP
+
+**Fare on Subfleet vs Fare on Flight** The fare exists once globally. The
+subfleet pivot (`subfleet_fare`) sets defaults for any flight using that
+subfleet. The flight pivot (`flight_fare`) overrides those defaults for one
+specific flight. Per-flight overrides win.
+
+**Rank vs Role** Rank is a _pilot progression tier_ (hours-based, gates
+subfleets). Role is a _staff permission_ (admin / mod / pilot — gates the admin
+panel). They're independent.
+
+**Type Rating** A separate qualification system. A subfleet can require one or
+more type ratings; a user holds zero or more. If the subfleet requires ratings
+the user doesn't have, they can't fly it — even if their rank would otherwise
+allow it.
 
 ---
 
-## Airports
+## Further reading
 
-Airports can be added to the system, and optionally selected as hubs. When users
-register, they select a home hub.
-
----
-
-## Fares
-
-An unlimited number of fares can be added, and then fares are attached to
-subfleets, therefor, all of these fares are then applied to any aircraft in that
-subfleet. These include examples of "First Class", "Economy", etc. You can add
-as many or as few as you want. Fares include:
-
-- Capacity - how many seats this fare class holds
-- Price - the amount a ticket in this fare class costs
-- Cost - the amount it costs for a ticket; this is the amount it costs you to
-  run a single seat
-
-In order to facilitate not needing multiple fares of the same type, but with
-different capacity/costs/price, when a fare it assigned to a subfleet, those
-properties can be changed on a per-subfleet basis.
-
-[ExpertFlyer has a great list of real-world fare classes](https://www.expertflyer.com/sessionlessClassList.do)
-
----
-
-## Subfleets and Aircraft
-
-A new feature in phpVMS 7 are subfleets. Subfleets can be thought of as
-aircraft-groups. Airlines often group aircraft by equipment types; as a
-real-world example, British Airways has a subfleet for their 767-336ER
-Rolls-Royce RB211-524H aircraft, of which there are 7, and the aircraft in this
-subfleet are used for short-haul routes. Fares are aligned for the aircraft in
-the subfleet; for example, an airline may further divide the 767 short-haul
-subfleet into one subfleet that has first, business and economy classes (with a
-name of "767-336ER RR RB211-524H-**FJY**") and another 767 subfleet with only
-first and economy classes (with a name of 767-336ER RR RB211-524H-**FY**)
-
-In phpVMS, you can create as many subfleets as you like, with as many aircraft
-in those subfleets as you want. At a minimum, one subfleet is required, and
-there's no restriction on the types of aircraft that can be included. This way,
-potentially dozens of aircraft don't need to be assigned to the same route.
-
-These subfleets, can be assigned to routes and ranks, making it easy to apply
-multiple aircraft to routes, and then allowing more control over what equipment
-pilots are allowed to fly. An example would be having a route that has 3
-subfleets assigned to it, however, if a pilot is only allowed to fly one of
-those subfleets (because of their rank), when filing a PIREP, only the aircraft
-from the allowed subfleet will be shown.
-
-- Subfleets have a name, type and a fuel type. The name and type are arbitrary,
-  and just convention to your VA.
-  [Here's an example for Continental Airlines](http://www.aerotransport.org/php/go.php?query=operator&luck=1&where=70913)
-- Any number of aircraft can be assigned
-- Any number of fares can be assigned, and the properties overridden.
-- Any number of subfleets can be assigned to a flight
-
----
-
-## Flights
-
-Schedules have been renamed to "flights". A flight consists of:
-
-- An airline
-- Flight type
-- Flight number
-- Flight Code (optional)
-- Flight Leg (optional)
-- Departure airport
-- Arrival airport
-- Any number of subfleets
-
-Flight numbers do not need to be unique, however, if a duplicate flight number
-is found, the creation/edit will fail, and a route code or leg must be provided
-in order for it to work properly.
-
-### Flight Types
-
-Flight types follow the IATA SSIM service code. The ones highlighted in bold are
-the most common.
-
-- A = Additional Cargo/Mail
-- **C = Charter – Passenger only**
-- E = Special VIP Flight (FAA/Government)
-- **F = Scheduled – Cargo and/or Mail**
-- G = Additional Flights – Passenger Normal Service
-- H = Charter – Cargo and/or Mail
-- I = Ambulance Flight
-- **J = Scheduled – Passenger Normal Service**
-- K = Training Flights
-- M = Mail Service
-- O = Charter requiring special handling (e.g. migrants, immigrants)
-- P = Positioning Flights – Non Revenue (ferry/delivery/demo)
-- T = Technical Test
-- W = Military
-- X = Technical Stop
-
-More resources
-
-- [Forum Topic - Connecting Flights](https://forum.phpvms.net/topic/24329-connecting-flights/)
-- [Quora - Multi-leg and multi-segment flights](https://www.quora.com/What-is-the-difference-between-Multi-leg-and-Multi-segment-flights)
+- [ExpertFlyer's real-world fare class list](https://www.expertflyer.com/sessionlessClassList.do)
+- [Forum: Connecting flights](https://forum.phpvms.net/topic/24329-connecting-flights/)
+- [Quora: Multi-leg vs multi-segment](https://www.quora.com/What-is-the-difference-between-Multi-leg-and-Multi-segment-flights)

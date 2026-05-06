@@ -17,7 +17,7 @@ import
 ## Command Line
 
 The importer tool can also be run on the command line, via a PHP artisan
-command. Before running the importer, you should install phpVMS using the
+command. Before running the importer, you should install phpvms using the
 installer. Both the `config.php` and `.env` files will need to exist.
 
 :::caution
@@ -35,9 +35,9 @@ php artisan phpvms:importer  {db_host} {db_name} {db_user} {db_pass?}
 
 Where
 
-- `db_host` - The database host where your legacy phpVMS install is
-- `db_name` - The database username for your legacy phpVMS install
-- `db_pass` - Database password for your legacy phpVMS install.
+- `db_host` - The database host where your legacy phpvms install is
+- `db_name` - The database username for your legacy phpvms install
+- `db_pass` - Database password for your legacy phpvms install.
 
 Example:
 

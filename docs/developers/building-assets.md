@@ -60,7 +60,7 @@ your changes are included
 
 nodejs and npm are required to build. Follow the
 [instructions for your platform](https://nodejs.org/en/download/) to install
-`nodejs`. After installing it, run the following in your phpVMS folder (the same
+`nodejs`. After installing it, run the following in your phpvms folder (the same
 directory as the `package.json` file). This installs webpack and the associated
 dependencies into `node_modules`.
 

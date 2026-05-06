@@ -1,7 +1,37 @@
 ---
-id: uploading
-title: Uploading Files
+id: download
+title: 'Download'
 ---
+
+There are a few ways you can obtain phpvms and its dependencies. The full
+package method already includes the `vendor` directory and you don't need to do
+anything but upload it.
+
+## How to Download
+
+### Downloading Full Package
+
+The **zip/tar file** from the downloads site contains all of the dependencies.
+Source code is not suitable for a fresh installation.
+
+- [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases)
+
+### Cloning the Repository
+
+If you chose to instead clone it from Github, rather than download it from
+above, you can do the following:
+
+```bash
+git clone https://github.com/nabeelio/phpvms.git
+cd phpvms
+composer install
+```
+
+After running `composer install`, you can continue the installation instructions
+
+See below if you are using a shared host; otherwise, skip to the next section.
+
+## Uploading Files On Shared Hosting
 
 When uploading the files, you have several options on how to. These mainly apply
 to shared hosts. For your own server or if you have control over the vhost
@@ -17,7 +47,7 @@ methods when uploading your files.
 
 ---
 
-## Option 1: Creating a Subdomain
+### Option 1: Creating a Subdomain
 
 :::tip
 
@@ -28,11 +58,11 @@ similar.
 
 :::
 
-Upload phpVMS to a directory with the name of your subdomain, for example,
+Upload phpvms to a directory with the name of your subdomain, for example,
 `demo.vmshost.io`. It should be parallel to the `public_html` folder (as above).
 In this example, I want to create the subdomain `demo.vmshost.io`.
 
-First, create a folder to extract phpVMS into:
+First, create a folder to extract phpvms into:
 
 ```
 /home/youruser
@@ -65,9 +95,7 @@ It will look like this:
 
 ![](img/subdomain-view.png)
 
----
-
-## Option 2: Copying the public directory
+### Option 2: Copying the public directory
 
 :::tip
 
@@ -76,9 +104,9 @@ if you're on shared hosting
 
 :::
 
-This method works well if your main site is going to be phpVMS.
+This method works well if your main site is going to be phpvms.
 
-1. Download/upload phpVMS into a `phpvms` folder in your home folder. It should
+1. Download/upload phpvms into a `phpvms` folder in your home folder. It should
    look something like:
 2. Copy the files from the `/public` folder into the `public_html` folder.
 
@@ -90,7 +118,7 @@ This method works well if your main site is going to be phpVMS.
 ```
 
 As long as you named the folder `phpvms`, the `index.php` will autodetect the
-location of the phpVMS folder.
+location of the phpvms folder.
 
 :::note
 
@@ -101,9 +129,7 @@ those types of links.
 
 :::
 
----
-
-## Option 3: Symlink
+### Option 3: Symlink
 
 :::danger
 
@@ -112,11 +138,11 @@ this if you know what you're doing
 
 :::
 
-This method works well if your main site is going to be phpVMS, and you're not
-running something like Wordpress. Running phpVMS in a subdirectory isn't
+This method works well if your main site is going to be phpvms, and you're not
+running something like Wordpress. Running phpvms in a subdirectory isn't
 recommended (see method 2 instead).
 
-Download/upload phpVMS into a `phpvms` folder in your home folder. It should
+Download/upload phpvms into a `phpvms` folder in your home folder. It should
 look something like:
 
 ```
@@ -127,8 +153,8 @@ look something like:
 ```
 
 To make this work properly and be secure, we're going to change the
-`public_html` directory to point into the phpVMS public directory. Then you can
-upload files as usual, but phpVMS will be the primary entry point. When you
+`public_html` directory to point into the phpvms public directory. Then you can
+upload files as usual, but phpvms will be the primary entry point. When you
 create folder/files in the `public_html` directory, they'll actually get created
 into the `phpvms/public` folder.
 
@@ -142,7 +168,7 @@ ln -s phpvms/public/ public_html
 
 ---
 
-## Option 4: Direct Upload (Not Recommended!)
+### Option 4: Direct Upload (Not Recommended!)
 
 :::danger
 

@@ -4,7 +4,7 @@ title: Backups
 sidebar_title: Backups
 ---
 
-phpVMS uses [`spatie/laravel-backup`](https://github.com/spatie/laravel-backup)
+phpvms uses [`spatie/laravel-backup`](https://github.com/spatie/laravel-backup)
 to perform backups. By default, this feature is disabled, but you can activate
 it if you want to create backups of your files and database.
 
@@ -29,7 +29,7 @@ BACKUP_NOTIFICATIONS_MAIL_TO=yourEmail@example.com
 ```
 
 For this feature to work, you need to have email configured (see
-[here](/config/email)).
+[here](./email.md)).
 
 ## Advanced Configuration
 
@@ -52,7 +52,7 @@ notifications.
 
 If you choose the `discord` channel, you need to configure
 `BACKUP_DISCORD_WEBHOOK_URL` with the webhook URL where you want to receive
-notifications. See [here](/config/notifications#discord) to create a webhook.
+notifications. See [here](./notifications.md#discord) to create a webhook.
 
 ### Disks
 
@@ -65,7 +65,7 @@ BACKUP_DISKS=local,r2
 ```
 
 To use a remote disk like Amazon S3, CloudFlare R2 or SFTP, you must configure
-the details in `.env` properly. By default phpVMS v7 supports Amazon S3,
+the details in `.env` properly. By default phpvms v7 supports Amazon S3,
 CloudFlare R2 and SFTP. As an example; To use CloudFlare R2, a bucket should be
 configured in your account along with an S3 compatible API and below details
 should be in your `.env` file
@@ -85,7 +85,7 @@ and other online sources.
 
 ### Backup Retention Configuration
 
-By default, phpVMS keeps backups for the last 7 days and retains a maximum of
+By default, phpvms keeps backups for the last 7 days and retains a maximum of
 5000 MB of backup data. You can adjust these settings to customize the retention
 period and maximum size.
 

@@ -3,7 +3,7 @@ id: routing-controllers
 title: Routing & Controllers
 ---
 
-Routing in a phpVMS module follows the standard
+Routing in a phpvms module follows the standard
 [Laravel routing](https://laravel.com/docs/routing) format. Each generated
 module has its own `routes/` directory with separate files for web pages and
 API endpoints, registered automatically by the module's `RouteServiceProvider`.
@@ -259,13 +259,13 @@ class PostController extends Controller
 ## Middleware
 
 Middleware lets you inject access checks into the request chain so you don't
-need to repeat them in every method. phpVMS provides three middleware
+need to repeat them in every method. phpvms provides three middleware
 aliases on top of Laravel's defaults:
 
 | Middleware     | Purpose                                                    |
 | -------------- | ---------------------------------------------------------- |
 | `auth`         | Standard Laravel — request must come from a logged-in user.|
-| `role:user`    | Logged-in phpVMS user. Use for normal pilot pages.         |
+| `role:user`    | Logged-in phpvms user. Use for normal pilot pages.         |
 | `role:admin`   | Admin user. Use for admin-only screens.                    |
 | `api.auth`     | API key authentication. Use on `routes/api.php` routes.    |
 

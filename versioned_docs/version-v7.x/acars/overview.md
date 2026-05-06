@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-The ACARS application is designed to run with phpVMS 7 to automatically report
+The ACARS application is designed to run with phpvms 7 to automatically report
 your pilot reports from the new Microsoft Flight Simulator, Prepar3d, FSX and
 X-Plane.
 

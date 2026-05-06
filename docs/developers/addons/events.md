@@ -3,7 +3,7 @@ id: events
 title: Events & Listeners
 ---
 
-phpVMS dispatches a number of events you can subscribe to from your module —
+phpvms dispatches a number of events you can subscribe to from your module —
 when a PIREP is filed, a flight is bid on, a user registers, and so on. The
 full list of available events lives in the core
 [app/Events](https://github.com/nabeelio/phpvms/tree/master/app/Events)
@@ -12,7 +12,7 @@ directory.
 Subscribing follows the standard
 [Laravel events](https://laravel.com/docs/events) pattern.
 
-## Listening to phpVMS events
+## Listening to phpvms events
 
 ### 1. Generate a listener
 

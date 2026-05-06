@@ -23,11 +23,11 @@ DISCORD_CLIENT_ID={your_client_id_copied_before}
 DISCORD_CLIENT_SECRET={your_client_secret_copied_before}
 ```
 
-Now, your users can link their Discord account to their phpVMS account and use
+Now, your users can link their Discord account to their phpvms account and use
 their Discord account to log in. The link between the two accounts is
 automatically established when clicking the "Login with Discord" button on the
 login page. However, if the email address of the Discord account is different
-from the email address of the phpVMS account, it must be done manually on the
+from the email address of the phpvms account, it must be done manually on the
 profile page.
 
 ## Sending Private Messages
