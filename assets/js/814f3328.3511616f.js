@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkphpvms_docs=self.webpackChunkphpvms_docs||[]).push([[7472],{55513(s){s.exports=JSON.parse('{"title":"Recent posts","items":[]}')}}]);

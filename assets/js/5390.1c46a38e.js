@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkphpvms_docs=self.webpackChunkphpvms_docs||[]).push([[5390],{75390(e,s,c){c.d(s,{createArchitectureServices:()=>p.S});var p=c(65530);c(72519)}}]);
