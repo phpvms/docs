@@ -4,12 +4,12 @@ title: Backups
 sidebar_title: Backups
 ---
 
-phpvms uses [`spatie/laravel-backup`](https://github.com/spatie/laravel-backup)
-to perform backups. By default, this feature is disabled, but you can activate
-it if you want to create backups of your files and database.
+phpvms backs up files and the database via
+[`spatie/laravel-backup`](https://github.com/spatie/laravel-backup).
+Disabled by default — enable it to start nightly snapshots.
 
-Backups are scheduled nightly, and an older backup is removed, ensuring you have
-multiple backups available (e.g., last night's, the one before, etc.).
+Backups run nightly. The oldest is rotated out so you keep a rolling
+window (last night, the night before, etc).
 
 :::warning
 
@@ -52,7 +52,7 @@ notifications.
 
 If you choose the `discord` channel, you need to configure
 `BACKUP_DISCORD_WEBHOOK_URL` with the webhook URL where you want to receive
-notifications. See [here](./notifications.md#discord) to create a webhook.
+notifications. See [Notifications](./notifications.md) to create a webhook.
 
 ### Disks
 
@@ -107,10 +107,8 @@ BACKUP_MAX_SIZE=10000
 
 ### Encryption
 
-You can encrypt your backups with AES256 and a password.
+Encrypt backups with AES256 and a password:
 
 ```shell title=".env"
 BACKUP_ARCHIVE_PASSWORD=yourPassword
 ```
-
----

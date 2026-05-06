@@ -1,6 +1,6 @@
 ---
 id: cron
-title: Cron/Scheduled Tasks
+title: Cron and Scheduled Tasks
 ---
 
 In order for some phpvms features to work, a cronjob is required to be setup.

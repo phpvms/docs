@@ -1,52 +1,59 @@
 ---
 id: notifications
 title: Notifications
+sidebar_title: Notifications
 ---
 
-# Notifications
+phpvms sends event notifications to Discord via webhooks. Two webhooks
+are supported:
 
-phpvms can send event notifications to different places. Currently, Discord is
-supported. Some of the events that are supported:
+- **Public webhook** — for events visible to your community
+- **Private webhook** — for restricted events (separate channel,
+  typically admin-only)
 
-- PIREP prefile notifications
+### Public events
+
+- PIREP prefile
 - PIREP state changes (boarding, taxi, landed, etc)
 - PIREP filed
 - News added
 
-You can also setup a private webhook, going to another channel, which might have
-more restricted permissions:
+### Private events
 
-- User Registrations
+- User registrations
 
 ---
 
-## Discord
+## Discord setup
 
-phpvms can send notifications to a Discord channel. To configure this, you need
-to create a webhook.
-[See the documentation for webhooks from Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks).
-This requires a webhook for the notification of public events, and an optional
-for private events (user registrations)
+Webhooks are how Discord receives notifications from external services.
+Full Discord docs:
+[Intro to Webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks).
 
-#### 1. Create a Webhook(s)
+### 1. Create the webhook
 
-To create a webhook, edit the channel you want the webhook to go into (you can
-move the webhook to another channel later)
+Edit the channel you want notifications in (you can move the webhook
+later).
 
 ![](img/discord/edit-channel.png)
 
-Then select integrations, and then "View Webhooks", then select integrations
+Open **Integrations**, then **View Webhooks**.
 
 ![](img/discord/integrations.png)
 
-Then click "Add Webhook", and fill in the information
+Click **Add Webhook** and fill in the details.
 
 ![](img/discord/create-webhook.png)
 
-Copy the webhook, URL, you'll need this for the admin panel
+Copy the webhook URL — you'll paste it into the admin panel next.
 
-#### 2. Add the webhook(s) into settings
+Repeat if you want a separate private webhook for user registrations.
 
-Next, go to your admin panel and add the webhook into the settings:
+### 2. Add to phpvms
+
+In the admin panel, paste the webhook URL into the corresponding
+setting:
 
 ![](img/discord/discord-setting.png)
+
+That's it — events fire to Discord from now on.

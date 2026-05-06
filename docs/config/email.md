@@ -1,36 +1,48 @@
 ---
 id: email
+title: Email
+sidebar_title: Email
 ---
 
-# Email
-
-It is recommended to use a 3rd party service for sending email. They usually
-offer SMTP support, and great logging and analytics. Especially on a shared
-host, where email is locked down, and a "naughty neighbor" can quickly get the
-server/IP you're emailing from blacklisted. I highly recommend using a service
-over SMTP, because SMTP slows response times down.
-
-These services are supported by Laravel natively;
-
-- [Mailgun](http://www.mailgun.com) - Free, up to 10k messages/month
-- [Postmark](https://postmarkapp.com) - Tell their support you were referred for
-  a free month
-- [Amazon SES](https://aws.amazon.com/ses/) - Super cheap, free if you're using
-  EC2
+phpvms sends transactional email (registration, PIREP receipts, password
+resets, etc). Use a third-party email provider — they handle SMTP,
+deliverability, logging, and analytics.
 
 :::warning
 
-Do not forget cleaning application cache after editing `.env` variables.
-Otherwise, settings you defined/altered will not be loaded.
+On shared hosting, email is often locked down. A "naughty neighbor" can
+get your shared IP blacklisted in hours. Use a provider over SMTP — and
+prefer a provider's API integration over plain SMTP, since API calls are
+faster than blocking SMTP handshakes.
+
+:::
+
+### Supported providers
+
+Laravel ships first-class drivers for these:
+
+| Provider                                  | Free tier                          |
+| ----------------------------------------- | ---------------------------------- |
+| [Mailgun](http://www.mailgun.com)         | Up to 10k messages/month           |
+| [Postmark](https://postmarkapp.com)       | First month free (mention referral) |
+| [Amazon SES](https://aws.amazon.com/ses/) | Very cheap, free from EC2          |
+
+:::warning
+
+After editing `.env`, clear the application cache. Otherwise your new
+mail settings won't load:
+
+```bash
+php artisan config:clear
+```
 
 :::
 
 ---
 
-### SMTP Configuration
+## SMTP
 
-To configure SMTP, in your `.env` file, you need to configure the following
-options:
+Generic SMTP — works with any provider that exposes SMTP credentials.
 
 ```bash title=".env"
 MAIL_MAILER=smtp
@@ -43,34 +55,25 @@ MAIL_USERNAME=
 MAIL_PASSWORD=
 ```
 
-For detailed settings about host, port and encryption details please check your
-hosting control panel (or VPS). These settings are not generic and can differ
-between hosting companies, even on a custom VPS these settings are local to your
-install (packages installed etc.) Therefore there a no generic examples for SMTP
-and mail settings.
+Host, port, and encryption values come from your hosting control panel
+or VPS provider — they vary per host, so there's no generic default.
 
-### Mailgun Configuration
-
-To use Mailgun, set your `.env` like:
+## Mailgun
 
 ```bash title=".env"
 MAIL_MAILER=mailgun
 MAILGUN_DOMAIN='your mailgun domain'
-MAILGUN_SECRET='your mailgun secret',
+MAILGUN_SECRET='your mailgun secret'
 ```
 
-### Postmark Configuration
-
-To use Postmark, set your `.env` like:
+## Postmark
 
 ```bash title=".env"
 MAIL_MAILER=postmark
 POSTMARK_TOKEN='your postmark token'
 ```
 
-### SES Configuration
-
-To use SES, set your `.env` like:
+## Amazon SES
 
 ```bash title=".env"
 MAIL_MAILER=ses
@@ -81,12 +84,11 @@ AWS_DEFAULT_REGION='the region if not us-east-1'
 
 ---
 
-## Debugging
+## Debugging with Mailtrap
 
-For debugging mail, you can use the service [mailtrap.io](https://mailtrap.io).
-Mail-trail will show all of the incoming and outgoing email in an inbox, so you
-can test registrations, accepts, etc. It will provide you Laravel-specific
-configuration, which looks something like:
+[mailtrap.io](https://mailtrap.io) catches all outgoing mail in a fake
+inbox so you can test registrations, password resets, and PIREP receipts
+without spamming real users. Mailtrap gives you Laravel-ready creds:
 
 ```bash title=".env"
 MAIL_MAILER=smtp

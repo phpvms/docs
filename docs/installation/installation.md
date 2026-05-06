@@ -98,7 +98,7 @@ installation is complete!
 
 ## Next Steps
 
-1. Read [about the configuration files (email, etc)](../config/files.md).
+1. Read [about the configuration files (email, etc)](../config/basics.md).
 2. [Setup the cron task on your server](./cron.md)
 
 ## Troubleshooting
@@ -108,7 +108,8 @@ installation is complete!
 If you're getting a 404 when trying to access the installer, this is either
 because:
 
-1. You haven't uploaded the files properly — [read Uploading Files](./download.md)
+1. You haven't uploaded the files properly —
+   [read Uploading Files](./download.md)
 2. Your vhost isn't correct — [read VHost Configuration](./vhost.md)
 3. Your host doesn't support `.htaccess` files — contact your host
 
