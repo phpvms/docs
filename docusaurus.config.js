@@ -13,6 +13,13 @@ module.exports = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
+  clientModules: [require.resolve('./src/clientModules/tocBar.js')],
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
+      type: 'text/css',
+    },
+  ],
   themeConfig: {
     imageZoom: {
       selector: '.markdown img',

@@ -1,7 +1,6 @@
 ---
 id: overview
 title: Overview
-slug: /developers/addons
 ---
 
 Addons (also called **modules** or **plugins**) let you ship self-contained

@@ -16,8 +16,8 @@ module.exports = {
       label: 'phpVMS',
       collapsed: false,
       collapsible: true,
-      link: {type: 'doc', id: 'intro'},
       items: [
+        'intro',
         {
           type: 'category',
           label: 'Introduction',
@@ -73,8 +73,8 @@ module.exports = {
       label: 'ACARS',
       collapsed: false,
       collapsible: true,
-      link: {type: 'doc', id: 'acars/overview'},
       items: [
+        'acars/overview',
         {
           type: 'category',
           label: 'For Operators',
@@ -114,8 +114,8 @@ module.exports = {
       label: 'Developers',
       collapsed: false,
       collapsible: true,
-      link: {type: 'doc', id: 'developers/environment'},
       items: [
+        'developers/environment',
         {
           type: 'category',
           label: 'Getting Started',
@@ -128,8 +128,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Addons & Modules',
-          link: {type: 'doc', id: 'developers/addons/overview'},
+          label: 'Addons',
           items: [
             'developers/addons/overview',
             'developers/addons/routing-controllers',

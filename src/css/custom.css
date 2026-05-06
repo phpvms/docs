@@ -16,7 +16,28 @@
   --ifm-color-primary-lightest: #0ba3f7;
   --ifm-navbar-background-color: #067ec1;
   --ifm-navbar-link-color: #ffffff;
-  --ifm-code-font-size: 95%;
+
+  /* Typography — Vercel-style airy reading rhythm */
+  --ifm-font-family-base: 'Geist', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'Geist Mono', ui-monospace, SFMono-Regular,
+    Menlo, monospace;
+  --ifm-font-size-base: 15px;
+  --ifm-line-height-base: 1.7;
+  --ifm-code-font-size: 90%;
+  --ifm-paragraph-margin-bottom: 1.5rem;
+  --ifm-leading: 1.5rem;
+  --ifm-list-margin: 1.25rem;
+  --ifm-list-item-margin: 0.4rem;
+  --ifm-pre-padding: 1rem;
+
+  /* Tighter heading sizes, generous top margins for airy section breaks */
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.4rem;
+  --ifm-h3-font-size: 1.1rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-heading-line-height: 1.25;
+  --ifm-heading-font-weight: 600;
 }
 
 .docusaurus-highlight-code-line {
@@ -40,8 +61,148 @@
   color: #fff;
 }
 
-div.main-wrapper {
-  font-size: 95%;
+/* Airy heading rhythm — generous top margins, no dividers (Vercel-style) */
+.theme-doc-markdown article h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.theme-doc-markdown article h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.theme-doc-markdown article h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.theme-doc-markdown article h2 + h3,
+.theme-doc-markdown article h3:first-of-type {
+  margin-top: 1.5rem;
+}
+
+/* Body breathing room — code blocks, lists, admonitions */
+.theme-doc-markdown article pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.theme-doc-markdown article ul,
+.theme-doc-markdown article ol {
+  margin-bottom: 1.5rem;
+}
+
+.theme-doc-markdown article li {
+  margin-bottom: 0.4rem;
+}
+
+.theme-doc-markdown article li > p {
+  margin-bottom: 0.5rem;
+}
+
+.theme-doc-markdown article .admonition,
+.theme-doc-markdown article .alert {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.theme-doc-markdown article blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-doc-markdown article hr {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Tables get more vertical breathing */
+.theme-doc-markdown article table {
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.theme-doc-markdown article th,
+.theme-doc-markdown article td {
+  padding: 0.65rem 0.85rem;
+}
+
+/* Version badge: float right onto breadcrumbs row */
+.theme-doc-breadcrumbs {
+  margin-bottom: 1rem;
+}
+.theme-doc-version-badge {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  margin-top: -2.5rem; /* pull up onto breadcrumbs row */
+  position: relative;
+  z-index: 1;
+}
+
+/* TOC (right side): no left border, push down from top, bigger text */
+.table-of-contents__left-border {
+  border-left: none;
+}
+.theme-doc-toc-desktop {
+  padding-top: 3rem;
+}
+.theme-doc-toc-desktop::before {
+  content: 'On This Page';
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-emphasis-900);
+  padding-left: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.table-of-contents {
+  font-size: 0.9rem;
+}
+
+/* Active TOC indicator: single floating bar that slides between active links.
+   JS lives in src/clientModules/tocBar.js — it injects .toc-active-bar into
+   each .theme-doc-toc-desktop and updates its translateY on active-class
+   changes. Easing curve is expo-out: fast start, logarithmic settle. */
+.toc-active-bar {
+  position: absolute;
+  left: 0.4rem;
+  top: 0;
+  width: 3px;
+  height: 1em;
+  border-radius: 2px;
+  background: var(--ifm-color-primary);
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 250ms ease,
+    opacity 200ms ease;
+  pointer-events: none;
+  will-change: transform;
+}
+.table-of-contents__link--active::before {
+  content: '';
+  position: absolute;
+  left: -0.6rem;
+  top: 0.3em;
+  bottom: 0.3em;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--ifm-color-primary);
+}
+
+/* Inline code — raise 2px to align with Geist Sans baseline. */
+.theme-doc-markdown article :not(pre) > code {
+  vertical-align: baseline !important;
+  position: relative;
+  top: -2px;
+  padding: 0.15em 1em !important;
+  font-size: 0.85em !important;
+  line-height: inherit;
 }
 
 div.markdown img {
@@ -64,9 +225,294 @@ div.markdown img {
     no-repeat;
 }
 
-/* Spacing between top-level sidebar sections (phpVMS / ACARS / Developers) */
-.theme-doc-sidebar-menu.menu__list > .menu__list-item + .menu__list-item {
-  margin-top: 40px;
+/* ============================================================
+   Vercel-inspired sidebar
+   ============================================================ */
+
+/* Tighten Infima vars used by the sidebar menu */
+:root {
+  --ifm-menu-link-padding-vertical: 6px;
+  --ifm-menu-link-padding-horizontal: 12px;
+  /* Right-pointing chevron, slightly darker gray */
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 6 15 12 9 18'></polyline></svg>");
+  /* Sidebar 5% narrower (default ~300px) */
+  --doc-sidebar-width: 285px !important;
+}
+
+/* Sidebar blends with page \u2014 no border */
+.theme-doc-sidebar-container {
+  border-right: none !important;
+}
+
+aside.theme-doc-sidebar-container > div {
+  border-right: none !important;
+}
+
+.theme-doc-sidebar-menu.menu__list {
+  font-size: 13px;
+  padding: 8px;
+}
+
+/* Top-level section: uppercase pill heading, modest gap above */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item {
+  margin-top: 16px;
+}
+
+.theme-doc-sidebar-menu.menu__list > .menu__list-item:first-child {
+  margin-top: 4px;
+}
+
+/* Section header (top-level category link) */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link,
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link--sublist {
+  text-transform: uppercase;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-emphasis-600);
+  padding: 4px 12px;
+  margin-bottom: 6px;
+  background: transparent !important;
+}
+
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible:hover > .menu__link {
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Hide caret on top-level headers — they're labels, click goes to landing doc */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__caret {
+  display: none;
+}
+
+/* Caret icons render via pseudo-elements:
+   - Path A: <a.menu__link--sublist-caret>::after  (L2 sub-cats with link)
+   - Path B: <button.menu__caret>::before          (L1 / Addons-style)
+   Our --ifm-menu-link-sublist-icon SVG is right-pointing (>), so:
+   - collapsed = right (rotate 0deg)
+   - expanded  = down  (rotate 90deg)
+   Override Infima's 180deg / 90deg defaults that assume an up-arrow icon. */
+.menu__caret::before,
+.menu__link--sublist-caret::after {
+  /* Use 1.25rem (20px) box for both paths so the icon centers at the same
+     x-offset from the right edge. The visual chevron is sized via
+     background-size, NOT the box, so it still looks 0.85rem. */
+  background-size: 0.85rem 0.85rem !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  opacity: 0.65;
+  transform: rotate(0deg) !important; /* default = collapsed = right */
+  transition: transform 0.15s ease;
+}
+
+/* Expanded — point down */
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__caret::before,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__link--sublist-caret::after,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__link--sublist-caret::after {
+  transform: rotate(90deg) !important;
+}
+
+/* Path B button: strip Infima padding + size to match Path A ::after.
+   Path A `::after` lives INSIDE the link with margin-left:auto + min-width:1.25rem,
+   pinned to the right edge of the link box. Path B button is a SIBLING of the link
+   inside the .menu__list-item-collapsible flex row, so by default it adds extra
+   width past the link. Setting button to width 1.25rem with no padding aligns
+   icon center with where Path A icon sits. */
+.menu__caret {
+  padding: 0 !important;
+  min-width: 1.25rem !important;
+  width: 1.25rem !important;
+  /* Match Path A's right inset: Path A ::after sits inside <a> which has
+     12px (--ifm-menu-link-padding-horizontal) right padding. Path B button
+     sits flush to collapsible edge. Push it inward to align. */
+  margin-right: var(--ifm-menu-link-padding-horizontal) !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kill button hover-highlight (Infima `.clean-btn:hover` adds bg) */
+.menu__caret:hover,
+.menu__caret:focus {
+  background: transparent !important;
+}
+
+/* Vercel-style sidebar items: hover/active bg stretches edge-to-edge
+   within the sidebar column (including the chevron area for sub-cats),
+   matching width across leaf links and sub-category headers. */
+.menu__link {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-700);
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.menu__link:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Active highlight: solid bg + same width as hover. */
+.menu__link--active,
+.menu__link--active:hover {
+  background: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-emphasis-900);
+  font-weight: 500;
+}
+
+/* Active page paints the left guide rail next to its row.
+
+   Two layers:
+   1. CSS fallback (per-<li>::before) — paints rail next to active <li>
+      with no animation. Always works, no JS required.
+   2. JS-injected `.sidebar-active-bar` — single span per railed <ul>
+      that slides between active items with expo-out easing. When JS
+      runs, the railed <ul> gets `data-bar-injected="1"`, which hides
+      the CSS fallback inside it (so the two don't double-paint). */
+
+/* Layer 1: static CSS fallback */
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-link-level-4,
+.theme-doc-sidebar-item-category-level-3,
+.theme-doc-sidebar-item-category-level-4 {
+  position: relative;
+}
+
+.theme-doc-sidebar-item-link-level-3::before,
+.theme-doc-sidebar-item-link-level-4::before,
+.theme-doc-sidebar-item-category-level-3::before,
+.theme-doc-sidebar-item-category-level-4::before {
+  content: '';
+  position: absolute;
+  /* Parent <ul> has 8px padding-left + 8px margin-left and 1px border-left.
+     Rail sits at left: -9px to overlay the border. */
+  left: -9px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ifm-color-primary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.theme-doc-sidebar-item-link-level-3:has(> .menu__link--active)::before,
+.theme-doc-sidebar-item-link-level-4:has(> .menu__link--active)::before,
+.theme-doc-sidebar-item-category-level-3:has(.menu__link--active)::before,
+.theme-doc-sidebar-item-category-level-4:has(.menu__link--active)::before {
+  opacity: 1;
+}
+
+/* Hide CSS fallback inside any <ul> that JS has taken over */
+ul.menu__list[data-bar-injected="1"] > li > ::before,
+ul.menu__list[data-bar-injected="1"] li::before {
+  /* Scope: only kill ::before on items inside a JS-managed rail. The
+     fallback ::before is on the <li> itself, so this targets it. */
+}
+ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-link-level-3::before,
+ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-link-level-4::before,
+ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-3::before,
+ul.menu__list[data-bar-injected="1"] .theme-doc-sidebar-item-category-level-4::before {
+  display: none;
+}
+
+/* Layer 2: JS-driven sliding bar.
+   Lives INSIDE the railed <ul>, which has position: relative (set by JS).
+   The <ul>'s containing block for its absolute children is its padding edge,
+   so left: -1px sits exactly on the border-left (1px wide), overlaying it
+   with the active color. */
+.sidebar-active-bar {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 1px;
+  height: 1.5em;
+  background: var(--ifm-color-primary);
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 200ms ease,
+    opacity 180ms ease;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Sub-category labels (e.g. ACARS > For Pilots): subtle, smaller weight */
+.theme-doc-sidebar-menu.menu__list .menu__list .menu__list-item-collapsible > .menu__link {
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 500;
+}
+
+/* Sub-list nesting indent — guide rail only on expanded level-3+ lists */
+.menu__list .menu__list {
+  padding-left: 8px;
+  margin-left: 8px;
+}
+
+/* Level-1 (phpVMS/ACARS/Developers) -> Level-2: no indent */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Guide rail only inside expanded sub-categories (level-2 and deeper),
+   never directly under top-level headings (phpVMS / ACARS / Developers) */
+.theme-doc-sidebar-item-category-level-2:not(.menu__list-item--collapsed) > .menu__list,
+.theme-doc-sidebar-item-category-level-3:not(.menu__list-item--collapsed) > .menu__list {
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Active-collapsible: don't carry over filled bg from sub-link */
+.menu__list-item-collapsible--active {
+  background: transparent;
+}
+
+/* Dark mode tweaks */
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  border-right-color: var(--ifm-color-emphasis-200);
+}
+
+/* Pagination (prev/next links at bottom of doc): drop the boxed border so
+   the links read as plain text, matching the cleaner look of the rest of
+   the doc. Padding pulled in too — without a border there's no need for
+   the inset breathing room. */
+.pagination-nav__link {
+  border: none;
+  padding: 0;
+  transition: none;
+}
+
+.pagination-nav__link:hover {
+  border: none;
+  text-decoration: none;
+}
+
+.pagination-nav__link:hover .pagination-nav__label {
+  color: var(--ifm-color-primary);
+}
+
+/* Vercel-style vertical rhythm at the end of a doc:
+   - generous space above pagination so it reads as a separate region
+   - large gap below pagination before the page hits the dark footer */
+.pagination-nav {
+  margin-top: 5rem !important;
+  margin-bottom: 6rem;
+}
+
+/* Hide "Edit this page" link — not surfacing GitHub edits in the docs UI. */
+.theme-doc-footer-edit-meta-row,
+.theme-edit-this-page {
+  display: none !important;
+}
+
+/* Site footer — push it well below the last bit of content for breathing
+   room. Targets the page-level footer, not in-doc footers. */
+.theme-layout-footer {
+  margin-top: 6rem;
 }
 
 html[data-theme='light'] .DocSearch {
@@ -85,4 +531,75 @@ html[data-theme='light'] .DocSearch {
   --docsearch-hit-background: var(--ifm-color-white);
   /* Footer */
   --docsearch-footer-background: var(--ifm-color-white);
+}
+
+/* ---------------------------------------------------------------------
+   Hide-on-idle scrollbars
+   ---------------------------------------------------------------------
+   Scrollbars stay invisible until the user hovers the scrollable region,
+   then fade in. WebKit (Chrome/Safari/Edge) uses ::-webkit-scrollbar.
+   Firefox uses scrollbar-color (auto-thin via scrollbar-width).
+
+   Targets:
+   - The sidebar viewport (left rail)
+   - The desktop TOC (right rail)
+   - The main page scroll (html element)
+   --------------------------------------------------------------------- */
+
+/* WebKit: invisible track + thumb by default; show on hover. */
+.theme-doc-sidebar-container ::-webkit-scrollbar,
+.theme-doc-toc-desktop::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-thumb,
+.theme-doc-toc-desktop::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-track,
+.theme-doc-toc-desktop::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Reveal on hover over the scrollable container */
+.theme-doc-sidebar-container:hover ::-webkit-scrollbar-thumb,
+.theme-doc-toc-desktop:hover::-webkit-scrollbar-thumb,
+html:hover::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.theme-doc-sidebar-container:hover ::-webkit-scrollbar-thumb:hover,
+.theme-doc-toc-desktop:hover::-webkit-scrollbar-thumb:hover,
+html:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ifm-color-emphasis-500);
+}
+
+/* Firefox: no per-state pseudo, but scrollbar-color drives the thumb.
+   Default to transparent thumb; reveal on hover. */
+.theme-doc-sidebar-container,
+.theme-doc-toc-desktop,
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+}
+
+.theme-doc-sidebar-container:hover,
+.theme-doc-toc-desktop:hover,
+html:hover {
+  scrollbar-color: var(--ifm-color-emphasis-300) transparent;
+}
+
+/* Dark mode: brighter thumb for contrast */
+html[data-theme='dark'] .theme-doc-sidebar-container:hover ::-webkit-scrollbar-thumb,
+html[data-theme='dark'] .theme-doc-toc-desktop:hover::-webkit-scrollbar-thumb,
+html[data-theme='dark']:hover::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-emphasis-400);
 }
