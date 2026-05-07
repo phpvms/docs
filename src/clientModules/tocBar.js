@@ -111,34 +111,39 @@ function updateSidebarBars(sidebar) {
     }
   }
 
-  sidebar.querySelectorAll('ul.menu__list[data-bar-injected="1"]').forEach((ul) => {
-    const bar = ul.querySelector(':scope > .sidebar-active-bar');
-    if (!bar) return;
-    if (ul !== activeUl) {
-      bar.style.opacity = '0';
-      return;
-    }
-    // Find the direct-child <li> of this <ul> that contains the active link.
-    const li = active.closest('li');
-    let directLi = li;
-    while (directLi && directLi.parentElement !== ul) {
-      directLi = directLi.parentElement.closest('li');
-    }
-    if (!directLi) {
-      bar.style.opacity = '0';
-      return;
-    }
-    // Measure against the link row (first .menu__link inside the <li>), not
-    // the whole <li> — otherwise the bar stretches over nested children.
-    const row = directLi.querySelector(':scope > .menu__link, :scope > .menu__list-item-collapsible > .menu__link') || directLi;
-    const ulBox = ul.getBoundingClientRect();
-    const rowBox = row.getBoundingClientRect();
-    const top = rowBox.top - ulBox.top;
-    const height = rowBox.height;
-    bar.style.opacity = '1';
-    bar.style.height = `${height}px`;
-    bar.style.transform = `translateY(${top}px)`;
-  });
+  sidebar
+    .querySelectorAll('ul.menu__list[data-bar-injected="1"]')
+    .forEach((ul) => {
+      const bar = ul.querySelector(':scope > .sidebar-active-bar');
+      if (!bar) return;
+      if (ul !== activeUl) {
+        bar.style.opacity = '0';
+        return;
+      }
+      // Find the direct-child <li> of this <ul> that contains the active link.
+      const li = active.closest('li');
+      let directLi = li;
+      while (directLi && directLi.parentElement !== ul) {
+        directLi = directLi.parentElement.closest('li');
+      }
+      if (!directLi) {
+        bar.style.opacity = '0';
+        return;
+      }
+      // Measure against the link row (first .menu__link inside the <li>), not
+      // the whole <li> — otherwise the bar stretches over nested children.
+      const row =
+        directLi.querySelector(
+          ':scope > .menu__link, :scope > .menu__list-item-collapsible > .menu__link',
+        ) || directLi;
+      const ulBox = ul.getBoundingClientRect();
+      const rowBox = row.getBoundingClientRect();
+      const top = rowBox.top - ulBox.top;
+      const height = rowBox.height;
+      bar.style.opacity = '1';
+      bar.style.height = `${height}px`;
+      bar.style.transform = `translateY(${top}px)`;
+    });
 }
 
 function setupSidebar(sidebar) {
@@ -207,10 +212,12 @@ function relocateVersionBanner() {
 const clientModule = {
   onRouteDidUpdate() {
     // Defer past Docusaurus's own DOM mount.
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      scan();
-      relocateVersionBanner();
-    }));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        scan();
+        relocateVersionBanner();
+      }),
+    );
   },
 };
 

@@ -8,14 +8,10 @@ The custom theme system is using
 great flexibility for creating themes, and extending existing ones, or only
 modifying the templates that you want to change.
 
----
-
 ## Creating a theme
 
 To create a new theme, you can either copy and existing one, or use the command
 line artisan command to generate one fresh.
-
----
 
 ### The Quick Way
 
@@ -31,8 +27,6 @@ If you want to edit only select templates (also recommended), set the `extends`
 value to `default`. Then you only need to copy over the templates that you
 modify, instead of all them (this makes it easier to update phpvms, and you also
 know what you've modified).
-
----
 
 ### New Theme from Scratch
 
@@ -87,8 +81,6 @@ referring to those assets like:
 echo public_asset('assets/my-theme/img/someimage.png');
 ```
 
----
-
 ## Packaging a theme to distribute
 
 To distribute a theme, on the command line run:
@@ -99,8 +91,6 @@ php artisan theme:package <theme name>
 
 This will create a distributable theme package in the `storage/themes` path,
 which can then be distributed.
-
----
 
 ## More resources for themes
 

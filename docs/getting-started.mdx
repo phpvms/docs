@@ -1,0 +1,143 @@
+---
+id: getting-started
+title: Getting Started
+slug: /getting-started
+---
+
+import Link from '@docusaurus/Link';
+
+phpvms runs on PHP 8.2+ with MySQL or MariaDB. Follow these five steps and
+you'll have a working virtual airline ready to accept your first pilot.
+
+<div className="lp-page">
+
+<section className="lp-section">
+
+<div className="lp-steps">
+
+<article className="lp-step">
+  <span className="lp-step-num">01</span>
+  <div>
+    <h2 className="lp-step-title">Download phpvms</h2>
+    <div className="lp-step-body">
+      <p>
+        Grab the latest release from GitHub or clone the repo. Drop it
+        into your web root and make the <code>storage/</code> and{' '}
+        <code>bootstrap/cache/</code> directories writable.
+      </p>
+    </div>
+
+```bash
+git clone https://github.com/phpvms/phpvms.git
+```
+
+  </div>
+</article>
+
+<article className="lp-step">
+  <span className="lp-step-num">02</span>
+  <div>
+    <h2 className="lp-step-title">Configure your virtual host</h2>
+    <div className="lp-step-body">
+      <p>
+        Point your web server at the <code>public/</code> directory.
+        Caddy is recommended, but Apache and nginx configs{' '}
+        <a href="./installation/webserver-config">are documented</a> for
+        both shared hosting and bare VPS setups.
+      </p>
+    </div>
+
+```nginx
+yourdomain.com {
+    root * /path/to/phpvms/public
+    php_fastcgi localhost:9000
+    file_server
+}
+```
+
+  </div>
+</article>
+
+<article className="lp-step">
+  <span className="lp-step-num">03</span>
+  <div>
+    <h2 className="lp-step-title">Run the install wizard</h2>
+    <div className="lp-step-body">
+      <p>
+        Visit your domain in a browser. The web installer walks you
+        through the database connection, admin account, and initial
+        configuration.
+      </p>
+    </div>
+
+```text
+https://your-domain.com/install
+```
+
+  </div>
+</article>
+
+<article className="lp-step">
+  <span className="lp-step-num">04</span>
+  <div>
+    <h2 className="lp-step-title">Set up the cron job</h2>
+    <div className="lp-step-body">
+      <p>
+        phpvms runs scheduled tasks (PIREP processing, backups, etc.)
+        via a single cron entry that triggers Laravel's scheduler every
+        minute.
+      </p>
+    </div>
+
+```bash
+* * * * * php /path/to/phpvms/artisan schedule:run
+```
+
+  </div>
+</article>
+
+<article className="lp-step">
+  <span className="lp-step-num">05</span>
+  <div>
+    <h2 className="lp-step-title">You're flying</h2>
+    <div className="lp-step-body">
+      <p>
+        Log in to the admin panel and start adding your fleet, airports, and
+        routes. The next steps below cover the most common follow-up tasks.
+      </p>
+    </div>
+  </div>
+</article>
+
+</div>
+
+</section>
+
+<section className="lp-section">
+  <header className="lp-section-header">
+    <h2 className="lp-section-title">What's next</h2>
+    <p className="lp-section-lead">
+      Common follow-up tasks once your install is up and running.
+    </p>
+  </header>
+
+  <div className="lp-whats-next centered" >
+    <Link to="/8.x/config/email" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>✉️</span>
+      <h3 className="lp-card-title">Configure email</h3>
+      <p className="lp-card-desc">Wire up SMTP so pilots get account and PIREP emails.</p>
+    </Link>
+    <Link to="/8.x/guides/basics" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🛫</span>
+      <h3 className="lp-card-title">Add your fleet</h3>
+      <p className="lp-card-desc">Create aircraft subfleets and assign them to ranks.</p>
+    </Link>
+    <Link to="/8.x/customize/theming" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🎨</span>
+      <h3 className="lp-card-title">Theme it</h3>
+      <p className="lp-card-desc">Match your VA branding with a custom theme.</p>
+    </Link>
+  </div>
+</section>
+
+</div>

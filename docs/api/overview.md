@@ -6,8 +6,6 @@ title: Overview
 phpvms includes a REST API that can be used for retrieving or saving
 information.
 
----
-
 ## Pagination
 
 Where indicated, pagination is enabled/available. When calling those APIs, the
@@ -37,8 +35,6 @@ data is returned in this format:
   }
 }
 ```
-
----
 
 ## Rate Limiting
 
@@ -71,8 +67,6 @@ X-RateLimit-Remaining: 59
 
 To read some more information about how the throttling works in Laravel,
 [check out this page](https://mattstauffer.com/blog/api-rate-limiting-in-laravel-5-2/)
-
----
 
 ## Errors
 

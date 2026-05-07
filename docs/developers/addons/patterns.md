@@ -4,9 +4,9 @@ title: Patterns & Conventions
 ---
 
 A few design patterns will keep your addon maintainable and consistent with
-phpvms core. These are conventions, not hard requirements — but following
-them makes your code easier to test, easier to debug, and easier for other
-developers to contribute to.
+phpvms core. These are conventions, not hard requirements — but following them
+makes your code easier to test, easier to debug, and easier for other developers
+to contribute to.
 
 ## Service layer
 
@@ -14,10 +14,10 @@ When a task spans multiple models or steps, write it as a **Service class**
 rather than putting the logic in a controller or model.
 
 For example, filing a PIREP touches the `Pirep` model, the `User` model,
-dispatches one or more events, updates ledgers, etc. Putting all of that in
-one controller is fragile and hard to reuse. A service class ties the steps
-together once and is callable from any entry point — web, API, console
-command, scheduled job.
+dispatches one or more events, updates ledgers, etc. Putting all of that in one
+controller is fragile and hard to reuse. A service class ties the steps together
+once and is callable from any entry point — web, API, console command, scheduled
+job.
 
 Generate one with:
 
@@ -26,8 +26,7 @@ php artisan module:make-service SampleReportService Sample
 # → Modules/Sample/app/Services/SampleReportService.php
 ```
 
-Inject any dependencies — other services, core models — via the
-constructor:
+Inject any dependencies — other services, core models — via the constructor:
 
 ```php
 namespace Modules\Sample\Services;
@@ -52,15 +51,15 @@ class SampleReportService
 
 Core service classes live under
 [`app/Services/`](https://github.com/nabeelio/phpvms/tree/master/app/Services)
-and are the canonical place to look for "how does phpvms do X" — they're
-also the safe entry points for mutating core data from your addon.
+and are the canonical place to look for "how does phpvms do X" — they're also
+the safe entry points for mutating core data from your addon.
 
 ## Dependency injection
 
-Listeners, controllers, services, and console commands are all resolved out
-of the Laravel container, so any constructor dependencies are auto-injected.
-Use this for everything — services, core models that need bootstrapping,
-clients for external APIs:
+Listeners, controllers, services, and console commands are all resolved out of
+the Laravel container, so any constructor dependencies are auto-injected. Use
+this for everything — services, core models that need bootstrapping, clients for
+external APIs:
 
 ```php
 namespace Modules\Sample\Listeners;
@@ -112,10 +111,11 @@ public function __construct(
 ) {}
 ```
 
-For singletons (one instance per request lifecycle), use `singleton()`
-instead of `bind()`.
+For singletons (one instance per request lifecycle), use `singleton()` instead
+of `bind()`.
 
-See the [Laravel automatic injection docs](https://laravel.com/docs/container#automatic-injection)
+See the
+[Laravel automatic injection docs](https://laravel.com/docs/container#automatic-injection)
 for the full pattern.
 
 ## Scheduled commands
@@ -144,18 +144,14 @@ Generate the command with:
 php artisan module:make-command CleanupReportsCommand Sample
 ```
 
----
-
 ## Module-owned flights
 
-If your module needs to generate flights for users to fly, attach them to
-your module via the **`owner` polymorphic relationship** on the `Flight`
-model.
+If your module needs to generate flights for users to fly, attach them to your
+module via the **`owner` polymorphic relationship** on the `Flight` model.
 
-When a flight is owned by a module, **phpvms core automation no longer
-applies to it** (no automatic showing/hiding, no schedule-based filtering,
-etc.). You're responsible for defining how those flights behave and when
-they're visible.
+When a flight is owned by a module, **phpvms core automation no longer applies
+to it** (no automatic showing/hiding, no schedule-based filtering, etc.). You're
+responsible for defining how those flights behave and when they're visible.
 
 There are two common ways to use the relationship.
 
@@ -169,8 +165,8 @@ $flight->owner_type = FreeFlightProvider::class;
 $flight->save();
 ```
 
-Core code only checks the `owner_type` value to know the flight is
-module-owned, so any unique class name works.
+Core code only checks the `owner_type` value to know the flight is module-owned,
+so any unique class name works.
 
 ### Attach to a specific model
 
@@ -186,7 +182,7 @@ $flight->owner_id   = $tour->id;
 $flight->save();
 ```
 
-If your `Tour` model declares the inverse `morphMany` relationship to
-flights, you can use Laravel's polymorphic helpers directly. See the
+If your `Tour` model declares the inverse `morphMany` relationship to flights,
+you can use Laravel's polymorphic helpers directly. See the
 [Laravel polymorphic relationship docs](https://laravel.com/docs/eloquent-relationships#polymorphic-relationships)
 for the full pattern.

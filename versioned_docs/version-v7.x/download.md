@@ -9,7 +9,8 @@ anything but upload it.
 
 ## Downloading Full Package
 
-The **zip/tar file** from the downloads site contains all of the dependencies. Source code is not suitable for a fresh installation.
+The **zip/tar file** from the downloads site contains all of the dependencies.
+Source code is not suitable for a fresh installation.
 
 - [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases) -
   The latest released versions **!!! DO NOT DOWNLOAD THE SOURCE CODE !!!**

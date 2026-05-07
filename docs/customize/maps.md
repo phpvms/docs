@@ -9,8 +9,6 @@ Modification of the Leaflet maps used is possible by editing two templates:
 - `widgets/live_map.blade.php` - This is the template for the live flights/ACARS
   map. This uses Rivets.js to do dynamic databinding to update the map
 
----
-
 ## Base Map
 
 ### Providers

@@ -16,8 +16,6 @@ Before asking for help, try to reproduce on the
 
 Without a lot of this information, it will be challenging to provide help.
 
----
-
 ## Where to get help
 
 ### Forums
@@ -38,8 +36,6 @@ The bug tracker is located on
 a GitHub account, and then select "New Issue." After that, select "Bug Report."
 There is a small template there that you can use, but try to include as much of
 the information below:
-
----
 
 ## Information Required
 
@@ -75,8 +71,6 @@ the information below:
 - Exported data data - see below
 - Any other relevant details
 
----
-
 ## Enable Debug and Debugging
 
 - Look at the logs—they're located in `storage/logs`
@@ -94,8 +88,6 @@ export:
 cd /path/to/phpvms
 php artisan phpvms:yaml-exporter table1 table2
 ```
-
----
 
 ## vmsACARS
 

@@ -21,8 +21,6 @@ title: Updating
    complete the update/installs
 1. Check the changelog for template changes so you can update your skin
 
----
-
 ### Update Errors
 
 If you run into an error similar to this, delete your `vendor` folder and

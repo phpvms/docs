@@ -1,22 +1,21 @@
 ---
 id: installation
 title: Installation
-sidebar_label: Installation
 ---
 
 The installation requires a few steps:
 
 1. File Permissions - some folders are written into and their permissions need
    to be configured properly
-1. Database Setup - right now, only MySQL (or its offshoots, like MariaDB or
+2. Database Setup - right now, only MySQL (or its offshoots, like MariaDB or
    Percona are supported). Create the credentials for the database using either
    the command line or the cPanel Database Wizard.
-1. Composer Install - only if you have cloned it from git or downloaded the
+3. Composer Install - only if you have cloned it from git or downloaded the
    "raw" zip/tar and not a release or distributed version
-1. Running the installer - This is a web interface, through which you can also
+4. Running the installer - This is a web interface, through which you can also
    import your older phpvms 2.x or 5.x install
 
-## 1. Create the Database
+## Create the Database
 
 Before running the install, you need to configure the database with the database
 itself and the credentials. Refer to your hosts documentation for specifics -
@@ -45,7 +44,7 @@ You can also use the cPanel Wizard to create the credentials prior to install
 
 ![](img/cpanel-db-1.png)
 
-## 2. Go to the Installer
+## Go to the Installer
 
 Once you go to your site, you'll see a page like this, click to proceed to the
 installer.

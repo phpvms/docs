@@ -1,0 +1,97 @@
+---
+id: 'requirements'
+title: 'Requirements'
+---
+
+## Server Requirements
+
+One of the first steps in the installer is to check your server for the proper
+requirements.
+
+### PHP
+
+<ul className="status-list">
+  <li>
+    <StatusDot status="ok" /> <strong>PHP 8.1+</strong> &mdash; required
+  </li>
+</ul>
+
+PHP extensions (most are installed by default):
+
+<ul className="status-list">
+  <li>
+    <StatusDot status="ok" /> <code>cURL</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>JSON</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>fileinfo</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>mbstring</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>openssl</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>pdo</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>tokenizer</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>bcmath</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>intl</code>
+  </li>
+  <li>
+    <StatusDot status="ok" /> <code>zip</code>
+  </li>
+</ul>
+
+### Database
+
+<ul className="status-list">
+  <li>
+    <StatusDot status="ok" /> <strong>MySQL 8.0+</strong> &mdash; recommended
+  </li>
+  <li>
+    <StatusDot status="warn" /> <strong>MySQL 5.7</strong> &mdash; supported,
+    but consider upgrading
+  </li>
+</ul>
+
+##### Optional
+
+<ul className="status-list">
+  <li>
+    <StatusDot status="info" />{' '}
+    <a href="http://php.net/manual/en/book.apc.php">php-apc</a>
+  </li>
+  <li>
+    <StatusDot status="info" /> <a href="https://redis.io">Redis</a> &mdash; job
+    queueing, caching, optimizations
+  </li>
+</ul>
+
+### Shared Hosting
+
+While shared hosts are not ideal for numerous reasons, it's still possible to
+run phpvms. Check especially CRON features/capabilities and hidden limits the
+provider applies while advertising the service as "limitless". Ram or resource
+usage limits (like I/O) may directly affect phpvms and your operations.
+
+_Don't use free hosts, you'll have a really bad time and they can not be
+supported._
+
+### VPS/Dedicated Hosts
+
+If you have control over your server, the combination of nginx/php-fpm will
+offer you the best performance, over using Apache. It's the combination that I
+test with. It will also be much more secure, seeing that only the `/public`
+directory is exposed.
+
+Pointing the vhost to the `/public` directory is the best way to run on a host
+that you control.

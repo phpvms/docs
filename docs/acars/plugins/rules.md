@@ -3,15 +3,13 @@ id: rules
 title: Custom Rules
 ---
 
-For users with Premium, you can create their own rules, in Javascript. Rules
-can be packaged alongside aircraft configs, sounds, and callbacks for
-distribution to your VA.
+For users with Premium, you can create their own rules, in Javascript. Rules can
+be packaged alongside aircraft configs, sounds, and callbacks for distribution
+to your VA.
 
 See the documentation at the
 [acars-pdk repository](https://github.com/phpvms/acars-pdk) on how to create
 aircraft configs, rules, and package them for distribution
-
----
 
 ## Rules Configuration
 
@@ -89,7 +87,7 @@ export default class BatteryOnDuringPushback implements Rule {
 }
 ```
 
-### Returning a `RuleValue`
+### Returning a RuleValue
 
 The return value has multiple possible values, sending on
 

@@ -9,7 +9,8 @@
       "items": [
         "guides/basics",
         "guides/finances"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -23,7 +24,8 @@
         "installation/updating",
         "installation/docker",
         "installation/issues"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -35,7 +37,8 @@
         "config/optimizing",
         "config/notifications",
         "config/backups"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -44,7 +47,8 @@
         "oauth/discord",
         "oauth/ivao",
         "oauth/vatsim"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -53,7 +57,8 @@
         "customize/layouts",
         "customize/theming",
         "customize/maps"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -63,7 +68,8 @@
         "developers/building-assets",
         "developers/addons",
         "developers/awards"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -72,7 +78,8 @@
         "api/overview",
         "api/auth",
         "api/apis"
-      ]
+      ],
+      "collapsed": false
     },
     {
       "type": "category",
@@ -95,7 +102,8 @@
             "acars/plugins/reference"
           ]
         }
-      ]
+      ],
+      "collapsed": false
     },
     "help"
   ]

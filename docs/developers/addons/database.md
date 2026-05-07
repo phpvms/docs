@@ -4,8 +4,8 @@ title: Database
 ---
 
 Modules use Laravel's standard Eloquent ORM and migration system. This page
-covers models, migrations, the **registry migration rules** (which apply if
-you plan to publish your addon), seeders, and factories.
+covers models, migrations, the **registry migration rules** (which apply if you
+plan to publish your addon), seeders, and factories.
 
 ## Models
 
@@ -17,8 +17,8 @@ php artisan module:make-model Report Sample
 ```
 
 After it's generated, open the model and set its `$table` property to the
-underlying table name. **The table name must use your author prefix** — see
-the warning below.
+underlying table name. **The table name must use your author prefix** — see the
+warning below.
 
 ```php
 namespace Modules\Sample\Models;
@@ -36,26 +36,25 @@ class Report extends Model
 }
 ```
 
-phpvms provides `App\Contracts\Model` as a convenience base class — extend
-it instead of `Illuminate\Database\Eloquent\Model` to pick up phpvms's
-shared traits and conventions.
+phpvms provides `App\Contracts\Model` as a convenience base class — extend it
+instead of `Illuminate\Database\Eloquent\Model` to pick up phpvms's shared
+traits and conventions.
 
 See the [Laravel Eloquent docs](https://laravel.com/docs/eloquent) for full
 details on working with models.
 
 :::warning Table names must be prefixed
 
-Every table your addon creates **must** start with your author prefix —
-the first segment of your registry name. For an addon registered as
-`acme/reports`, every table must match `^acme_*`.
+Every table your addon creates **must** start with your author prefix — the
+first segment of your registry name. For an addon registered as `acme/reports`,
+every table must match `^acme_*`.
 
-Unprefixed (or wrongly prefixed) table names will collide with phpvms core
-or other addons, and the
-[addon registry migration linter](#migration-rules) will reject your
-submission.
+Unprefixed (or wrongly prefixed) table names will collide with phpvms core or
+other addons, and the [addon registry migration linter](#migration-rules) will
+reject your submission.
 
-**Read [Table name convention](#table-name-convention) before writing your
-first migration.**
+**Read [Table name convention](#table-name-convention) before writing your first
+migration.**
 
 :::
 
@@ -78,22 +77,22 @@ php artisan module:make-model Report Sample --all
 php artisan module:make-model Report Sample --fillable="name,pirep_id,status"
 ```
 
-| Flag                  | Generates                                  |
-| --------------------- | ------------------------------------------ |
+| Flag                  | Generates                                      |
+| --------------------- | ---------------------------------------------- |
 | `--migration` / `-m`  | A matching migration in `database/migrations/` |
-| `--factory` / `-f`    | A factory in `database/factories/`         |
-| `--seed` / `-s`       | A seeder in `database/seeders/`            |
-| `--controller` / `-c` | A controller in `app/Http/Controllers/`    |
-| `--request` / `-r`    | Form request classes                       |
-| `--resource` / `-R`   | An API resource class                      |
-| `--policy` / `-p`     | A policy class                             |
-| `--all` / `-a`        | All of the above                           |
-| `--fillable=`         | Sets the model's `$fillable` array         |
+| `--factory` / `-f`    | A factory in `database/factories/`             |
+| `--seed` / `-s`       | A seeder in `database/seeders/`                |
+| `--controller` / `-c` | A controller in `app/Http/Controllers/`        |
+| `--request` / `-r`    | Form request classes                           |
+| `--resource` / `-R`   | An API resource class                          |
+| `--policy` / `-p`     | A policy class                                 |
+| `--all` / `-a`        | All of the above                               |
+| `--fillable=`         | Sets the model's `$fillable` array             |
 
 ### Relationships
 
-If your table has a column called `pirep_id`, you can add a relationship to
-the core `Pirep` model:
+If your table has a column called `pirep_id`, you can add a relationship to the
+core `Pirep` model:
 
 ```php
 namespace Modules\Sample\Models;
@@ -119,8 +118,8 @@ $record = Report::with(['pirep'])->find(1);
 echo $record->pirep->dpt_airport_id;
 ```
 
-The `Pirep` model itself has relationships to airports, users, etc., so you
-can chain further:
+The `Pirep` model itself has relationships to airports, users, etc., so you can
+chain further:
 
 ```php
 echo $record->pirep->dpt_airport->name;
@@ -170,23 +169,21 @@ php artisan module:show-model Sample
 Lists every model in the module along with its attributes, casts, and
 relationships — useful when joining a project you didn't write.
 
----
-
 ## Migrations
 
-phpvms uses [Laravel migrations](https://laravel.com/docs/migrations) to
-version your database schema. Generate a new migration with:
+phpvms uses [Laravel migrations](https://laravel.com/docs/migrations) to version
+your database schema. Generate a new migration with:
 
 ```shell
 php artisan module:make-migration create_acme_reports_table Sample
 ```
 
 This creates a file under `Modules/{Module}/database/migrations/`. When an
-operator visits `/update`, pending migrations from all enabled modules are
-run automatically — installs and updates require no manual SQL.
+operator visits `/update`, pending migrations from all enabled modules are run
+automatically — installs and updates require no manual SQL.
 
-The core migrations under `app/Database/migrations/` are a good reference
-for field types, indexes, and foreign keys.
+The core migrations under `app/Database/migrations/` are a good reference for
+field types, indexes, and foreign keys.
 
 ### Migration syntax
 
@@ -245,43 +242,43 @@ return new class extends Migration
 
 :::warning No raw SQL
 
-Do **not** use `DB::statement` or `DB::unprepared`. Beyond being fragile
-across database engines, raw SQL is **forbidden** by the addon registry's
-migration linter — see [Migration rules](#migration-rules) below.
+Do **not** use `DB::statement` or `DB::unprepared`. Beyond being fragile across
+database engines, raw SQL is **forbidden** by the addon registry's migration
+linter — see [Migration rules](#migration-rules) below.
 
 :::
 
 :::note Always add a new migration
 
-Always add a new migration when you change a table schema after release.
-The migration runner records what's been applied, so previously-run files
-are skipped — editing an old migration after operators have run it has no
-effect on their database.
+Always add a new migration when you change a table schema after release. The
+migration runner records what's been applied, so previously-run files are
+skipped — editing an old migration after operators have run it has no effect on
+their database.
 
 :::
 
 ### Running migrations
 
-| Command                                 | Effect                                            |
-| --------------------------------------- | ------------------------------------------------- |
-| `module:migrate Sample`                 | Run pending migrations for one module.            |
-| `module:migrate`                        | Run pending migrations for **all** modules.       |
-| `module:migrate Sample --pretend`       | Show the SQL without running it.                  |
-| `module:migrate Sample --seed`          | Run migrations, then run the module's seeders.    |
-| `module:migrate Sample --database=pgsql`| Run against a specific database connection.       |
-| `module:migrate-rollback Sample`        | Roll back the last batch.                         |
-| `module:migrate-rollback Sample --subpath="2024_01_15_120000_create_acme_reports_table.php"` | Roll back a specific migration. |
-| `module:migrate-refresh Sample [--seed]`| Roll back everything, then re-run.                |
-| `module:migrate-reset Sample`           | Roll back everything (no re-run).                 |
-| `module:migrate-fresh Sample`           | Drop tables and re-run. **Warning** — drops all tables on the connection, including ones from other modules. |
-| `module:publish-migration Sample`       | Copy module migrations into the host app's `database/migrations/` (one-time export). |
+| Command                                                                                      | Effect                                                                                                       |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `module:migrate Sample`                                                                      | Run pending migrations for one module.                                                                       |
+| `module:migrate`                                                                             | Run pending migrations for **all** modules.                                                                  |
+| `module:migrate Sample --pretend`                                                            | Show the SQL without running it.                                                                             |
+| `module:migrate Sample --seed`                                                               | Run migrations, then run the module's seeders.                                                               |
+| `module:migrate Sample --database=pgsql`                                                     | Run against a specific database connection.                                                                  |
+| `module:migrate-rollback Sample`                                                             | Roll back the last batch.                                                                                    |
+| `module:migrate-rollback Sample --subpath="2024_01_15_120000_create_acme_reports_table.php"` | Roll back a specific migration.                                                                              |
+| `module:migrate-refresh Sample [--seed]`                                                     | Roll back everything, then re-run.                                                                           |
+| `module:migrate-reset Sample`                                                                | Roll back everything (no re-run).                                                                            |
+| `module:migrate-fresh Sample`                                                                | Drop tables and re-run. **Warning** — drops all tables on the connection, including ones from other modules. |
+| `module:publish-migration Sample`                                                            | Copy module migrations into the host app's `database/migrations/` (one-time export).                         |
 
 ### Table name convention
 
 Table names **must** be prefixed with your **author namespace** — the first
-segment of your addon registry name. For an addon registered as
-`acme/reports`, the author namespace is `acme`, and every table must match
-`^acme_*`. Prefix pivot tables too.
+segment of your addon registry name. For an addon registered as `acme/reports`,
+the author namespace is `acme`, and every table must match `^acme_*`. Prefix
+pivot tables too.
 
 ```php
 // Good — matches the author namespace `acme`
@@ -295,58 +292,55 @@ Schema::create('reports', ...);
 Schema::create('reports_acme', ...);
 ```
 
-You can share tables across your own addons. If you publish both
-`acme/reports` and `acme/inventory`, both addons may legitimately read and
-write `acme_*` tables.
+You can share tables across your own addons. If you publish both `acme/reports`
+and `acme/inventory`, both addons may legitimately read and write `acme_*`
+tables.
 
-Not prefixing your tables (or using a prefix that doesn't match your
-namespace) will:
+Not prefixing your tables (or using a prefix that doesn't match your namespace)
+will:
 
 - Conflict with future phpvms core tables, breaking upgrades.
 - Conflict with other addons that share the same generic name.
-- **Be rejected** by the [registry migration linter](#migration-rules) if
-  you publish your addon.
+- **Be rejected** by the [registry migration linter](#migration-rules) if you
+  publish your addon.
 
 :::tip Picking a namespace before you publish
 
 If you haven't picked a registry name yet, choose one now and use its first
-segment as your prefix. Changing the prefix later means a destructive
-migration. The convention is to use your **GitHub username or organisation**
-as the author segment — see [Publishing](./publishing.md#naming-rules).
+segment as your prefix. Changing the prefix later means a destructive migration.
+The convention is to use your **GitHub username or organisation** as the author
+segment — see [Publishing](./publishing.md#naming-rules).
 
 :::
-
----
 
 ## Migration rules
 
 If you plan to publish your addon to the
 [phpvms addon registry](./publishing.md), every migration under
-`database/migrations/` is statically analysed at PR time using an
-allow-list. The author namespace is the first segment of your registry
-name — for `acme/reports` the namespace is `acme`, and your tables must
-match `^acme_*`.
+`database/migrations/` is statically analysed at PR time using an allow-list.
+The author namespace is the first segment of your registry name — for
+`acme/reports` the namespace is `acme`, and your tables must match `^acme_*`.
 
 ### Rules at a glance
 
-| Rule                                                  | Allowed                                | Forbidden                                                                |
-| ----------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------ |
-| Migration class                                       | anonymous class extending `Migration`  | classes that don't extend `Migration`                                    |
-| `Schema::create / table / drop / dropIfExists / rename` table targets | tables matching `^{author}_*` | core tables, other authors' tables, dynamic table names                  |
-| `DB::table()` targets                                 | tables matching `^{author}_*`          | core tables, other authors' tables, dynamic table names                  |
-| `DB::raw()`                                           | always                                 | —                                                                        |
-| `DB::statement`, `DB::unprepared`                     | —                                      | always forbidden                                                         |
-| Foreign key referent (`->on('users')`)                | any table                              | —                                                                        |
-| `foreignId(...)->constrained()` (implicit referent)   | any table                              | —                                                                        |
-| `eval`, `include`, `include_once`, `require`, `require_once` | —                               | always forbidden                                                         |
+| Rule                                                                  | Allowed                               | Forbidden                                               |
+| --------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------- |
+| Migration class                                                       | anonymous class extending `Migration` | classes that don't extend `Migration`                   |
+| `Schema::create / table / drop / dropIfExists / rename` table targets | tables matching `^{author}_*`         | core tables, other authors' tables, dynamic table names |
+| `DB::table()` targets                                                 | tables matching `^{author}_*`         | core tables, other authors' tables, dynamic table names |
+| `DB::raw()`                                                           | always                                | —                                                       |
+| `DB::statement`, `DB::unprepared`                                     | —                                     | always forbidden                                        |
+| Foreign key referent (`->on('users')`)                                | any table                             | —                                                       |
+| `foreignId(...)->constrained()` (implicit referent)                   | any table                             | —                                                       |
+| `eval`, `include`, `include_once`, `require`, `require_once`          | —                                     | always forbidden                                        |
 
 ### Why allow-list, not deny-list
 
-A deny-list of "core tables" would need updating every time phpvms adds a
-table. The allow-list catches **all** core tables (none start with
-`{author}_`) and **all** other authors' tables automatically. It also lets
-you share tables across your own addons — `acme/reports` may legitimately
-read `acme_inventory_*` tables.
+A deny-list of "core tables" would need updating every time phpvms adds a table.
+The allow-list catches **all** core tables (none start with `{author}_`) and
+**all** other authors' tables automatically. It also lets you share tables
+across your own addons — `acme/reports` may legitimately read `acme_inventory_*`
+tables.
 
 ### Examples that pass
 
@@ -409,34 +403,32 @@ DB::table('users')->update(['banned' => true]);
 
 ### Common gotchas
 
-- **`Schema::create(...)` table name must be a string literal.** Patterns
-  like `$name = 'acme_x'; Schema::create($name, ...)` are rejected — the
-  lint can't prove what `$name` resolves to.
+- **`Schema::create(...)` table name must be a string literal.** Patterns like
+  `$name = 'acme_x'; Schema::create($name, ...)` are rejected — the lint can't
+  prove what `$name` resolves to.
 - **`DB::table($var)` is rejected** for the same reason.
-- **Forbidden imports/requires.** Helpers belong in your service provider
-  or a regular class file, not in migrations.
-- **Drop migrations also need the prefix.** `Schema::drop('users')` fails
-  just as `Schema::create('users')` does. Drop only what you own.
+- **Forbidden imports/requires.** Helpers belong in your service provider or a
+  regular class file, not in migrations.
+- **Drop migrations also need the prefix.** `Schema::drop('users')` fails just
+  as `Schema::create('users')` does. Drop only what you own.
 - **`down()` is linted with the same rules as `up()`.**
 
 If you find a real-world legitimate pattern the lint rejects,
-[open an issue](https://github.com/phpvms/addon-registry/issues) — the
-rules are tunable.
-
----
+[open an issue](https://github.com/phpvms/addon-registry/issues) — the rules are
+tunable.
 
 ## Seeding initial data
 
-phpvms supports two ways of seeding data: phpvms's `addData()` migration
-helper for setup data shipped with a release, and Laravel's standard seeder
-classes for everything else.
+phpvms supports two ways of seeding data: phpvms's `addData()` migration helper
+for setup data shipped with a release, and Laravel's standard seeder classes for
+everything else.
 
 ### Inside a migration (phpvms-specific)
 
-For rows that **must** exist for the addon to work — config defaults,
-default categories, lookup tables — use phpvms's `$this->addData()`
-helper inside `up()`. Extending `App\Contracts\Migration` (instead of
-Laravel's base `Migration`) makes it available:
+For rows that **must** exist for the addon to work — config defaults, default
+categories, lookup tables — use phpvms's `$this->addData()` helper inside
+`up()`. Extending `App\Contracts\Migration` (instead of Laravel's base
+`Migration`) makes it available:
 
 ```php
 <?php
@@ -482,13 +474,13 @@ return new class extends Migration
 };
 ```
 
-`addData()` runs once when the migration is applied — perfect for setup
-rows the addon depends on.
+`addData()` runs once when the migration is applied — perfect for setup rows the
+addon depends on.
 
 ### Standard Laravel seeders
 
-For development data, demo content, or anything an operator should choose
-to load, use Laravel seeders. Generate one with:
+For development data, demo content, or anything an operator should choose to
+load, use Laravel seeders. Generate one with:
 
 ```shell
 php artisan module:make-seed AcmeReportsSeeder Sample
@@ -511,8 +503,8 @@ class AcmeReportsSeeder extends Seeder
 }
 ```
 
-Each module ships with a master seeder named `{Module}DatabaseSeeder.php`
-that calls the others:
+Each module ships with a master seeder named `{Module}DatabaseSeeder.php` that
+calls the others:
 
 ```php
 namespace Modules\Sample\Database\Seeders;
@@ -546,10 +538,10 @@ php artisan module:seed
 php artisan module:migrate Sample --seed
 ```
 
-### Hooking into the main `db:seed`
+### Hooking into the main db:seed
 
-If you want the host app's `php artisan db:seed` to also run your module's
-data, add it to `database/seeders/DatabaseSeeder.php` in the host app:
+If you want the host app's `php artisan db:seed` to also run your module's data,
+add it to `database/seeders/DatabaseSeeder.php` in the host app:
 
 ```php
 public function run(): void
@@ -562,8 +554,8 @@ public function run(): void
 
 ### Factories
 
-Factories let you generate fake records for tests and seeders. Generate one
-with `module:make-model Report Sample --factory`, or stand-alone:
+Factories let you generate fake records for tests and seeders. Generate one with
+`module:make-model Report Sample --factory`, or stand-alone:
 
 ```shell
 php artisan module:make-factory ReportFactory Sample

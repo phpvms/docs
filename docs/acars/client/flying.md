@@ -41,8 +41,6 @@ supported:
 The routes/navpoints are then loaded from the flight plan, along with the TOD
 (from MSFS/Simbrief), and filed along with your PIREP.
 
----
-
 ## Lights and Aircraft Features
 
 Lights and other features for aircraft may not work on all aircraft, due to the
@@ -52,8 +50,6 @@ example, PMDG implements their lights differently for each aircraft). There is a
 updated - enhancements to this coming soon) which uses the aircraft name/title
 to determine which offsets (for FSUIPC) or data refs (X-Plane) are used to
 detect those features.
-
----
 
 ## Flight Phases
 

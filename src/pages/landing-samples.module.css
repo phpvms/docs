@@ -1,0 +1,70 @@
+/*
+ * Passthrough: maps CSS-module class names used by the React landing
+ * pages (sketches + new index) to the global .lp-* classes defined in
+ * src/css/custom.css.
+ *
+ * The actual styles live in custom.css so that markdown doc pages can
+ * use them too. This module only exists so existing JSX that references
+ * `styles.heroTitle`, `styles.card`, etc. keeps compiling without
+ * touching every file. New code should prefer `className="lp-..."`
+ * strings directly.
+ *
+ * Each rule is `:global(.lp-foo)` composed into the local class name.
+ */
+
+.page              { composes: lp-page                  from global; }
+.hero              { composes: lp-hero                  from global; }
+.heroCompact       { composes: lp-hero--compact         from global; }
+.eyebrow           { composes: lp-eyebrow               from global; }
+.heroTitle         { composes: lp-hero-title            from global; }
+.heroSubtitle      { composes: lp-hero-subtitle         from global; }
+.heroActions       { composes: lp-hero-actions          from global; }
+
+.btnPrimary        { composes: lp-btn-primary           from global; }
+.btnSecondary      { composes: lp-btn-secondary         from global; }
+
+.section           { composes: lp-section               from global; }
+.sectionHeader     { composes: lp-section-header        from global; }
+.sectionTitle      { composes: lp-section-title         from global; }
+.sectionLead       { composes: lp-section-lead          from global; }
+
+.card              { composes: lp-card                  from global; }
+.cardIcon          { composes: lp-card-icon             from global; }
+.cardTitle         { composes: lp-card-title            from global; }
+.cardDesc          { composes: lp-card-desc             from global; }
+.cardLinks         { composes: lp-card-links            from global; }
+
+.audienceGrid      { composes: lp-audience-grid         from global; }
+.audienceCard      { composes: lp-audience-card         from global; }
+.browseGrid        { composes: lp-browse-grid           from global; }
+.browseCard        { composes: lp-browse-card           from global; }
+.flatGrid          { composes: lp-flat-grid             from global; }
+
+.steps             { composes: lp-steps                 from global; }
+.step              { composes: lp-step                  from global; }
+.stepNum           { composes: lp-step-num              from global; }
+.stepTitle         { composes: lp-step-title            from global; }
+.stepBody          { composes: lp-step-body             from global; }
+.codeBlock         { composes: lp-code-block            from global; }
+
+.useCasePanel      { composes: lp-usecase-panel         from global; }
+.useCaseTitle      { composes: lp-usecase-title         from global; }
+.useCaseDesc       { composes: lp-usecase-desc          from global; }
+.useCaseLinks      { composes: lp-usecase-links         from global; }
+
+.questions         { composes: lp-questions             from global; }
+.featuredStrip     { composes: lp-featured-strip        from global; }
+.featuredItem      { composes: lp-featured-item         from global; }
+.whatsNextRow      { composes: lp-whats-next            from global; }
+
+.helpBlock         { composes: lp-help-block            from global; }
+.helpTitle         { composes: lp-help-title            from global; }
+.helpDesc          { composes: lp-help-desc             from global; }
+.helpLinks         { composes: lp-help-links            from global; }
+
+.sampleIndexList   { composes: lp-sketch-list           from global; }
+.sampleIndexCard   { composes: lp-sketch-card           from global; }
+.sampleIndexNum    { composes: lp-sketch-num            from global; }
+.sampleIndexTitle  { composes: lp-sketch-title          from global; }
+.sampleIndexDesc   { composes: lp-sketch-desc           from global; }
+.sampleIndexBadge  { composes: lp-sketch-badge          from global; }

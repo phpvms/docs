@@ -74,7 +74,7 @@ export default class ExampleScript implements CallbackHook {
 
 ## Core Methods
 
-### 1. `setup()`
+### 1. setup()
 
 #### Purpose
 
@@ -96,14 +96,14 @@ will use.
 #### Example
 
 ```typescript
-setup()
+setup();
 {
-  Acars.Set('above_1k', false)
-  Acars.Set('launched_message', false)
+  Acars.Set('above_1k', false);
+  Acars.Set('launched_message', false);
 }
 ```
 
-### 2. `run()`
+### 2. run()
 
 ```typescript
 run(pirep
@@ -141,7 +141,7 @@ perform actions based on that data.
 - Playing audio cues at appropriate times
 
 ````
-### 3. `phaseChange()`
+### 3. phaseChange()
 ``` typescript
 phaseChange(pirep: Pirep, data: Telemetry, newPhase: PirepState, oldPhase: PirepState): void
 ````

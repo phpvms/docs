@@ -14,8 +14,6 @@ PIREP is accepted, or other properties for the user are changed (e.g, the number
 of flights, flight hours, etc). The user being scanned is passed in as the
 `$user` property.
 
----
-
 ## Adding an Award
 
 An award consists of two parts:
@@ -28,8 +26,6 @@ plugin allows for advanced, reusable plugins and can be as complex or as simple
 as you like. To create an award from a plugin, view the awards page:
 
 ![](img/admin-awards.png)
-
----
 
 ## Award Plugin Structure
 

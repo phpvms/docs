@@ -161,11 +161,11 @@ reference
   - Simvar has to be prefixed with `A:`, e.g, `A:LIGHT LOGO,bool`, and then the
     type
 
-:::caution
-Datarefs, SimVars, Offsets or any other variable used by the simulators can be case sensitive !!!  
+:::caution Datarefs, SimVars, Offsets or any other variable used by the
+simulators can be case sensitive !!!
 
-Therefore, please be careful when defining and always use the exact same casing with the variable.
-:::
+Therefore, please be careful when defining and always use the exact same casing
+with the variable. :::
 
 Examples:
 

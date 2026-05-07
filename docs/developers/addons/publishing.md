@@ -12,8 +12,6 @@ This guide is the short reference. The
 [full plugin authors guide](https://github.com/phpvms/addon-registry/blob/main/docs/plugin-authors.md)
 in the registry repo is the authoritative source.
 
----
-
 ## Prerequisites
 
 Before submitting:
@@ -28,7 +26,7 @@ Before submitting:
 - All migrations under `database/migrations/` follow the
   [migration rules](./database.md#migration-rules).
 
-### Adding `registry_id` to module.json
+### Adding registry_id to module.json
 
 The `alias` field in `module.json` is restricted to lowercase identifiers
 (letters, digits, underscores) because Laravel uses it as the namespace for
@@ -57,8 +55,6 @@ your addon to its YAML entry:
 - `alias` — Laravel namespace. Lowercase, no slashes.
 - `registry_id` — **must** equal the `name:` value in your
   `packages/{author}/{name}.yml`.
-
----
 
 ## What you submit
 
@@ -112,7 +108,7 @@ requirements:
 
 That's the entire submission. The bot resolves the `release:` block after merge.
 
-### Allowed `category` values
+### Allowed category values
 
 Pick exactly one. The current list lives in
 [`schema/categories.yml`](https://github.com/phpvms/addon-registry/blob/main/schema/categories.yml):
@@ -134,7 +130,7 @@ Pick exactly one. The current list lives in
 To request a new category, open a separate PR adding it to that file **before**
 submitting your package YAML.
 
-### `meta.yml` (first-time author)
+### meta.yml (first-time author)
 
 If your namespace is new (no other addons under `packages/{author}/`), include
 `packages/{author}/meta.yml` in the same PR:
@@ -150,8 +146,6 @@ maintainers:
 
 `maintainers` is a list of GitHub usernames. The first listed is treated as the
 primary contact.
-
----
 
 ## What CI checks at PR time
 
@@ -170,8 +164,6 @@ primary contact.
 The validator posts a single comment summarising results. If everything passes,
 the comment includes the proposed `release:` block.
 
----
-
 ## What happens after merge
 
 1. The `release-block` workflow opens an auto-merging bot PR appending the
@@ -182,16 +174,12 @@ the comment includes the proposed `release:` block.
 4. Subsequent releases on your repo are picked up by the discovery sweep (cron
    every 6h, plus push triggers from the worker).
 
----
-
 ## Updating your addon
 
 Tag a new release on your GitHub repo. The discovery sweep opens an auto-merging
 `bot/bump-{author}-{name}-{version}` PR within hours.
 
 **You do not interact with the registry repository for routine updates.**
-
----
 
 ## Marking an addon revoked or archived
 

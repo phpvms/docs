@@ -16,10 +16,11 @@ module.exports = {
   clientModules: [
     require.resolve('./src/clientModules/tocBar.js'),
     require.resolve('./src/clientModules/mermaidZoom.js'),
+    require.resolve('./src/clientModules/backToTop.js'),
   ],
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500;600;700&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@600&family=JetBrains+Mono:wght@400;500;600&display=swap',
       type: 'text/css',
     },
   ],
@@ -56,6 +57,12 @@ module.exports = {
       apiKey: '0dc12617e3ca951eb79977c8733b0fe2',
       indexName: 'phpvms',
       contextualSearch: true,
+      // Persist user's recent + favorite searches in localStorage so
+      // returning visitors see "Recent" / "Favorites" sections in the
+      // DocSearch modal before they start typing. Default is enabled in
+      // DocSearch v3, but we set it explicitly so future config changes
+      // don't inadvertently flip it off.
+      disableUserPersonalization: false,
     },
     metadata: [
       {
@@ -65,23 +72,25 @@ module.exports = {
       },
     ],
     navbar: {
+      title: 'phpvms',
       logo: {
         alt: 'phpvms Logo',
         src: 'img/logo_blue.svg',
       },
       items: [
+        // {
+        //   href: 'https://forum.phpvms.net',
+        //   label: 'Forum',
+        //   className: 'navbar-forum-link',
+        //   position: 'right',
+        // },
         {
           type: 'docsVersionDropdown',
           position: 'right',
-        },
-        {
-          href: 'https://forum.phpvms.net',
-          label: 'Forum',
-          position: 'right',
+          className: 'navbar-version-pill',
         },
         {
           href: 'https://github.com/nabeelio/phpvms',
-          //label: 'GitHub',
           className: 'header-github-link',
           position: 'right',
         },
@@ -89,10 +98,10 @@ module.exports = {
     },
     prism: {
       theme: themes.github,
-      additionalLanguages: ['php', 'bash'],
+      additionalLanguages: ['php', 'bash', 'sql', 'nginx', 'apacheconf'],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} phpvms`,
     },

@@ -20,8 +20,6 @@ After downloading the installer, extract it and run it. It will install into:
 Desktop and start menu shortcuts will be created, and the program will be
 registered.
 
----
-
 ## Simulator Configuration
 
 <Tabs>
@@ -45,6 +43,7 @@ registered.
 
     If you're getting a permission-denied error, see
     [this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
+
   </TabItem>
   <TabItem value="xplane" label="X-Plane">
 
@@ -58,6 +57,7 @@ registered.
     selecting your X-Plane root/main folder.
 
     ![](../img/xplane_button.png)
+
   </TabItem>
   <TabItem value="banana" label="Prepar3d/FSX">
     To use FSX/Prepar3d, you need to install:

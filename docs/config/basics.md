@@ -13,9 +13,7 @@ phpvms configuration lives in two places:
 This page covers the `.env` file. For admin panel settings, log in as an admin
 and explore each section.
 
----
-
-## The `.env` file
+## The .env file
 
 Laravel ships configuration in PHP files under `/config`. phpvms overrides these
 via a `.env` file in the install root that the installer generates for you.
@@ -35,7 +33,7 @@ full reference.
 Two flags control whether phpvms behaves like a dev install or a production
 install.
 
-### `APP_ENV`
+### APP_ENV
 
 Set to `production` when going live. Default is `dev`.
 
@@ -43,7 +41,7 @@ Set to `production` when going live. Default is `dev`.
 APP_ENV=production
 ```
 
-### `APP_DEBUG`
+### APP_DEBUG
 
 Controls error verbosity. Keep `true` while developing — set `false` in
 production so users don't see stack traces.
@@ -53,7 +51,7 @@ APP_DEBUG=false
 DEBUG_TOOLBAR=false
 ```
 
-### After editing `.env`
+### After editing .env
 
 Clear the application cache so changes take effect:
 
@@ -64,8 +62,6 @@ php artisan cache:clear
 
 If you skip this, your edits won't load.
 
----
-
 ## Where to go next
 
 | Setting             | Page                                                                                |
@@ -74,9 +70,7 @@ If you skip this, your edits won't load.
 | Discord webhooks    | [Notifications](./notifications.md)                                                 |
 | OAuth login         | [Discord](./oauth/discord.md), [IVAO](./oauth/ivao.md), [VATSIM](./oauth/vatsim.md) |
 | Database backups    | [Backups](./backups.md)                                                             |
-| Cache, queues, perf  | [Advanced Configuration](./advanced.md)               |
-
----
+| Cache, queues, perf | [Advanced Configuration](./advanced.md)                                             |
 
 ## Language
 

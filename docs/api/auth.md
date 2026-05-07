@@ -8,8 +8,6 @@ Requests to a phpvms API will require an `X-API-Key` header, with this key.
 Addons can take advantage of this by adding the `api.auth` middleware to their
 route group.
 
----
-
 ## Headers Example
 
 ```http

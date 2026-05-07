@@ -22,8 +22,6 @@ resized down to fit. Fill in the URLs to your logos. They should be PNG format
 
 ![](img/logo-urls.png)
 
----
-
 ## Discord Rich Presence
 
 :::tip

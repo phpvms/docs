@@ -7,12 +7,12 @@ There are several core files/interfaces that are included:
 
 ## Types
 
-### `src/global.d.ts`
+### src/global.d.ts
 
 This describes the globally available functions, including the logging methods
 available through `console` and `Acars`.
 
-### `src/types.d.ts`
+### src/types.d.ts
 
 This contains all the base types:
 
@@ -23,5 +23,3 @@ This contains all the base types:
 
 It also includes other detailed type information, for example `Length`, so you
 can retrieve that type of information.
-
----

@@ -45,8 +45,6 @@ methods when uploading your files.
 
 :::
 
----
-
 ### Option 1: Creating a Subdomain
 
 :::tip
@@ -165,8 +163,6 @@ SSH into your server, symlink the `public_html` folder to point to
 mv public_html public_html_backup
 ln -s phpvms/public/ public_html
 ```
-
----
 
 ### Option 4: Direct Upload (Not Recommended!)
 

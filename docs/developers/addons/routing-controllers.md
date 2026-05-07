@@ -5,19 +5,19 @@ title: Routing & Controllers
 
 Routing in a phpvms module follows the standard
 [Laravel routing](https://laravel.com/docs/routing) format. Each generated
-module has its own `routes/` directory with separate files for web pages and
-API endpoints, registered automatically by the module's `RouteServiceProvider`.
+module has its own `routes/` directory with separate files for web pages and API
+endpoints, registered automatically by the module's `RouteServiceProvider`.
 
 ## Route files
 
 A generated module ships with two route files:
 
-| File              | URL prefix         | Middleware group | Default name prefix |
-| ----------------- | ------------------ | ---------------- | ------------------- |
-| `routes/web.php`  | `/{module}`        | `web`            | `{module}.`         |
-| `routes/api.php`  | `/api/{module}`    | `api`            | `api.{module}.`     |
+| File             | URL prefix      | Middleware group | Default name prefix |
+| ---------------- | --------------- | ---------------- | ------------------- |
+| `routes/web.php` | `/{module}`     | `web`            | `{module}.`         |
+| `routes/api.php` | `/api/{module}` | `api`            | `api.{module}.`     |
 
-### Web routes (`routes/web.php`)
+### Web routes (routes/web.php)
 
 ```php
 <?php
@@ -34,10 +34,10 @@ Route::middleware(['web'])
     });
 ```
 
-The named route `sample.index` resolves to `route('sample.index')` and the
-URL `/sample`.
+The named route `sample.index` resolves to `route('sample.index')` and the URL
+`/sample`.
 
-### API routes (`routes/api.php`)
+### API routes (routes/api.php)
 
 ```php
 <?php
@@ -53,8 +53,8 @@ Route::middleware(['api'])
     });
 ```
 
-`apiResource` registers the standard `index/show/store/update/destroy`
-routes — see the
+`apiResource` registers the standard `index/show/store/update/destroy` routes —
+see the
 [Laravel API resource controllers docs](https://laravel.com/docs/controllers#api-resource-routes).
 
 ### Standard Laravel features
@@ -62,17 +62,17 @@ routes — see the
 All Laravel routing features work as you'd expect inside module route files:
 
 - Resource and API resource routes (`Route::resource`, `Route::apiResource`).
-- Route model binding — `Route::get('/posts/{post}', ...)` resolves a `Post`
-  by its primary key automatically.
+- Route model binding — `Route::get('/posts/{post}', ...)` resolves a `Post` by
+  its primary key automatically.
 - Named routes and route groups.
-- Cross-module references — your module can call `route('shop.checkout')`
-  on routes defined in another module.
+- Cross-module references — your module can call `route('shop.checkout')` on
+  routes defined in another module.
 
-### `RouteServiceProvider`
+### RouteServiceProvider
 
 The provider at `app/Providers/RouteServiceProvider.php` registers the route
-files and sets the controller namespace. You won't normally need to edit
-it. If you delete it accidentally, regenerate with:
+files and sets the controller namespace. You won't normally need to edit it. If
+you delete it accidentally, regenerate with:
 
 ```shell
 php artisan module:route-provider Sample
@@ -81,8 +81,7 @@ php artisan module:route-provider Sample
 ## Controllers
 
 Controllers live under `Modules/{Module}/app/Http/Controllers/`, with the
-namespace `Modules\{Module}\Http\Controllers`. A minimal controller looks
-like:
+namespace `Modules\{Module}\Http\Controllers`. A minimal controller looks like:
 
 ```php
 <?php
@@ -120,8 +119,8 @@ php artisan module:make-controller PostController Sample --plain
 php artisan module:make-controller PublishPostController Sample --invokable
 ```
 
-You can nest controllers in subdirectories. This is the convention for
-admin- and API-specific controllers:
+You can nest controllers in subdirectories. This is the convention for admin-
+and API-specific controllers:
 
 ```shell
 php artisan module:make-controller Admin/PostController Sample
@@ -259,15 +258,15 @@ class PostController extends Controller
 ## Middleware
 
 Middleware lets you inject access checks into the request chain so you don't
-need to repeat them in every method. phpvms provides three middleware
-aliases on top of Laravel's defaults:
+need to repeat them in every method. phpvms provides three middleware aliases on
+top of Laravel's defaults:
 
-| Middleware     | Purpose                                                    |
-| -------------- | ---------------------------------------------------------- |
-| `auth`         | Standard Laravel — request must come from a logged-in user.|
-| `role:user`    | Logged-in phpvms user. Use for normal pilot pages.         |
-| `role:admin`   | Admin user. Use for admin-only screens.                    |
-| `api.auth`     | API key authentication. Use on `routes/api.php` routes.    |
+| Middleware   | Purpose                                                     |
+| ------------ | ----------------------------------------------------------- |
+| `auth`       | Standard Laravel — request must come from a logged-in user. |
+| `role:user`  | Logged-in phpvms user. Use for normal pilot pages.          |
+| `role:admin` | Admin user. Use for admin-only screens.                     |
+| `api.auth`   | API key authentication. Use on `routes/api.php` routes.     |
 
 Apply middleware in route groups or directly on routes:
 
@@ -300,8 +299,8 @@ php artisan module:make-middleware EnsurePostIsPublished Sample
 # → Modules/Sample/app/Http/Middleware/EnsurePostIsPublished.php
 ```
 
-Register an alias in your module's `RouteServiceProvider` if you want to use
-it as a string:
+Register an alias in your module's `RouteServiceProvider` if you want to use it
+as a string:
 
 ```php
 public function boot(): void
@@ -322,9 +321,9 @@ Route::get('/posts/{post}', [PostController::class, 'show'])
     ->middleware(\Modules\Sample\Http\Middleware\EnsurePostIsPublished::class);
 ```
 
-See the [Laravel middleware docs](https://laravel.com/docs/middleware) for
-the full feature set, including parameters, terminable middleware, and
-group registration.
+See the [Laravel middleware docs](https://laravel.com/docs/middleware) for the
+full feature set, including parameters, terminable middleware, and group
+registration.
 
 ## Getting the current user
 
@@ -338,5 +337,5 @@ if (Auth::check()) {
 }
 ```
 
-For API routes protected by `api.auth`, the authenticated user is also
-available via `Auth::user()` once the middleware has resolved the API key.
+For API routes protected by `api.auth`, the authenticated user is also available
+via `Auth::user()` once the middleware has resolved the API key.

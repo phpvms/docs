@@ -20,11 +20,13 @@ After downloading the installer, extract it and run it. It will install into:
 %LocalAppData%\vmsacars\current
 ```
 
-Desktop and start menu shortcuts will be created, and the program will be registered
+Desktop and start menu shortcuts will be created, and the program will be
+registered
 
 ---
 
 ## Simulator Configuration
+
 <Tabs>
   <TabItem value="msfs" label="MSFS 2020/2024" default>
     #### WASM Module
@@ -46,6 +48,7 @@ Desktop and start menu shortcuts will be created, and the program will be regist
 
     If you're getting a permission-denied error, see
     [this thread](https://forum.navigraph.com/t/faq-navigraph-navdata-center-could-not-find-access-simulator/2104)
+
   </TabItem>
   <TabItem value="xplane" label="X-Plane">
 
@@ -59,6 +62,7 @@ Desktop and start menu shortcuts will be created, and the program will be regist
     selecting your X-Plane root/main folder.
 
     ![](img/xplane_button.png)
+
   </TabItem>
   <TabItem value="banana" label="Prepar3d/FSX">
     To use FSX/Prepar3d, you need to install:
@@ -79,7 +83,6 @@ Desktop and start menu shortcuts will be created, and the program will be regist
 
   </TabItem>
 </Tabs>
-
 
 ---
 
@@ -133,10 +136,8 @@ Parallels or Virtual Box, which is roughly:
 1. Copy the `AcarsConnect` plugin to the `Resources\plugin` folder (see above)
 1. Set the IP address in ACARS to the IP of the host
 
-
 Then click "Open In Guest", and you can follow the above instructions for then
-installing the plugin. Then, in ACARS, properly set the IP to
-your Mac machine:
+installing the plugin. Then, in ACARS, properly set the IP to your Mac machine:
 
 Then you can launch/run ACARS as usual.
 
@@ -283,6 +284,7 @@ the phases properly for both IFR and VFR flights.
 ## Debugging
 
 To debug whether the lights are working or not, you can open the "Debug" window.
-To open it, go to the "Map" page, click the three dots, and select "Debug Window"
+To open it, go to the "Map" page, click the three dots, and select "Debug
+Window"
 
 ![](img/data-window.png)

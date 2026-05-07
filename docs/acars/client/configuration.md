@@ -37,8 +37,6 @@ files needed to scan.
 
 :::
 
----
-
 ## Mac/Linux Configuration
 
 To run ACARS with X-Plane on the Mac or Linux, you have to run Windows in a VM.

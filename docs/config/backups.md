@@ -5,11 +5,11 @@ sidebar_title: Backups
 ---
 
 phpvms backs up files and the database via
-[`spatie/laravel-backup`](https://github.com/spatie/laravel-backup).
-Disabled by default — enable it to start nightly snapshots.
+[`spatie/laravel-backup`](https://github.com/spatie/laravel-backup). Disabled by
+default — enable it to start nightly snapshots.
 
-Backups run nightly. The oldest is rotated out so you keep a rolling
-window (last night, the night before, etc).
+Backups run nightly. The oldest is rotated out so you keep a rolling window
+(last night, the night before, etc).
 
 :::warning
 

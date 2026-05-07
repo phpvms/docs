@@ -92,8 +92,6 @@ consistent standard for addons, widgets and other customizations.
 @endsection
 ```
 
----
-
 ## Caching Items
 
 When making calls to models, etc in templates, to increase performance, using
@@ -115,8 +113,6 @@ Schedule Count: {{ $schedule_count }}
 ```
 
 This will greatly increase the performance on your pages
-
----
 
 ## Resources
 

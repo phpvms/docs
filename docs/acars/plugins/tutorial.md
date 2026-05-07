@@ -35,8 +35,6 @@ ACARS_SCRIPTS_PATH=$HOME/Documents/vmsacars/data/$ACARS_PROFILE_NAME/config
 ACARS_DIST_ZIP=dist.zip
 ```
 
----
-
 # Creating a rule
 
 Create a rule file under `src/rules/example.ts`, and you can use the following:

@@ -3,10 +3,9 @@ id: templating
 title: Templating & Assets
 ---
 
-Module views are [Blade](https://laravel.com/docs/blade) templates stored
-under `Modules/{Module}/resources/views/`. Reference them from controllers
-using the module's `alias` (from `module.json`) as the view-namespace
-prefix:
+Module views are [Blade](https://laravel.com/docs/blade) templates stored under
+`Modules/{Module}/resources/views/`. Reference them from controllers using the
+module's `alias` (from `module.json`) as the view-namespace prefix:
 
 ```php
 return view('sample::index');           // resources/views/index.blade.php
@@ -61,8 +60,8 @@ Or include partials from other modules:
 
 ## View composers
 
-If a view always needs the same data, register a view composer in the
-module's service provider — usually inside `boot()`:
+If a view always needs the same data, register a view composer in the module's
+service provider — usually inside `boot()`:
 
 ```php
 // Modules/Sample/app/Providers/SampleServiceProvider.php
@@ -77,11 +76,11 @@ public function boot(): void
 }
 ```
 
-Now every view in the `sample` namespace receives `$siteSettings`
-automatically.
+Now every view in the `sample` namespace receives `$siteSettings` automatically.
 
-See the [Laravel view composers docs](https://laravel.com/docs/views#view-composers)
-for the full pattern.
+See the
+[Laravel view composers docs](https://laravel.com/docs/views#view-composers) for
+the full pattern.
 
 ## Blade components
 
@@ -150,11 +149,10 @@ php artisan module:make-component-view card Sample
 
 ## Overriding views
 
-If an operator wants to customise your module's views without editing the
-module itself, they have two options. Both work because the module's service
-provider registers the **app override path first** when calling
-`loadViewsFrom`, so Laravel resolves the operator's copy before the
-module's own.
+If an operator wants to customise your module's views without editing the module
+itself, they have two options. Both work because the module's service provider
+registers the **app override path first** when calling `loadViewsFrom`, so
+Laravel resolves the operator's copy before the module's own.
 
 ### 1. Publish the views
 
@@ -163,15 +161,14 @@ php artisan vendor:publish
 ```
 
 …and pick your module from the list. This copies the Blade files into
-`resources/views/modules/{alias}/` in the host app, where edits survive
-module updates.
+`resources/views/modules/{alias}/` in the host app, where edits survive module
+updates.
 
 ### 2. Manually copy the file
 
-Copy the specific view from
-`Modules/{Module}/resources/views/...` into
-`resources/views/modules/{alias}/...` in the host app. The override is
-picked up immediately — no `vendor:publish` required.
+Copy the specific view from `Modules/{Module}/resources/views/...` into
+`resources/views/modules/{alias}/...` in the host app. The override is picked up
+immediately — no `vendor:publish` required.
 
 :::note
 
@@ -199,28 +196,25 @@ There are two ways to compile module assets — pick one per project.
 
 ### Option A — Main Vite config (recommended)
 
-A single `vite.config.js` at the project root collects assets from every
-enabled module. The host project's main `vite.config.js` should look like:
+A single `vite.config.js` at the project root collects assets from every enabled
+module. The host project's main `vite.config.js` should look like:
 
 ```js
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 import collectModuleAssetsPaths from './vite-module-loader.js';
 
 async function getConfig() {
-    const paths = [
-        'resources/css/app.css',
-        'resources/js/app.js',
-    ];
+  const paths = ['resources/css/app.css', 'resources/js/app.js'];
 
-    return defineConfig({
-        plugins: [
-            laravel({
-                input: await collectModuleAssetsPaths(paths, 'Modules'),
-                refresh: true,
-            }),
-        ],
-    });
+  return defineConfig({
+    plugins: [
+      laravel({
+        input: await collectModuleAssetsPaths(paths, 'Modules'),
+        refresh: true,
+      }),
+    ],
+  });
 }
 
 export default getConfig();
@@ -231,8 +225,8 @@ Each module's `vite.config.js` exports its asset paths:
 ```js
 // Modules/Sample/vite.config.js
 export const paths = [
-    'Modules/Sample/resources/assets/sass/app.scss',
-    'Modules/Sample/resources/assets/js/app.js',
+  'Modules/Sample/resources/assets/sass/app.scss',
+  'Modules/Sample/resources/assets/js/app.js',
 ];
 ```
 
@@ -251,8 +245,8 @@ npm run dev        # dev server with HMR
 
 ### Option B — Per-module Vite
 
-If you'd rather keep each module fully self-contained, publish the
-per-module loader:
+If you'd rather keep each module fully self-contained, publish the per-module
+loader:
 
 ```shell
 php artisan vendor:publish \
@@ -263,25 +257,25 @@ php artisan vendor:publish \
 Configure the module's `vite.config.js`:
 
 ```js
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
-    build: {
-        outDir: '../../public/build-sample',
-        emptyOutDir: true,
-    },
-    plugins: [
-        laravel({
-            publicDirectory: '../../public',
-            buildDirectory: 'build-sample',
-            input: [
-                __dirname + '/resources/assets/sass/app.scss',
-                __dirname + '/resources/assets/js/app.js',
-            ],
-            refresh: true,
-        }),
-    ],
+  build: {
+    outDir: '../../public/build-sample',
+    emptyOutDir: true,
+  },
+  plugins: [
+    laravel({
+      publicDirectory: '../../public',
+      buildDirectory: 'build-sample',
+      input: [
+        __dirname + '/resources/assets/sass/app.scss',
+        __dirname + '/resources/assets/js/app.js',
+      ],
+      refresh: true,
+    }),
+  ],
 });
 ```
 

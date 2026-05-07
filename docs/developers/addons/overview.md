@@ -140,7 +140,7 @@ A few notes:
 - **`routes/web.php`** and **`routes/api.php`** define the module's URLs. See
   [Routing & Controllers](./routing-controllers.md).
 
-## `module.json`
+## module.json
 
 The metadata for your module. Generated automatically; you'll only edit it if
 you need to change descriptors:

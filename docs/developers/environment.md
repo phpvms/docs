@@ -93,8 +93,6 @@ git pull origin dev
 ./vendor/bin/sail artisan migrate
 ```
 
----
-
 ## Without Docker
 
 If you don't want to use Docker, you can use other software like
@@ -116,8 +114,6 @@ This does require sqlite. If you want to use MySQL, you need to run the phpvms
 installer, so it can generate the config files for MySQL (or you can modify the
 generated `.env`), then you can run the above command to reset the database and
 migrations in MySQL.
-
----
 
 ## Laravel Valet
 

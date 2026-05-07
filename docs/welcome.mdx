@@ -1,0 +1,204 @@
+---
+id: welcome
+title: 'Welcome'
+slug: /
+hide_title: true
+hide_table_of_contents: true
+sidebar_label: Welcome
+---
+
+import Link from '@docusaurus/Link';
+import HelpBlock from '@site/src/components/HelpBlock';
+
+<div className="lp-page">
+
+<header className="lp-hero">
+  {/* <span className="lp-eyebrow">v8.x · Documentation</span> */}
+
+<h1 className="lp-hero-title">
+  Build a virtual airline. Fly the routes. Extend the platform.
+</h1>
+
+<p className="lp-hero-subtitle">
+  phpvms is the open-source platform for building your own virtual airline
+</p>
+
+  <div className="lp-hero-actions">
+    <Link to="/8.x/getting-started" className="lp-btn-primary">Get started →</Link>
+    <a href="https://demo.phpvms.net" className="lp-btn-secondary" target="_blank" rel="noreferrer">View the demo</a>
+  </div>
+</header>
+
+<section className="lp-section">
+
+<article className="lp-usecase-panel">
+  <div>
+    <h2 className="lp-usecase-title">Run a virtual airline</h2>
+    <p className="lp-usecase-desc">
+      Stand up a phpvms instance, configure your fleet and routes, onboard
+      pilots, and process flight reports. Everything you need to operate a VA
+      from day one.
+    </p>
+  </div>
+  <ul className="lp-usecase-links">
+    <li>
+      <Link to="/8.x/getting-started">Get started</Link>
+    </li>
+    <li>
+      <Link to="/8.x/installation/docker">Docker setup</Link>
+    </li>
+    <li>
+      <Link to="/8.x/config/basics">Configuration</Link>
+    </li>
+    <li>
+      <Link to="/8.x/config/email">Email & notifications</Link>
+    </li>
+    <li>
+      <Link to="/8.x/config/oauth/discord">OAuth providers</Link>
+    </li>
+    <li>
+      <Link to="/8.x/config/backups">Backups</Link>
+    </li>
+  </ul>
+</article>
+
+<article className="lp-usecase-panel">
+  <div>
+    <h2 className="lp-usecase-title">Fly with vmsACARS</h2>
+    <p className="lp-usecase-desc">
+      Track flights automatically. Install the desktop client, connect to your
+      VA, and let ACARS file PIREPs while you fly in MSFS, X-Plane, or P3D.
+    </p>
+  </div>
+  <ul className="lp-usecase-links">
+    <li>
+      <Link to="/8.x/acars/overview">ACARS overview</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/client/install">Install the client</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/client/configuration">Configure simulators</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/client/flying">Flying with ACARS</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/customization">Customization</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/client/debugging">Debugging</Link>
+    </li>
+  </ul>
+</article>
+
+<article className="lp-usecase-panel">
+  <div>
+    <h2 className="lp-usecase-title">Extend phpvms</h2>
+    <p className="lp-usecase-desc">
+      Build addons, themes, ACARS plugins, and integrations. phpvms is fully
+      extensible through Laravel-style routes, events, and a REST API.
+    </p>
+  </div>
+  <ul className="lp-usecase-links">
+    <li>
+      <Link to="/8.x/developers/environment">Dev environment</Link>
+    </li>
+    <li>
+      <Link to="/8.x/developers/addons/overview">Addon overview</Link>
+    </li>
+    <li>
+      <Link to="/8.x/developers/addons/routing-controllers">
+        Routes & controllers
+      </Link>
+    </li>
+    <li>
+      <Link to="/8.x/developers/addons/events">Events</Link>
+    </li>
+    <li>
+      <Link to="/8.x/acars/plugins/tutorial">ACARS plugin tutorial</Link>
+    </li>
+    <li>
+      <Link to="/8.x/api/overview">REST API</Link>
+    </li>
+  </ul>
+</article>
+
+</section>
+
+<section className="lp-section">
+  <header className="lp-section-header">
+    <h2 className="lp-section-title">Browse by area</h2>
+    <p className="lp-section-lead">Jump directly into a topic.</p>
+  </header>
+
+  <div className="lp-browse-grid">
+    <Link to="/8.x/config/basics" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>⚙️</span>
+      <h3 className="lp-card-title">Configuration</h3>
+      <p className="lp-card-desc">Email, backups, OAuth, advanced</p>
+    </Link>
+    <Link to="/8.x/customize/theming" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🎨</span>
+      <h3 className="lp-card-title">Theming</h3>
+      <p className="lp-card-desc">Layouts, theming, maps</p>
+    </Link>
+    <Link to="/8.x/guides/basics" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>📚</span>
+      <h3 className="lp-card-title">Concepts</h3>
+      <p className="lp-card-desc">Basics, glossary, deeper dive</p>
+    </Link>
+    <Link to="/8.x/developers/addons/overview" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🔌</span>
+      <h3 className="lp-card-title">Addons</h3>
+      <p className="lp-card-desc">Routes, events, database</p>
+    </Link>
+    <Link to="/8.x/api/overview" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🛰️</span>
+      <h3 className="lp-card-title">REST API</h3>
+      <p className="lp-card-desc">Endpoints and auth</p>
+    </Link>
+    <Link to="/8.x/installation/docker" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🐳</span>
+      <h3 className="lp-card-title">Docker</h3>
+      <p className="lp-card-desc">Containerised deployment</p>
+    </Link>
+    <Link to="/8.x/config/oauth/discord" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🔐</span>
+      <h3 className="lp-card-title">OAuth</h3>
+      <p className="lp-card-desc">Discord, IVAO, VATSIM</p>
+    </Link>
+    <Link to="/8.x/developers/awards" className="lp-card lp-browse-card">
+      <span className="lp-card-icon" aria-hidden>🏆</span>
+      <h3 className="lp-card-title">Awards</h3>
+      <p className="lp-card-desc">Build custom awards</p>
+    </Link>
+  </div>
+</section>
+
+<div className="lp-divider-runway" aria-hidden>
+  <span />
+  <span />
+  <span />
+</div>
+
+<section className="lp-section">
+  <header className="lp-section-header">
+    <h2 className="lp-section-title">Common questions</h2>
+  </header>
+
+  <ul className="lp-questions">
+    <li><Link to="/8.x/installation/requirements">What are the system requirements?</Link></li>
+    <li><Link to="/8.x/getting-started">How do I install phpvms?</Link></li>
+    <li><Link to="/8.x/installation/updating">How do I update an existing install?</Link></li>
+    <li><Link to="/8.x/acars/client/install">How do I install the ACARS client?</Link></li>
+    <li><Link to="/8.x/customize/theming">How do I write a custom theme?</Link></li>
+    <li><Link to="/8.x/api/auth">How do I authenticate with the API?</Link></li>
+  </ul>
+</section>
+
+<section className="lp-section">
+  <HelpBlock />
+</section>
+
+</div>

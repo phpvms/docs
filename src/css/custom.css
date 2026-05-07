@@ -42,6 +42,9 @@
   --ifm-h4-font-size: 1rem;
   --ifm-heading-line-height: 1.25;
   --ifm-heading-font-weight: 600;
+  --ifm-heading-font-family:
+    'Encode Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
 }
 
 .docusaurus-highlight-code-line {
@@ -49,12 +52,6 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-}
-
-/* Default navbar is sticky/fixed; let it scroll with the page like a
-   normal header. */
-.navbar {
-  position: static;
 }
 
 .navbar__logo {
@@ -66,6 +63,12 @@
 .navbar__logo img {
   height: 100%;
   width: auto;
+}
+
+/* Hide the duplicate logo inside the mobile slide-out menu's brand row
+   (the desktop logo is the canonical one). */
+.navbar-sidebar__brand .navbar__brand {
+  display: none;
 }
 
 .navbar__link--active {
@@ -84,11 +87,33 @@
   opacity: 1;
 }
 
-/* Dark mode: keep navbar dark instead of inheriting white from light mode */
+/* "phpvms" wordmark next to the logo: Encode Sans, weight 600. */
+.navbar__title {
+  font-family:
+    'Encode Sans',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 600;
+  font-size: 1.85rem;
+  letter-spacing: -0.01em;
+  margin-left: 1rem;
+}
+
+/* Dark mode: GitHub/Linear-inspired warmer near-black with a hint of
+   blue-gray. Replaces Infima's #1b1b1d (which reads slightly cool/sterile)
+   across the whole site — page background, navbar, surface cards. The
+   surface variable bumps a step lighter so cards/popovers sit visibly
+   above the page. */
 html[data-theme='dark'] {
-  --ifm-navbar-background-color: #1b1b1d;
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #161b22;
+  --ifm-navbar-background-color: #0d1117;
   --ifm-navbar-link-color: var(--ifm-color-emphasis-900);
   --ifm-navbar-shadow: none;
+  /* Slightly cooler footer so it visually anchors the bottom of the page. */
+  --ifm-footer-background-color: #0a0d12;
 }
 
 /* Airy heading rhythm — generous top margins, no dividers (Vercel-style) */
@@ -158,17 +183,15 @@ html[data-theme='dark'] {
   padding: 0.65rem 0.85rem;
 }
 
-/* Version badge: float right onto breadcrumbs row */
+/* Hide breadcrumbs entirely. */
 .theme-doc-breadcrumbs {
-  margin-bottom: 1rem;
+  display: none;
 }
+
+/* Hide the version badge that sits inline above the doc body \u2014
+   navbar pill is the canonical version indicator. */
 .theme-doc-version-badge {
-  display: inline-block;
-  float: right;
-  margin: 0;
-  margin-top: -2.5rem; /* pull up onto breadcrumbs row */
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 /* TOC (right side): no left border, push down from top, bigger text */
@@ -177,22 +200,61 @@ html[data-theme='dark'] {
 }
 .theme-doc-toc-desktop {
   padding-top: 3rem;
-  /* Navbar scrolls with page; pin TOC near top of viewport when sticky. */
-  top: 1rem !important;
 }
 .theme-doc-toc-desktop::before {
   content: 'On This Page';
   display: block;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ifm-color-emphasis-900);
+  color: #6a7282;
   padding-left: 0.5rem;
   margin-bottom: 0.75rem;
 }
+
+html[data-theme='dark'] .theme-doc-toc-desktop::before {
+  color: #99a1af;
+}
 .table-of-contents {
   font-size: 0.9rem;
+}
+
+/* "Back to Top" footer at the bottom of the TOC. Markup injected by
+   src/clientModules/backToTop.js. */
+.toc-back-to-top-divider {
+  margin: 1.25rem 0.5rem 0.75rem;
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.toc-back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.toc-back-to-top:hover,
+.toc-back-to-top:focus-visible {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.toc-back-to-top svg {
+  flex-shrink: 0;
+  transition: transform 150ms ease;
+}
+
+.toc-back-to-top:hover svg {
+  transform: translateY(-2px);
 }
 
 /* Active TOC indicator: single floating bar that slides between active links.
@@ -227,14 +289,40 @@ html[data-theme='dark'] {
   background: var(--ifm-color-primary);
 }
 
-/* Inline code — raise 2px to align with Geist Sans baseline. */
-.theme-doc-markdown article :not(pre) > code {
+/* Inline code — Stripe/Linear-style pill. Subtle gray background,
+   primary blue text, monospace, no backticks. Scoped to
+   `.theme-doc-markdown` (the prose wrapper) so it doesn't touch
+   sidebar/navbar/admin UI code spans. */
+.theme-doc-markdown :not(pre) > code {
+  background: var(--ifm-color-emphasis-100) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.15em 0.4em !important;
+  font-family:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9em !important;
+  font-weight: 500;
+  font-variant-ligatures: none;
+  color: var(--ifm-color-primary);
   vertical-align: baseline !important;
-  position: relative;
-  top: -2px;
-  padding: 0.15em 1em !important;
-  font-size: 0.85em !important;
-  line-height: inherit;
+}
+
+/* Inside links and headings, tighten weight up so the code reads as
+   "part of the link/heading" rather than detached. */
+.theme-doc-markdown a :not(pre) > code,
+.theme-doc-markdown h1 :not(pre) > code,
+.theme-doc-markdown h2 :not(pre) > code,
+.theme-doc-markdown h3 :not(pre) > code,
+.theme-doc-markdown h4 :not(pre) > code,
+.theme-doc-markdown h5 :not(pre) > code,
+.theme-doc-markdown h6 :not(pre) > code {
+  font-weight: 600;
+}
+
+html[data-theme='dark'] .theme-doc-markdown :not(pre) > code {
+  background: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-primary-lighter);
 }
 
 div.markdown img {
@@ -260,6 +348,109 @@ div.markdown img {
   -webkit-mask-size: contain;
 }
 
+/* ---------------------------------------------------------------------
+   Navbar right-side ordering and styling
+   ---------------------------------------------------------------------
+   Default Docusaurus DOM order on the right side:
+     items (config) -> color mode toggle -> search
+
+   Desired visual order (left -> right):
+     search -> forum -> version-pill -> github -> theme-toggle
+
+   Use flex `order` to rearrange without DOM swizzling. Default order=0;
+   set explicit values for the elements we want to anchor. */
+.navbar__items--right {
+  align-items: center;
+}
+
+.navbar__items--right .navbarSearchContainer_Bca1,
+.navbar__items--right > [class*='searchBox'] {
+  order: -10;
+  margin-right: 0.5rem;
+}
+
+/* Wider search box. Default DocSearch button is ~tight; widen it. */
+.DocSearch.DocSearch-Button {
+  width: 280px;
+  min-width: 280px;
+}
+
+.DocSearch-Button-Container {
+  flex: 1;
+}
+
+.DocSearch-Button-Placeholder {
+  flex: 1;
+  text-align: left;
+}
+
+.navbar__items--right .navbar-forum-link {
+  order: -5;
+}
+
+.navbar__items--right .dropdown:has(> .navbar-version-pill) {
+  order: 0;
+}
+
+.navbar__items--right .header-github-link {
+  order: 5;
+}
+
+.navbar__items--right .colorModeToggle_DEke,
+.navbar__items--right [class*='colorModeToggle'] {
+  order: 10;
+}
+
+/* Forum link: drop the auto-injected external-link icon, add horizontal
+   padding so it reads as a real navbar link. */
+.navbar-forum-link .iconExternalLink_nPIU,
+.navbar-forum-link svg[class*='iconExternalLink'] {
+  display: none;
+}
+
+.navbar-forum-link {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+/* Version dropdown: smaller font, gray rounded pill background.
+   Note: docusaurus puts the `className` from `docsVersionDropdown`
+   config directly on the <a>, not the parent .dropdown wrapper, so
+   `.navbar-version-pill` IS the link. */
+.navbar__link.navbar-version-pill {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.navbar__link.navbar-version-pill:hover,
+.navbar__link.navbar-version-pill.active {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+}
+
+html[data-theme='dark'] .navbar__link.navbar-version-pill {
+  background: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+}
+
+html[data-theme='dark'] .navbar__link.navbar-version-pill:hover,
+html[data-theme='dark'] .navbar__link.navbar-version-pill.active {
+  background: var(--ifm-color-emphasis-400);
+}
+
+/* Hide the body-of-page version banner ("This is unreleased
+   documentation for v8.x...") — version selection lives in the
+   navbar pill instead. */
+.theme-doc-version-banner {
+  display: none;
+}
+
 /* ============================================================
    Vercel-inspired sidebar
    ============================================================ */
@@ -281,39 +472,103 @@ div.markdown img {
 
 aside.theme-doc-sidebar-container > div {
   border-right: none !important;
-  /* Navbar is no longer fixed; pin sidebar to top of viewport instead
-     of leaving a navbar-height gap. */
-  top: 0 !important;
 }
 
 .theme-doc-sidebar-menu.menu__list {
   font-size: 13px;
   padding: 8px;
+  padding-top: 18px;
 }
 
-/* Top-level section: uppercase pill heading, modest gap above */
-.theme-doc-sidebar-menu.menu__list > .menu__list-item {
-  margin-top: 16px;
+/* Tailwind-docs-inspired rhythm:
+   - 32px gap between top-level sections (categories only)
+   - 12px gap between section heading and first item
+   - 8px gap between sibling items (handled by .menu__link line-height)
+   - Bare top-level links (welcome/requirements/whats-new) flow tight,
+     not as sections. */
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item.theme-doc-sidebar-item-category {
+  margin-top: 32px;
 }
 
 .theme-doc-sidebar-menu.menu__list > .menu__list-item:first-child {
   margin-top: 4px;
 }
 
-/* Section header (top-level category link) */
+/* Soft horizontal rule separating the intro links (welcome / requirements
+   / what's new) from the first sectioned heading. Sits as a sidebar
+   item via { type: 'html' } in sidebars.js. */
+.sidebar-section-divider {
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 16px 12px;
+}
+
+html[data-theme='dark'] .sidebar-section-divider {
+  border-top-color: var(--ifm-color-emphasis-300);
+}
+
+/* Docusaurus wraps the {type:'html'} divider in a .menu__list-item.
+   The divider's parent <li> sits between the intro links and the first
+   section heading. Both sides already have margins; zero out the
+   wrapper li's auto margins to keep total whitespace controlled. */
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item:has(.sidebar-section-divider) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* The first phpvms section directly after the divider already gets
+   32px margin-top via .menu__list-item. The 16px below the rule adds
+   to that. Pull the section back up. */
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item:has(.sidebar-section-divider)
+  + .menu__list-item {
+  margin-top: 0 !important;
+}
+
+/* Section header (top-level category link) — Tailwind-style:
+   uppercase, monospace, wide tracking, gray-500. */
 .theme-doc-sidebar-menu.menu__list
   > .menu__list-item
   > .menu__list-item-collapsible
   > .menu__link,
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link--sublist {
   text-transform: uppercase;
-  font-size: 12.5px;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--ifm-color-emphasis-600);
-  padding: 4px 12px;
-  margin-bottom: 6px;
+  letter-spacing: 0.1em;
+  color: #6a7282;
+  padding: 6px 12px;
   background: transparent !important;
+}
+
+/* Heading -> first child gap moves OFF the link (which lives inside a
+   flex wrapper that paints the hover bg) and ONTO the wrapper itself.
+   Otherwise the wrapper's hover bg extends below the text by 12px,
+   making it look bottom-heavy. */
+.theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__list-item-collapsible {
+  margin-bottom: 12px;
+}
+
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link--sublist {
+  margin-bottom: 12px;
+}
+
+html[data-theme='dark']
+  .theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__list-item-collapsible
+  > .menu__link,
+html[data-theme='dark']
+  .theme-doc-sidebar-menu.menu__list
+  > .menu__list-item
+  > .menu__link--sublist {
+  color: #99a1af;
 }
 
 .theme-doc-sidebar-menu.menu__list
@@ -405,28 +660,42 @@ aside.theme-doc-sidebar-container > div {
   transform: rotate(90deg) !important;
 }
 
-/* Vercel-style sidebar items: hover/active bg stretches edge-to-edge
-   within the sidebar column (including the chevron area for sub-cats),
-   matching width across leaf links and sub-category headers. */
+/* Tailwind-docs-style sidebar items: ~14px text, gray-600 default,
+   gray-950 + semibold when active. line-height 1.5rem creates the
+   visual 8px gap between sibling rows naturally. */
 .menu__link {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 400;
-  color: var(--ifm-color-emphasis-700);
+  color: #4a5565;
   border-radius: 6px;
-  line-height: 1.5;
+  line-height: 1.25rem;
+  padding: 6px 12px;
 }
 
 .menu__link:hover {
   background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
+  color: #030712;
 }
 
-/* Active highlight: solid bg + same width as hover. */
+/* Active highlight: solid bg + semibold + near-black text. */
 .menu__link--active,
 .menu__link--active:hover {
   background: var(--ifm-color-emphasis-200) !important;
-  color: var(--ifm-color-emphasis-900);
-  font-weight: 500;
+  color: #030712;
+  font-weight: 600;
+}
+
+html[data-theme='dark'] .menu__link {
+  color: #d1d5dc;
+}
+
+html[data-theme='dark'] .menu__link:hover {
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .menu__link--active,
+html[data-theme='dark'] .menu__link--active:hover {
+  color: #ffffff;
 }
 
 /* Active page paints the left guide rail next to its row.
@@ -723,6 +992,14 @@ html[data-theme='dark']:hover::-webkit-scrollbar-thumb {
    The JS lives in src/clientModules/mermaidZoom.js.
    --------------------------------------------------------------------- */
 
+/* Center inline mermaid diagrams in the content column. The default
+   wrapper renders left-aligned; flex-centering keeps the SVG itself
+   un-stretched (no full-width distortion). */
+.docusaurus-mermaid-container {
+  display: flex;
+  justify-content: center;
+}
+
 /* Inline diagram: hint that it's clickable */
 .docusaurus-mermaid-container.mermaid-zoom-source {
   cursor: zoom-in;
@@ -834,4 +1111,1347 @@ html[data-theme='dark'] .mermaid-zoom-stage > svg {
   font-size: 22px;
   padding: 4px 12px;
   margin-left: 4px;
+}
+
+/* ===================================================================
+ * Landing-page primitives (lp-*)
+ * Reusable in any markdown doc, not just src/pages. Lifted from the
+ * /landing-samples sketches so doc pages can build the same hero,
+ * card grids, use-case panels, numbered steps, and help blocks.
+ * =================================================================== */
+
+/* Page wrapper used inside .markdown content for landing-style pages */
+.lp-page {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ----------------------------- Hero ------------------------------ */
+
+.lp-hero {
+  padding: 1rem 0 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.lp-hero--compact {
+  padding: 1rem 0 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--ifm-color-primary) 25%, transparent);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.lp-hero-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* When no eyebrow precedes the title, reserve the space the eyebrow
+ * would have occupied so vertical rhythm stays consistent. */
+.lp-hero > .lp-hero-title:first-child {
+  margin-top: 5.7rem;
+}
+
+.lp-hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 640px;
+  margin: 0 0 2rem;
+}
+
+.lp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Buttons -------------------------------------------------------- */
+
+.lp-btn-primary,
+.lp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.lp-btn-primary {
+  background: var(--ifm-color-primary);
+  color: #fff !important;
+}
+
+.lp-btn-primary:hover {
+  background: var(--ifm-color-primary-darker);
+  transform: translateY(-1px);
+}
+
+.lp-btn-secondary {
+  background: transparent;
+  color: var(--ifm-color-emphasis-900) !important;
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.lp-btn-secondary:hover {
+  border-color: var(--ifm-color-emphasis-500);
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* --------------------------- Sections ---------------------------- */
+
+.lp-section {
+  margin-bottom: 4rem;
+}
+
+.lp-section-header {
+  margin-bottom: 1.75rem;
+}
+
+.lp-section-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.lp-section-lead {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.98rem;
+  margin: 0;
+  max-width: 620px;
+}
+
+/* Markdown headings inside .lp-* should not pick up the airy
+ * top-margins from .theme-doc-markdown. Reset them locally. */
+.lp-page h1,
+.lp-page h2,
+.lp-page h3,
+.lp-page h4 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  border: 0;
+}
+
+/* ----------------------------- Cards ----------------------------- */
+
+.lp-card {
+  display: block;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.15s ease;
+}
+
+.lp-card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px -4px
+    color-mix(in srgb, var(--ifm-color-emphasis-900) 12%, transparent);
+}
+
+.lp-card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.85rem;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+}
+
+.lp-card-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.lp-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.lp-card-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lp-card-links a {
+  font-size: 0.88rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.lp-card-links a:hover {
+  text-decoration: underline;
+}
+
+/* Audience / browse / flat grids --------------------------------- */
+
+.lp-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.lp-audience-card {
+  padding: 1.75rem;
+}
+
+.lp-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.lp-browse-card {
+  padding: 1.1rem 1.25rem;
+}
+
+.lp-browse-card .lp-card-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.lp-browse-card .lp-card-title {
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+}
+
+.lp-browse-card .lp-card-desc {
+  font-size: 0.84rem;
+}
+
+.lp-flat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+
+/* ------------------- Numbered install steps ---------------------- */
+
+.lp-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+}
+
+.lp-steps::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 36px;
+  bottom: 36px;
+  width: 1px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.lp-step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.lp-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  z-index: 1;
+}
+
+.lp-step-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.lp-step-body {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.lp-step-body p {
+  margin: 0 0 0.85rem;
+}
+
+.lp-code-block {
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-900);
+  overflow-x: auto;
+  margin: 0;
+}
+
+/* --------------------- Use-case panels --------------------------- */
+
+.lp-usecase-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  align-items: start;
+}
+
+/* Two-column grid items: left (title+desc div) sticks to top of its
+ * track, right column (links) centers vertically against the taller
+ * column. */
+.lp-usecase-panel > div {
+  align-self: start;
+}
+
+.lp-usecase-panel > .lp-usecase-links {
+  align-self: center;
+}
+
+/* Reset markdown's first-child top-margin inside the panel so the
+ * title doesn't get pushed down by inherited rhythm. */
+.lp-usecase-panel > div > :first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .lp-usecase-panel {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.lp-usecase-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.85rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.lp-usecase-desc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lp-usecase-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 1rem;
+  align-content: start;
+}
+
+@media (max-width: 480px) {
+  .lp-usecase-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lp-usecase-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.12s ease;
+}
+
+.lp-usecase-links a:hover {
+  color: var(--ifm-color-primary);
+  border-bottom-color: currentColor;
+}
+
+.lp-usecase-links a::after {
+  content: '→';
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.12s ease;
+}
+
+.lp-usecase-links a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------- Common questions list --------------------- */
+
+.lp-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.lp-questions li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  font-size: 0.96rem;
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  transition: color 0.12s ease;
+}
+
+.lp-questions li:last-child a {
+  border-bottom: none;
+}
+
+.lp-questions li a::after {
+  content: '→';
+  color: var(--ifm-color-emphasis-500);
+  transition: all 0.12s ease;
+}
+
+.lp-questions li a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.lp-questions li a:hover::after {
+  color: var(--ifm-color-primary);
+  transform: translateX(3px);
+}
+
+/* --------------------- Featured topics strip --------------------- */
+
+.lp-featured-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 12px;
+}
+
+.lp-featured-item {
+  display: block;
+  padding: 0.4rem 0;
+  text-decoration: none !important;
+  color: var(--ifm-color-emphasis-900) !important;
+}
+
+.lp-featured-item strong {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+  color: var(--ifm-color-primary);
+}
+
+.lp-featured-item span {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* --------------------- What's-next row --------------------------- */
+
+.lp-whats-next {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.lp-whats-next > * {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 320px;
+}
+
+/* --------------------- Help / community block ------------------- */
+
+.lp-help-block {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--ifm-color-primary) 8%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 2%, transparent)
+  );
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .lp-help-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lp-help-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.lp-help-desc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.lp-help-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* --------------------- Sketch index list ------------------------- */
+
+.lp-sketch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lp-sketch-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.15s ease;
+}
+
+.lp-sketch-card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px -4px
+    color-mix(in srgb, var(--ifm-color-emphasis-900) 12%, transparent);
+}
+
+@media (max-width: 600px) {
+  .lp-sketch-card {
+    grid-template-columns: 1fr;
+  }
+  .lp-sketch-card .lp-sketch-num {
+    display: none;
+  }
+}
+
+.lp-sketch-num {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-300);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.lp-sketch-title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.lp-sketch-desc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-sketch-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* --------------------- Dark-mode adjustments -------------------- */
+
+[data-theme='dark'] .lp-card,
+[data-theme='dark'] .lp-usecase-panel,
+[data-theme='dark'] .lp-sketch-card,
+[data-theme='dark'] .lp-help-block {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .lp-card-icon {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .lp-code-block,
+[data-theme='dark'] .lp-featured-strip {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .lp-step-num {
+  background: var(--ifm-background-surface-color);
+}
+
+/* Tighten Docusaurus code blocks when they appear inside .lp-step.
+ * The default theme-code-block has chunky vertical margins that look
+ * too loose between step prose and the next numbered step. */
+.lp-step .theme-code-block {
+  margin: 0 0 0.5rem;
+}
+
+/* Spacing between paginator (prev/next) and the global doc-page help
+ * block injected by src/theme/DocItem/Paginator. */
+.lp-doc-help-wrapper {
+  margin-top: 3rem;
+}
+
+/* ===================================================================
+ * Atmosphere & polish — additive flourishes layered on the base theme.
+ * Grouped by concern; each block self-contained and reversible.
+ *
+ * Sections:
+ *   1A   Sectional-chart dot grid behind landing-page heroes
+ *   2B   Tabular figures in tables / inline numerics
+ *   2C   JetBrains Mono OpenType features (slashed zero + ligatures off)
+ *   3A   Runway-dash divider (.lp-divider-runway)
+ *   3C   Status-dot indicators (paired with src/components/StatusDot.tsx)
+ *   4A   Code-block filename title pill
+ *   4B   Copy-button success pulse animation
+ *   4C   Shell input vs output two-tone (Prism token override)
+ *   5A   Featured-card animated gradient border (.lp-card--featured)
+ *   5B   Anchor-link reveal on heading hover
+ *   6B   Footer typography rhythm (build version + tagline)
+ *   7B   Primary-color glow on active rails in dark mode
+ * =================================================================== */
+
+/* ----------------------------------------------------------------- *
+ * 1A  Sectional-chart dot grid — landing hero atmosphere
+ *
+ * Faint cyan-tinted dot grid (24px spacing) sits behind .lp-hero only,
+ * masked to fade at the edges so it doesn't fight the surrounding
+ * content. The aviation-chart palette is achieved by mixing the brand
+ * primary into transparent at very low opacity. Dark mode gets a slight
+ * boost in alpha because dots wash out against the deep background.
+ *
+ * Pseudo-element layered with z-index: 0; .lp-hero contents use position
+ * relative + z-index: 1 to sit above. The hero already had top padding,
+ * so no layout shift.
+ * ----------------------------------------------------------------- */
+.lp-hero {
+  position: relative;
+  z-index: 0;
+}
+
+.lp-hero::before {
+  content: '';
+  position: absolute;
+  inset: -2rem -1rem;
+  z-index: -1;
+  /* Two stacked layers: a tighter inner grid + a slightly larger one
+     gives the surface a touch of organic noise, like real chart paper
+     where lat/lon dots aren't perfectly uniform. */
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary) 22%, transparent) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary) 10%, transparent) 1px,
+      transparent 1.5px
+    );
+  background-size:
+    24px 24px,
+    72px 72px;
+  background-position:
+    0 0,
+    12px 12px;
+  /* Fade out at edges so the grid feels like a backdrop, not a frame. */
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 40%,
+    black 0%,
+    black 35%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    ellipse at 30% 40%,
+    black 0%,
+    black 35%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* Dark mode: bump alpha so the dots don't disappear into #0d1117. */
+html[data-theme='dark'] .lp-hero::before {
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary-light) 35%, transparent) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary-light) 16%, transparent) 1px,
+      transparent 1.5px
+    );
+}
+
+/* ----------------------------------------------------------------- *
+ * 2B  Tabular figures — tables, inline numerics, version pill, code
+ *
+ * Numbers in proportional-figure mode wobble between rows in a table or
+ * a status list (4 is narrower than 8). Forcing tabular-nums keeps
+ * columns aligned and gives data-heavy docs a more "instrument-grade"
+ * feel. Scoped to areas that show numeric data — never apply globally
+ * because it can hurt prose density.
+ * ----------------------------------------------------------------- */
+.theme-doc-markdown article table,
+.theme-doc-markdown article table th,
+.theme-doc-markdown article table td,
+.theme-doc-markdown article code,
+.theme-doc-markdown article pre,
+.navbar__link.navbar-version-pill,
+.lp-step-num,
+.lp-sketch-num,
+.toc-back-to-top,
+.table-of-contents {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------- *
+ * 2C  JetBrains Mono OpenType features — slashed zero, no ligatures
+ *
+ * - "zero" 1     → forces slashed zero so 0/O are unambiguous in code.
+ * - "calt" 0     → disables contextual alternates (ligatures like
+ *                  != and >= → ≠ ≥). Many devs expect raw ASCII in
+ *                  documentation samples; ligatures can confuse copy/
+ *                  paste reasoning.
+ * - "ss01"…"ss20" → JetBrains stylistic sets are mostly off-by-default;
+ *                  no need to enable.
+ * ----------------------------------------------------------------- */
+code,
+pre,
+kbd,
+.theme-code-block,
+.table-of-contents,
+.menu__link,
+.theme-doc-toc-desktop {
+  font-feature-settings:
+    'zero' 1,
+    'calt' 0,
+    'liga' 0;
+}
+
+/* ----------------------------------------------------------------- *
+ * 3A  Runway-dash divider — .lp-divider-runway
+ *
+ * A horizontal centerline made of three short dashes spaced like
+ * runway centerline markings. Use between major landing-page sections
+ * where a plain <hr> would feel too utilitarian.
+ *
+ * Markup:
+ *   <div className="lp-divider-runway" aria-hidden>
+ *     <span /><span /><span />
+ *   </div>
+ * ----------------------------------------------------------------- */
+.lp-divider-runway {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 4rem 0;
+  /* Make the dashes look like they're painted on tarmac — slight
+     letterbox of negative space above and below feels intentional. */
+  padding: 0.5rem 0;
+}
+
+.lp-divider-runway > span {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ifm-color-primary);
+  opacity: 0.45;
+}
+
+/* Center dash subtly longer — like a runway threshold marker. */
+.lp-divider-runway > span:nth-child(2) {
+  width: 44px;
+  opacity: 0.6;
+}
+
+html[data-theme='dark'] .lp-divider-runway > span {
+  background: var(--ifm-color-primary-lighter);
+  opacity: 0.35;
+}
+
+html[data-theme='dark'] .lp-divider-runway > span:nth-child(2) {
+  opacity: 0.5;
+}
+
+/* ----------------------------------------------------------------- *
+ * 3C  Status-dot indicators — paired with src/components/StatusDot.tsx
+ *
+ * Inline 8px circle with a soft 20% ring (current-color) for a tiny
+ * glow. Five variants: ok / warn / bad / info / muted. The ring is the
+ * key — without it the dot reads as a typographic dot ("·"). With the
+ * ring it reads as a status indicator (Linear, Tailwind UI).
+ *
+ * Variants set --dot-color which both fill and ring inherit, so adding
+ * a new color is a one-line addition.
+ * ----------------------------------------------------------------- */
+.status-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  vertical-align: 0.05em;
+  margin-right: 0.55em;
+  background: var(--dot-color, currentColor);
+  /* Soft halo derived from the dot color. The double box-shadow gives
+     a tighter inner ring + a wider outer fade for a subtle bloom.
+     Halo alpha is intentionally low so the SOLID dot reads as the
+     primary signal, not the bloom. */
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--dot-color, currentColor) 18%, transparent),
+    0 0 5px color-mix(in srgb, var(--dot-color, currentColor) 28%, transparent);
+  /* Don't let the dot inherit text decoration / underline from a link. */
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Soft sky-blue — pairs with the site's primary blue palette without
+   competing with link text (which uses --ifm-color-primary, a deeper
+   blue). Tailwind sky-400 (#38bdf8): bright enough to read as "active /
+   verified" against the white surface, soft enough to feel ambient. */
+.status-dot--ok {
+  --dot-color: #38bdf8;
+}
+.status-dot--warn {
+  --dot-color: #f59e0b;
+}
+.status-dot--bad {
+  --dot-color: #ef4444;
+}
+.status-dot--info {
+  --dot-color: #3b82f6;
+}
+.status-dot--muted {
+  --dot-color: #94a3b8;
+}
+
+/* Status-dot inside a list item: tighten margin + align with text. */
+.theme-doc-markdown li .status-dot {
+  margin-right: 0.6em;
+}
+
+/* Compact status list — used on requirements / compatibility pages.
+   Drops the default bullet (the dot IS the bullet now), tightens row
+   gap, and aligns the dot with the first text baseline. Keeps the
+   default Infima list indent (--ifm-list-left-padding, 2rem) so the
+   list sits where readers expect a <ul> to sit.
+
+   Tight margin-bottom (0.5rem) keeps successive lists / headings
+   close together. The natural rhythm of the surrounding headings
+   (h5 has its own margin-top ~2rem) handles section separation. */
+.theme-doc-markdown ul.status-list,
+.theme-doc-markdown article ul.status-list {
+  list-style: none;
+  /* Match the indent of a regular <ul> (Infima default ≈ 2rem). */
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.theme-doc-markdown ul.status-list > li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0;
+  padding: 0.15rem 0;
+}
+
+/* When a status-list is immediately followed by a heading (e.g.
+   Database list → "Optional" h5), pull the heading up so the gap
+   reads as a section transition, not a chasm. */
+.theme-doc-markdown ul.status-list + h5,
+.theme-doc-markdown ul.status-list + h6 {
+  margin-top: 1.25rem;
+}
+
+/* ----------------------------------------------------------------- *
+ * 4A  Code-block filename title pill
+ *
+ * Docusaurus renders the `title="filename"` attribute as a full-width
+ * bar above the code. Restyle to a smaller pill anchored top-left,
+ * monospace, gray, with subtle border. Reads as a tag on a piece of
+ * tape stuck to the code block (Stripe / Resend pattern).
+ *
+ * The default theme uses a hashed CSS-modules class for the title
+ * container; we target it via the unhashed wrapper structure plus the
+ * `[class*=...]` selector for the inner element.
+ * ----------------------------------------------------------------- */
+.theme-code-block .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Container-styles-module,
+.theme-code-block [class*='codeBlockTitle'] {
+  display: inline-block;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: none;
+  /* !important to defeat default full-bleed top-bar radius. */
+  border-radius: 6px 6px 0 0 !important;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: -1px; /* visually attach to the code box */
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  width: auto;
+}
+
+html[data-theme='dark'] .theme-code-block [class*='codeBlockTitle'] {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* 4B (copy button success pulse) — REMOVED. The MutationObserver-driven
+ * client module caused browser freezes (likely an infinite class-mutation
+ * loop when the observer's own class additions re-triggered observation).
+ * Reverted: src/clientModules/copyButton.js deleted, registration removed
+ * from docusaurus.config.js. */
+
+/* ----------------------------------------------------------------- *
+ * 4C  Shell input vs output two-tone — Prism token differentiation
+ *
+ * Convention (documented in installation/* docs):
+ *   - Lines starting with `$ ` or `# ` are SHELL INPUT (the user types).
+ *   - Other lines are OUTPUT.
+ *
+ * Prism's `bash` / `shell-session` lexer tags prompts as
+ * `.token.bash.prompt` (or `.token.shell-symbol`). We dim the output
+ * (everything that isn't part of a prompt token's siblings) by setting
+ * the surrounding line to a slightly muted color.
+ *
+ * Caveat: Prism doesn't tokenize "lines", it tokenizes characters. The
+ * cleanest approach is to color the prompt characters themselves
+ * accent-colored and let the rest of the line use the default fg. That
+ * gives input a subtle highlight without needing to span output lines.
+ * ----------------------------------------------------------------- */
+.theme-code-block code .token.bash,
+.theme-code-block code .token.shell-symbol,
+.theme-code-block code .token.prolog,
+.theme-code-block code .token.command-line-prompt > span {
+  /* Prompt characters ($, #, $$, sudo prompts) — subtle primary tint. */
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  user-select: none;
+}
+
+/* For shell-session blocks where Prism wraps prompts in a dedicated
+   span class, render output (.token.output) at lower contrast so input
+   stands out. */
+.theme-code-block code .token.output {
+  color: var(--ifm-color-emphasis-600);
+  opacity: 0.85;
+}
+
+html[data-theme='dark'] .theme-code-block code .token.output {
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* ----------------------------------------------------------------- *
+ * 5A  Featured-card animated gradient border — .lp-card--featured
+ *
+ * Opt-in modifier on .lp-card. Wraps the card in a conic gradient that
+ * rotates slowly on hover. Uses a CSS @property-driven custom property
+ * for the angle so the gradient itself can transition (regular CSS
+ * gradients don't transition mid-stops, but transitioning the angle
+ * variable that the conic-gradient reads does work).
+ *
+ * Implementation: the card already has `border: 1px solid emphasis-200`.
+ * We replace the static border with a 1px gradient layer painted on a
+ * pseudo-element. The card's actual background sits on top via
+ * `background-clip: padding-box`. When the user hovers, the conic
+ * spins; otherwise it sits at a fixed angle.
+ *
+ * Falls back gracefully on browsers without @property — the gradient
+ * just won't animate, but still renders correctly.
+ * ----------------------------------------------------------------- */
+@property --lp-featured-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 130deg;
+}
+
+.lp-card--featured {
+  position: relative;
+  background: var(--ifm-background-surface-color, #fff);
+  /* Defeat the static border from .lp-card so the gradient ::before
+     becomes the visible edge. */
+  border-color: transparent;
+  isolation: isolate;
+}
+
+.lp-card--featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* gradient ring thickness */
+  background: conic-gradient(
+    from var(--lp-featured-angle),
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 70%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 30%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 70%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent)
+  );
+  /* Knockout the inner area so only the 1px frame paints. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hover: rotate the conic + brighten the gradient stops. Driven by a
+   single keyframe so we avoid the "invalid animation value" warning
+   from CSS minifiers (which don't recognize transitioning an
+   @property-registered custom prop directly). The keyframe uses
+   `forwards` so the angle holds at the end of the rotation; the next
+   hover restarts it. */
+@keyframes lp-featured-angle-spin {
+  from {
+    --lp-featured-angle: 130deg;
+  }
+  to {
+    --lp-featured-angle: 490deg;
+  }
+}
+
+.lp-card--featured:hover::before {
+  animation: lp-featured-angle-spin 1200ms linear forwards;
+  /* Stronger tints during hover make the spin feel "brighter" rather
+     than just kinetic. */
+  background: conic-gradient(
+    from var(--lp-featured-angle),
+    color-mix(in srgb, var(--ifm-color-primary) 70%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 90%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 90%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 70%, transparent)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-card--featured:hover::before {
+    animation: none;
+  }
+}
+
+/* ----------------------------------------------------------------- *
+ * 5B  Anchor-link reveal on heading hover
+ *
+ * Docusaurus emits `<a class="hash-link" href="#anchor">` immediately
+ * after each heading's text. Default styling shows it always (or shows
+ * a Unicode # always). We:
+ *   - hide it by default
+ *   - reveal on hover of the heading itself (using :hover on the
+ *     headings, not just the link, so the larger target is friendlier)
+ *   - swap the glyph to a smaller "#" with subtle slide-in animation
+ *
+ * Stripe / Tailwind use this pattern. Improves shareability of deep
+ * links without permanent visual noise.
+ * ----------------------------------------------------------------- */
+.theme-doc-markdown article h1 .hash-link,
+.theme-doc-markdown article h2 .hash-link,
+.theme-doc-markdown article h3 .hash-link,
+.theme-doc-markdown article h4 .hash-link,
+.theme-doc-markdown article h5 .hash-link,
+.theme-doc-markdown article h6 .hash-link {
+  opacity: 0;
+  margin-left: 0.4em;
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--ifm-color-emphasis-500);
+  text-decoration: none;
+  transform: translateX(-6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    color 120ms ease;
+  display: inline-block;
+}
+
+.theme-doc-markdown article h1:hover .hash-link,
+.theme-doc-markdown article h2:hover .hash-link,
+.theme-doc-markdown article h3:hover .hash-link,
+.theme-doc-markdown article h4:hover .hash-link,
+.theme-doc-markdown article h5:hover .hash-link,
+.theme-doc-markdown article h6:hover .hash-link,
+.theme-doc-markdown article .hash-link:focus-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.theme-doc-markdown article .hash-link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* ----------------------------------------------------------------- *
+ * 6B  Footer typography rhythm — tagline + build chip
+ *
+ * The Docusaurus footer renders `copyright` as a `.footer__copyright`
+ * paragraph at the bottom. We don't add new elements here (that lives
+ * in docusaurus.config.js or a swizzle); instead we improve the
+ * typography of whatever is in there: tighter, lighter, slight letter
+ * spacing, and a subtle separator if multiple lines.
+ *
+ * If/when a build version is added (e.g. "v8.x · 2026-05-06") in the
+ * footer copyright string, it'll inherit these styles for free.
+ * ----------------------------------------------------------------- */
+.footer {
+  font-size: 0.85rem;
+  letter-spacing: 0.005em;
+}
+
+.footer__copyright {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.02em;
+}
+
+/* If the copyright line contains a `<code>` (used to wrap the build
+   tag), render it as a tiny mono pill. */
+.footer__copyright code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  margin-left: 0.5em;
+  font-variant-numeric: tabular-nums;
+}
+
+html[data-theme='dark'] .footer__copyright code {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* ----------------------------------------------------------------- *
+ * 7B  Active-rail glow in dark mode
+ *
+ * Both the TOC active bar (.toc-active-bar) and the sidebar active rail
+ * (.sidebar-active-bar) are 1–3px wide primary-blue strips. Against a
+ * pure dark background they read flat. A small box-shadow halo (4–8px
+ * blur, 50% primary mix) makes them feel "lit" — like a runway edge
+ * light at night.
+ *
+ * Light mode skipped: against a white surface the glow looks muddy.
+ * ----------------------------------------------------------------- */
+html[data-theme='dark'] .toc-active-bar,
+html[data-theme='dark'] .sidebar-active-bar {
+  box-shadow: 0 0 8px 1px
+    color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
+}
+
+/* The CSS-fallback rail (paints next to active <li> when JS hasn't
+   injected the sliding bar yet) gets the same treatment so dark-mode
+   first-paint matches. */
+html[data-theme='dark']
+  .theme-doc-sidebar-item-link-level-3:has(> .menu__link--active)::before,
+html[data-theme='dark']
+  .theme-doc-sidebar-item-link-level-4:has(> .menu__link--active)::before,
+html[data-theme='dark']
+  .theme-doc-sidebar-item-category-level-3:has(.menu__link--active)::before,
+html[data-theme='dark']
+  .theme-doc-sidebar-item-category-level-4:has(.menu__link--active)::before {
+  box-shadow: 0 0 8px 1px
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent);
+}
+
+html[data-theme='dark']
+  .table-of-contents__link--active::before {
+  box-shadow: 0 0 8px 1px
+    color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
+}
+
+/* ----------------------------------------------------------------- *
+ * Bottom-right ambient dot-grid — atmospheric texture
+ *
+ * Mirrors the hero's sectional-chart dot grid in the opposite corner.
+ * Anchored to the viewport (position: fixed) so it follows the scroll
+ * — the user always has a "destination" corner with the same chart-
+ * paper feel as the hero. Diagonal composition: hero glow at top-left
+ * (35%, 0%), this corner at bottom-right.
+ *
+ * Two layers stacked:
+ *   1. Dot-grid (24px tight + 72px loose), same recipe as .lp-hero
+ *      so the texture is visually consistent.
+ *   2. Soft radial fall-off (mask-image) so the dots fade smoothly
+ *      into the page background instead of stopping at a hard edge.
+ *
+ * Scoped to `html.docs-wrapper` so custom pages like /landing-samples
+ * don't pick it up. Sits at z-index: -1, pointer-events: none, so
+ * nothing interactive is affected.
+ * ----------------------------------------------------------------- */
+html.docs-wrapper::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  width: 560px;
+  height: 460px;
+  /* Dot alpha runs ~10% lighter than the hero (22%/10% → 20%/9%) so
+     this corner reads as a softer echo of the hero, not a duplicate. */
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary) 20%, transparent) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary) 9%, transparent) 1px,
+      transparent 1.5px
+    );
+  background-size:
+    24px 24px,
+    72px 72px;
+  background-position:
+    0 0,
+    12px 12px;
+  /* Fade so the dots are densest at the corner and dissolve toward
+     the page interior. Anchor: 100% 100% (bottom-right). */
+  -webkit-mask-image: radial-gradient(
+    ellipse at bottom right,
+    black 0%,
+    black 25%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    ellipse at bottom right,
+    black 0%,
+    black 25%,
+    transparent 75%
+  );
+}
+
+/* Dark mode: bump alpha so dots stay legible against #0d1117. Held
+   ~10% softer than the hero's dark-mode values (35%/16% → 32%/14%)
+   to match the light-mode delta. */
+html[data-theme='dark'].docs-wrapper::after {
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary-light) 32%, transparent) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ifm-color-primary-light) 14%, transparent) 1px,
+      transparent 1.5px
+    );
+}
+
+/* Mobile: shrink so the corner texture doesn't dominate small
+   viewports. Below 720px the dot field becomes a third of the screen
+   instead of two-thirds. */
+@media (max-width: 720px) {
+  html.docs-wrapper::after {
+    width: 280px;
+    height: 220px;
+  }
 }

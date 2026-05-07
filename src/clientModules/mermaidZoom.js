@@ -144,7 +144,10 @@ function ensureModal() {
       } else if (touchStart.mode === 'pinch' && e.touches.length === 2) {
         const [a, b] = e.touches;
         const d = Math.hypot(b.clientX - a.clientX, b.clientY - a.clientY);
-        scale = Math.min(8, Math.max(0.2, touchStart.startScale * (d / touchStart.dist)));
+        scale = Math.min(
+          8,
+          Math.max(0.2, touchStart.startScale * (d / touchStart.dist)),
+        );
         applyTransform();
       }
       e.preventDefault();

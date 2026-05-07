@@ -9,6 +9,19 @@
 module.exports = {
   docs: [
     // ---------------------------------------------------------------------
+    // Top-level intro links (no section heading) — appear above phpvms.
+    // The site landing (welcome.mdx) is reached via the navbar logo and
+    // is intentionally not in the sidebar.
+    // ---------------------------------------------------------------------
+    'getting-started',
+    'whats-new',
+    {
+      type: 'html',
+      value: '<hr class="sidebar-section-divider" />',
+      defaultStyle: true,
+    },
+
+    // ---------------------------------------------------------------------
     // phpvms — for VA operators running phpvms
     // ---------------------------------------------------------------------
     {
@@ -17,18 +30,11 @@ module.exports = {
       collapsed: false,
       collapsible: true,
       items: [
-        'welcome',
-        'requirements',
-        'whats-new',
-        {
-          type: 'category',
-          label: 'Concepts',
-          items: ['guides/basics', 'guides/finances'],
-        },
         {
           type: 'category',
           label: 'Installation',
           items: [
+            'installation/requirements',
             {
               type: 'category',
               label: 'Get the Files',
@@ -42,6 +48,11 @@ module.exports = {
             'installation/updating',
             'installation/cron',
           ],
+        },
+        {
+          type: 'category',
+          label: 'Concepts',
+          items: ['guides/basics', 'guides/deeper-dive', 'guides/glossary'],
         },
         {
           type: 'category',

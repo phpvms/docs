@@ -18,8 +18,6 @@ This PDK includes build scripts to:
 - GitHub Actions to build and deploy
 - Scripts to help with development
 
----
-
 ## The General Steps
 
 First, fork the [acars-pdk](https://github.com/phpvms/acars-pdk) repository.
@@ -36,8 +34,6 @@ distribute it to all of your pilots.
 - ???
 - Profit!
 
----
-
 ## Setup
 
 #### Required:
@@ -52,7 +48,7 @@ Run:
 npm install
 ```
 
-#### Customizing using the `.env` file:
+#### Customizing using the .env file:
 
 Next, copy the `.env.default` to `.env`. Then edit this file to change the
 profile name.
@@ -65,8 +61,6 @@ The available options:
 - `ACARS_SCRIPTS_PATH` - Uses the `ACARS_PROFILE_NAME` to build the path to
   where the scripts should be sent after a build
 - `ACARS_DIST_ZIP` - The distribution filename
-
----
 
 ## Commands
 
@@ -104,8 +98,6 @@ Creates a `dist.zip` (you can rename it in the `.env` file) after running a
 build. You can modify the `gulpfile.mjs` to include other files - by default,
 anything in the `dist` directory gets packaged. You can then configure GitHub
 Actions to then upload this zip somewhere for ACARS to download.
-
----
 
 ### Disable Downloading Latest Defaults
 

@@ -8,8 +8,6 @@ The default CSS/Javascript is built and packaged using
 together into a single JS file, which is then minimized. While most settings are
 exposed, you might still want to customize them.
 
----
-
 ## Source Layout
 
 The "source" files for the assets are in one of two places:
@@ -54,8 +52,6 @@ your changes are included
 
 :::
 
----
-
 ## Required Tools
 
 nodejs and npm are required to build. Follow the
@@ -69,8 +65,6 @@ npm install
 ```
 
 Building both the CSS and Javascript use the same command.
-
----
 
 ## Building CSS
 
@@ -90,8 +84,6 @@ To build the CSS, run the build command:
 ```bash
 npm run production
 ```
-
----
 
 ## Building JS
 

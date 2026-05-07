@@ -96,10 +96,10 @@ will use.
 #### Example
 
 ```typescript
-setup()
+setup();
 {
-  Acars.Set('above_1k', false)
-  Acars.Set('launched_message', false)
+  Acars.Set('above_1k', false);
+  Acars.Set('launched_message', false);
 }
 ```
 
